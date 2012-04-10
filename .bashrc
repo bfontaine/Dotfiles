@@ -157,15 +157,12 @@ alias sagautoclean="sudo apt-get autoclean"
 
 alias aptisearch="aptitude search"
 
-# alias maintenance="saupd && saupg && saar && sudo updatedb"
-
 alias xlogo="xlogo -render"
 
 alias pker="ping kernel.org"
 
 # java
 alias jInterpreter="java bsh.Interpreter"
-#alias minecraft="java -jar ~/Applications/minecraft.jar"
 alias minecraft="padsp java -jar ~/Applications/minecraft.jar"
 
 # python
@@ -193,25 +190,12 @@ alias MoM="~/Applications/MoM/MoM"
 alias processing="sh ~/Applications/processing-1.5.1/processing"
 alias gephi="~/Applications/gephi/bin/gephi"
 
-# alias aoe2="wine \"~/.wine/drive_c/Program Files/Microsoft Games/Age of Empires II/EMPIRE2.EXE\""
-
 alias apache_restart="sudo /etc/init.d/apache2 restart"
 
 alias sl="sl -e"
 alias LS="LS -e"
 
 # perso
-
-# alias clr="~/Documents/Programmation/AppsPerso/clr/clr.sh"
-# alias sca="clr"
-alias clr="clr -v"
-
-alias maintenance="~/Documents/Programmation/AppsPerso/maintenance/maintenance.sh"
-alias adressbook="~/Documents/Programmation/AppsPerso/adressbook/main.py"
-
-alias dispo_clavier="xbkprint -color :0 -ll -o layout.ps;gv layout.ps"
-
-alias updatepacketslist="dpkg -l > ~/Ubuntu\ One/liste-paquets-fixe.txt"
 
 for f in ~/Documents/Programmation/AppsPerso/fonctions/*.sh;
 do
@@ -224,18 +208,8 @@ done
 resolve() { curl -Is $1 | sed -n 's/^Location: //p'; }
 
 # web
-alias aspiSite="wget -r -k -np"
-alias viderDNS="sudo rndc flush"
-alias adzhosts="~/Documents/Programmation/ExternApps/adzhosts.sh"
-alias whatweb="~/Documents/Applications/whatweb-0.4.7/whatweb"
+alias flushDNS="sudo rndc flush"
 alias python2server="python2.7 -m SimpleHTTPServer"
-
-# Reseau
-alias netbook_sshfs="sshfs baptiste@192.168.1.26:/home/baptiste /home/baptiste/_netbook"
-alias netbook_unsshfs="fusermount -u ~/_netbook"
-
-alias fac_sshfs="sshfs fontaine@nivose.informatique.univ-paris-diderot.fr:/info/nouveaux/fontaine/ /home/baptiste/_fac"
-alias fac_unsshfs="fusermount -u ~/_fac"
 
 if [ $COLUMNS -lt 35 ];
 then
