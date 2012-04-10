@@ -100,14 +100,24 @@ fi
 #                      PERSO
 # ------------------------------------------------------
 
-# evide <c-d>
+# need <C-d> twice to quit
 ignoreeof=1
 
 # variables
 export EDITOR="vim"
 export PS2="... "
 
+export PATH="$PATH:/opt/scala/bin"
+
+# Python
 export PYTHONPATH="$PYTHONPATH:$HOME/Documents/Programmation/libs/python"
+
+# Ruby
+alias irb="irb1.9.1"
+alias gem="gem1.9.1"
+
+# Rails
+export PATH="$PATH:/var/lib/gems/1.8/bin"
 
 # Bean Shell
 export CLASSPATH="$CLASSPATH:$HOME/Documents/Programmation/libs/java/bsh-2.0b4.jar"
@@ -115,25 +125,23 @@ export CLASSPATH="$CLASSPATH:$HOME/Documents/Programmation/libs/java/bsh-2.0b4.j
 export DEBFULLNAME="Baptiste Fontaine"
 export DEBEMAIL="batifon@yahoo.fr"
 
-# usuelles
+# usual
 alias rm="rm -i"
 alias rmdir="rm -Ri"
 
-function mkcd() { mkdir $1 && cd $1; }
+function mkdc() { mkdir $1 && cd $1; }
 
 alias ps="ps x"
 
 alias shred="shred -n 50 -z -u"
 alias wipe="wipe -r -i -Q 50"
 
-alias ls="ls -Fgh --color --group-directories-first"
-alias lsa="ls -a"
-alias l=ls
-alias lszip="unzip -l"
-
-alias grep="grep -n"
-
 alias top="htop"
+
+alias ls='ls -Fhg --color --group-directories-first'
+alias l=ls
+alias lsa='ls -a'
+alias lszip="unzip -l"
 
 alias cd="cd -P"
 
@@ -147,33 +155,26 @@ alias saupd="sudo apt-get update"
 alias saar="sudo apt-get autoremove --purge"
 alias sagautoclean="sudo apt-get autoclean"
 
-alias aptis="aptitude search"
+alias aptisearch="aptitude search"
 
-alias xclip="xclip -selection clipboard"
-
-alias maintenance="saupd && saupg && saar && sudo updatedb"
+# alias maintenance="saupd && saupg && saar && sudo updatedb"
 
 alias xlogo="xlogo -render"
 
-alias up7c="~/Documents/Programmation/UP7_Tools/up7connect.rb"
+alias pker="ping kernel.org"
 
 # java
 alias jInterpreter="java bsh.Interpreter"
+#alias minecraft="java -jar ~/Applications/minecraft.jar"
+alias minecraft="padsp java -jar ~/Applications/minecraft.jar"
 
 # python
 alias python="python3"
 
-# ruby
-alias irb="irb1.9.1"
-alias ruby="ruby1.9.1"
-alias gem="gem1.9.1"
-
 # ocaml
 alias locaml="ledit ocaml"
 
-# repertoires & fichiers
-alias bureau="cd ~/Bureau"
-
+# bash files
 alias openbashrc="vim ~/.bashrc"
 alias reload="source ~/.bashrc"
 
@@ -185,28 +186,24 @@ alias svnlog="svn log | less"
 # apps
 alias chromium="chromium-browser"
 
-alias fortune="fortune -e"
-
-alias msn="empathy"
-alias pdf="evince"
 alias sudoku="gnome-sudoku"
-alias transmission="transmission-gtk"
-# alias velib="lugdulov"
-# alias okawix="~/Documents/okawix/okawix"
+alias velib="lugdulov"
+alias okawix="~/Documents/okawix/okawix"
 alias MoM="~/Applications/MoM/MoM"
+alias processing="sh ~/Applications/processing-1.5.1/processing"
+alias gephi="~/Applications/gephi/bin/gephi"
 
-alias aoe2="wine \"~/.wine/drive_c/Program Files/Microsoft Games/Age of Empires II/EMPIRE2.EXE\""
-alias aoes="aoe_says"
+# alias aoe2="wine \"~/.wine/drive_c/Program Files/Microsoft Games/Age of Empires II/EMPIRE2.EXE\""
 
-alias starwars="telnet towel.blinkenlights.nl"
+alias apache_restart="sudo /etc/init.d/apache2 restart"
 
 alias sl="sl -e"
 alias LS="LS -e"
 
 # perso
 
-#alias clr="~/Documents/Programmation/AppsPerso/clr/clr.sh"
-#alias sca="clr"
+# alias clr="~/Documents/Programmation/AppsPerso/clr/clr.sh"
+# alias sca="clr"
 alias clr="clr -v"
 
 alias maintenance="~/Documents/Programmation/AppsPerso/maintenance/maintenance.sh"
@@ -214,70 +211,47 @@ alias adressbook="~/Documents/Programmation/AppsPerso/adressbook/main.py"
 
 alias dispo_clavier="xbkprint -color :0 -ll -o layout.ps;gv layout.ps"
 
-alias updatepacketslist="dpkg -l > ~/Ubuntu\ One/liste-paquets-netbook.txt"
+alias updatepacketslist="dpkg -l > ~/Ubuntu\ One/liste-paquets-fixe.txt"
 
 for f in ~/Documents/Programmation/AppsPerso/fonctions/*.sh;
 do
-    if test -x $f;
-    then
+    if [ -x $f ];then
         . $f;
     fi
 done
 
-# scripts
-alias MER="~/Documents/Programmation/AppsPerso/mer.py"
-
-alias exif-img="~/Documents/scripts/exif-img.sh"
-
-alias "php-sh"="php-shell.sh"
+# http://www.commandlinefu.com/commands/view/9824/resolve-short-urls
+resolve() { curl -Is $1 | sed -n 's/^Location: //p'; }
 
 # web
 alias aspiSite="wget -r -k -np"
 alias viderDNS="sudo rndc flush"
 alias adzhosts="~/Documents/Programmation/ExternApps/adzhosts.sh"
-alias whatweb="~/Applications/whatweb-0.4.7/whatweb"
+alias whatweb="~/Documents/Applications/whatweb-0.4.7/whatweb"
 alias python2server="python2.7 -m SimpleHTTPServer"
-alias apache2-restart="sudo /etc/init.d/apache2 restart"
-
-# Securite
-# alias upmsf="sudo svn update /opt/metasploit3/msf3/"
-# alias sqlmap="~/Documents/Programmation/ExternApps/sqlmap/sqlmap.py"
 
 # Reseau
-# si l'IP ne change pas c'est bon
-# alias netbook_sshfs="sshfs baptiste@192.168.1.26:/home/baptiste /home/baptiste/_netbook"
-# alias netbook_unsshfs="fusermount -u ~/_netbook"
+alias netbook_sshfs="sshfs baptiste@192.168.1.26:/home/baptiste /home/baptiste/_netbook"
+alias netbook_unsshfs="fusermount -u ~/_netbook"
 
 alias fac_sshfs="sshfs fontaine@nivose.informatique.univ-paris-diderot.fr:/info/nouveaux/fontaine/ /home/baptiste/_fac"
 alias fac_unsshfs="fusermount -u ~/_fac"
 
-# scripts
-# alias "php-sh"="php-shell.sh"
-
-# multimedia
-alias webcam-watch-only="mplayer tv://"
-
-# misc
-alias umlascii="ditaa"
-
-# stopper/ralentir les blagueurs
-# alias alias="echo 'et mon cul, c'est du poulet ?';"
-# ulimit -u 256
-
-if [ $COLUMNS -lt 45 ];
+if [ $COLUMNS -lt 35 ];
 then
-        # Petit terminal
+        # small terminal
         export PS1="% ";
         alias ls="ls -F --color --group-directories-first";
 fi
+
+# Flash cookies
+rm -Rf ~/.adobe/*
+rm -Rf ~/.macromedia/*
 
 # demarrage
 # linux_logo -a -L ubuntu
 # clr
 cp ~/.bashrc ~/.copie_bashrc-auto
-
-rm -f ~/Ubuntu\ One/*u1conflict*
-
 clear
-echo Bonjour \!
+echo Bonjour \! # Hello !
 echo 
