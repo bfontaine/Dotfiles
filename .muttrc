@@ -1,0 +1,84 @@
+set folder=~/Mail
+set alias_file=~/.mutt/mail_aliases # Alias file
+source $alias_file
+set arrow_cursor                    # Use '>' when moving in a messages list
+#set noaskbcc                       # don't ask for 'bcc' field when editing new message
+#set noaskcc                        # don't ask for 'cc' field when editing new message
+set autoedit                        # Use text editor for message editing
+set charset="utf-8"
+set noconfirmappend                 # don't confirm when saving message
+set confirmcreate                   # confirm new saving messages file creation
+set copy=yes                        # Keep a copy of sended messages
+set delete=yes                      # Delete removed messages when exiting Mutt
+set edit_headers                    # Autorize headers editing
+set editor="vim"
+set fcc_attach                      # Send attached files to 'bcc' and 'cc' 
+set header                          # Keep original message header when replying
+set help                            # show help
+#set history=20                     # keep 20 lines of history
+set include                         # include original message in replies
+set indent_string="> "              # used for delimiting original message
+set mark_old                        # Mark non-read messages
+set mail_check=10                   # Check for new mail every X minutes
+set mime_forward                    # use RFC822 type for mmessage forward
+set move=yes                        # move read messages when exiting Mutt
+set pager=less                      # pager used
+set pager_context=3                 # keep X context lines when scrolling
+set pager_index_lines=6             # number of index lines when a message is displayed
+set pager_stop                      # stop at the end of the message
+set print=ask-yes                   # printing need a confirmation
+set reply_to 
+set nosave_empty                    # don't save empty files
+set save_name                       # Use sender's name for the file name when saving a message
+#set shell="/bin/bash"              # shell
+set signature="~/.signature"        # signature file
+
+set sort=threads                    # Sort by threads
+set tilde                           # Mark empty lines in editor
+set timeout=600
+set use_from                        # Always use "from"
+#set pgp_verify_sig=no
+
+hdr_order date from subject to cc   # headers display order
+
+# Basic config
+set realname = "Baptiste Fontaine"
+set header_cache =~/.mutt/cache/headers
+set certificate_file =~/.mutt/certificates
+set message_cachedir =~/.mutt/cache/bodies
+
+# IMAP
+set spoolfile=imaps://imap.mail.yahoo.com:993/INBOX
+set imap_user = "batifon"
+set imap_passive="no"
+set imap_check_subscribed="yes"
+set imap_list_subscribed="yes"
+set imap_keepalive = 300
+
+# SMTP
+set smtp_url = "smtp://batifon@smtp.mail.yahoo.fr:587/"
+set from = "batifon@yahoo.fr"
+set use_envelope_from=yes
+
+#
+set attribution="Le %d, %n a écrit :"
+set forward_format="[Fwd: %s]"
+set forward_quote
+
+mailboxes !
+
+#editor
+set edit_hdrs
+auto_view text/html
+set editor="vim"
+
+# folders
+set folder="$HOME/Mail"
+set record="+sent"
+set mbox="+mbox"
+set postponed="+postponed"
+
+# language
+set locale="fr_FR"
+set charset="utf-8"
+set date_format="%A %d %b %Y à %H:%M:%S (%Z)"
