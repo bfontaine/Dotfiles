@@ -65,6 +65,8 @@ endf
 
 fun Use_c()
     set omnifunc=ccomplete#Complete
+    " Need 'alternate' plugin
+    nnoremap <leader>s :A<cr>
 endf
 
 fun Use_css()
@@ -169,7 +171,7 @@ noremap <c-l> <c-w>l
 " tabs
 noremap <c-down> :tabn<cr>
 noremap <c-up> :tabp<cr>
-noremap <c-c> :tabc<cr>
+noremap <c-c> <c-t><c-c>
 noremap <leader>tn :tabnew<cr>
 nnoremap gt <c-w>gf
 
@@ -178,6 +180,11 @@ nnoremap <leader><space> :nohlsearch<cr>
 
 " sort
 vnoremap <leader>s :sort u<cr>
+
+" hack to redraw the console screen
+nnoremap <leader>c :!clear<cr><cr>
+
+" - plugins mappings -
 
 " NERDTree
 nnoremap <leader>n :NERDTreeToggle<cr>
