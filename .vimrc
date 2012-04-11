@@ -9,7 +9,7 @@ filetype plugin indent on
 set autoindent                 " auto-indentation
 set autoread                   " auto re-read when a file is changed outside
 set backspace=indent,eol,start " allow backspace on everything in insert mode
-set backup		" keep a backup file
+set backup	                   " keep a backup file
 " set bomb                     " set UTF-8 bomb
 " set colorcolumn=80           " color 80th column
 set encoding=utf-8             " set UTF-8 encoding
@@ -28,7 +28,7 @@ set noautoread                 " don't re-read a file changed outside of Vim
 set nolazyredraw               " turn off lazy redraw
 set number                     " display line numbers
 set numberwidth=1              " use only 1 column (+ 1 space) while possible
-set pumheight=7                " size of completion window: 7 lines
+set pumheight=10               " size of completion window: 10 lines
 set ruler                      " show the cursor position all the time
 set scrolloff=3                " keep 3 context lines above/below the cursor
 set shell=/bin/bash            " set Bash shell
@@ -74,11 +74,14 @@ fun Use_css()
 endf
 
 fun Use_html()
-    inoremap = =""<left>
+    " inoremap = =""<left>
+    inoremap =" =""<left>
+    set textwidth=0
     set omnifunc=htmlcomplete#CompleteTags
 endf
 
 fun Use_js()
+    imap <leader>l console.log();<esc>hi
     set omnifunc=javascriptcomplete#CompleteJS
 endf
 
@@ -101,6 +104,7 @@ fun Use_sql()
 endf
 
 fun Use_xml()
+    set textwidth=0
     set omnifunc=xmlcomplete#CompleteTags
 endf
 
@@ -114,15 +118,15 @@ if has("autocmd")
 
     " completion
     autocmd FileType ada call Use_ada()
-    autocmd FileType scala call Set_tab2()
-    autocmd FileType ocaml call Set_tab2()
     autocmd FileType c call Use_c()
     autocmd FileType css call Use_css()
     autocmd FileType html call Use_html()
     autocmd FileType javascript call Use_js()
+    autocmd FileType ocaml call Set_tab2()
     autocmd FileType php call Use_php()
     autocmd FileType python call Use_python()
     autocmd FileType ruby call Use_ruby()
+    autocmd FileType scala call Set_tab2()
     autocmd FileType sql call Use_sql()
     autocmd FileType xml call Use_xml()
 
@@ -134,9 +138,6 @@ if has("autocmd")
     autocmd BufNewFile *.rb   0r ~/.vim/skeletons/ruby.rb
     autocmd BufNewFile *.sh   0r ~/.vim/skeletons/bash.sh
 
-    " JS
-    autocmd FileType javascript imap <leader>l console.log();<esc>hi
-
 endif " has("autocmd")
 
 " -- Mappings --
@@ -146,7 +147,7 @@ inoremap jj <esc>
 let mapleader = ","
 
 " vimrc
-nnoremap <leader>v :e ~/.vimrc<cr>
+nnoremap <leader>v :tabnew ~/.vimrc<cr>
 
 " saving
 inoremap <leader>w <esc>:w<cr>a
@@ -170,6 +171,7 @@ noremap <c-down> :tabn<cr>
 noremap <c-up> :tabp<cr>
 noremap <c-c> :tabc<cr>
 noremap <leader>tn :tabnew<cr>
+nnoremap gt <c-w>gf
 
 " search
 nnoremap <leader><space> :nohlsearch<cr>
