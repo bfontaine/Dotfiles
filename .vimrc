@@ -182,7 +182,7 @@ nnoremap <leader><space> :nohlsearch<cr>
 vnoremap <leader>s :sort u<cr>
 
 " hack to redraw the console screen
-nnoremap <leader>c :!clear<cr><cr>
+nnoremap <c-l> :!clear<cr><cr>
 
 " - plugins mappings -
 
