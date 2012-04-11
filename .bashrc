@@ -129,7 +129,7 @@ export DEBEMAIL="batifon@yahoo.fr"
 alias rm="rm -i"
 alias rmdir="rm -Ri"
 
-function mkdc() { mkdir $1 && cd $1; }
+function mkcd() { mkdir $1 && cd $1; }
 
 alias ps="ps x"
 
