@@ -14,7 +14,7 @@ set backup	                   " keep a backup file
 " set colorcolumn=80           " color 80th column
 set encoding=utf-8             " set UTF-8 encoding
 set expandtab                  " replace tabs with spaces
-set ffs=unix,dos,mac           " default file types
+set ff=unix                    " default file types
 set formatoptions+=n           " recognize lists when formatting text
 set guicursor=a:blinkon0       " no cursor blinking
 set hidden                     " buffers can exists in bg w/o being in a window
