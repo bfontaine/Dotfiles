@@ -38,7 +38,8 @@ set smartcase                  " check case if upper case chars in /regex
 set smartindent                " no autoindent when starting a new line
 set softtabstop=4              " 1 tab = 4 spaces
 set suffixes=,*~,*.swp,*.class " files to ignore when tab completing
-set suffixes+=*.pdf,*.aux,*.toc,*.dvi,*.ps,*.out,*.pyc
+set suffixes+=*.pdf,*.aux,*.toc,*.dvi,*.ps,*.out,*.pyc,*.odt,*.docx
+set suffixes+=*.zip,*.tgz,*.bz2,*.tbz2,*.tar,*.7z,*.txz
 set tabpagemax=10              " only show 10 tabs
 set tabstop=4                  " 1 tab = 4 spaces
 set textwidth=80               " text width = 80 characters
@@ -198,5 +199,7 @@ command Clr !rm -f *~
 command Mkdn !markdown % > %.html
 " strip trailing whitespaces
 command Strip :%s/ \+$//gc
+" need 'lorem' programm
+command Lorem :!lorem
 
 colorscheme 256-jungle
