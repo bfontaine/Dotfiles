@@ -128,11 +128,11 @@ if ! [ -d ${VIM_DIR}/bundle/gundo ]; then
 fi
 
 # After-image : edit small images with vim
-
-if ! [ -d ${VIM_DIR}/bundle/afterimage ]; then
-    git clone git://github.com/tpope/vim-afterimage.git \
-        ${VIM_DIR}/bundle/afterimage
-fi
+# 
+# if ! [ -d ${VIM_DIR}/bundle/afterimage ]; then
+#     git clone git://github.com/tpope/vim-afterimage.git \
+#         ${VIM_DIR}/bundle/afterimage
+# fi
 
 # == themes ==
 
@@ -197,4 +197,20 @@ if ! [ -f ${VIM_DIR}/after/syntax/css.vim ]; then
     mkdir -p ${VIM_DIR}/after/syntax
     mv CSS3-syntax-file-for-vim/after/syntax/css.vim \
         ${VIM_DIR}/after/syntax/css.vim
+fi
+
+# Textile
+# 
+# need Ruby & RedCloth :
+# sudo apt-get install ruby rubygems
+# sudo gem install RedCloth
+
+if ! [ -f ${VIM_DIR}/doc/textile.txt ]; then
+    cd /tmp/
+    wget http://www.vim.org/scripts/download_script.php?src_id=9427 \
+        -O textile.zip
+    unzip textile.zip
+    for d in doc ftplugin plugin syntax; do
+        mv textile*/${d}/textile.* ${VIM_DIR}/${d}/
+    done
 fi
