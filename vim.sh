@@ -128,11 +128,11 @@ if ! [ -d ${VIM_DIR}/bundle/gundo ]; then
 fi
 
 # After-image : edit small images with vim
-# 
-# if ! [ -d ${VIM_DIR}/bundle/afterimage ]; then
-#     git clone git://github.com/tpope/vim-afterimage.git \
-#         ${VIM_DIR}/bundle/afterimage
-# fi
+ 
+ if ! [ -d ${VIM_DIR}/bundle/afterimage ]; then
+     git clone git://github.com/tpope/vim-afterimage.git \
+         ${VIM_DIR}/bundle/afterimage
+ fi
 
 # == themes ==
 
