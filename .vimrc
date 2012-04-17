@@ -83,6 +83,7 @@ endf
 fun Use_html()
     " inoremap = =""<left>
     inoremap =" =""<left>
+    nnoremap <leader>l o<p><esc>:r!lorem<cr>kJxA</p><esc>
     set textwidth=0
     set omnifunc=htmlcomplete#CompleteTags
 endf
@@ -205,7 +206,5 @@ command Clr !rm -f *~
 command Mkdn !markdown % > %.html
 " strip trailing whitespaces
 command Strip :%s/ \+$//gc
-" need 'lorem' programm
-command Lorem :!lorem
 
 colorscheme 256-jungle
