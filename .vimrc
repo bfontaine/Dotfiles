@@ -38,7 +38,7 @@ set smartcase                  " check case if upper case chars in /regex
 set smartindent                " no autoindent when starting a new line
 set softtabstop=4              " 1 tab = 4 spaces
 set suffixes=,*~,*.swp,*.class " files to ignore when tab completing
-set suffixes+=*.pdf,*.aux,*.toc,*.dvi,*.ps,*.out,*.pyc,*.odt,*.docx
+set suffixes+=*.pdf,*.aux,*.toc,*.dvi,*.ps,*.out,*.pyc,*.odt,*.docx,*.pptx
 set suffixes+=*.zip,*.tgz,*.bz2,*.tbz2,*.tar,*.7z,*.txz
 set tabpagemax=10              " only show 10 tabs
 set tabstop=4                  " 1 tab = 4 spaces
@@ -70,6 +70,10 @@ fun Use_c()
     nnoremap <leader>s :A<cr>
 endf
 
+fun Use_coffeescript()
+    inoremap #{ #{}<left>
+endf
+
 fun Use_css()
     inoremap { {}<left>
     inoremap : :;<left>
@@ -98,6 +102,7 @@ fun Use_python()
 endf
 
 fun Use_ruby()
+    inoremap #{ #{}<left>
     set omnifunc=rubycomplete#Complete
 endf
 
@@ -122,6 +127,7 @@ if has("autocmd")
     " completion
     autocmd FileType ada call Use_ada()
     autocmd FileType c call Use_c()
+    autocmd FileType coffeescript call Use_coffeescript()
     autocmd FileType css call Use_css()
     autocmd FileType html call Use_html()
     autocmd FileType javascript call Use_js()
@@ -183,7 +189,7 @@ nnoremap <leader><space> :nohlsearch<cr>
 vnoremap <leader>s :sort u<cr>
 
 " hack to redraw the console screen
-nnoremap <c-l> :!clear<cr><cr>
+nnoremap <c-r> :!clear<cr><cr>
 
 " - plugins mappings -
 
