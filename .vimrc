@@ -83,6 +83,9 @@ endf
 fun Use_html()
     " inoremap = =""<left>
     inoremap =" =""<left>
+    " puts a 'Lorem Ipsum' <p> block on the line
+    " under the current one. You need 'lorem' program,
+    " download the package 'libtext-lorem-perl' for Ubuntu
     nnoremap <leader>l o<p><esc>:r!lorem<cr>kJxA</p><esc>
     set textwidth=0
     set omnifunc=htmlcomplete#CompleteTags
