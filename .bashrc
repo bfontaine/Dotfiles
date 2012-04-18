@@ -18,15 +18,6 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-    xterm*|rxvt*)
-        PS1="\[\e]0;\u@\h: \w\a\]$PS1"
-        ;;
-    *)
-        ;;
-esac
-
 # enable color support of ls/grep/…
 if [ -x /usr/bin/dircolors ]; then
     alias   grep='grep --color=auto'
@@ -42,12 +33,32 @@ fi
 #                      PERSO
 # ------------------------------------------------------
 
-#if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-#    # if color support
-#    PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n\$ '
-#else
-    PS1='\u@\h:\w\$ '
-#fi
+function _bash_prompt_command() {
+
+    local NEWPWD=$PWD
+    local l=30
+
+    # replace $HOME with '~'
+    [ ${PWD:0:${#HOME}} == $HOME ] && NEWPWD="~${PWD##$HOME}"
+
+    # if pwd > 30 chars, add '…' before and keep only 30 chars
+    [ ${#NEWPWD} -gt $l ] && NEWPWD=…${NEWPWD:$((${#NEWPWD}-${l})):${#NEWPWD}}
+
+    # no colors:
+    #PS1="\u@\h:${NEWPWD}[\$] ⚡ "
+    
+    # We assume that we have color support
+    PS1="\u@\h:${NEWPWD}[\$] \[\033[1;33m\]⚡\[\033[0m\] "
+}
+_bash_prompt_command
+
+case $TERM in
+    xterm*|rxvt*|aterm|kterm|gnome*)
+        PROMPT_COMMAND='_bash_prompt_command';;
+    *)
+        ;;
+esac
+
 
 # need <C-d> twice to quit
 ignoreeof=1
