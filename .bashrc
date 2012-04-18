@@ -82,9 +82,6 @@ alias gem='gem1.9.1'
 # Rails
 export PATH="$PATH:/var/lib/gems/1.8/bin"
 
-# Node.js
-export NODE_PATH='/usr/lib/nodejs'
-
 # Bean Shell
 export CLASSPATH="$CLASSPATH:$HOME/Documents/Programmation/libs/java/bsh-2.0b4.jar"
 
