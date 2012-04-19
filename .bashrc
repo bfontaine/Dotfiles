@@ -107,6 +107,9 @@ mkcd() { mkdir $1 && cd $1; }
 
 alias ps='ps x'
 
+# see launchpad.net/clr
+alias clr='clr -d'
+
 alias shred='shred -n 50 -z -u'
 alias wipe='wipe -r -i -Q 50'
 
