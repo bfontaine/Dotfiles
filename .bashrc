@@ -37,6 +37,13 @@ function _bash_prompt_command() {
 
     local NEWPWD=$PWD
     local l=30
+    local GITSTATUS=$(git status 2> /dev/null)
+    local GITPROMPT=
+
+    if [ $? -eq 0 ]; then
+        echo $GITSTATUS | grep 'not staged' > /dev/null 2>&1
+        [ $? -eq 0 ] && GITPROMPT="\[\033[1;31m\]+\[\033[0m\]"
+    fi
 
     # replace $HOME with '~'
     [ ${PWD:0:${#HOME}} == $HOME ] && NEWPWD="~${PWD##$HOME}"
@@ -48,12 +55,12 @@ function _bash_prompt_command() {
     #PS1="\u@\h:${NEWPWD}[\$] ⚡ "
     
     # We assume that we have color support
-    PS1="\u@\h:${NEWPWD}[\$] \[\033[1;33m\]⚡\[\033[0m\] "
+    PS1="\u@\h:${NEWPWD}[\$]${GITPROMPT} \[\033[1;33m\]⚡\[\033[0m\] "
 }
-_bash_prompt_command
 
 case $TERM in
     xterm*|rxvt*|aterm|kterm|gnome*)
+        _bash_prompt_command;
         PROMPT_COMMAND='_bash_prompt_command';;
     *)
         ;;
