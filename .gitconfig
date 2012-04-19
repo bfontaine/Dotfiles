@@ -1,0 +1,17 @@
+# inspired of gist 470582
+[user]
+	name = Baptiste Fontaine
+	email = batifon@yahoo.fr
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	fp = format-patch
+	lg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative
+[core]
+	pager = cat
+    editor = vim
