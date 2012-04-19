@@ -37,8 +37,12 @@ function _bash_prompt_command() {
 
     local NEWPWD=$PWD
     local l=30
-    local GITSTATUS=$(git status 2> /dev/null)
     local GITPROMPT=
+    local ROOTPROMPT=
+
+    [ $EUID -eq 0 ] && ROOTPROMPT='[#]'
+
+    local GITSTATUS=$(git status 2> /dev/null)
 
     if [ $? -eq 0 ]; then
         echo $GITSTATUS | grep 'not staged' > /dev/null 2>&1
@@ -55,7 +59,7 @@ function _bash_prompt_command() {
     #PS1="\u@\h:${NEWPWD}[\$] ⚡ "
     
     # We assume that we have color support
-    PS1="\u@\h:${NEWPWD}[\$]${GITPROMPT} \[\033[1;33m\]⚡\[\033[0m\] "
+    PS1="\u@\h:${NEWPWD}${ROOTPROMPT}${GITPROMPT} \[\033[1;33m\]⚡\[\033[0m\] "
 }
 
 case $TERM in
