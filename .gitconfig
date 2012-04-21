@@ -1,21 +1,21 @@
 [user]
-	name = Baptiste Fontaine
-	email = batifon@yahoo.fr
+    name = Baptiste Fontaine
+    email = batifon@yahoo.fr
 [color]
-	diff = auto
-	status = auto
-	branch = auto
+    diff = auto
+    status = auto
+    branch = auto
 [alias]
-	st = status
-	ci = commit
-	co = checkout
-	fp = format-patch
-	lg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative
+    st = status
+    ci = commit
+    co = checkout
+    fp = format-patch
+    lg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative
     plom = pull origin master
     psom = push origin master
 [core]
-	pager = cat
+    pager = cat
     editor = vim
 [github]
-	user = bfontaine
-	token = 0ec97a058a8c1ff7a93e70ef2ee6b65a
+    user = bfontaine
+    token = 0ec97a058a8c1ff7a93e70ef2ee6b65a
