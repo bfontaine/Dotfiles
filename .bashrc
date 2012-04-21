@@ -105,6 +105,8 @@ alias rmdir='rm -Ri'
 
 mkcd() { mkdir $1 && cd $1; }
 
+alias xclip='xclip -selection "clipboard"'
+
 alias ps='ps x'
 
 # see launchpad.net/clr
