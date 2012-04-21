@@ -180,6 +180,9 @@ let mapleader = ","
 " vimrc
 nnoremap <leader>v :tabnew ~/.vimrc<cr>
 
+" completing
+inoremap <c-f> <c-x><c-f>
+
 " saving
 inoremap <leader>w <esc>:w<cr>a
 inoremap <leader>x <esc>:x<cr>
