@@ -92,7 +92,11 @@ fun Use_html()
 endf
 
 fun Use_js()
-    imap <leader>l console.log();<esc>hi
+    inoremap <leader>l console.log();<esc>hi
+    inoremap ( ()<left>
+    inoremap { {}<left>
+    inoremap ' ''<left>
+    inoremap " ""<left>
     set omnifunc=javascriptcomplete#CompleteJS
 endf
 
