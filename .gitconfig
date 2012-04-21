@@ -1,4 +1,3 @@
-# inspired of gist 470582
 [user]
 	name = Baptiste Fontaine
 	email = batifon@yahoo.fr
@@ -12,6 +11,11 @@
 	co = checkout
 	fp = format-patch
 	lg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative
+    plom = pull origin master
+    psom = push origin master
 [core]
 	pager = cat
     editor = vim
+[github]
+	user = bfontaine
+	token = 0ec97a058a8c1ff7a93e70ef2ee6b65a
