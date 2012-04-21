@@ -54,35 +54,43 @@ autocmd FileType txt set spell
 
 " -- functions --
 
-fun Set_tab2()
-    set tabstop=2
-    set softtabstop=2
-    set shiftwidth=2
+fun Set_indent(width)
+    execute "set tabstop=".a:width
+    execute "set softtabstop=".a:width
+    execute "set shiftwidth=".a:width
 endf
 
-fun Use_ada()
-    set omnifunc=adacomplete#Complete
+fun Braces_shortcuts()
+    inoremap ( ()<left>
+    inoremap { {}<left>
+    inoremap [ []<left>
+    inoremap " ""<left>
 endf
+
+" fun Use_ada()
+"     set omnifunc=adacomplete#Complete
+" endf
 
 fun Use_c()
+    call Braces_shortcuts()
     set omnifunc=ccomplete#Complete
     " Need 'alternate' plugin
     nnoremap <leader>s :A<cr>
 endf
 
 fun Use_coffeescript()
+    call Braces_shortcuts()
     inoremap #{ #{}<left>
 endf
 
 fun Use_css()
-    inoremap { {}<left>
+    call Braces_shortcuts()
     inoremap : :;<left>
     set omnifunc=csscomplete#CompleteCSS
 endf
 
 fun Use_html()
-    " inoremap = =""<left>
-    inoremap =" =""<left>
+    inoremap = =""<left>
     " puts a 'Lorem Ipsum' <p> block on the line
     " under the current one. You need 'lorem' program,
     " download the package 'libtext-lorem-perl' for Ubuntu
@@ -92,37 +100,43 @@ fun Use_html()
 endf
 
 fun Use_js()
+    call Braces_shortcuts()
     inoremap <leader>l console.log();<esc>hi
-    inoremap ( ()<left>
-    inoremap { {}<left>
     inoremap ' ''<left>
-    inoremap " ""<left>
+
+    inoremap <leader>{ {<cr>}<esc>O
+    inoremap <leader>b ({});<left><left><left>
+    inoremap <leader>B ({<cr>});<esc>O
+
     set omnifunc=javascriptcomplete#CompleteJS
 endf
 
 fun Use_php()
+    call Braces_shortcuts()
     set omnifunc=phpcomplete#CompletePHP
 endf
 
 fun Use_python()
+    call Braces_shortcuts()
     "set omnifunc=python3complete#Complete
     set omnifunc=pythoncomplete#Complete
 endf
 
 fun Use_ruby()
+    call Braces_shortcuts()
     inoremap #{ #{}<left>
     set omnifunc=rubycomplete#Complete
 endf
 
 fun Use_sql()
-    call Set_tab2()
+    call Set_indent(2)
     set omnifunc=sqlcomplete#Complete
 endf
 
-fun Use_xml()
-    set textwidth=0
-    set omnifunc=xmlcomplete#CompleteTags
-endf
+" fun Use_xml()
+"     set textwidth=0
+"     set omnifunc=xmlcomplete#CompleteTags
+" endf
 
 if has("autocmd")
 
@@ -133,19 +147,19 @@ if has("autocmd")
     autocmd BufRead /tmp/mutt* set tw=72
 
     " completion
-    autocmd FileType ada call Use_ada()
+    " autocmd FileType ada call Use_ada()
     autocmd FileType c call Use_c()
     autocmd FileType coffeescript call Use_coffeescript()
     autocmd FileType css call Use_css()
     autocmd FileType html call Use_html()
     autocmd FileType javascript call Use_js()
-    autocmd FileType ocaml call Set_tab2()
+    autocmd FileType ocaml call Set_indent(2)
     autocmd FileType php call Use_php()
     autocmd FileType python call Use_python()
     autocmd FileType ruby call Use_ruby()
-    autocmd FileType scala call Set_tab2()
+    autocmd FileType scala call Set_indent(2)
     autocmd FileType sql call Use_sql()
-    autocmd FileType xml call Use_xml()
+    " autocmd FileType xml call Use_xml()
 
     " files skeletons
     autocmd BufNewFile *.c    0r ~/.vim/skeletons/c.c
@@ -170,8 +184,10 @@ nnoremap <leader>v :tabnew ~/.vimrc<cr>
 inoremap <leader>w <esc>:w<cr>a
 inoremap <leader>x <esc>:x<cr>
 
-" centering
+" moving into the file
 inoremap <leader>z <esc>zza
+nnoremap <leader>z :set scrolloff=9999<cr>
+nnoremap <leader>Z :set scrolloff=3<cr>
 
 " command line like Bash
 cnoremap <c-a> <Home>
@@ -208,9 +224,9 @@ nnoremap <leader>n :NERDTreeToggle<cr>
 nnoremap <leader>g :GundoToggle<cr>
 
 " -- Command Aliasing --
-command Reload source $MYVIMRC
+command W :w
+command WQ :wq
 command Clr !rm -f *~
-command Mkdn !markdown % > %.html
 " strip trailing whitespaces
 command Strip :%s/ \+$//gc
 
