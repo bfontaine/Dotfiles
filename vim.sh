@@ -170,8 +170,6 @@ if ! [ -f ${VIM_DIR}/syntax/brainfuck.vim ]; then
 fi
 
 # Scala
-# see http://lorenzod8n.wordpress.com/2008/01/11/
-#        getting-scala-syntax-hightlighting-to-work-in-vim/
 
 for dir in ftdetect indent syntax; do
 
@@ -214,3 +212,11 @@ if ! [ -f ${VIM_DIR}/doc/textile.txt ]; then
         mv textile*/${d}/textile.* ${VIM_DIR}/${d}/
     done
 fi
+
+# JSON
+
+if ! [ -f ${VIM_DIR}/syntax/json.vim ]; then
+    wget http://www.vim.org/scripts/download_script.php?src_id=10853 \
+        -O ${VIM_DIR}/syntax/json.vim
+fi
+

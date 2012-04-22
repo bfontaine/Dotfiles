@@ -48,6 +48,9 @@ set undodir=~/.vim/backups     " keep undo history accross sessions
 set undofile                   " see 'undodir'
 set wildmenu                   " show completion possibilities in command mode
 
+:hi CursorLine cterm=NONE ctermbg=black ctermfg=NONE
+set cursorline                 " highlight current line
+
 setlocal spelllang=fr,en
 set nospell " default (no .txt)
 autocmd FileType txt set spell
@@ -111,6 +114,11 @@ fun Use_js()
     set omnifunc=javascriptcomplete#CompleteJS
 endf
 
+fun Use_json()
+    call Braces_shortcuts()
+    set nocursorline
+endf
+
 fun Use_php()
     call Braces_shortcuts()
     set omnifunc=phpcomplete#CompletePHP
@@ -141,7 +149,8 @@ endf
 if has("autocmd")
 
     " files type
-    autocmd BufNewFile,BufRead *.bf,*.brainfuck setlocal ft=brainfuck
+    autocmd BufNewFile,BufRead *.bf,*.brainfuck set filetype=brainfuck
+    autocmd BufNewFile,BufRead *.json set filetype=json 
 
     " mutt
     autocmd BufRead /tmp/mutt* set tw=72
@@ -153,6 +162,7 @@ if has("autocmd")
     autocmd FileType css call Use_css()
     autocmd FileType html call Use_html()
     autocmd FileType javascript call Use_js()
+    autocmd FileType json call Use_json()
     autocmd FileType ocaml call Set_indent(2)
     autocmd FileType php call Use_php()
     autocmd FileType python call Use_python()
