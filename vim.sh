@@ -45,14 +45,24 @@ if     [ ! -f ${VIM_DIR}/plugin/a.vim ] \
         -O ${VIM_DIR}/doc/alternate.txt
 fi
 
-# Gundo : easier undo tree visualization
+# DelimitMate : automatic closing of quotes, parenthesis, brackets, etc.
+if     [ ! -f ${VIM_DIR}/doc/delimitMate.txt ] \
+    || [ ! -f ${VIM_DIR}/plugin/delimitMate.vim ];then
+    cd /tmp/
+    git clone git://github.com/Raimondi/delimitMate.git
+    cd delimitMate/
+    mv autoload/delimitMate.vim ${VIM_DIR}/autoload/
+    mv doc/delimitMate.txt ${VIM_DIR}/doc/
+    mv plugin/delimitMate.vim ${VIM_DIR}/plugin/
+fi
 
+
+# Gundo : easier undo tree visualization
 if [ ! -d ${VIM_DIR}/bundle/gundo ]; then
     git clone http://github.com/sjl/gundo.vim.git ${VIM_DIR}/bundle/gundo
 fi
 
 # Matchit : extended % matching for HTML, LaTeX, etc
-
 if     [ ! -f ${VIM_DIR}/plugin/matchit.vim ] \
     || [ ! -f ${VIM_DIR}/doc/matchit.txt ]; then
 
@@ -64,7 +74,6 @@ if     [ ! -f ${VIM_DIR}/plugin/matchit.vim ] \
 fi
 
 # Nerdtree : File tree
-
 if [ ! -d ${VIM_DIR}/bundle/nerdtree ]; then
     git clone git://github.com/scrooloose/nerdtree.git;
 fi
@@ -76,7 +85,6 @@ if [ ! -d ${VIM_DIR}/bundle/rope-vim ]; then
 fi
 
 # SnipMate : allow TextMate's snippets in Vim
-
 if [ ! -f ${VIM_DIR}/autoload/snipMate.vim ]; then
     wget http://www.vim.org/scripts/download_script.php?src_id=11006 \
         -O /tmp/sm.zip
@@ -84,7 +92,6 @@ if [ ! -f ${VIM_DIR}/autoload/snipMate.vim ]; then
 fi
 
 # Zencoding : HTML coding made faster
-
 if     [ ! -f ${VIM_DIR}/plugin/zencoding.vim ] \
     || [ ! -f ${VIM_DIR}/autoload/zencoding.vim ]; then
 
@@ -99,14 +106,12 @@ fi
 # == themes ==
 
 # 256-jungle
-
 if [ ! -f ${VIM_DIR}/colors/256-jungle.vim ]; then
     wget http://www.vim.org/scripts/download_script.php?src_id=8685 \
         -O ${VIM_DIR}/colors/256-jungle.vim
 fi
 
 # Molokai
-
 if [ ! -f ${VIM_DIR}/colors/molokai.vim ]; then
     cd /tmp/
     git clone git://github.com/tomasr/molokai.git
@@ -114,7 +119,6 @@ if [ ! -f ${VIM_DIR}/colors/molokai.vim ]; then
 fi
 
 # Tomorrow
-
 if [ ! -f ${VIM_DIR}/colors/Tomorrow.vim ]; then
     cd /tmp/
     git clone git://github.com/chriskempson/tomorrow-theme.git
@@ -124,7 +128,6 @@ fi
 # == syntax ==
 
 # Brainfuck
-
 if [ ! -f ${VIM_DIR}/syntax/brainfuck.vim ]; then
     cd ${VIM_DIR}/syntax/
     wget http://www.vim.org/scripts/download_script.php?src_id=14054 \
@@ -132,14 +135,12 @@ if [ ! -f ${VIM_DIR}/syntax/brainfuck.vim ]; then
 fi
 
 # CoffeeScript
-
 if [ ! -d ${VIM_DIR}/bundle/vim-coffee-script ]; then
     cd ${VIM_DIR}/bundle/
     git clone https://github.com/kchmck/vim-coffee-script.git
 fi
 
 # CSS3
-
 if [ ! -f ${VIM_DIR}/after/syntax/css.vim ]; then
     cd /tmp/
     git clone git://github.com/kight/CSS3-syntax-file-for-vim.git
@@ -149,14 +150,12 @@ if [ ! -f ${VIM_DIR}/after/syntax/css.vim ]; then
 fi
 
 # JSON
-
 if [ ! -f ${VIM_DIR}/syntax/json.vim ]; then
     wget http://www.vim.org/scripts/download_script.php?src_id=10853 \
         -O ${VIM_DIR}/syntax/json.vim
 fi
 
 # Mustache
-
 if [ ! -d ${VIM_DIR}/bundle/mustache ]; then
     cd ${VIM_DIR}
     [ ! -d .git ] && git init
@@ -179,7 +178,6 @@ done
 # need Ruby & RedCloth :
 # sudo apt-get install ruby rubygems
 # sudo gem install RedCloth
-
 if [ ! -f ${VIM_DIR}/doc/textile.txt ]; then
     cd /tmp/
     wget http://www.vim.org/scripts/download_script.php?src_id=9427 \
