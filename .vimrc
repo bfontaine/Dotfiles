@@ -88,8 +88,7 @@ fun Use_html()
 endf
 
 fun Use_js()
-    inoremap <leader>l console.log();<esc>hi
-
+    inoremap <leader>l console.log();<left><left>
     set omnifunc=javascriptcomplete#CompleteJS
 endf
 
