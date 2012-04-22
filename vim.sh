@@ -75,10 +75,14 @@ if     [ ! -f ${VIM_DIR}/plugin/matchit.vim ] \
     rm -f matchit.zip
 fi
 
-# Nerdtree : File tree
-if [ ! -d ${VIM_DIR}/bundle/nerdtree ]; then
-    git clone git://github.com/scrooloose/nerdtree.git;
+# NerdTree : File tree
+# NerdCommenter : Mapppings for comments
+for plugin in tree commenter; do
+if [ ! -d ${VIM_DIR}/bundle/nerd${plugin} ]; then
+    cd ${VIM_DIR}/bundle/
+    git clone git://github.com/scrooloose/nerd${plugin}.git;
 fi
+done
 
 # Rope : easier variables/functions renamming for Python
 if [ ! -d ${VIM_DIR}/bundle/rope-vim ]; then
