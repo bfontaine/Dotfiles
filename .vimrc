@@ -43,6 +43,7 @@ set suffixes+=*.zip,*.tgz,*.bz2,*.tbz2,*.tar,*.7z,*.txz
 set tabpagemax=10              " only show 10 tabs
 set tabstop=4                  " 1 tab = 4 spaces
 set textwidth=80               " text width = 80 characters
+set timeout                    " Wait for max 1sec for :mappings
 set title                      " show title in console title bar
 set undodir=~/.vim/backups     " keep undo history accross sessions
 set undofile                   " see 'undodir'
@@ -55,6 +56,9 @@ setlocal spelllang=fr,en
 set nospell " default (no .txt)
 autocmd FileType txt set spell
 
+" plugins options
+let delimitMate_expand_cr=1
+
 " -- functions --
 
 fun Set_indent(width)
@@ -63,26 +67,17 @@ fun Set_indent(width)
     execute "set shiftwidth=".a:width
 endf
 
-fun Braces_shortcuts()
-    inoremap ( ()<left>
-    inoremap { {}<left>
-    inoremap [ []<left>
-    inoremap " ""<left>
-endf
-
 " fun Use_ada()
 "     set omnifunc=adacomplete#Complete
 " endf
 
 fun Use_c()
-    call Braces_shortcuts()
     set omnifunc=ccomplete#Complete
     " Need 'alternate' plugin
     nnoremap <leader>s :A<cr>
 endf
 
 fun Use_coffeescript()
-    call Braces_shortcuts()
     inoremap #{ #{}<left>
 endf
 
@@ -93,7 +88,6 @@ fun Use_css()
 endf
 
 fun Use_html()
-    inoremap = =""<left>
     " puts a 'Lorem Ipsum' <p> block on the line
     " under the current one. You need 'lorem' program,
     " download the package 'libtext-lorem-perl' for Ubuntu
@@ -103,35 +97,29 @@ fun Use_html()
 endf
 
 fun Use_js()
-    call Braces_shortcuts()
     inoremap <leader>l console.log();<esc>hi
-    inoremap ' ''<left>
-
-    inoremap <leader>{ {<cr>}<esc>O
-    inoremap <leader>b ({});<left><left><left>
-    inoremap <leader>B ({<cr>});<esc>O
 
     set omnifunc=javascriptcomplete#CompleteJS
 endf
 
 fun Use_json()
-    call Braces_shortcuts()
     set nocursorline
 endf
 
+fun Use_mustache()
+    inoremap <leader>{ {{}}<left><left>
+endf
+
 fun Use_php()
-    call Braces_shortcuts()
     set omnifunc=phpcomplete#CompletePHP
 endf
 
 fun Use_python()
-    call Braces_shortcuts()
     "set omnifunc=python3complete#Complete
     set omnifunc=pythoncomplete#Complete
 endf
 
 fun Use_ruby()
-    call Braces_shortcuts()
     inoremap #{ #{}<left>
     set omnifunc=rubycomplete#Complete
 endf
@@ -164,6 +152,7 @@ if has("autocmd")
     autocmd FileType javascript call Use_js()
     autocmd FileType json call Use_json()
     autocmd FileType ocaml call Set_indent(2)
+    autocmd FileType mustache call Use_mustache()
     autocmd FileType php call Use_php()
     autocmd FileType python call Use_python()
     autocmd FileType ruby call Use_ruby()
