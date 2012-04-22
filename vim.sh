@@ -7,7 +7,7 @@
 VIM_DIR=~/.vim
 
 for dir in after autoload backups bundle colors doc \
-                    ftdetect indent plugin syntax; do
+                    ftdetect indent plugin snippets syntax; do
     mkdir -p ${VIM_DIR}/$dir
 done
 
@@ -194,3 +194,12 @@ if [ ! -f ${VIM_DIR}/doc/textile.txt ]; then
     done
 fi
 
+# -- snippets (for SnipMate plugin)
+
+# Backbone
+
+if [ ! -f ${VIM_DIR}/snippets/backbone.snippets ];then
+    url='https://raw.github.com/gist/959876/ab6981b2a882'
+    url="${url}57e823ebd0cc4ecc5eaf54eb5634/backbone.snippets"
+    wget $url -O ${VIM_DIR}/snippets/backbone.snippets
+fi
