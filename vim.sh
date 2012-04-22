@@ -107,6 +107,12 @@ if     [ ! -f ${VIM_DIR}/plugin/supertab.vim ] \
 
 fi
 
+# Tabular : text line up made easy
+if [ ! -d ${VIM_DIR}/bundle/tabular ]; then
+    cd ${VIM_DIR}/bundle/
+    git clone git://github.com/godlygeek/tabular.git
+fi
+
 # Zencoding : HTML coding made faster
 if     [ ! -f ${VIM_DIR}/plugin/zencoding.vim ] \
     || [ ! -f ${VIM_DIR}/autoload/zencoding.vim ]; then
@@ -215,3 +221,5 @@ if [ ! -f ${VIM_DIR}/snippets/backbone.snippets ];then
     wget $url -O ${VIM_DIR}/snippets/backbone.snippets
 fi
 
+# Bundles cleaning
+rm -Rf ${VIM_DIR}/bundle/*/.git
