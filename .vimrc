@@ -12,6 +12,7 @@ set backspace=indent,eol,start " allow backspace on everything in insert mode
 set backup	                   " keep a backup file
 " set bomb                     " set UTF-8 bomb
 " set colorcolumn=80           " color 80th column
+set cursorline                 " highlight current line
 set encoding=utf-8             " set UTF-8 encoding
 set expandtab                  " replace tabs with spaces
 set ff=unix                    " default file types
@@ -28,6 +29,7 @@ set noautoread                 " don't re-read a file changed outside of Vim
 set nolazyredraw               " turn off lazy redraw
 set number                     " display line numbers
 set numberwidth=1              " use only 1 column (+ 1 space) while possible
+set nospell                    " do not use spell checking
 set pumheight=10               " size of completion window: 10 lines
 set ruler                      " show the cursor position all the time
 set scrolloff=3                " keep 3 context lines above/below the cursor
@@ -37,27 +39,20 @@ set showcmd                    " show current incomplete command
 set smartcase                  " check case if upper case chars in /regex
 set smartindent                " no autoindent when starting a new line
 set softtabstop=4              " 1 tab = 4 spaces
+set spelllang=fr,en            " Spell languages: FRench, ENglish
 set suffixes=,*~,*.swp,*.class " files to ignore when tab completing
 set suffixes+=*.pdf,*.aux,*.toc,*.dvi,*.ps,*.out,*.pyc,*.odt,*.docx,*.pptx
 set suffixes+=*.zip,*.tgz,*.bz2,*.tbz2,*.tar,*.7z,*.txz
 set tabpagemax=10              " only show 10 tabs
 set tabstop=4                  " 1 tab = 4 spaces
 set textwidth=80               " text width = 80 characters
-set timeout                    " Wait for max 1sec for :mappings
+set timeout                    " Wait max 1sec for :mappings
 set title                      " show title in console title bar
 set undodir=~/.vim/backups     " keep undo history accross sessions
 set undofile                   " see 'undodir'
 set wildmenu                   " show completion possibilities in command mode
 
 :hi CursorLine cterm=NONE ctermbg=black ctermfg=NONE
-set cursorline                 " highlight current line
-
-setlocal spelllang=fr,en
-set nospell " default (no .txt)
-autocmd FileType txt set spell
-
-" plugins options
-let delimitMate_expand_cr=1
 
 " -- functions --
 
@@ -75,10 +70,6 @@ fun Use_c()
     set omnifunc=ccomplete#Complete
     " Need 'alternate' plugin
     nnoremap <leader>s :A<cr>
-endf
-
-fun Use_coffeescript()
-    inoremap #{ #{}<left>
 endf
 
 fun Use_css()
@@ -106,10 +97,6 @@ fun Use_json()
     set nocursorline
 endf
 
-fun Use_mustache()
-    inoremap <leader>{ {{}}<left><left>
-endf
-
 fun Use_php()
     set omnifunc=phpcomplete#CompletePHP
 endf
@@ -120,7 +107,6 @@ fun Use_python()
 endf
 
 fun Use_ruby()
-    inoremap #{ #{}<left>
     set omnifunc=rubycomplete#Complete
 endf
 
@@ -146,18 +132,17 @@ if has("autocmd")
     " completion
     " autocmd FileType ada call Use_ada()
     autocmd FileType c call Use_c()
-    autocmd FileType coffeescript call Use_coffeescript()
     autocmd FileType css call Use_css()
     autocmd FileType html call Use_html()
     autocmd FileType javascript call Use_js()
     autocmd FileType json call Use_json()
     autocmd FileType ocaml call Set_indent(2)
-    autocmd FileType mustache call Use_mustache()
     autocmd FileType php call Use_php()
     autocmd FileType python call Use_python()
     autocmd FileType ruby call Use_ruby()
     autocmd FileType scala call Set_indent(2)
     autocmd FileType sql call Use_sql()
+    autocmd FileType txt set spell
     " autocmd FileType xml call Use_xml()
 
     " files skeletons
@@ -206,12 +191,12 @@ noremap <c-l> <c-w>l
 " tabs
 noremap <c-down> :tabn<cr>
 noremap <c-up> :tabp<cr>
-noremap <c-c> <c-t><c-c>
+" noremap <c-c> <c-t><c-c>
 noremap <leader>tn :tabnew<cr>
 nnoremap gt <c-w>gf
 
 " search
-nnoremap <leader><space> :nohlsearch<cr>
+nnoremap <leader><space> :set nohlsearch!<cr>
 
 " sort
 vnoremap <leader>s :sort u<cr>
@@ -219,7 +204,10 @@ vnoremap <leader>s :sort u<cr>
 " hack to redraw the console screen
 nnoremap <c-r> :!clear<cr><cr>
 
-" - plugins mappings -
+" - plugins options/mappings -
+
+" DelimitMate
+let delimitMate_expand_cr=1
 
 " NERDTree
 nnoremap <leader>n :NERDTreeToggle<cr>
