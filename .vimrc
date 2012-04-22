@@ -62,10 +62,6 @@ fun Set_indent(width)
     execute "set shiftwidth=".a:width
 endf
 
-" fun Use_ada()
-"     set omnifunc=adacomplete#Complete
-" endf
-
 fun Use_c()
     set omnifunc=ccomplete#Complete
     " Need 'alternate' plugin
@@ -73,7 +69,6 @@ fun Use_c()
 endf
 
 fun Use_css()
-    call Braces_shortcuts()
     inoremap : :;<left>
     set omnifunc=csscomplete#CompleteCSS
 endf
@@ -83,7 +78,6 @@ fun Use_html()
     " under the current one. You need 'lorem' program,
     " download the package 'libtext-lorem-perl' for Ubuntu
     nnoremap <leader>l o<p><esc>:r!lorem<cr>kJxA</p><esc>
-    set textwidth=0
     set omnifunc=htmlcomplete#CompleteTags
 endf
 
@@ -92,57 +86,35 @@ fun Use_js()
     set omnifunc=javascriptcomplete#CompleteJS
 endf
 
-fun Use_json()
-    set nocursorline
-endf
-
-fun Use_php()
-    set omnifunc=phpcomplete#CompletePHP
-endf
-
 fun Use_python()
     "set omnifunc=python3complete#Complete
     set omnifunc=pythoncomplete#Complete
 endf
-
-fun Use_ruby()
-    set omnifunc=rubycomplete#Complete
-endf
-
-fun Use_sql()
-    call Set_indent(2)
-    set omnifunc=sqlcomplete#Complete
-endf
-
-" fun Use_xml()
-"     set textwidth=0
-"     set omnifunc=xmlcomplete#CompleteTags
-" endf
 
 if has("autocmd")
 
     " files type
     autocmd BufNewFile,BufRead *.bf,*.brainfuck set filetype=brainfuck
     autocmd BufNewFile,BufRead *.json set filetype=json 
+    autocmd BufNewFile,BufRead *.mustache set filetype=mustache
 
-    " mutt
-    autocmd BufRead /tmp/mutt* set tw=72
+    autocmd FileType html,xml,json set tw=0
+    autocmd FileType ocaml,scala,sql call Set_indent(2)
 
-    " completion
-    " autocmd FileType ada call Use_ada()
     autocmd FileType c call Use_c()
     autocmd FileType css call Use_css()
     autocmd FileType html call Use_html()
     autocmd FileType javascript call Use_js()
-    autocmd FileType json call Use_json()
-    autocmd FileType ocaml call Set_indent(2)
-    autocmd FileType php call Use_php()
+    autocmd FileType json set nocursorline
+    autocmd FileType php set omnifunc=phpcomplete#CompletePHP
     autocmd FileType python call Use_python()
-    autocmd FileType ruby call Use_ruby()
-    autocmd FileType scala call Set_indent(2)
-    autocmd FileType sql call Use_sql()
+    autocmd FileType ruby set omnifunc=rubycomplete#Complete
+    autocmd FileType sql set omnifunc=sqlcomplete#Complete
     autocmd FileType txt set spell
-    " autocmd FileType xml call Use_xml()
+    " autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+
+    " mutt
+    autocmd BufRead /tmp/mutt* set tw=72
 
     " files skeletons
     autocmd BufNewFile *.c    0r ~/.vim/skeletons/c.c
@@ -168,10 +140,11 @@ inoremap <c-f> <c-x><c-f>
 
 " saving
 inoremap <leader>w <esc>:w<cr>a
-inoremap <leader>x <esc>:x<cr>
 
 " moving into the file
 inoremap <leader>z <esc>zza
+inoremap <leader>o <esc>o
+inoremap <leader>O <esc>O
 nnoremap <leader>z :set scrolloff=9999<cr>
 nnoremap <leader>Z :set scrolloff=3<cr>
 
