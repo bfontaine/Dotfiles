@@ -21,19 +21,19 @@ fi
 
 cd ${VIM_DIR}/bundle/
 
-# abolish      : String replacement with word variants
-# afterimage   : edit small images with vim
-# endwise      : add 'end' in Ruby files when using if/def/…
-# fugitive     : Git wrapper
-# commentary   : Universal shortcut to comment (programing)
-# haml         : HAML, Sass, SCSS syntax
-# markdown     : Markdown syntax
-# surround     : parentheses, quotes, XML/HTML tags
+# abolish    : String replacement with word variants
+# afterimage : edit small images with vim
+# endwise    : add 'end' in Ruby files when using if/def/…
+# fugitive   : Git wrapper
+# commentary : Universal shortcut to comment (programing)
+# haml       : HAML, Sass, SCSS syntax
+# markdown   : Markdown syntax
+# surround   : parentheses, quotes, XML/HTML tags
 
 for plugin in abolish afterimage endwise fugitive commentary \
         haml markdown surround; do
     if [ ! -d ${VIM_DIR}/bundle/vim-${plugin} ]; then
-        git clone git://github.com/tpope/vim-${plugin}.git;
+        git clone git://github.com/tpope/vim-${plugin}.git
     fi
 done
 
@@ -58,7 +58,6 @@ if     [ ! -f ${VIM_DIR}/doc/delimitMate.txt ] \
     mv plugin/delimitMate.vim ${VIM_DIR}/plugin/
 fi
 
-
 # Gundo : easier undo tree visualization
 if [ ! -d ${VIM_DIR}/bundle/gundo ]; then
     git clone http://github.com/sjl/gundo.vim.git ${VIM_DIR}/bundle/gundo
@@ -80,7 +79,7 @@ fi
 for plugin in tree commenter; do
 if [ ! -d ${VIM_DIR}/bundle/nerd${plugin} ]; then
     cd ${VIM_DIR}/bundle/
-    git clone git://github.com/scrooloose/nerd${plugin}.git;
+    git clone git://github.com/scrooloose/nerd${plugin}.git
 fi
 done
 
@@ -95,6 +94,17 @@ if [ ! -f ${VIM_DIR}/autoload/snipMate.vim ]; then
     wget http://www.vim.org/scripts/download_script.php?src_id=11006 \
         -O /tmp/sm.zip
     unzip /tmp/sm.zip -d ~/.vim
+fi
+
+# Supertab : tab-completion (instead of <c-x><c-n>)
+if     [ ! -f ${VIM_DIR}/plugin/supertab.vim ] \
+    || [ ! -f ${VIM_DIR}/doc/supertab.txt ]; then
+
+    cd /tmp/
+    git clone git://github.com/ervandew/supertab.git
+    mv supertab/doc/supertab.txt ${VIM_DIR}/doc/
+    mv supertab/plugin/supertab.vim ${VIM_DIR}/plugin/
+
 fi
 
 # Zencoding : HTML coding made faster
@@ -173,8 +183,9 @@ fi
 for dir in ftdetect indent syntax; do
 
     if [ ! -f ${VIM_DIR}/${dir}/scala.vim ]; then
-        wget https://lampsvn.epfl.ch/trac/scala/export/26099/scala-tool-support/trunk/src/vim/${dir}/scala.vim \
-            -O ${VIM_DIR}/${dir}/scala.vim
+        url='https://lampsvn.epfl.ch/trac/scala/export/26099/scala-tool-'
+        url="${url}support/trunk/src/vim/${dir}/scala.vim"
+        wget $url -O ${VIM_DIR}/${dir}/scala.vim
     fi
 
 done
@@ -194,7 +205,7 @@ if [ ! -f ${VIM_DIR}/doc/textile.txt ]; then
     done
 fi
 
-# -- snippets (for SnipMate plugin)
+# == snippets (for SnipMate plugin) ==
 
 # Backbone
 
@@ -203,3 +214,4 @@ if [ ! -f ${VIM_DIR}/snippets/backbone.snippets ];then
     url="${url}57e823ebd0cc4ecc5eaf54eb5634/backbone.snippets"
     wget $url -O ${VIM_DIR}/snippets/backbone.snippets
 fi
+
