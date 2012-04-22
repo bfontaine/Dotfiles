@@ -23,13 +23,15 @@ cd ${VIM_DIR}/bundle/
 
 # abolish      : String replacement with word variants
 # afterimage   : edit small images with vim
+# endwise      : add 'end' in Ruby files when using if/def/…
 # fugitive     : Git wrapper
 # commentary   : Universal shortcut to comment (programing)
 # haml         : HAML, Sass, SCSS syntax
 # markdown     : Markdown syntax
 # surround     : parentheses, quotes, XML/HTML tags
 
-for plugin in abolish afterimage fugitive commentary haml markdown surround; do
+for plugin in abolish afterimage endwise fugitive commentary \
+        haml markdown surround; do
     if [ ! -d ${VIM_DIR}/bundle/vim-${plugin} ]; then
         git clone git://github.com/tpope/vim-${plugin}.git;
     fi
