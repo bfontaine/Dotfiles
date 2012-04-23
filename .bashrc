@@ -106,12 +106,14 @@ alias rmdir='rm -Ri'
 function mkcd() { mkdir $1 && cd $1; }
 function cdl()  { cd $1 && ls; }
 
+function vimtmp() { vim $(tempfile).$1; }
+
 alias xclip='xclip -selection "clipboard"'
 
 alias ps='ps x'
 
 # see launchpad.net/clr
-alias clr='clr -d'
+alias clr='clr -vd'
 
 alias shred='shred -n 50 -z -u'
 alias wipe='wipe -r -i -Q 50'
