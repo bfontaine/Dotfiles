@@ -100,6 +100,7 @@ if has("autocmd")
 
     autocmd FileType html,xml,json set tw=0
     autocmd FileType ocaml,scala,sql call Set_indent(2)
+    autocmd FileType ruby,coffeescript inoremap #{ #{}<left>
 
     autocmd FileType c call Use_c()
     autocmd FileType css call Use_css()

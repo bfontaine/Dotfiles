@@ -211,6 +211,12 @@ if [ ! -f ${VIM_DIR}/doc/textile.txt ]; then
     done
 fi
 
+# Asciidoc
+if [ ! -f ${VIM_DIR}/syntax/asciidoc.vim ]; then
+    wget http://www.vim.org/scripts/download_script.php?src_id=6891 \
+        -O ${VIM_DIR}/syntax/asciidoc.vim
+fi
+
 # == snippets (for SnipMate plugin) ==
 
 # Backbone
