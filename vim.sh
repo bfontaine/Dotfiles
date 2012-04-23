@@ -171,6 +171,19 @@ if [ ! -f ${VIM_DIR}/after/syntax/css.vim ]; then
         ${VIM_DIR}/after/syntax/css.vim
 fi
 
+# Javascript
+if     [ ! -f ${VIM_DIR}/syntax/javascript.vim ] \
+    || [ ! -f ${VIM_DIR}/indent/javascript.vim ]; then
+    cd /tmp/
+    wget http://www.vim.org/scripts/download_script.php?src_id=11296 \
+        -O javascript.zip
+    unzip javascript.zip -d js-vim
+    for d in syntax indent; do
+        mv js-vim/$d/javascript.vim ${VIM_DIR}/$d/
+    done
+    rm -f javascript.zip
+fi
+
 # JSON
 if [ ! -f ${VIM_DIR}/syntax/json.vim ]; then
     wget http://www.vim.org/scripts/download_script.php?src_id=10853 \
