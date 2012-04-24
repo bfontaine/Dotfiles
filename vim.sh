@@ -96,16 +96,16 @@ if [ ! -f ${VIM_DIR}/autoload/snipMate.vim ]; then
     unzip /tmp/sm.zip -d ~/.vim
 fi
 
-# Supertab : tab-completion (instead of <c-x><c-n>)
-if     [ ! -f ${VIM_DIR}/plugin/supertab.vim ] \
-    || [ ! -f ${VIM_DIR}/doc/supertab.txt ]; then
-
-    cd /tmp/
-    git clone git://github.com/ervandew/supertab.git
-    mv supertab/doc/supertab.txt ${VIM_DIR}/doc/
-    mv supertab/plugin/supertab.vim ${VIM_DIR}/plugin/
-
-fi
+## Supertab : tab-completion (instead of <c-x><c-n>)
+#if     [ ! -f ${VIM_DIR}/plugin/supertab.vim ] \
+#    || [ ! -f ${VIM_DIR}/doc/supertab.txt ]; then
+#
+#    cd /tmp/
+#    git clone git://github.com/ervandew/supertab.git
+#    mv supertab/doc/supertab.txt ${VIM_DIR}/doc/
+#    mv supertab/plugin/supertab.vim ${VIM_DIR}/plugin/
+#
+#fi
 
 # Tabular : text line up made easy
 if [ ! -d ${VIM_DIR}/bundle/tabular ]; then
