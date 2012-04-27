@@ -11,8 +11,8 @@
     co = checkout
     fp = format-patch
     lg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative
-    plom = pull origin master
-    psom = push origin master
+    plo = pull origin
+    pso = push origin
 [core]
     pager = cat
     editor = vim
