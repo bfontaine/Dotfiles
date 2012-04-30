@@ -110,6 +110,11 @@ function cdl()  { cd $1 && ls; }
 
 function vimtmp() { vim $(tempfile).$1; }
 
+function prettyjson() {
+    # http://stackoverflow.com/a/1920585/735926
+    python -mjson.tool < $1
+}
+
 alias xclip='xclip -selection "clipboard"'
 
 alias ps='ps x'
