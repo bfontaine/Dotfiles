@@ -37,7 +37,7 @@ function _bash_prompt_command() {
 
     local NEWPWD=$PWD
     local l=30
-    local GITPROMPT=
+    local GITPROMPT=' '
     local ROOTPROMPT=
 
     [ $EUID -eq 0 ] && ROOTPROMPT='[#]'
@@ -61,7 +61,7 @@ function _bash_prompt_command() {
     # We assume that we have color support
     # for the '\[\033[G\]' part, see:
     # http://jonisalonen.com/2012/your-bash-prompt-needs-this
-    PS1="\[\033[G\]\u@\h:${NEWPWD}${ROOTPROMPT}${GITPROMPT} \[\033[1;33m\]⚡\[\033[0m\] "
+    PS1="\[\033[G\]\u@\h:${NEWPWD}${ROOTPROMPT}${GITPROMPT}\[\033[1;33m\]⚡\[\033[0m\] "
 }
 
 case $TERM in
