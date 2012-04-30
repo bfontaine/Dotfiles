@@ -81,6 +81,9 @@ export EDITOR='vim'
 export PS2='... '
 export PATH="$PATH:$HOME/bin"
 
+# Add home directory to the cd PATH
+export CDPATH=:~
+
 # Scala
 export PATH="$PATH:/opt/scala/bin"
 
