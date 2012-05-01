@@ -168,6 +168,8 @@ mkdir -p ~/PDF
 # git
 # see github.com/icefox/git-achievements
 alias git='git-achievements'
+# alias g=git
+alias g='git-achievements'
 
 # apps
 alias chromium='chromium-browser'
