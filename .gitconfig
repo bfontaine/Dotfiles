@@ -5,6 +5,7 @@
     diff = auto
     status = auto
     branch = auto
+	ui = auto
 [alias]
     st = status
     ci = commit
@@ -19,3 +20,7 @@
 [github]
     user = bfontaine
     token = 0ec97a058a8c1ff7a93e70ef2ee6b65a
+[branch]
+	autosetupmerge = true
+[rerere]
+	enabled = true
