@@ -109,7 +109,7 @@ alias rm='rm -i'
 alias rmdir='rm -Ri'
 
 function mkcd() { mkdir $1 && cd $1; }
-function cdl()  { cd $1 && ls; }
+function cdl()  { cd $1 && ls -Fgh; }
 
 function vimtmp() { vim $(tempfile).$1; }
 
