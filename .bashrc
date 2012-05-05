@@ -59,9 +59,7 @@ function _bash_prompt_command() {
     #PS1="\[\033[G\]\u@\h:${NEWPWD}[\$] ⚡ "
     
     # We assume that we have color support
-    # for the '\[\033[G\]' part, see:
-    # http://jonisalonen.com/2012/your-bash-prompt-needs-this
-    PS1="\[\033[G\]\u@\h:${NEWPWD}${ROOTPROMPT}${GITPROMPT}\[\033[1;33m\]⚡\[\033[0m\] "
+    PS1="\u@\h:${NEWPWD}${ROOTPROMPT}${GITPROMPT}\[\033[1;33m\]⚡\[\033[0m\] "
 }
 
 case $TERM in
