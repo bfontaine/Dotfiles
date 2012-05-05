@@ -11,7 +11,7 @@
     ci = commit
     co = checkout
     fp = format-patch
-    lg = log --graph --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an %cr)%Creset' --abbrev-commit --date=relative
+    lg = log --graph --pretty=oneline --abbrev-commit
     plo = pull origin
     pso = push origin
 [core]
