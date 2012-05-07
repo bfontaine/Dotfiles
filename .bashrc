@@ -130,7 +130,7 @@ alias top='htop'
 
 alias ls='ls -Fhg --color --group-directories-first'
 alias l=ls
-alias lsa='ls -a'
+alias la='ls -a'
 alias lszip='unzip -l'
 
 alias cd='cd -P'
