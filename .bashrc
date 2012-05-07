@@ -176,6 +176,8 @@ alias MoM='~/Applications/MoM/MoM'
 alias processing='sh ~/Applications/processing-1.5.1/processing'
 alias gephi='~/Applications/gephi/bin/gephi'
 
+[ -x ~/Applications/tetris ] && alias tetris="~/Applications/tetris";
+
 alias apache_restart='sudo /etc/init.d/apache2 restart'
 
 alias sl='sl -e'
