@@ -6,52 +6,48 @@ call pathogen#infect()
 filetype on
 filetype plugin indent on
 
-set autoindent                 " auto-indentation
-set autoread                   " auto re-read when a file is changed outside
-set backspace=indent,eol,start " allow backspace on everything in insert mode
-set backup	                   " keep a backup file
-" set bomb                     " set UTF-8 bomb
-" set colorcolumn=80           " color 80th column
-set cursorline                 " highlight current line
-set encoding=utf-8             " set UTF-8 encoding
-set expandtab                  " replace tabs with spaces
-set ff=unix                    " default file types
-set formatoptions+=n           " recognize lists when formatting text
-set hidden                     " buffers can exists in bg w/o being in a window
-set history=100                " more command history
-set hlsearch                   " highlight current search
-set ignorecase                 " ignore case for '/regex' search
-set incsearch                  " incremental search with '/regex' search
-set linebreak                  " don't wrap text in the middle of a word
-set magic                      " set magic for regex
-set noautoread                 " don't re-read a file changed outside of Vim
-set nolazyredraw               " turn off lazy redraw
-set number                     " display line numbers
-set numberwidth=1              " use only 1 column (+ 1 space) while possible
-set nospell                    " do not use spell checking
-set pumheight=10               " size of completion window: 10 lines
-set ruler                      " show the cursor position all the time
-set scrolloff=3                " keep 3 context lines above/below the cursor
-set shell=/bin/bash            " set Bash shell
-set shiftwidth=4               " use 4-spaces indentation
-set showcmd                    " show current incomplete command
-set smartcase                  " check case if upper case chars in /regex
-set smartindent                " no autoindent when starting a new line
-set softtabstop=4              " 1 tab = 4 spaces
-set spelllang=fr,en            " Spell languages: FRench, ENglish
-set suffixes=,*~,*.aux,*.toc   " last used files when tab completing
-set tabpagemax=10              " only show 10 tabs
-set tabstop=4                  " 1 tab = 4 spaces
-" set textwidth=80               " text width = 80 characters
-set timeout                    " Wait max 1sec for :mappings
-set title                      " show title in console title bar
-set undodir=~/.vim/backups     " keep undo history accross sessions
-set undofile                   " see 'undodir'
-set wildignore=*.swp,*.class   " files to ignore when tab completing
-set wildignore+=*.pdf,*.dvi,*.ps,a.out,*.pyc,*.odt,*.docx,*.pptx,*.ocx
-set wildignore+=*.zip,*.tgz,*.gz,*.bz2,*.tbz2,*.tar,*.7z,*.txz,*.mp3,*.mp4
-set wildignore+=*.webm,*.gif,*.jpg,*.jpeg,*.png,*.ico,*.jar,*.deb,*.iso,*.ttf
-set wildmenu                   " show completion possibilities in command mode
+set autoindent                  " auto-indentation
+set autoread                    " auto re-read when a file is changed outside
+set backspace=indent,eol,start  " allow backspace on everything in insert mode
+set backup                      " keep a backup file
+" set colorcolumn=80            " color 80th column
+set cursorline                  " highlight current line
+set encoding=utf-8              " set UTF-8 encoding
+set expandtab                   " replace tabs with spaces
+set ff=unix                     " default file types: UNIX
+set formatoptions+=n            " recognize lists when formatting text
+set hidden                      " buffers can exists in bg w/o being in a window
+set history=100                 " more command history
+set hlsearch                    " highlight current search
+set ignorecase                  " ignore case for '/regex' search
+set incsearch                   " incremental search with '/regex' search
+set linebreak                   " don't wrap text in the middle of a word
+set magic                       " set magic for regex
+set noautoread                  " don't re-read a file changed outside of Vim
+set nolazyredraw                " turn off lazy redraw
+set number                      " display line numbers
+set numberwidth=1               " use only 1 column (+ 1 space) while possible
+set nospell                     " do not use spell checking
+set pumheight=10                " size of completion window: 10 lines
+set ruler                       " show the cursor position all the time
+set scrolloff=3                 " keep 3 context lines above/below the cursor
+set shell=/bin/bash             " set Bash shell
+set shiftwidth=4                " use 4-spaces indentation
+set showcmd                     " show current incomplete command
+set smartcase                   " check case if upper case chars in /regex
+set smartindent                 " no autoindent when starting a new line
+set softtabstop=4               " 1 tab = 4 spaces
+set spelllang=fr,en             " Spell languages: FRench, ENglish
+set suffixes=,*.aux,*.toc       " last used files when tab completing
+set tabpagemax=10               " only show 10 tabs
+set tabstop=4                   " 1 tab = 4 spaces
+" set textwidth=80              " text width = 80 characters
+set timeout                     " Wait max 1sec for :mappings
+set title                       " show title in console title bar
+set undodir=~/.vim/backups      " keep undo history accross sessions
+set undofile                    " see 'undodir'
+set wildignore=*~,*.swp,*.class " files to ignore when tab completing
+set wildmenu                    " show completion possibilities in command mode
 
 
 " -- functions --
@@ -155,14 +151,17 @@ inoremap <leader>w <esc>:w<cr>a
 inoremap <leader>z <esc>zza
 inoremap <leader>o <esc>o
 inoremap <leader>O <esc>O
-nnoremap <leader>z :set scrolloff=9999<cr>
+inoremap <leader>A <esc>A
+nnoremap <leader>z :set scrolloff=100<cr>
 nnoremap <leader>Z :set scrolloff=3<cr>
 
 " command line like Bash
 cnoremap <c-a> <Home>
-inoremap <c-a> ^
+inoremap <c-a> <esc>^i
+noremap <c-a> ^
 cnoremap <c-e> <End>
-inoremap <c-e> $
+inoremap <c-e> <esc>$a
+noremap <c-e> $
 
 " windows
 noremap <c-j> <c-w>j
