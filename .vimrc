@@ -17,7 +17,6 @@ set encoding=utf-8             " set UTF-8 encoding
 set expandtab                  " replace tabs with spaces
 set ff=unix                    " default file types
 set formatoptions+=n           " recognize lists when formatting text
-set guicursor=a:blinkon0       " no cursor blinking
 set hidden                     " buffers can exists in bg w/o being in a window
 set history=100                " more command history
 set hlsearch                   " highlight current search
@@ -54,7 +53,6 @@ set wildignore+=*.zip,*.tgz,*.gz,*.bz2,*.tbz2,*.tar,*.7z,*.txz,*.mp3,*.mp4
 set wildignore+=*.webm,*.gif,*.jpg,*.jpeg,*.png,*.ico,*.jar,*.deb,*.iso,*.ttf
 set wildmenu                   " show completion possibilities in command mode
 
-:hi CursorLine cterm=NONE ctermbg=black ctermfg=NONE
 
 " -- functions --
 
@@ -198,4 +196,7 @@ command Clr !rm -f *~
 command Strip :%s/ \+$//gc
 
 " colorscheme 256-jungle
+" :hi CursorLine cterm=NONE ctermbg=black ctermfg=NONE
+
 colorscheme candycode
+:hi CursorLine cterm=NONE ctermbg=darkcyan ctermfg=NONE
