@@ -41,17 +41,17 @@ set smartindent                " no autoindent when starting a new line
 set softtabstop=4              " 1 tab = 4 spaces
 set spelllang=fr,en            " Spell languages: FRench, ENglish
 set suffixes=,*~,*.aux,*.toc   " last used files when tab completing
-set wildignore=*.swp,*.class   " files to ignore when tab completing
-set wildignore+=*.pdf,*.dvi,*.ps,a.out,*.pyc,*.odt,*.docx,*.pptx,*.ocx
-set wildignore+=*.zip,*.tgz,*.gz,*.bz2,*.tbz2,*.tar,*.7z,*.txz,*.mp3,*.mp4
-set wildignore+=*.webm,*.gif,*.jpg,*.jpeg,*.png,*.ico,*.jar,*.deb,*.iso,*.ttf
 set tabpagemax=10              " only show 10 tabs
 set tabstop=4                  " 1 tab = 4 spaces
-set textwidth=80               " text width = 80 characters
+" set textwidth=80               " text width = 80 characters
 set timeout                    " Wait max 1sec for :mappings
 set title                      " show title in console title bar
 set undodir=~/.vim/backups     " keep undo history accross sessions
 set undofile                   " see 'undodir'
+set wildignore=*.swp,*.class   " files to ignore when tab completing
+set wildignore+=*.pdf,*.dvi,*.ps,a.out,*.pyc,*.odt,*.docx,*.pptx,*.ocx
+set wildignore+=*.zip,*.tgz,*.gz,*.bz2,*.tbz2,*.tar,*.7z,*.txz,*.mp3,*.mp4
+set wildignore+=*.webm,*.gif,*.jpg,*.jpeg,*.png,*.ico,*.jar,*.deb,*.iso,*.ttf
 set wildmenu                   " show completion possibilities in command mode
 
 :hi CursorLine cterm=NONE ctermbg=black ctermfg=NONE
@@ -100,7 +100,7 @@ if has("autocmd")
     autocmd BufNewFile,BufRead *.json set filetype=json 
     autocmd BufNewFile,BufRead *.mustache set filetype=mustache
 
-    autocmd FileType html,xml,json set tw=0
+    autocmd FileType txt,markdown set tw=80
     autocmd FileType ocaml,scala,sql call Set_indent(2)
     autocmd FileType ruby,coffeescript inoremap #{ #{}<left>
 

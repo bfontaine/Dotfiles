@@ -133,6 +133,12 @@ if [ ! -f ${VIM_DIR}/colors/256-jungle.vim ]; then
         -O ${VIM_DIR}/colors/256-jungle.vim
 fi
 
+# Candycode
+if [ ! -f ${VIM_DIR}/colors/candycode.vim ]; then
+    wget http://www.vim.org/scripts/download_script.php?src_id=6066 \
+        -O ${VIM_DIR}/colors/candycode.vim
+fi
+
 # Molokai
 if [ ! -f ${VIM_DIR}/colors/molokai.vim ]; then
     cd /tmp/
