@@ -158,7 +158,6 @@ nnoremap <leader>Z :set scrolloff=3<cr>
 " command line like Bash
 cnoremap <c-a> <Home>
 inoremap <c-a> <esc>^i
-noremap <c-a> ^
 cnoremap <c-e> <End>
 inoremap <c-e> <esc>$a
 noremap <c-e> $
