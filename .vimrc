@@ -91,6 +91,14 @@ fun Use_python()
     set omnifunc=pythoncomplete#Complete
 endf
 
+fun Candy()
+    colorscheme candycode
+    :hi CursorLine cterm=NONE ctermbg=DarkCyan ctermfg=NONE
+endf
+
+colorscheme 256-jungle
+:hi CursorLine cterm=NONE ctermbg=black ctermfg=NONE
+
 if has("autocmd")
 
     " files type
@@ -101,6 +109,7 @@ if has("autocmd")
     autocmd FileType txt,markdown set tw=80
     autocmd FileType ocaml,scala,sql call Set_indent(2)
     autocmd FileType ruby,coffeescript inoremap #{ #{}<left>
+    autocmd FileType css,markdown,sql,vim,txt call Candy()
 
     autocmd FileType c call Use_c()
     autocmd FileType css call Use_css()
@@ -195,8 +204,3 @@ command Clr !rm -f *~
 " strip trailing whitespaces
 command Strip :%s/ \+$//gc
 
-colorscheme 256-jungle
-" :hi CursorLine cterm=NONE ctermbg=black ctermfg=NONE
-
-colorscheme candycode
-:hi CursorLine cterm=NONE ctermbg=DarkCyan ctermfg=NONE
