@@ -195,8 +195,8 @@ command Clr !rm -f *~
 " strip trailing whitespaces
 command Strip :%s/ \+$//gc
 
-" colorscheme 256-jungle
+colorscheme 256-jungle
 " :hi CursorLine cterm=NONE ctermbg=black ctermfg=NONE
 
 colorscheme candycode
-:hi CursorLine cterm=NONE ctermbg=darkcyan ctermfg=NONE
+:hi CursorLine cterm=NONE ctermbg=DarkCyan ctermfg=NONE
