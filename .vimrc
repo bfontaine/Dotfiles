@@ -110,6 +110,7 @@ if has("autocmd")
     autocmd FileType c call Use_c()
     autocmd FileType css call Use_css()
     autocmd FileType html call Use_html()
+    autocmd FileType java set omnifunc=javacomplete#Complete
     autocmd FileType javascript call Use_js()
     autocmd FileType json set nocursorline
     autocmd FileType php set omnifunc=phpcomplete#CompletePHP
