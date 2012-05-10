@@ -246,5 +246,22 @@ if [ ! -f ${VIM_DIR}/snippets/backbone.snippets ];then
     wget $url -O ${VIM_DIR}/snippets/backbone.snippets
 fi
 
+# == Omnicomplete ==
+
+if     [ ! -f ${VIM_DIR}/autoload/javacomplete.vim ] \
+    || [ ! -f ${VIM_DIR}/autoload/Reflection.java ] \
+    || [ ! -f ${VIM_DIR}/autoload/java_parser.java ] \
+    || [ ! -f ${VIM_DIR}/doc/javacomplete.txt ]; then
+
+    cd /tmp/
+    wget http://www.vim.org/scripts/download_script.php?src_id=14914 \
+        -O javacomplete.zip
+    unzip javacomplete.zip && rm javacomplete.zip
+    for f in java_parser.vim javacomplete.vim Reflection.java; do
+        mv autoload/$f ${VIM_DIR}/autoload/$f
+    done
+    mv doc/javacomplete.txt ${VIM_DIR}/doc/
+fi
+
 # Bundles cleaning
 rm -Rf ${VIM_DIR}/bundle/*/.git
