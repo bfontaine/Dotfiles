@@ -178,7 +178,9 @@ noremap <c-l> <c-w>l
 " tabs
 noremap <c-down> :tabn<cr>
 noremap <c-up> :tabp<cr>
-" noremap <c-c> <c-t><c-c>
+inoremap <c-down> <esc>:tabn<cr>
+inoremap <c-up> <esc>:tabp<cr>
+
 noremap <leader>tn :tabnew<cr>
 nnoremap gt <c-w>gf
 
