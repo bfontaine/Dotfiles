@@ -77,6 +77,12 @@ fun Use_html()
     set omnifunc=htmlcomplete#CompleteTags
 endf
 
+fun Use_java()
+    set omnifunc=javacomplete#Complete
+    set foldmethod=indent
+    set foldlevel=1
+endfun
+
 fun Use_js()
     inoremap <leader>l console.log();<left><left>
     set omnifunc=javascriptcomplete#CompleteJS
@@ -110,7 +116,7 @@ if has("autocmd")
     autocmd FileType c call Use_c()
     autocmd FileType css call Use_css()
     autocmd FileType html call Use_html()
-    autocmd FileType java set omnifunc=javacomplete#Complete
+    autocmd FileType java call Use_java()
     autocmd FileType javascript call Use_js()
     autocmd FileType json set nocursorline
     autocmd FileType php set omnifunc=phpcomplete#CompletePHP
