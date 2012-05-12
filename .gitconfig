@@ -8,10 +8,12 @@
 	ui = auto
 [alias]
     st = status
+    br = branch
     ci = commit
     co = checkout
     fp = format-patch
-    lg = log --graph --pretty=oneline --abbrev-commit
+    lg = log --graph --pretty=format:'%Cred%h%Creset - %C(blue bold)%an%Creset: %C(cyan)%s%Creset %Cgreen(%ar)%Creset'
+    lgs = log --graph --pretty=format:'%Cred%h%Creset: %s' # short
     plo = pull origin
     pso = push origin
 [core]
