@@ -113,6 +113,20 @@ if [ ! -d ${VIM_DIR}/bundle/tabular ]; then
     git clone git://github.com/godlygeek/tabular.git
 fi
 
+# Taglist : source code browser
+# note: you need to install Ctags before
+# (exuberant-ctags package in Ubuntu)
+if     [ ! -f ${VIM_DIR}/plugin/taglist.vim ] \
+    || [ ! -f ${VIM_DIR}/doc/taglist.txt ]; then
+    
+    cd /tmp/
+    wget http://www.vim.org/scripts/download_script.php?src_id=7701 \
+        -O taglist.zip
+    unzip taglist.zip
+    mv plugin/taglist.vim ${VIM_DIR}/plugin/taglist.vim
+    mv doc/taglist.txt ${VIM_DIR}/doc/taglist.txt
+fi
+
 # Zencoding : HTML coding made faster
 if     [ ! -f ${VIM_DIR}/plugin/zencoding.vim ] \
     || [ ! -f ${VIM_DIR}/autoload/zencoding.vim ]; then
@@ -250,7 +264,7 @@ fi
 
 if     [ ! -f ${VIM_DIR}/autoload/javacomplete.vim ] \
     || [ ! -f ${VIM_DIR}/autoload/Reflection.java ] \
-    || [ ! -f ${VIM_DIR}/autoload/java_parser.java ] \
+    || [ ! -f ${VIM_DIR}/autoload/java_parser.vim ] \
     || [ ! -f ${VIM_DIR}/doc/javacomplete.txt ]; then
 
     cd /tmp/
