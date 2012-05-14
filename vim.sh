@@ -275,6 +275,9 @@ if     [ ! -f ${VIM_DIR}/autoload/javacomplete.vim ] \
         mv autoload/$f ${VIM_DIR}/autoload/$f
     done
     mv doc/javacomplete.txt ${VIM_DIR}/doc/
+
+    # Note: for the first use, Reflection.java will be compiled
+    #       to ~/Reflection.class . You should move it to ${VIM_DIR}/autoload/
 fi
 
 # Bundles cleaning
