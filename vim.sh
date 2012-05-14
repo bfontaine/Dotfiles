@@ -191,6 +191,12 @@ if [ ! -f ${VIM_DIR}/after/syntax/css.vim ]; then
         ${VIM_DIR}/after/syntax/css.vim
 fi
 
+# Io
+if [ ! -f ${VIM_DIR}/syntax/io.vim ]; then
+    wget http://www.vim.org/scripts/download_script.php?src_id=8129 \
+        -O ${VIM_DIR}/syntax/io.vim
+fi
+
 # Javascript
 if     [ ! -f ${VIM_DIR}/syntax/javascript.vim ] \
     || [ ! -f ${VIM_DIR}/indent/javascript.vim ]; then
