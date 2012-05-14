@@ -181,7 +181,7 @@ noremap <c-up> :tabp<cr>
 inoremap <c-down> <esc>:tabn<cr>
 inoremap <c-up> <esc>:tabp<cr>
 
-noremap <leader>tn :tabnew<cr>
+noremap <leader>T :tabnew<cr>
 nnoremap gt <c-w>gf
 
 " search
@@ -197,12 +197,14 @@ nnoremap <c-r> :!clear<cr><cr>
 
 " DelimitMate
 let delimitMate_expand_cr=1
-
-" NERDTree
-nnoremap <leader>n :NERDTreeToggle<cr>
-
 " Gundo
 nnoremap <leader>g :GundoToggle<cr>
+" NERDTree
+nnoremap <leader>n :NERDTreeToggle<cr>
+" Taglist
+nnoremap <leader>t :TlistToggle<cr>
+
+
 
 " -- Command Aliasing --
 command W :w
