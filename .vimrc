@@ -193,6 +193,8 @@ vnoremap <leader>s :sort u<cr>
 " hack to redraw the console screen
 nnoremap <c-r> :!clear<cr><cr>
 
+nnoremap ; A;
+
 " - plugins options/mappings -
 
 " DelimitMate
