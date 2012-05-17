@@ -105,6 +105,7 @@ if has("autocmd")
 
     " files type
     autocmd BufNewFile,BufRead *.bf,*.brainfuck set filetype=brainfuck
+    autocmd BufNewFile,BufRead *.io set filetype=io
     autocmd BufNewFile,BufRead *.json set filetype=json 
     autocmd BufNewFile,BufRead *.mustache set filetype=mustache
 
@@ -132,6 +133,7 @@ if has("autocmd")
     " files skeletons
     autocmd BufNewFile *.c    0r ~/.vim/skeletons/c.c
     autocmd BufNewFile *.html 0r ~/.vim/skeletons/html.html
+    autocmd BufNewFile *.io   0r ~/.vim/skeletons/io.io
     autocmd BufNewFile *.php  0r ~/.vim/skeletons/php.php
     autocmd BufNewFile *.py   0r ~/.vim/skeletons/python.py
     autocmd BufNewFile *.rb   0r ~/.vim/skeletons/ruby.rb
