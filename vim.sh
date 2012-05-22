@@ -197,6 +197,11 @@ if [ ! -f ${VIM_DIR}/syntax/io.vim ]; then
         -O ${VIM_DIR}/syntax/io.vim
 fi
 
+if [ ! -f ${VIM_DIR}/indent/io.vim ]; then
+    wget https://raw.github.com/xhr/vim-io/master/indent/io.vim \
+        -O ${VIM_DIR}/syntax/io.vim
+fi
+
 # Javascript
 if     [ ! -f ${VIM_DIR}/syntax/javascript.vim ] \
     || [ ! -f ${VIM_DIR}/indent/javascript.vim ]; then
