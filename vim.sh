@@ -47,6 +47,17 @@ if     [ ! -f ${VIM_DIR}/plugin/a.vim ] \
         -O ${VIM_DIR}/doc/alternate.txt
 fi
 
+# Clang complete : C/C++ autocompletion
+# you need Clang installed (package 'clang' on Ubuntu)
+if     [ ! -f ${VIM_DIR}/plugin/clang_complete.vim ]; then 
+    cd /tmp/
+    git clone git://github.com/Rip-Rip/clang_complete.git
+    cd clang_complete/
+    make install
+    cd ..
+    rm -Rf clang_complete
+fi
+
 # DelimitMate : automatic closing of quotes, parenthesis, brackets, etc.
 if     [ ! -f ${VIM_DIR}/doc/delimitMate.txt ] \
     || [ ! -f ${VIM_DIR}/plugin/delimitMate.vim ];then
@@ -199,7 +210,7 @@ fi
 
 if [ ! -f ${VIM_DIR}/indent/io.vim ]; then
     wget https://raw.github.com/xhr/vim-io/master/indent/io.vim \
-        -O ${VIM_DIR}/syntax/io.vim
+        -O ${VIM_DIR}/indent/io.vim
 fi
 
 # Javascript
