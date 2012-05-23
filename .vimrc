@@ -47,6 +47,7 @@ set title                       " show title in console title bar
 set undodir=~/.vim/backups      " keep undo history accross sessions
 set undofile                    " see 'undodir'
 set wildignore=*~,*.swp,*.class " files to ignore when tab completing
+set wildignore+=*.o
 set wildmenu                    " show completion possibilities in command mode
 
 
@@ -110,7 +111,7 @@ if has("autocmd")
     autocmd BufNewFile,BufRead *.mustache set filetype=mustache
 
     autocmd FileType txt,markdown set tw=80
-    autocmd FileType ocaml,scala,sql call Set_indent(2)
+    autocmd FileType ocaml,scala,sql,yaml call Set_indent(2)
     autocmd FileType ruby,coffeescript inoremap #{ #{}<left>
     autocmd FileType css,markdown,sql,vim,txt call Candy()
 
