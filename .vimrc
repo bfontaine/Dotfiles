@@ -89,6 +89,11 @@ fun Use_js()
     set omnifunc=javascriptcomplete#CompleteJS
 endf
 
+fun Use_liquid()
+   inoremap <leader>b {{  }}<left><left><left>
+   inoremap <leader>B {{%  %}}<left><left><left><left>
+endf
+
 fun Use_python()
     "set omnifunc=python3complete#Complete
     set omnifunc=pythoncomplete#Complete
@@ -108,9 +113,11 @@ if has("autocmd")
     autocmd BufNewFile,BufRead *.bf,*.brainfuck set filetype=brainfuck
     autocmd BufNewFile,BufRead *.io set filetype=io
     autocmd BufNewFile,BufRead *.json set filetype=json 
+    autocmd BufNewFile,BufRead *.liquid set filetype=liquid
     autocmd BufNewFile,BufRead *.mustache set filetype=mustache
 
     autocmd FileType txt,markdown set tw=80
+    autocmd FileType liquid,markdown call Use_liquid()
     autocmd FileType ocaml,scala,sql,yaml call Set_indent(2)
     autocmd FileType ruby,coffeescript inoremap #{ #{}<left>
     autocmd FileType css,markdown,sql,vim,txt call Candy()
