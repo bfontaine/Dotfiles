@@ -102,6 +102,8 @@ export CLASSPATH="$CLASSPATH:$HOME/Documents/Programmation/libs/java/bsh-2.0b4.j
 export DEBFULLNAME='Baptiste Fontaine'
 export DEBEMAIL='batifon@yahoo.fr'
 
+export R_HOME='/usr/lib/R'
+
 # usual
 alias rm='rm -i'
 alias rmdir='rm -Ri'
