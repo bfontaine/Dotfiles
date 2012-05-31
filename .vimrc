@@ -118,7 +118,7 @@ if has("autocmd")
 
     autocmd FileType txt,markdown set tw=80
     autocmd FileType liquid,markdown call Use_liquid()
-    autocmd FileType ocaml,scala,sql,yaml call Set_indent(2)
+    autocmd FileType lisp,ocaml,scala,sql,yaml call Set_indent(2)
     autocmd FileType ruby,coffeescript inoremap #{ #{}<left>
     autocmd FileType css,markdown,sql,vim,txt call Candy()
 
