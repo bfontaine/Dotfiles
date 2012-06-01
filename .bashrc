@@ -85,6 +85,9 @@ export CDPATH=:~
 # Scala
 export PATH="$PATH:/opt/scala/bin"
 
+# C. Lisp
+alias clisp="clisp -q"
+
 # Python
 export PYTHONPATH="$PYTHONPATH:$HOME/Documents/Programmation/libs/python"
 
