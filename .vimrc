@@ -94,6 +94,11 @@ fun Use_liquid()
    inoremap <leader>B {{%  %}}<left><left><left><left>
 endf
 
+fun Use_lisp()
+  " remove ' and ` from autoclosed quotes
+  let delimitMate_quotes = "\""
+endfun
+
 fun Use_python()
     "set omnifunc=python3complete#Complete
     set omnifunc=pythoncomplete#Complete
@@ -119,7 +124,6 @@ if has("autocmd")
     autocmd FileType txt,markdown set tw=80
     autocmd FileType liquid,markdown call Use_liquid()
     autocmd FileType lisp,ocaml,scala,sql,yaml call Set_indent(2)
-    autocmd FileType ruby,coffeescript inoremap #{ #{}<left>
     autocmd FileType css,markdown,sql,vim,txt call Candy()
 
     autocmd FileType c call Use_c()
@@ -128,6 +132,7 @@ if has("autocmd")
     autocmd FileType java call Use_java()
     autocmd FileType javascript call Use_js()
     autocmd FileType json set nocursorline
+    autocmd FileType lisp call Use_lisp()
     autocmd FileType php set omnifunc=phpcomplete#CompletePHP
     autocmd FileType python call Use_python()
     autocmd FileType ruby set omnifunc=rubycomplete#Complete
