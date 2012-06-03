@@ -147,6 +147,7 @@ if has("autocmd")
     autocmd BufNewFile *.c    0r ~/.vim/skeletons/c.c
     autocmd BufNewFile *.html 0r ~/.vim/skeletons/html.html
     autocmd BufNewFile *.io   0r ~/.vim/skeletons/io.io
+    autocmd BufNewFile *.pl   0r ~/.vim/skeletons/perl.pl
     autocmd BufNewFile *.php  0r ~/.vim/skeletons/php.php
     autocmd BufNewFile *.py   0r ~/.vim/skeletons/python.py
     autocmd BufNewFile *.rb   0r ~/.vim/skeletons/ruby.rb
