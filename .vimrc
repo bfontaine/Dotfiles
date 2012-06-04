@@ -96,7 +96,7 @@ endf
 
 fun Use_lisp()
   " remove ' and ` from autoclosed quotes
-  let delimitMate_quotes = "\""
+  let b:delimitMate_quotes = "\""
 endfun
 
 fun Use_python()
