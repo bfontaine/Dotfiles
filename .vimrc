@@ -120,6 +120,7 @@ if has("autocmd")
     autocmd BufNewFile,BufRead *.json set filetype=json 
     autocmd BufNewFile,BufRead *.liquid set filetype=liquid
     autocmd BufNewFile,BufRead *.mustache set filetype=mustache
+    autocmd BufNewFile,BufRead *.groovy set filetype=groovy
 
     autocmd FileType txt,markdown set tw=80
     autocmd FileType liquid,markdown call Use_liquid()
@@ -144,14 +145,15 @@ if has("autocmd")
     autocmd BufRead /tmp/mutt* set tw=72
 
     " files skeletons
-    autocmd BufNewFile *.c    0r ~/.vim/skeletons/c.c
-    autocmd BufNewFile *.html 0r ~/.vim/skeletons/html.html
-    autocmd BufNewFile *.io   0r ~/.vim/skeletons/io.io
-    autocmd BufNewFile *.pl   0r ~/.vim/skeletons/perl.pl
-    autocmd BufNewFile *.php  0r ~/.vim/skeletons/php.php
-    autocmd BufNewFile *.py   0r ~/.vim/skeletons/python.py
-    autocmd BufNewFile *.rb   0r ~/.vim/skeletons/ruby.rb
-    autocmd BufNewFile *.sh   0r ~/.vim/skeletons/bash.sh
+    autocmd BufNewFile *.c      0r ~/.vim/skeletons/c.c
+    autocmd BufNewFile *.groovy 0r ~/.vim/skeletons/groovy.groovy
+    autocmd BufNewFile *.html   0r ~/.vim/skeletons/html.html
+    autocmd BufNewFile *.io     0r ~/.vim/skeletons/io.io
+    autocmd BufNewFile *.pl     0r ~/.vim/skeletons/perl.pl
+    autocmd BufNewFile *.php    0r ~/.vim/skeletons/php.php
+    autocmd BufNewFile *.py     0r ~/.vim/skeletons/python.py
+    autocmd BufNewFile *.rb     0r ~/.vim/skeletons/ruby.rb
+    autocmd BufNewFile *.sh     0r ~/.vim/skeletons/bash.sh
 
 endif " has("autocmd")
 
