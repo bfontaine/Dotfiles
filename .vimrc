@@ -146,6 +146,7 @@ if has("autocmd")
 
     " files skeletons
     autocmd BufNewFile *.c      0r ~/.vim/skeletons/c.c
+    autocmd BufNewFile *.cpp    0r ~/.vim/skeletons/cpp.cpp
     autocmd BufNewFile *.groovy 0r ~/.vim/skeletons/groovy.groovy
     autocmd BufNewFile *.html   0r ~/.vim/skeletons/html.html
     autocmd BufNewFile *.io     0r ~/.vim/skeletons/io.io
