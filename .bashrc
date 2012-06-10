@@ -70,6 +70,7 @@ case $TERM in
         ;;
 esac
 
+mkdir -p ~/PDF
 
 # need <C-d> twice to quit
 ignoreeof=1
@@ -79,69 +80,70 @@ export EDITOR='vim'
 export PS2='... '
 export PATH="$PATH:$HOME/bin"
 
+export DEBFULLNAME='Baptiste Fontaine'
+export DEBEMAIL='batifon@yahoo.fr'
+
 # Add home directory to the cd PATH
 export CDPATH=:~
 
-# Scala
-export PATH="$PATH:/opt/scala/bin"
+# == Programming ==
+
+# Bean Shell
+export CLASSPATH="$CLASSPATH:$HOME/Documents/Programmation/libs/java/bsh-2.0b4.jar"
+alias jInterpreter='java bsh.Interpreter'
 
 # C. Lisp
 alias clisp="clisp -q"
 
+# OCaml
+alias locaml='ledit ocaml'
+
+# Processing
+alias processing='sh ~/Applications/processing-1.5.1/processing'
+
 # Python
 export PYTHONPATH="$PYTHONPATH:$HOME/Documents/Programmation/libs/python"
+alias python='python3'
+
+# R
+export R_HOME='/usr/lib/R'
+
+# Rails
+export PATH="$PATH:/var/lib/gems/1.8/bin"
 
 # Ruby
 alias ruby='ruby1.9.1'
 alias irb='irb1.9.1'
 alias gem='gem1.9.1'
 
-# Rails
-export PATH="$PATH:/var/lib/gems/1.8/bin"
-
-# Bean Shell
-export CLASSPATH="$CLASSPATH:$HOME/Documents/Programmation/libs/java/bsh-2.0b4.jar"
-
-export DEBFULLNAME='Baptiste Fontaine'
-export DEBEMAIL='batifon@yahoo.fr'
-
-export R_HOME='/usr/lib/R'
+# Scala
+export PATH="$PATH:/opt/scala/bin"
 
 # usual
 alias rm='rm -i'
 alias rmdir='rm -Ri'
-
-function mkcd() { mkdir $1 && cd $1; }
-function cdl()  { cd $1 && ls -Fgh; }
-
-function vimtmp() { vim $(tempfile).$1; }
-
-function prettyjson() {
-    # http://stackoverflow.com/a/1920585/735926
-    python -mjson.tool < $1
-}
-
-alias xclip='xclip -selection "clipboard"'
-
 alias ps='ps x'
-
-# see launchpad.net/clr
-alias clr='clr -vd'
-
-alias shred='shred -n 50 -z -u'
-alias wipe='wipe -r -i -Q 50'
-
 alias top='htop'
+alias cd='cd -P'
+alias du='du -h'
+alias df='df -h'
 
 alias ls='ls -Fhg --color --group-directories-first'
 alias l=ls
 alias la='ls -a'
 alias lszip='unzip -l'
 
-alias cd='cd -P'
+function mkcd() { mkdir $1 && cd $1; }
+function cdl()  { cd $1 && ls -Fgh; }
+function vimtmp() { vim $(tempfile).$1; }
+function prettyjson() { python -mjson.tool < $1; }
 
-alias du='du -h'
-alias df='df -h'
+alias xclip='xclip -selection "clipboard"'
+
+# perso
+alias up7c='~/Documents/Programmation/UP7_Tools/up7connect.rb'
+# see launchpad.net/clr
+alias clr='clr -vd'
 
 alias sag='sudo apt-get'
 alias sai='sudo apt-get install'
@@ -150,37 +152,21 @@ alias saupd='sudo apt-get update'
 
 alias aptis='aptitude search'
 
-alias pker='ping -c 1 -w 1 kernel.org'
-
-# java
-alias jInterpreter='java bsh.Interpreter'
-alias minecraft='padsp java -jar ~/Applications/minecraft.jar'
-
-# python
-alias python='python3'
-
-# ocaml
-alias locaml='ledit ocaml'
 
 # bashrc
 alias openbashrc='vim ~/.bashrc'
 alias reload='source ~/.bashrc'
 
-mkdir -p ~/PDF
-
 # git
 # see github.com/icefox/git-achievements
 alias git='git-achievements'
-# alias g=git
 alias g='git-achievements'
 
 # apps
 alias chromium='chromium-browser'
-
+alias minecraft='padsp java -jar ~/Applications/minecraft.jar'
 alias MoM='~/Applications/MoM/MoM'
-alias processing='sh ~/Applications/processing-1.5.1/processing'
 alias gephi='~/Applications/gephi/bin/gephi'
-
 [ -x ~/Applications/tetris ] && alias tetris="~/Applications/tetris";
 
 alias apache_restart='sudo /etc/init.d/apache2 restart'
@@ -193,15 +179,11 @@ do
     [ -x $f ] && . $f;
 done
 
-# perso
-alias up7c='~/Documents/Programmation/UP7_Tools/up7connect.rb'
-
-# http://www.commandlinefu.com/commands/view/9824/resolve-short-urls
-resolve() { curl -Is $1 | sed -n 's/^Location: //p'; }
-
-# web
+# Internet
 alias flushDNS='sudo rndc flush'
 alias python2server='python2.7 -m SimpleHTTPServer'
+alias pker='ping -c 1 -w 1 kernel.org'
+resolve() { curl -Is $1 | sed -n 's/^Location: //p'; }
 
 if [ $COLUMNS -lt 35 ];
 then
@@ -215,7 +197,6 @@ rm -Rf ~/.adobe/*
 rm -Rf ~/.macromedia/*
 
 # starting
-cp ~/.bashrc ~/.bashrc_autosave
 clear
 echo Bonjour \! # Hello !
 echo 
