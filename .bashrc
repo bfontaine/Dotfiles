@@ -88,6 +88,8 @@ export CDPATH=:~
 
 # == Programming ==
 
+alias vim='vim -p'
+
 # Bean Shell
 export CLASSPATH="$CLASSPATH:$HOME/Documents/Programmation/libs/java/bsh-2.0b4.jar"
 alias jInterpreter='java bsh.Interpreter'
