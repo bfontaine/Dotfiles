@@ -116,6 +116,7 @@ if has("autocmd")
 
     " files type
     autocmd BufNewFile,BufRead *.bf,*.brainfuck set filetype=brainfuck
+    autocmd BufNewFile,BufRead *.fth set filetype=forth
     autocmd BufNewFile,BufRead *.io set filetype=io
     autocmd BufNewFile,BufRead *.json set filetype=json 
     autocmd BufNewFile,BufRead *.liquid set filetype=liquid

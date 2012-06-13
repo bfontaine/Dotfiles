@@ -202,6 +202,12 @@ if [ ! -f ${VIM_DIR}/after/syntax/css.vim ]; then
         ${VIM_DIR}/after/syntax/css.vim
 fi
 
+# Forth
+if [ ! -f ${VIM_DIR}/syntax/forth.vim ]; then
+    wget http://www.vim.org/scripts/download_script.php?src_id=18049 \
+        -O ${VIM_DIR}/syntax/io.vim
+fi
+
 # Io
 if [ ! -f ${VIM_DIR}/syntax/io.vim ]; then
     wget http://www.vim.org/scripts/download_script.php?src_id=8129 \
