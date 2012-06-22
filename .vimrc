@@ -213,7 +213,11 @@ vnoremap <leader>s :sort u<cr>
 " hack to redraw the console screen
 nnoremap <c-r> :!clear<cr><cr>
 
+" Adding a ';' at the end of the current line
 nnoremap ; A;
+
+" showing trailing spaces at the end of lines
+nnoremap <leader>$ :set list!
 
 " - plugins options/mappings -
 
@@ -225,7 +229,6 @@ nnoremap <leader>g :GundoToggle<cr>
 nnoremap <leader>n :NERDTreeToggle<cr>
 " Taglist
 nnoremap <leader>t :TlistToggle<cr>
-
 
 
 " -- Command Aliasing --
