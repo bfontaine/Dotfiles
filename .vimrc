@@ -217,7 +217,7 @@ nnoremap <c-r> :!clear<cr><cr>
 nnoremap ; A;
 
 " showing trailing spaces at the end of lines
-nnoremap <leader>$ :set list!
+nnoremap <leader>$ :set list!<cr>
 
 " - plugins options/mappings -
 
