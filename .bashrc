@@ -167,6 +167,7 @@ alias g='git-achievements'
 # apps
 alias chromium='chromium-browser'
 alias minecraft='padsp java -jar ~/Applications/minecraft.jar'
+alias worldofgoo='~/Applications/WorldOfGoo/WorldOfGoo.bin32'
 alias MoM='~/Applications/MoM/MoM'
 alias gephi='~/Applications/gephi/bin/gephi'
 [ -x ~/Applications/tetris ] && alias tetris="~/Applications/tetris";
