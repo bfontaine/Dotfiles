@@ -124,7 +124,6 @@ alias du='du -h'
 alias df='df -h'
 
 alias ls='ls -Fhg --color --group-directories-first'
-alias l=ls
 alias la='ls -a'
 alias lszip='unzip -l'
 
@@ -153,7 +152,11 @@ alias reload='source ~/.bashrc'
 # git
 # see github.com/icefox/git-achievements
 alias git='git-achievements'
-alias g='git-achievements'
+
+# one-letter shortcuts
+alias c=cat
+alias g=git
+alias l=ls
 
 # apps
 alias chromium='chromium-browser'
