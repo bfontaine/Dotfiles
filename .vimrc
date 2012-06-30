@@ -165,11 +165,15 @@ inoremap jj <esc>
 
 let mapleader = ","
 
-" vimrc
-nnoremap <leader>v :tabnew ~/.vimrc<cr>
+" dotfiles
+nnoremap <leader>db :tabnew ~/.bashrc<cr>
+nnoremap <leader>dg :tabnew ~/.gitconfig<cr>
+nnoremap <leader>dm :tabnew ~/.muttrc<cr>
+nnoremap <leader>ds :tabnew ~/.ssh/config<cr>
+nnoremap <leader>dv :tabnew ~/.vimrc<cr>
 
-" completing
-inoremap <c-f> <c-x><c-f>
+" toggle paste mode
+inoremap <leader>p <esc>:set paste!<cr>a
 
 " saving
 inoremap <leader>w <esc>:w<cr>a
@@ -210,8 +214,8 @@ nnoremap <leader><space> :set nohlsearch!<cr>
 " sort
 vnoremap <leader>s :sort u<cr>
 
-" hack to redraw the console screen
-nnoremap <c-r> :!clear<cr><cr>
+" redraw the console screen (<c-l> has been remapped)
+nnoremap <c-r> :redraw<cr>
 
 " Adding a ';' at the end of the current line
 nnoremap ; A;
