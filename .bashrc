@@ -90,10 +90,6 @@ export CDPATH=:~
 
 alias vim='vim -p'
 
-# Bean Shell
-export CLASSPATH="$CLASSPATH:$HOME/Documents/Programmation/libs/java/bsh-2.0b4.jar"
-alias jInterpreter='java bsh.Interpreter'
-
 # C. Lisp
 alias clisp="clisp -q"
 
@@ -109,9 +105,6 @@ alias python='python3'
 
 # R
 export R_HOME='/usr/lib/R'
-
-# Rails
-export PATH="$PATH:/var/lib/gems/1.8/bin"
 
 # Ruby
 alias ruby='ruby1.9.1'
@@ -136,7 +129,6 @@ alias la='ls -a'
 alias lszip='unzip -l'
 
 function mkcd() { mkdir $1 && cd $1; }
-function cdl()  { cd $1 && ls -Fgh; }
 function vimtmp() { vim $(tempfile).$1; }
 function prettyjson() { python -mjson.tool < $1; }
 
@@ -154,7 +146,6 @@ alias saupd='sudo apt-get update'
 
 alias aptis='aptitude search'
 
-
 # bashrc
 alias openbashrc='vim ~/.bashrc'
 alias reload='source ~/.bashrc'
@@ -167,12 +158,9 @@ alias g='git-achievements'
 # apps
 alias chromium='chromium-browser'
 alias minecraft='padsp java -jar ~/Applications/minecraft.jar'
-alias worldofgoo='~/Applications/WorldOfGoo/WorldOfGoo.bin32'
 alias MoM='~/Applications/MoM/MoM'
 alias gephi='~/Applications/gephi/bin/gephi'
 [ -x ~/Applications/tetris ] && alias tetris="~/Applications/tetris";
-
-alias apache_restart='sudo /etc/init.d/apache2 restart'
 
 alias sl='sl -e'
 alias LS='LS -e'
@@ -184,7 +172,6 @@ done
 
 # Internet
 alias flushDNS='sudo rndc flush'
-alias python2server='python2.7 -m SimpleHTTPServer'
 alias pker='ping -c 1 -w 1 kernel.org'
 resolve() { curl -Is $1 | sed -n 's/^Location: //p'; }
 
