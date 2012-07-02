@@ -205,7 +205,7 @@ fi
 # Forth
 if [ ! -f ${VIM_DIR}/syntax/forth.vim ]; then
     wget http://www.vim.org/scripts/download_script.php?src_id=18049 \
-        -O ${VIM_DIR}/syntax/io.vim
+        -O ${VIM_DIR}/syntax/forth.vim
 fi
 
 # Io
