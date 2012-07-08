@@ -143,6 +143,8 @@ alias sai='sudo apt-get install'
 alias saupg='sudo apt-get upgrade'
 alias saupd='sudo apt-get update'
 
+alias maintenance='saupd; saupg --yes && sag dist-upgrade --yes && sag autoremove && sag autoclean'
+
 alias aptis='aptitude search'
 
 # bashrc
