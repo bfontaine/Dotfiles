@@ -99,6 +99,14 @@ fun Use_lisp()
   let b:delimitMate_quotes = "\""
 endfun
 
+fun Use_markdown()
+    call Use_liquid()
+    set tw=80
+    " make titles
+    nnoremap <leader>h yypVr-k
+    nnoremap <leader>H yypVr=k
+endf
+
 fun Use_python()
     "set omnifunc=python3complete#Complete
     set omnifunc=pythoncomplete#Complete
@@ -123,8 +131,8 @@ if has("autocmd")
     autocmd BufNewFile,BufRead *.mustache set filetype=mustache
     autocmd BufNewFile,BufRead *.groovy set filetype=groovy
 
-    autocmd FileType txt,markdown set tw=80
-    autocmd FileType liquid,markdown call Use_liquid()
+    autocmd FileType txt set tw=80
+    autocmd FileType liquid call Use_liquid()
     autocmd FileType lisp,ocaml,scala,sql,yaml call Set_indent(2)
     autocmd FileType css,markdown,sql,vim,txt call Candy()
 
@@ -135,6 +143,7 @@ if has("autocmd")
     autocmd FileType javascript call Use_js()
     autocmd FileType json set nocursorline
     autocmd FileType lisp call Use_lisp()
+    autocmd FileType markdown call Use_markdown()
     autocmd FileType php set omnifunc=phpcomplete#CompletePHP
     autocmd FileType python call Use_python()
     autocmd FileType ruby set omnifunc=rubycomplete#Complete
@@ -165,7 +174,12 @@ inoremap jj <esc>
 
 let mapleader = ","
 
-" dotfiles
+" avoid errors
+nnoremap <f1> <esc>
+inoremap <f1> <esc>
+vnoremap <f1> <esc>
+
+" open dotfiles
 nnoremap <leader>db :tabnew ~/.bashrc<cr>
 nnoremap <leader>dg :tabnew ~/.gitconfig<cr>
 nnoremap <leader>dm :tabnew ~/.muttrc<cr>
