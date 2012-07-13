@@ -30,7 +30,7 @@ set numberwidth=1               " use only 1 column (+ 1 space) while possible
 set nospell                     " do not use spell checking
 set pumheight=10                " size of completion window: 10 lines
 set ruler                       " show the cursor position all the time
-set scrolloff=3                 " keep 3 context lines above/below the cursor
+set scrolloff=5                 " keep 3 context lines above/below the cursor
 set shell=/bin/bash             " set Bash shell
 set shiftwidth=4                " use 4-spaces indentation
 set showcmd                     " show current incomplete command
@@ -174,6 +174,20 @@ inoremap jj <esc>
 
 let mapleader = ","
 
+" get used to hjkl
+nnoremap <up> <nop>
+inoremap <up> <nop>
+vnoremap <up> <nop>
+nnoremap <down> <nop>
+inoremap <down> <nop>
+vnoremap <down> <nop>
+nnoremap <left> <nop>
+inoremap <left> <nop>
+vnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <right> <nop>
+vnoremap <right> <nop>
+
 " avoid errors
 nnoremap <f1> <esc>
 inoremap <f1> <esc>
@@ -229,7 +243,7 @@ nnoremap <leader><space> :set nohlsearch!<cr>
 vnoremap <leader>s :sort u<cr>
 
 " redraw the console screen (<c-l> has been remapped)
-nnoremap <c-r> :redraw<cr>
+nnoremap L :redraw<cr>
 
 " Adding a ';' at the end of the current line
 nnoremap ; A;
