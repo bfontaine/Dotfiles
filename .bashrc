@@ -15,23 +15,16 @@ HISTFILESIZE=2000
 # update the values of LINES and COLUMNS after each command
 shopt -s checkwinsize
 
-# make less more friendly for non-text input files, see lesspipe(1)
+# make less more friendly for non-text input files
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # enable color support of ls/grep/…
-if [ -x /usr/bin/dircolors ]; then
-    alias   grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
+DIRCOLOR=
+[ -x /usr/bin/dircolors ] && DIRCOLOR='--color=auto'
 
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
-
-# ------------------------------------------------------
-#                      PERSO
-# ------------------------------------------------------
 
 function _bash_prompt_command() {
 
@@ -46,7 +39,13 @@ function _bash_prompt_command() {
 
     if [ $? -eq 0 ]; then
         echo $GITSTATUS | grep 'not staged' > /dev/null 2>&1
-        [ $? -eq 0 ] && GITPROMPT="\[\033[1;31m\]+\[\033[0m\]"
+        if [ $? -eq 0 ]; then
+            if [ $DIRCOLOR ]; then
+                GITPROMPT="\[\033[1;31m\]+\[\033[0m\]"
+            else
+                GITPROMPT='+'
+            fi
+        fi
     fi
 
     # replace $HOME with '~'
@@ -54,12 +53,13 @@ function _bash_prompt_command() {
 
     # if pwd > 30 chars, add '…' before and keep only 30 chars
     [ ${#NEWPWD} -gt $l ] && NEWPWD=…${NEWPWD:$((${#NEWPWD}-${l})):${#NEWPWD}}
-
-    # no colors:
-    #PS1="\[\033[G\]\u@\h:${NEWPWD}[\$] ⚡ "
     
     # We assume that we have color support
-    PS1="\u@\h:${NEWPWD}${ROOTPROMPT}${GITPROMPT}\[\033[1;33m\]⚡\[\033[0m\] "
+    if [ $DIRCOLOR ]; then
+        PS1="\u@\h:${NEWPWD}${ROOTPROMPT}${GITPROMPT}\[\033[1;33m\]⚡\[\033[0m\] "
+    else
+        PS1="\u@\h:${NEWPWD}${ROOTPROMPT}${GITPROMPT}⚡ "
+    fi
 }
 
 case $TERM in
@@ -123,11 +123,15 @@ alias cd='cd -P'
 alias du='du -h'
 alias df='df -h'
 
-alias ls='ls -Fhg --color --group-directories-first'
+alias  grep="grep $DIRCOLOR"
+alias fgrep="fgrep $DIRCOLOR"
+alias egrep="egrep $DIRCOLOR"
+
+alias ls="ls -Fhg $DIRCOLOR --group-directories-first"
 alias la='ls -a'
 alias lszip='unzip -l'
 
-function mkcd() { mkdir $1 && cd $1; }
+function mkcd() { mkdir -p $1 && cd $1; }
 function vimtmp() { vim $(tempfile).$1; }
 function prettyjson() { python -mjson.tool < $1; }
 
@@ -185,7 +189,7 @@ if [ $COLUMNS -lt 35 ];
 then
         # small terminal
         PS1='\u@\h:\W\n\$ '
-        alias ls='ls -F --color --group-directories-first';
+        alias ls="ls -F $DIRCOLOR --group-directories-first";
 fi
 
 # Flash cookies
