@@ -188,6 +188,10 @@ let mapleader = ","
 " inoremap <right> <nop>
 " vnoremap <right> <nop>
 
+" move up and down on long wrapped lines
+nnoremap j gj
+nnoremap k gk
+
 " avoid errors
 nnoremap <f1> <esc>
 inoremap <f1> <esc>
@@ -261,6 +265,8 @@ nnoremap <leader>g :GundoToggle<cr>
 nnoremap <leader>n :NERDTreeToggle<cr>
 " Taglist
 nnoremap <leader>t :TlistToggle<cr>
+" Zencoding
+let g:user_zen_expandabbr_key='<leader>h'
 
 
 " -- Command Aliasing --
