@@ -78,12 +78,6 @@ fun Use_html()
     set omnifunc=htmlcomplete#CompleteTags
 endf
 
-fun Use_java()
-    set omnifunc=javacomplete#Complete
-    set foldmethod=indent
-    set foldlevel=1
-endfun
-
 fun Use_js()
     inoremap <leader>l console.log();<left><left>
     set omnifunc=javascriptcomplete#CompleteJS
@@ -112,6 +106,11 @@ fun Use_python()
     set omnifunc=pythoncomplete#Complete
 endf
 
+fun Use_xml()
+    set foldmethod=indent
+    set foldlevel=1
+endfun
+
 fun Candy()
     colorscheme candycode
     :hi CursorLine cterm=NONE ctermbg=DarkCyan ctermfg=NONE
@@ -139,7 +138,7 @@ if has("autocmd")
     autocmd FileType c call Use_c()
     autocmd FileType css call Use_css()
     autocmd FileType html call Use_html()
-    autocmd FileType java call Use_java()
+    autocmd FileType java set omnifunc=javacomplete#Complete
     autocmd FileType javascript call Use_js()
     autocmd FileType json set nocursorline
     autocmd FileType lisp call Use_lisp()
@@ -149,6 +148,7 @@ if has("autocmd")
     autocmd FileType ruby set omnifunc=rubycomplete#Complete
     autocmd FileType sql set omnifunc=sqlcomplete#Complete
     autocmd FileType txt set spell
+    autocmd FileType xml call Use_xml()
     " autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 
     " mutt
