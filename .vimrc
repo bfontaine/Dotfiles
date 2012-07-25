@@ -270,9 +270,11 @@ let g:user_zen_expandabbr_key='<leader>h'
 
 
 " -- Command Aliasing --
+" saving
 command W :w
 command WQ :wq
+command SudoW :w !sudo tee % > /dev/null
+" misc
 command Clr !rm -f *~
 " strip trailing whitespaces
 command Strip :%s/ \+$//gc
-
