@@ -94,6 +94,12 @@ if [ ! -d ${VIM_DIR}/bundle/nerd${plugin} ]; then
 fi
 done
 
+# Powerline : better status line
+if [ ! -d ${VIM_DIR}/bundle/vim-powerline ]; then
+    cd ${VIM_DIR}/bundle/
+    git clone git://github.com/Lokaltog/vim-powerline.git
+fi
+
 # Rope : easier variables/functions renamming for Python
 if [ ! -d ${VIM_DIR}/bundle/rope-vim ]; then
     cd ${VIM_DIR}/bundle/

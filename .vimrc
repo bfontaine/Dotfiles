@@ -263,6 +263,9 @@ let delimitMate_expand_cr=1
 nnoremap <leader>g :GundoToggle<cr>
 " NERDTree
 nnoremap <leader>n :NERDTreeToggle<cr>
+" Powerline
+let g:Powerline_symbols='fancy'
+set laststatus=2
 " Taglist
 nnoremap <leader>t :TlistToggle<cr>
 " Zencoding
