@@ -154,6 +154,9 @@ if has("autocmd")
     " mutt
     autocmd BufRead /tmp/mutt* set tw=72
 
+    " perso
+    autocmd BufNewFile,BufRead */ip7/Website/views/templates/*.html set ft=htmljinja
+
     " files skeletons
     autocmd BufNewFile *.c      0r ~/.vim/skeletons/c.c
     autocmd BufNewFile *.cpp    0r ~/.vim/skeletons/cpp.cpp
