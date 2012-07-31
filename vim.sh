@@ -11,13 +11,22 @@ for dir in after autoload backups bundle colors doc \
     mkdir -p ${VIM_DIR}/$dir
 done
 
+install_if_absent() {
+    [ $# -ne 2 ] && return -1;
+
+    name=${VIM_DIR}/${1%%.vim}.vim
+    url=http://www.vim.org/scripts/download_script.php?src_id=$2
+
+    if [ ! -f "${name}" ]; then
+        echo "downloading ${name}..."
+        wget -q $url -O "${name}";
+    fi
+}
+
 # == plugins ==
 
 # Pathogen
-if [ ! -f ${VIM_DIR}/autoload/pathogen.vim ]; then
-    wget http://www.vim.org/scripts/download_script.php?src_id=16224 \
-        -O ${VIM_DIR}/autoload/pathogen.vim
-fi
+install_if_absent autoload/pathogen 16224
 
 cd ${VIM_DIR}/bundle/
 
@@ -38,14 +47,9 @@ for plugin in abolish afterimage endwise fugitive commentary \
 done
 
 # Alternate : switch quickly between .c & .h files
-if     [ ! -f ${VIM_DIR}/plugin/a.vim ] \
-    || [ ! -f ${VIM_DIR}/doc/alternate.txt ];then
 
-    wget http://www.vim.org/scripts/download_script.php?src_id=7218 \
-        -O ${VIM_DIR}/plugin/a.vim
-    wget http://www.vim.org/scripts/download_script.php?src_id=6347 \
-        -O ${VIM_DIR}/doc/alternate.txt
-fi
+install_if_absent plugin/a 7218
+install_if_absent doc/alternate 6347
 
 # Clang complete : C/C++ autocompletion
 # you need Clang installed (package 'clang' on Ubuntu)
@@ -159,16 +163,10 @@ fi
 # == themes ==
 
 # 256-jungle
-if [ ! -f ${VIM_DIR}/colors/256-jungle.vim ]; then
-    wget http://www.vim.org/scripts/download_script.php?src_id=8685 \
-        -O ${VIM_DIR}/colors/256-jungle.vim
-fi
+install_if_absent colors/256-jungle 8685
 
 # Candycode
-if [ ! -f ${VIM_DIR}/colors/candycode.vim ]; then
-    wget http://www.vim.org/scripts/download_script.php?src_id=6066 \
-        -O ${VIM_DIR}/colors/candycode.vim
-fi
+install_if_absent colors/candycode 6066
 
 # Molokai
 if [ ! -f ${VIM_DIR}/colors/molokai.vim ]; then
@@ -187,11 +185,7 @@ fi
 # == syntax ==
 
 # Brainfuck
-if [ ! -f ${VIM_DIR}/syntax/brainfuck.vim ]; then
-    cd ${VIM_DIR}/syntax/
-    wget http://www.vim.org/scripts/download_script.php?src_id=14054 \
-        -O brainfuck.vim
-fi
+install_if_absent syntax/brainfuck 14054
 
 # CoffeeScript
 if [ ! -d ${VIM_DIR}/bundle/vim-coffee-script ]; then
@@ -209,16 +203,10 @@ if [ ! -f ${VIM_DIR}/after/syntax/css.vim ]; then
 fi
 
 # Forth
-if [ ! -f ${VIM_DIR}/syntax/forth.vim ]; then
-    wget http://www.vim.org/scripts/download_script.php?src_id=18049 \
-        -O ${VIM_DIR}/syntax/forth.vim
-fi
+install_if_absent syntax/forth 18049
 
 # Io
-if [ ! -f ${VIM_DIR}/syntax/io.vim ]; then
-    wget http://www.vim.org/scripts/download_script.php?src_id=8129 \
-        -O ${VIM_DIR}/syntax/io.vim
-fi
+install_if_absent syntax/io 8129
 
 if [ ! -f ${VIM_DIR}/indent/io.vim ]; then
     wget https://raw.github.com/xhr/vim-io/master/indent/io.vim \
@@ -239,21 +227,11 @@ if     [ ! -f ${VIM_DIR}/syntax/javascript.vim ] \
 fi
 
 # Jinja
-if [ ! -f ${VIM_DIR}/syntax/jinja.vim ]; then
-    wget http://www.vim.org/scripts/download_script.php?src_id=8666 \
-        -O ${VIM_DIR}/syntax/jinja.vim
-fi
-
-if [ ! -f ${VIM_DIR}/syntax/htmljinja.vim ]; then
-    wget http://www.vim.org/scripts/download_script.php?src_id=6961 \
-        -O ${VIM_DIR}/syntax/htmljinja.vim
-fi
+install_if_absent syntax/jinja 8666
+install_if_absent syntax/htmljinja 6961
 
 # JSON
-if [ ! -f ${VIM_DIR}/syntax/json.vim ]; then
-    wget http://www.vim.org/scripts/download_script.php?src_id=10853 \
-        -O ${VIM_DIR}/syntax/json.vim
-fi
+install_if_absent syntax/json 10853
 
 # Mustache
 if [ ! -d ${VIM_DIR}/bundle/mustache ]; then
@@ -290,10 +268,7 @@ if [ ! -f ${VIM_DIR}/doc/textile.txt ]; then
 fi
 
 # Asciidoc
-if [ ! -f ${VIM_DIR}/syntax/asciidoc.vim ]; then
-    wget http://www.vim.org/scripts/download_script.php?src_id=6891 \
-        -O ${VIM_DIR}/syntax/asciidoc.vim
-fi
+install_if_absent syntax/asciidoc 6891
 
 # == snippets (for SnipMate plugin) ==
 
