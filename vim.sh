@@ -238,6 +238,17 @@ if     [ ! -f ${VIM_DIR}/syntax/javascript.vim ] \
     rm -f javascript.zip
 fi
 
+# Jinja
+if [ ! -f ${VIM_DIR}/syntax/jinja.vim ]; then
+    wget http://www.vim.org/scripts/download_script.php?src_id=8666 \
+        -O ${VIM_DIR}/syntax/jinja.vim
+fi
+
+if [ ! -f ${VIM_DIR}/syntax/htmljinja.vim ]; then
+    wget http://www.vim.org/scripts/download_script.php?src_id=6961 \
+        -O ${VIM_DIR}/syntax/htmljinja.vim
+fi
+
 # JSON
 if [ ! -f ${VIM_DIR}/syntax/json.vim ]; then
     wget http://www.vim.org/scripts/download_script.php?src_id=10853 \
