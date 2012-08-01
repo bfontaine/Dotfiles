@@ -204,7 +204,6 @@ fun Use_markdown()
     " make titles
     inoremap <leader>h yypVr-k
     inoremap <leader>H yypVr=k
-    inoremap <leader>H yypVr=k
 endf
 
 fun Candy()
@@ -212,8 +211,7 @@ fun Candy()
     :hi CursorLine cterm=NONE ctermbg=DarkCyan ctermfg=NONE
 endf
 
-
-if has("au")
+if has("autocmd")
 
     " filetypes
     " - general
@@ -265,4 +263,4 @@ if has("au")
     au BufNewFile *.rb     0r ~/.vim/skeletons/ruby.rb
     au BufNewFile *.sh     0r ~/.vim/skeletons/bash.sh
 
-endif " has("au")
+endif " has("autocmd")
