@@ -23,6 +23,7 @@ set ignorecase                  " ignore case for '/regex' search
 set incsearch                   " incremental search with '/regex' search
 set linebreak                   " don't wrap text in the middle of a word
 set magic                       " set magic for regex
+set modelines=0                 " no modelines
 set noautoread                  " don't re-read a file changed outside of Vim
 set nolazyredraw                " turn off lazy redraw
 set number                      " display line numbers
