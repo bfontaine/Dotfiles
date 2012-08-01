@@ -31,6 +31,8 @@ function _bash_prompt_command() {
     local NEWPWD=$PWD
     local l=30
     local GITPROMPT=' '
+    local TMP=
+    local GITBR=
     local ROOTPROMPT=
 
     [ $EUID -eq 0 ] && ROOTPROMPT='[#]'
@@ -46,18 +48,30 @@ function _bash_prompt_command() {
                 GITPROMPT='+'
             fi
         fi
+
+        GITBR=$(git describe --contains --all HEAD 2>/dev/null)
+
+        if [ $? -eq 0 ]; then
+            if [ $DIRCOLOR ]; then
+                GITPROMPT=" \033[0;36m{$GITBR}\[\033[0m\]$GITPROMPT";
+            else
+                GITPROMPT=" {$GITBR}$GITPROMPT";
+            fi
+        fi
+
     fi
 
     # replace $HOME with '~'
-    [ ${PWD:0:${#HOME}} == $HOME ] && NEWPWD="~${PWD##$HOME}"
+    NEWPWD=${PWD//$HOME/\~}
 
     # if pwd > 30 chars, add '…' before and keep only 30 chars
     [ ${#NEWPWD} -gt $l ] && NEWPWD=…${NEWPWD:$((${#NEWPWD}-${l})):${#NEWPWD}}
     
-    # We assume that we have color support
     if [ $DIRCOLOR ]; then
+        # colors
         PS1="\u@\h:${NEWPWD}${ROOTPROMPT}${GITPROMPT}\[\033[1;33m\]⚡\[\033[0m\] "
     else
+        # no colors
         PS1="\u@\h:${NEWPWD}${ROOTPROMPT}${GITPROMPT}⚡ "
     fi
 }
