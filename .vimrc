@@ -215,8 +215,6 @@ inoremap <leader>w <esc>:w<cr>a
 
 " moving into the file
 inoremap <leader>z <esc>zza
-inoremap <leader>o <esc>o
-inoremap <leader>O <esc>O
 inoremap <leader>A <esc>A
 nnoremap <leader>z :set scrolloff=100<cr>
 nnoremap <leader>Z :set scrolloff=3<cr>
