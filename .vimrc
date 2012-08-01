@@ -134,7 +134,7 @@ if has("autocmd")
     autocmd FileType txt set tw=80
     autocmd FileType liquid call Use_liquid()
     autocmd FileType lisp,ocaml,scala,sql,yaml call Set_indent(2)
-    autocmd FileType css,markdown,sql,vim,txt call Candy()
+    autocmd FileType css,javascript,markdown,sql,vim,txt call Candy()
 
     autocmd FileType c call Use_c()
     autocmd FileType css call Use_css()
