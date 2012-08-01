@@ -51,128 +51,12 @@ set wildignore=*~,*.swp,*.class " files to ignore when tab completing
 set wildignore+=*.o
 set wildmenu                    " show completion possibilities in command mode
 
-
-" -- functions --
-
-fun Set_indent(width)
-    execute "set tabstop=".a:width
-    execute "set softtabstop=".a:width
-    execute "set shiftwidth=".a:width
-endf
-
-fun Use_c()
-    set omnifunc=ccomplete#Complete
-    " Need 'alternate' plugin
-    nnoremap <leader>s :A<cr>
-endf
-
-fun Use_css()
-    inoremap : :;<left>
-    set omnifunc=csscomplete#CompleteCSS
-endf
-
-fun Use_html()
-    " puts a 'Lorem Ipsum' <p> block on the line
-    " under the current one. You need 'lorem' program,
-    " download the package 'libtext-lorem-perl' for Ubuntu
-    nnoremap <leader>l o<p><esc>:r!lorem<cr>kJxA</p><esc>
-    set omnifunc=htmlcomplete#CompleteTags
-endf
-
-fun Use_js()
-    inoremap <leader>l console.log();<left><left>
-    set omnifunc=javascriptcomplete#CompleteJS
-endf
-
-fun Use_liquid()
-   inoremap <leader>b {{  }}<left><left><left>
-   inoremap <leader>B {{%  %}}<left><left><left><left>
-endf
-
-fun Use_lisp()
-  " remove ' and ` from autoclosed quotes
-  let b:delimitMate_quotes = "\""
-endfun
-
-fun Use_markdown()
-    call Use_liquid()
-    set tw=80
-    " make titles
-    nnoremap <leader>h yypVr-k
-    nnoremap <leader>H yypVr=k
-endf
-
-fun Use_python()
-    "set omnifunc=python3complete#Complete
-    set omnifunc=pythoncomplete#Complete
-endf
-
-fun Use_xml()
-    set foldmethod=indent
-    set foldlevel=1
-endfun
-
-fun Candy()
-    colorscheme candycode
-    :hi CursorLine cterm=NONE ctermbg=DarkCyan ctermfg=NONE
-endf
+" -- Colorscheme
 
 colorscheme 256-jungle
 :hi CursorLine cterm=NONE ctermbg=black ctermfg=NONE
 
-if has("autocmd")
-
-    " files type
-    autocmd BufNewFile,BufRead *.bf,*.brainfuck set filetype=brainfuck
-    autocmd BufNewFile,BufRead *.ft,*.fh,*.fth set filetype=forth
-    autocmd BufNewFile,BufRead *.io set filetype=io
-    autocmd BufNewFile,BufRead *.json set filetype=json 
-    autocmd BufNewFile,BufRead *.liquid set filetype=liquid
-    autocmd BufNewFile,BufRead *.mustache set filetype=mustache
-    autocmd BufNewFile,BufRead *.groovy set filetype=groovy
-
-    autocmd FileType txt set tw=80
-    autocmd FileType liquid call Use_liquid()
-    autocmd FileType lisp,ocaml,scala,sql,yaml call Set_indent(2)
-    autocmd FileType css,javascript,markdown,sql,vim,txt call Candy()
-
-    autocmd FileType c call Use_c()
-    autocmd FileType css call Use_css()
-    autocmd FileType html call Use_html()
-    autocmd FileType java set omnifunc=javacomplete#Complete
-    autocmd FileType javascript call Use_js()
-    autocmd FileType json set nocursorline
-    autocmd FileType lisp call Use_lisp()
-    autocmd FileType markdown call Use_markdown()
-    autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-    autocmd FileType python call Use_python()
-    autocmd FileType ruby set omnifunc=rubycomplete#Complete
-    autocmd FileType sql set omnifunc=sqlcomplete#Complete
-    autocmd FileType txt set spell
-    autocmd FileType xml call Use_xml()
-    " autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-
-    " mutt
-    autocmd BufRead /tmp/mutt* set tw=72
-
-    " perso
-    autocmd BufNewFile,BufRead */ip7/Website/views/templates/*.html set ft=htmljinja
-
-    " files skeletons
-    autocmd BufNewFile *.c      0r ~/.vim/skeletons/c.c
-    autocmd BufNewFile *.cpp    0r ~/.vim/skeletons/cpp.cpp
-    autocmd BufNewFile *.groovy 0r ~/.vim/skeletons/groovy.groovy
-    autocmd BufNewFile *.html   0r ~/.vim/skeletons/html.html
-    autocmd BufNewFile *.io     0r ~/.vim/skeletons/io.io
-    autocmd BufNewFile *.pl     0r ~/.vim/skeletons/perl.pl
-    autocmd BufNewFile *.php    0r ~/.vim/skeletons/php.php
-    autocmd BufNewFile *.py     0r ~/.vim/skeletons/python.py
-    autocmd BufNewFile *.rb     0r ~/.vim/skeletons/ruby.rb
-    autocmd BufNewFile *.sh     0r ~/.vim/skeletons/bash.sh
-
-endif " has("autocmd")
-
-" -- Mappings --
+" -- Global Mappings --
 
 inoremap jj <esc>
 
@@ -271,7 +155,7 @@ set laststatus=2
 " Taglist
 nnoremap <leader>t :TlistToggle<cr>
 " Zencoding
-let g:user_zen_expandabbr_key='<leader>h'
+au FileType html,xhtml let g:user_zen_expandabbr_key='<leader>h'
 
 
 " -- Command Aliasing --
@@ -283,3 +167,102 @@ command SudoW :w !sudo tee % > /dev/null
 command Clr !rm -f *~
 " strip trailing whitespaces
 command Strip :%s/ \+$//gc
+
+" -- functions --
+
+fun Set_indent(width)
+    execute "set tabstop=".a:width
+    execute "set softtabstop=".a:width
+    execute "set shiftwidth=".a:width
+endf
+
+"fun Load_skeleton(name)
+"    if glob("~/.vim/skeletons/".a:name) != ""
+"        execute "0r ~/.vim/skeletons/".a:name
+"    endif
+"endf
+
+fun Use_css()
+    inoremap : :;<left>
+    set ofu=csscomplete#CompleteCSS
+endf
+
+fun Use_html()
+    " puts a 'Lorem Ipsum' <p> block on the line
+    " under the current one. You need 'lorem' program,
+    " download the package 'libtext-lorem-perl' for Ubuntu
+    nnoremap <leader>l o<p><esc>:r!lorem<cr>kJxA</p><esc>
+    set ofu=htmlcomplete#CompleteTags
+endf
+
+fun Use_js()
+    inoremap <leader>c console.log();<left><left>
+    set ofu=javascriptcomplete#CompleteJS
+endf
+
+fun Use_markdown()
+    " make titles
+    inoremap <leader>h yypVr-k
+    inoremap <leader>H yypVr=k
+    inoremap <leader>H yypVr=k
+endf
+
+fun Candy()
+    colorscheme candycode
+    :hi CursorLine cterm=NONE ctermbg=DarkCyan ctermfg=NONE
+endf
+
+
+if has("au")
+
+    " filetypes
+    " - general
+    au BufNewFile,BufRead *.bf,*.brainfuck set ft=brainfuck
+    au BufNewFile,BufRead *.ft,*.fh,*.fth  set ft=forth
+    au BufNewFile,BufRead *.groovy         set ft=groovy
+    au BufNewFile,BufRead *.io             set ft=io
+    au BufNewFile,BufRead *.json           set ft=json
+    au BufNewFile,BufRead *.liquid         set ft=liquid
+    au BufNewFile,BufRead *.mustache       set ft=mustache
+    " - perso
+    au BufNewFile,BufRead */templates/*.html set ft=htmljinja
+
+    " autocomplete
+    au FileType c          set ofu=ccomplete#Complete
+    au FileType java       set ofu=javacomplete#Complete
+    au FileType php        set ofu=phpcomplete#CompletePHP
+    au FileType python     set ofu=pythoncomplete#Complete
+    au FileType ruby       set ofu=rubycomplete#Complete
+    au FileType sql        set ofu=sqlcomplete#Complete
+    au FileType xml        set ofu=xmlcomplete#CompleteTags
+
+    " filetypes settings
+    au FileType markdown,txt set tw=80
+    au FileType lisp,ocaml,scala,sql,yaml call Set_indent(2)
+    au FileType css,javascript,markdown,sql,vim,txt call Candy()
+
+    au FileType css        call Use_css()
+    au FileType html       call Use_html()
+    au FileType javascript call Use_js()
+    au FileType json       set nocursorline
+    au FileType lisp       let b:delimitMate_quotes = "\""
+    au FileType markdown   call Use_markdown()
+    au FileType txt        set spell
+    au FileType xml        set fdm=indent fdl=1
+
+    " mutt
+    au BufRead /tmp/mutt* set tw=72
+
+    " files skeletons
+    au BufNewFile *.c      0r ~/.vim/skeletons/c.c
+    au BufNewFile *.cpp    0r ~/.vim/skeletons/cpp.cpp
+    au BufNewFile *.groovy 0r ~/.vim/skeletons/groovy.groovy
+    au BufNewFile *.html   0r ~/.vim/skeletons/html.html
+    au BufNewFile *.io     0r ~/.vim/skeletons/io.io
+    au BufNewFile *.pl     0r ~/.vim/skeletons/perl.pl
+    au BufNewFile *.php    0r ~/.vim/skeletons/php.php
+    au BufNewFile *.py     0r ~/.vim/skeletons/python.py
+    au BufNewFile *.rb     0r ~/.vim/skeletons/ruby.rb
+    au BufNewFile *.sh     0r ~/.vim/skeletons/bash.sh
+
+endif " has("au")
