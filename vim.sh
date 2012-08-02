@@ -148,6 +148,14 @@ if     [ ! -f ${VIM_DIR}/plugin/taglist.vim ] \
     mv doc/taglist.txt ${VIM_DIR}/doc/taglist.txt
 fi
 
+# Textobj-word-column: add a new text-object: word-based column
+if     [ ! -d ${VIM_DIR}/bundle/textobj-word-column ]; then
+
+    cd ${VIM_DIR}/bundle
+    git clone https://github.com/coderifous/textobj-word-column.vim.git textobj-word-column
+    rm -f textobj-word-column/README*
+fi
+
 # Zencoding : HTML coding made faster
 if     [ ! -f ${VIM_DIR}/plugin/zencoding.vim ] \
     || [ ! -f ${VIM_DIR}/autoload/zencoding.vim ]; then
