@@ -171,7 +171,7 @@ alias reload='source ~/.bashrc'
 
 # git
 # see github.com/icefox/git-achievements
-alias git='git-achievements'
+[ $(which git-achievements) ] && alias git='git-achievements'
 
 # one-letter shortcuts
 alias c=cat
