@@ -93,7 +93,7 @@ nnoremap <leader>ds :tabnew ~/.ssh/config<cr>
 nnoremap <leader>dv :tabnew ~/.vimrc<cr>
 
 " toggle paste mode
-inoremap <leader>p <esc>:set paste!<cr>a
+nnoremap <leader>p :set paste!<cr>
 
 " saving
 inoremap <leader>w <esc>:w<cr>a
@@ -103,6 +103,7 @@ inoremap <leader>z <esc>zza
 inoremap <leader>A <esc>A
 nnoremap <leader>z :set scrolloff=100<cr>
 nnoremap <leader>Z :set scrolloff=3<cr>
+nnoremap <space> <c-d>
 
 " command line like Bash
 cnoremap <c-a> <Home>
