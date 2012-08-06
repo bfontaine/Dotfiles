@@ -153,10 +153,13 @@ nnoremap <leader>n :NERDTreeToggle<cr>
 " Powerline
 let g:Powerline_symbols='fancy'
 set laststatus=2
+" Tabular
+vnoremap <leader>t :Tabular<space>
 " Taglist
 nnoremap <leader>t :TlistToggle<cr>
 " Zencoding
-au FileType html,xhtml let g:user_zen_expandabbr_key='<leader>h'
+" au FileType htmljinja,html,xhtml"
+let g:user_zen_expandabbr_key='<leader>h'
 
 
 " -- Command Aliasing --
@@ -203,8 +206,8 @@ endf
 
 fun Use_markdown()
     " make titles
-    inoremap <leader>h yypVr-k
-    inoremap <leader>H yypVr=k
+    inoremap <leader>H- yypVr-k
+    inoremap <leader>H= yypVr=k
 endf
 
 fun Candy()
