@@ -9,8 +9,8 @@ HISTCONTROL=ignoredups:ignorespace
 shopt -s histappend
 
 # history length
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=10000
+HISTFILESIZE=20000
 
 # update the values of LINES and COLUMNS after each command
 shopt -s checkwinsize
