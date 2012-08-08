@@ -2,15 +2,17 @@
     name = Baptiste Fontaine
     email = batifon@yahoo.fr
 [color]
-    diff = auto
-    status = auto
-    branch = auto
 	ui = auto
+[color "branch"]
+    current = bold
 [alias]
     st = status
     br = branch
     ci = commit
+    cm = commit -m
     co = checkout
+    f  = fetch
+    fo = fetch origin
     fp = format-patch
     lg = log --graph --pretty=format:'%Cred%h%Creset - %C(blue bold)%an%Creset: %C(cyan)%s%Creset %Cgreen(%ar)%Creset'
     lgs = log --graph --pretty=format:'%Cred%h%Creset: %s' # short
@@ -19,10 +21,9 @@
 [core]
     pager = cat
     editor = vim
-[github]
-    user = bfontaine
-    token = 0ec97a058a8c1ff7a93e70ef2ee6b65a
 [branch]
 	autosetupmerge = true
 [rerere]
 	enabled = true
+[push]
+	default = tracking
