@@ -243,6 +243,8 @@ if has("autocmd")
     au FileType lisp,ocaml,scala,sql,yaml call Set_indent(2)
     au FileType css,javascript,markdown,sql,vim,txt call Candy()
 
+    au FileType ruby,coffeescript nnoremap <leader>s viwc#{<c-r>"}<esc>
+
     au FileType css        call Use_css()
     au FileType html       call Use_html()
     au FileType javascript call Use_js()
