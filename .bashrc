@@ -35,6 +35,8 @@ function _bash_prompt_command() {
     local GITBR=
     local ROOTPROMPT=
 
+    [ "$PROMPT_DIR_LEN" ] && l=$PROMPT_DIR_LEN;
+
     [ $EUID -eq 0 ] && ROOTPROMPT='[#]'
 
     local GITSTATUS=$(git status 2> /dev/null)
