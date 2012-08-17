@@ -176,9 +176,11 @@ alias reload='source ~/.bashrc'
 [ $(which git-achievements) ] && alias git='git-achievements'
 
 # one-letter shortcuts
-alias c=cat
+alias c=cd
 alias g=git
 alias l=ls
+alias m=mv
+alias v=vim
 
 # apps
 alias chromium='chromium-browser'
