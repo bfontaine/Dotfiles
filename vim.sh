@@ -248,8 +248,13 @@ if [ ! -d ${VIM_DIR}/bundle/mustache ]; then
     git submodule add git://github.com/juvenn/mustache.vim.git bundle/mustache
 fi
 
-# Scala
+# Omgrofl
+if [ ! -f ${VIM_DIR}/syntax/omgrofl.vim ]; then
+    wget https://raw.github.com/bfontaine/omgrofl.vim/master/omgrofl.vim \
+        -O ${VIM_DIR}/syntax/omgrofl.vim
+fi
 
+# Scala
 for dir in ftdetect indent syntax; do
 
     if [ ! -f ${VIM_DIR}/${dir}/scala.vim ]; then
