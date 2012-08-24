@@ -222,6 +222,7 @@ if has("autocmd")
     au BufNewFile,BufRead *.bf,*.brainfuck set ft=brainfuck
     au BufNewFile,BufRead *.ft,*.fh,*.fth  set ft=forth
     au BufNewFile,BufRead *.groovy         set ft=groovy
+    au BufNewFile,BufRead *.gs             set ft=golfscript
     au BufNewFile,BufRead *.io             set ft=io
     au BufNewFile,BufRead *.json           set ft=json
     au BufNewFile,BufRead *.liquid         set ft=liquid
