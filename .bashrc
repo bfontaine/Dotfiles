@@ -177,9 +177,11 @@ alias reload='source ~/.bashrc'
 
 # one-letter shortcuts
 alias c=cd
+alias f="find . -name"
 alias g=git
 alias l=ls
 alias m=mv
+alias s=sudo
 alias v=vim
 
 # apps
