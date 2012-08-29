@@ -184,6 +184,9 @@ alias m=mv
 alias s=sudo
 alias v=vim
 
+# two-letters ones
+alias ct=cat
+
 # apps
 alias chromium='chromium-browser'
 alias minecraft='padsp java -jar ~/Applications/minecraft.jar'
