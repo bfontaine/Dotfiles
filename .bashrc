@@ -18,6 +18,8 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
+[ -f ~/.private_bashrc ] && . ~/.private_bashrc;
+
 # enable color support of ls/grep/…
 DIRCOLOR=
 [ -x /usr/bin/dircolors ] && DIRCOLOR='--color=auto'
