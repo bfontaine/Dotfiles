@@ -48,7 +48,7 @@ set title                       " show title in console title bar
 set undodir=~/.vim/backups      " keep undo history accross sessions
 set undofile                    " see 'undodir'
 set wildignore=*~,*.swp,*.class " files to ignore when tab completing
-set wildignore+=*.o
+set wildignore+=*.o,.git/**
 set wildmenu                    " show completion possibilities in command mode
 
 " -- Colorscheme
@@ -143,6 +143,11 @@ nnoremap ; A;
 nnoremap <leader>$ :set list!<cr>
 
 " - plugins options/mappings -
+
+" Command T
+nnoremap <leader>f :CommandT<CR>
+let g:CommandTMaxFiles=2000
+let g:CommandTMaxHeight=25
 
 " DelimitMate
 let delimitMate_expand_cr=1

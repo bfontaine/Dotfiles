@@ -62,6 +62,15 @@ if     [ ! -f ${VIM_DIR}/plugin/clang_complete.vim ]; then
     rm -Rf clang_complete
 fi
 
+# Command-T : Quickly open files
+if [ ! -d ${VIM_DIR}/bundle/command-t ]; then
+    cd ${VIM_DIR}
+    git clone git://git.wincent.com/command-t.git bundle/command-t
+    cd ${VIM_DIR}/bundle/command-t/ruby/command-t
+    ruby extconf.rb
+    make
+fi
+
 # DelimitMate : automatic closing of quotes, parenthesis, brackets, etc.
 if     [ ! -f ${VIM_DIR}/doc/delimitMate.txt ] \
     || [ ! -f ${VIM_DIR}/plugin/delimitMate.vim ];then
