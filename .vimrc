@@ -7,7 +7,6 @@ filetype on
 filetype plugin indent on
 
 set autoindent                  " auto-indentation
-set autoread                    " auto re-read when a file is changed outside
 set backspace=indent,eol,start  " allow backspace on everything in insert mode
 set backup                      " keep a backup file
 " set colorcolumn=80            " color 80th column
