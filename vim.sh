@@ -223,10 +223,12 @@ fi
 install_if_absent syntax/forth 18049
 
 # Go
-if [ ! -f ${VIM_DIR}/syntax/go.vim ]; then
-    wget https://raw.github.com/jnwhiteh/vim-golang/master/syntax/go.vim \
-        -O ${VIM_DIR}/syntax/go.vim
-fi
+for f in syntax indent ftdetect; do
+    if [ ! -f ${VIM_DIR}/syntax/go.vim ]; then
+        wget https://raw.github.com/jnwhiteh/vim-golang/master/$f/go.vim \
+            -O ${VIM_DIR}/$f/go.vim
+    fi
+done
 
 # Io
 install_if_absent syntax/io 8129
