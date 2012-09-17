@@ -191,7 +191,6 @@ endf
 "endf
 
 fun Use_css()
-    inoremap : :;<left>
     set ofu=csscomplete#CompleteCSS
 endf
 
