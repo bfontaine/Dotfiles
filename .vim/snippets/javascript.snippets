@@ -66,8 +66,26 @@ snippet :f
 snippet timeout
 	window.setTimeout(function() {${2}}, ${1:10};
 # Get Elements
-snippet get
-	document.getElementsBy${1:TagName}('${2}')${3}
-# Get Element
-snippet gett
-	document.getElementBy${1:Id}('${2}')${3}
+snippet gid
+	document.getElementById('${1}')${2}
+snippet gclass
+	document.getElementsByClassName('${1}')${2}
+snippet gtag
+	document.getElementsByTagName('${1}')${2}
+# RequireJS/Node
+snippet r
+	var ${1:buster} = require('${2:$1}');${3}
+# jQuery DOMready
+snippet $f
+	$(function() {
+		
+		${1:// code here}
+
+	});
+# Buster JS
+snippet btc
+	buster.testCase('${1:name}', {
+		'${2:desc}' : function() {
+			${3:// code here}
+		}
+	});${4}
