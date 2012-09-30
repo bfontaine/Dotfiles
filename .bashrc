@@ -179,7 +179,7 @@ alias reload='source ~/.bashrc'
 
 # one-letter shortcuts
 alias c=cd
-alias f="find . -name"
+alias f='find . -name'
 alias g=git
 alias l=ls
 alias m=mv
@@ -188,6 +188,7 @@ alias v=vim
 
 # two-letters ones
 alias ct=cat
+alias gr=grep
 
 # apps
 alias chromium='chromium-browser'
