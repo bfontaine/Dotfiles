@@ -154,6 +154,8 @@ let delimitMate_expand_cr=1
 nnoremap <leader>g :GundoToggle<cr>
 " NERDTree
 nnoremap <leader>n :NERDTreeToggle<cr>
+" Numbers
+nnoremap <F3> :NumbersToggle<cr>
 " Powerline
 let g:Powerline_symbols='fancy'
 set laststatus=2

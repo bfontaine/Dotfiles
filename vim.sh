@@ -107,6 +107,12 @@ if [ ! -d ${VIM_DIR}/bundle/nerd${plugin} ]; then
 fi
 done
 
+# Numbers : better line numbers
+if [ ! -d ${VIM_DIR}/bundle/numbers ]; then
+    git clone https://github.com/myusuf3/numbers.vim.git \
+        ~/.vim/bundle/numbers
+fi
+
 # Powerline : better status line
 if [ ! -d ${VIM_DIR}/bundle/vim-powerline ]; then
     cd ${VIM_DIR}/bundle/
