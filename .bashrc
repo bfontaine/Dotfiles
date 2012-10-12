@@ -95,7 +95,7 @@ ignoreeof=1
 
 # variables
 export EDITOR='vim'
-export PS2='... '
+export PS2='… '
 export PATH="$PATH:$HOME/bin"
 
 export DEBFULLNAME='Baptiste Fontaine'
