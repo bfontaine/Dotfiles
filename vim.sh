@@ -31,15 +31,13 @@ install_if_absent autoload/pathogen 16224
 cd ${VIM_DIR}/bundle/
 
 # abolish    : String replacement with word variants
-# afterimage : edit small images with vim
 # endwise    : add 'end' in Ruby files when using if/def/…
 # fugitive   : Git wrapper
-# commentary : Universal shortcut to comment (programing)
 # haml       : HAML, Sass, SCSS syntax
 # markdown   : Markdown syntax
 # surround   : parentheses, quotes, XML/HTML tags
 
-for plugin in abolish afterimage endwise fugitive commentary \
+for plugin in abolish endwise fugitive \
         haml markdown surround; do
     if [ ! -d ${VIM_DIR}/bundle/vim-${plugin} ]; then
         git clone git://github.com/tpope/vim-${plugin}.git
@@ -99,13 +97,10 @@ if     [ ! -f ${VIM_DIR}/plugin/matchit.vim ] \
 fi
 
 # NerdTree : File tree
-# NerdCommenter : Mapppings for comments
-for plugin in tree commenter; do
-if [ ! -d ${VIM_DIR}/bundle/nerd${plugin} ]; then
+if [ ! -d ${VIM_DIR}/bundle/nerdtree ]; then
     cd ${VIM_DIR}/bundle/
-    git clone git://github.com/scrooloose/nerd${plugin}.git
+    git clone git://github.com/scrooloose/nerdtree.git
 fi
-done
 
 # Numbers : better line numbers
 if [ ! -d ${VIM_DIR}/bundle/numbers ]; then
@@ -119,29 +114,12 @@ if [ ! -d ${VIM_DIR}/bundle/vim-powerline ]; then
     git clone git://github.com/Lokaltog/vim-powerline.git
 fi
 
-# Rope : easier variables/functions renamming for Python
-if [ ! -d ${VIM_DIR}/bundle/rope-vim ]; then
-    cd ${VIM_DIR}/bundle/
-    git clone git://github.com/klen/rope-vim.git
-fi
-
 # SnipMate : allow TextMate's snippets in Vim
 if [ ! -f ${VIM_DIR}/autoload/snipMate.vim ]; then
     wget http://www.vim.org/scripts/download_script.php?src_id=11006 \
         -O /tmp/sm.zip
     unzip /tmp/sm.zip -d ~/.vim
 fi
-
-## Supertab : tab-completion (instead of <c-x><c-n>)
-#if     [ ! -f ${VIM_DIR}/plugin/supertab.vim ] \
-#    || [ ! -f ${VIM_DIR}/doc/supertab.txt ]; then
-#
-#    cd /tmp/
-#    git clone git://github.com/ervandew/supertab.git
-#    mv supertab/doc/supertab.txt ${VIM_DIR}/doc/
-#    mv supertab/plugin/supertab.vim ${VIM_DIR}/plugin/
-#
-#fi
 
 # Tabular : text line up made easy
 if [ ! -d ${VIM_DIR}/bundle/tabular ]; then
