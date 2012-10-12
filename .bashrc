@@ -8,9 +8,9 @@ HISTCONTROL=ignoredups:ignorespace
 # append to the history file, don't overwrite it
 shopt -s histappend
 
-# history length
-HISTSIZE=10000
-HISTFILESIZE=20000
+# history length (very large for stats)
+HISTSIZE=20000
+HISTFILESIZE=30000
 
 # update the values of LINES and COLUMNS after each command
 shopt -s checkwinsize
@@ -150,27 +150,23 @@ alias la='ls -a'
 alias lszip='unzip -l'
 
 function mkcd() { mkdir -p $1 && cd $1; }
-function vimtmp() { vim $(tempfile).$1; }
 function prettyjson() { python -mjson.tool < $1; }
 
 alias xclip='xclip -selection "clipboard"'
 
 # perso
 alias up7c='~/Documents/Programmation/UP7_Tools/up7connect.rb'
-# see launchpad.net/clr
-alias clr='clr -vd'
 
 alias sag='sudo apt-get'
 alias sai='sudo apt-get install'
 alias saupg='sudo apt-get upgrade'
 alias saupd='sudo apt-get update'
 
-alias maintenance='saupd; saupg --yes && sag dist-upgrade --yes && sag autoremove && sag autoclean'
+alias maintenance='saupd; saupg --yes && sag dist-upgrade --yes && sag autoremove --yes && sag autoclean'
 
 alias aptis='aptitude search'
 
 # bashrc
-alias openbashrc='vim ~/.bashrc'
 alias reload='source ~/.bashrc'
 
 # git
@@ -196,7 +192,7 @@ alias minecraft='padsp java -jar ~/Applications/minecraft.jar'
 alias MoM='~/Applications/MoM/MoM'
 alias gephi='~/Applications/gephi/bin/gephi'
 alias yuicompressor='java -jar ~/Applications/yuicompressor-2.4.7.jar'
-[ -x ~/Applications/tetris ] && alias tetris="~/Applications/tetris";
+[ -x ~/Applications/tetris ] && alias tetris='~/Applications/tetris';
 
 alias sl='sl -e'
 alias LS='LS -e'
@@ -209,12 +205,12 @@ done
 # Internet
 alias flushDNS='sudo rndc flush'
 alias pker='ping -c 1 -w 1 kernel.org'
-resolve() { curl -Is $1 | sed -n 's/^Location: //p'; }
 
 if [ $COLUMNS -lt 35 ];
 then
         # small terminal
-        PS1='\u@\h:\W\n\$ '
+        export PROMPT_COMMAND=
+        PS1='∞ '
         alias ls="ls -F $DIRCOLOR --group-directories-first";
 fi
 
