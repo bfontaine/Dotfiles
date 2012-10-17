@@ -86,6 +86,7 @@ vnoremap <f1> <esc>
 
 " open dotfiles
 nnoremap <leader>db :tabnew ~/.bashrc<cr>
+nnoremap <leader>dc :tabnew ~/.curlrc<cr>
 nnoremap <leader>dg :tabnew ~/.gitconfig<cr>
 nnoremap <leader>dm :tabnew ~/.muttrc<cr>
 nnoremap <leader>ds :tabnew ~/.ssh/config<cr>
