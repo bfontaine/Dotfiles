@@ -175,16 +175,17 @@ alias reload='source ~/.bashrc'
 
 # one-letter shortcuts
 alias c=cd
+alias e=egrep
 alias f='find . -name'
 alias g=git
 alias l=ls
 alias m=mv
+alias p=cp
 alias s=sudo
 alias v=vim
 
 # two-letters ones
 alias ct=cat
-alias gr=grep
 
 # apps
 alias chromium='chromium-browser'
