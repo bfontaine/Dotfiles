@@ -193,7 +193,9 @@ alias minecraft='padsp java -jar ~/Applications/minecraft.jar'
 alias MoM='~/Applications/MoM/MoM'
 alias gephi='~/Applications/gephi/bin/gephi'
 alias yuicompressor='java -jar ~/Applications/yuicompressor-2.4.7.jar'
-[ -x ~/Applications/tetris ] && alias tetris='~/Applications/tetris';
+
+[ -x ~/Applications/tetris    ] && alias tetris='~/Applications/tetris';
+[ -x ~/.dropbox-dist/dropboxd ] && alias dropbox='~/.dropbox-dist/dropboxd';
 
 alias sl='sl -e'
 alias LS='LS -e'
