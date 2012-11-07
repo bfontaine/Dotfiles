@@ -8,6 +8,7 @@
 [alias]
     br = branch
     ci = commit
+    cl = clone
     cm = commit -m
     co = checkout
     f  = fetch
