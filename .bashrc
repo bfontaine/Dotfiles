@@ -186,6 +186,7 @@ alias v=vim
 
 # two-letters ones
 alias ct=cat
+alias f~='find . -name "*~" -delete'
 
 # apps
 alias chromium='chromium-browser'
