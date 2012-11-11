@@ -188,6 +188,9 @@ alias v=vim
 alias ct=cat
 alias f~='find . -name "*~" -delete'
 
+# gi : copy ~/.gitignore in the current dir and call `git init`
+[ -f ~/.gitignore ] && alias gi='cp ~/.gitignore ./ && git init'
+
 # apps
 alias chromium='chromium-browser'
 alias minecraft='padsp java -jar ~/Applications/minecraft.jar'
