@@ -103,10 +103,10 @@ if [ ! -d ${VIM_DIR}/bundle/nerdtree ]; then
 fi
 
 # Numbers : better line numbers
-if [ ! -d ${VIM_DIR}/bundle/numbers ]; then
-    git clone https://github.com/myusuf3/numbers.vim.git \
-        ~/.vim/bundle/numbers
-fi
+# if [ ! -d ${VIM_DIR}/bundle/numbers ]; then
+#     git clone https://github.com/myusuf3/numbers.vim.git \
+#         ~/.vim/bundle/numbers
+# fi
 
 # Powerline : better status line
 if [ ! -d ${VIM_DIR}/bundle/vim-powerline ]; then
@@ -187,6 +187,21 @@ fi
 
 # Brainfuck
 install_if_absent syntax/brainfuck 14054
+
+# Clojure
+if [ ! -f ${VIM_DIR}/syntax/clojure.vim ]; then
+
+    cd /tmp/
+    mkdir -p clojure-vim && cd clojure-vim
+    wget http://www.vim.org/scripts/download_script.php?src_id=18485 \
+            -O clj-vim.zip
+
+    unzip clj-vim.zip
+
+    mv ftdetect/clojure.vim ${VIM_DIR}/ftdetect/clojure.vim
+    mv syntax/clojure.vim   ${VIM_DIR}/syntax/clojure.vim
+
+fi
 
 # CoffeeScript
 if [ ! -d ${VIM_DIR}/bundle/vim-coffee-script ]; then
