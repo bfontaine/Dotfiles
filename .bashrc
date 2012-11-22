@@ -121,6 +121,9 @@ alias processing='sh ~/Applications/processing-1.5.1/processing'
 export PYTHONPATH="$PYTHONPATH:$HOME/Documents/Programmation/libs/python"
 alias python='python3'
 
+# Node
+export NODE_PATH="/usr/lib/node_modules"
+
 # R
 export R_HOME='/usr/lib/R'
 
