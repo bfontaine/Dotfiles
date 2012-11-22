@@ -237,6 +237,19 @@ if [ ! -f ${VIM_DIR}/indent/io.vim ]; then
         -O ${VIM_DIR}/indent/io.vim
 fi
 
+# Jade
+if [ ! -f ${VIM_DIR}/syntax/jade.vim ]; then
+
+    wget http://www.vim.org/scripts/download_script.php?src_id=13895 \
+        -O jade.zip
+    unzip jade.zip
+
+    for d in ftdetect ftplugin indent syntax; do
+        mv ${d}/jade.vim ${VIM_DIR}/$d/jade.vim
+    done
+
+fi
+
 # Javascript
 if     [ ! -f ${VIM_DIR}/syntax/javascript.vim ] \
     || [ ! -f ${VIM_DIR}/indent/javascript.vim ]; then
