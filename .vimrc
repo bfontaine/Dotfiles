@@ -208,6 +208,7 @@ endf
 fun Use_js()
     inoremap <leader>c console.log();<left><left>
     set ofu=javascriptcomplete#CompleteJS
+    let b:delimitMate_expand_space=1
 endf
 
 fun Use_markdown()
