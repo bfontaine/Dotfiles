@@ -202,8 +202,9 @@ alias gephi='~/Applications/gephi/bin/gephi'
 alias yuicompressor='java -jar ~/Applications/yuicompressor-2.4.7.jar'
 alias closurecompiler='java -jar ~/Applications/GoogleClosureCompiler/compiler.jar'
 
-[ -x ~/Applications/tetris    ] && alias tetris='~/Applications/tetris';
+[ -f ~/Applications/Chunky/Chunky.jar ] && alias chunky='java -jar ~/Applications/Chunky/Chunky.jar'
 [ -x ~/.dropbox-dist/dropboxd ] && alias dropbox='~/.dropbox-dist/dropboxd';
+[ -x ~/Applications/tetris    ] && alias tetris='~/Applications/tetris';
 
 alias sl='sl -e'
 alias LS='LS -e'
