@@ -154,6 +154,8 @@ alias lszip='unzip -l'
 
 function mkcd() { mkdir -p $1 && cd $1; }
 function prettyjson() { python -mjson.tool < $1; }
+# adapted from http://www.commandlinefu.com/commands/view/3837/encode-image-to-base64-and-copy-to-clipboard
+function base64() { uuencode -m $1 /dev/stdout | sed '1d' | sed '$d' | tr -d '\n'; }
 
 alias xclip='xclip -selection "clipboard"'
 
