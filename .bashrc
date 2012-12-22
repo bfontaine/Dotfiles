@@ -118,8 +118,10 @@ alias locaml='ledit ocaml'
 alias processing='sh ~/Applications/processing-1.5.1/processing'
 
 # Python
-export PYTHONPATH="$PYTHONPATH:$HOME/Documents/Programmation/libs/python"
 alias python='python3'
+alias py3='python3'
+alias py='python3'
+alias py2='python2'
 
 # Node
 export NODE_PATH="/usr/lib/node_modules"
