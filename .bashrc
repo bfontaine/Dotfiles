@@ -183,17 +183,28 @@ alias reload='source ~/.bashrc'
 # one-letter shortcuts
 alias c=cd
 alias e=egrep
-alias f='find . -name'
 alias g=git
+alias j=java
 alias l=ls
 alias m=mv
+alias n=node
 alias p=cp
 alias s=sudo
 alias v=vim
+alias w=wc
 
 # two-letters ones
 alias ct=cat
+alias cg='cd ~/Github'
+alias fn='find . -name'
 alias f~='find . -name "*~" -delete'
+alias gr=grep
+alias jc=javac
+alias jj='java -jar'
+alias mt=maintenance
+alias wl='wc -l'
+alias xc=xclip
+alias yc=yuicompressor
 
 # gi : copy ~/.gitignore in the current dir and call `git init`
 [ -f ~/.gitignore ] && alias gi='cp ~/.gitignore ./ && git init'
