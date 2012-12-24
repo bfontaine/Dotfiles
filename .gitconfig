@@ -6,6 +6,7 @@
 [color "branch"]
     current = bold
 [alias]
+    bd = branch -d
     br = branch
     ci = commit
     cl = clone
