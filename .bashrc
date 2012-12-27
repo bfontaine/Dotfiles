@@ -195,16 +195,18 @@ alias w=wc
 
 # two-letters ones
 alias ct=cat
-alias cg='cd ~/Github'
 alias fn='find . -name'
 alias f~='find . -name "*~" -delete'
 alias gr=grep
 alias jc=javac
 alias jj='java -jar'
+alias jk=jake
 alias mt=maintenance
 alias wl='wc -l'
 alias xc=xclip
 alias yc=yuicompressor
+
+function cg() { if [ $# -eq 1 ]; then cd ~/Github/${1}*; else cd ~/Github; fi }
 
 # gi : copy ~/.gitignore in the current dir and call `git init`
 [ -f ~/.gitignore ] && alias gi='cp ~/.gitignore ./ && git init'
