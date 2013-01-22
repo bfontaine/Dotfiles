@@ -104,6 +104,8 @@ export DEBEMAIL='batifon@yahoo.fr'
 # Add home directory to the cd PATH
 export CDPATH=:~
 
+APPS_DIR="$HOME/Applications"
+
 # == Programming ==
 
 alias vim='vim -p'
@@ -115,7 +117,7 @@ alias clisp="clisp -q"
 alias locaml='ledit ocaml'
 
 # Processing
-alias processing='sh ~/Applications/processing-1.5.1/processing'
+alias processing="sh $APPS_DIR/processing-1.5.1/processing"
 
 # Python
 alias python='python3'
@@ -213,15 +215,15 @@ function cg() { if [ $# -eq 1 ]; then cd ~/Github/${1}*; else cd ~/Github; fi }
 
 # apps
 alias chromium='chromium-browser'
-alias minecraft='padsp java -jar ~/Applications/minecraft.jar'
-alias MoM='~/Applications/MoM/MoM'
-alias gephi='~/Applications/gephi/bin/gephi'
-alias yuicompressor='java -jar ~/Applications/yuicompressor-2.4.7.jar'
-alias closurecompiler='java -jar ~/Applications/GoogleClosureCompiler/compiler.jar'
+[ -f $APPS_DIR/minecraft.jar ] && alias minecraft="padsp java -jar $APPS_DIR/minecraft.jar"
+[ -x $APPS_DIR/MoM/MoM ] && alias MoM="$APPS_DIR/MoM/MoM"
+alias gephi="$APPS_DIR/gephi/bin/gephi"
+alias yuicompressor="java -jar $APPS_DIR/yuicompressor-2.4.7.jar"
+alias closurecompiler="java -jar $APPS_DIR/GoogleClosureCompiler/compiler.jar"
 
-[ -f ~/Applications/Chunky/Chunky.jar ] && alias chunky='java -jar ~/Applications/Chunky/Chunky.jar'
+[ -f $APPS_DIR/Chunky/Chunky.jar ] && alias chunky="java -jar $APPS_DIR/Chunky/Chunky.jar"
 [ -x ~/.dropbox-dist/dropboxd ] && alias dropbox='~/.dropbox-dist/dropboxd';
-[ -x ~/Applications/tetris    ] && alias tetris='~/Applications/tetris';
+[ -x $APPS_DIR/tetris    ] && alias tetris="$APPS_DIR/tetris";
 
 alias sl='sl -e'
 alias LS='LS -e'
