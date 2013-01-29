@@ -139,6 +139,8 @@ alias gem='gem1.9.1'
 # Scala
 export PATH="$PATH:/opt/scala/bin"
 
+. $HOME/bin/z.sh
+
 # usual
 alias rm='rm -i'
 alias rmdir='rm -Ri'
