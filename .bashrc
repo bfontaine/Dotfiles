@@ -224,7 +224,6 @@ alias yuicompressor="java -jar $APPS_DIR/yuicompressor-2.4.7.jar"
 alias closurecompiler="java -jar $APPS_DIR/GoogleClosureCompiler/compiler.jar"
 
 [ -f $APPS_DIR/Chunky/Chunky.jar ] && alias chunky="java -jar $APPS_DIR/Chunky/Chunky.jar"
-[ -x ~/.dropbox-dist/dropboxd ] && alias dropbox='~/.dropbox-dist/dropboxd';
 [ -x $APPS_DIR/tetris    ] && alias tetris="$APPS_DIR/tetris";
 
 alias sl='sl -e'
