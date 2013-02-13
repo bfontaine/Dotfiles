@@ -132,9 +132,8 @@ export NODE_PATH="/usr/lib/node_modules"
 export R_HOME='/usr/lib/R'
 
 # Ruby
-alias ruby='ruby1.9.1'
-alias irb='irb1.9.1'
-alias gem='gem1.9.1'
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
 
 # Scala
 export PATH="$PATH:/opt/scala/bin"
@@ -254,3 +253,5 @@ rm -Rf ~/.macromedia/*
 clear
 echo Bonjour \! # Hello !
 echo 
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
