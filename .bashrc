@@ -134,11 +134,10 @@ export R_HOME='/usr/lib/R'
 # Ruby
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
-
 # Scala
 export PATH="$PATH:/opt/scala/bin"
 
-. $HOME/bin/z.sh
+. "$HOME/bin/z.sh";
 
 # usual
 alias rm='rm -i'
