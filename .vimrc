@@ -227,6 +227,7 @@ if has("autocmd")
     " filetypes
     " - general
     au BufNewFile,BufRead *.bf,*.brainfuck set ft=brainfuck
+    au BufNewFile,BufRead *.e,*.E          set ft=e
     au BufNewFile,BufRead *.ft,*.fh,*.fth  set ft=forth
     au BufNewFile,BufRead *.go             set ft=go
     au BufNewFile,BufRead *.groovy         set ft=groovy
@@ -270,6 +271,7 @@ if has("autocmd")
     " files skeletons
     au BufNewFile *.c      0r ~/.vim/skeletons/c.c
     au BufNewFile *.cpp    0r ~/.vim/skeletons/cpp.cpp
+    au BufNewFile *.e,*.E  0r ~/.vim/skeletons/e.e
     au BufNewFile *.groovy 0r ~/.vim/skeletons/groovy.groovy
     au BufNewFile *.html   0r ~/.vim/skeletons/html.html
     au BufNewFile *.io     0r ~/.vim/skeletons/io.io
