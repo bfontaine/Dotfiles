@@ -213,8 +213,8 @@ endf
 
 fun Use_markdown()
     " make titles
-    inoremap <leader>H- yypVr-k
-    inoremap <leader>H= yypVr=k
+    inoremap <leader>H- <esc>yypVr-ki
+    inoremap <leader>H= <esc>yypVr=ki
 endf
 
 fun Candy()
