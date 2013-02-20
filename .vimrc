@@ -151,6 +151,8 @@ let g:CommandTMaxHeight=25
 
 " DelimitMate
 let delimitMate_expand_cr=1
+" Closetag
+au Filetype html,xhtml,xml,xsl,htmljinja so ~/.vim/scripts/closetag.vim 
 " CSS colors
 let g:cssColorVimDoNotMessMyUpdatetime = 1
 " Gundo

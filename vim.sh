@@ -7,7 +7,8 @@
 VIM_DIR=~/.vim
 
 for dir in after autoload backups bundle colors doc \
-                    ftdetect indent plugin snippets syntax; do
+                    ftdetect indent plugin scripts \
+                    snippets syntax; do
     mkdir -p ${VIM_DIR}/$dir
 done
 
@@ -59,6 +60,9 @@ if     [ ! -f ${VIM_DIR}/plugin/clang_complete.vim ]; then
     cd ..
     rm -Rf clang_complete
 fi
+
+# Close tag : close (X)HTML/XML tags
+install_if_absent scripts/closetag.vim 4318
 
 # Command-T : Quickly open files
 if [ ! -d ${VIM_DIR}/bundle/command-t ]; then
