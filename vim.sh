@@ -31,15 +31,12 @@ install_if_absent autoload/pathogen 16224
 
 cd ${VIM_DIR}/bundle/
 
-# abolish    : String replacement with word variants
 # endwise    : add 'end' in Ruby files when using if/def/…
-# fugitive   : Git wrapper
 # haml       : HAML, Sass, SCSS syntax
 # markdown   : Markdown syntax
 # surround   : parentheses, quotes, XML/HTML tags
 
-for plugin in abolish endwise fugitive \
-        haml markdown surround; do
+for plugin in endwise haml markdown surround; do
     if [ ! -d ${VIM_DIR}/bundle/vim-${plugin} ]; then
         git clone git://github.com/tpope/vim-${plugin}.git
     fi
@@ -235,6 +232,12 @@ fi
 if [ ! -d ${VIM_DIR}/bundle/vim-css3-syntax ]; then
     cd ${VIM_DIR}/bundle
     git clone https://github.com/hail2u/vim-css3-syntax.git
+fi
+
+# E
+if [ ! -f ${VIM_DIR}/syntax/e.vim ]; then
+    wget http://raw.github.com/bfontaine/e.vim/master/e.vim \
+        -O ${VIM_DIR}/syntax/e.vim
 fi
 
 # Forth
