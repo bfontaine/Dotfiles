@@ -69,6 +69,16 @@ if [ ! -d ${VIM_DIR}/bundle/command-t ]; then
     make
 fi
 
+# CSS-Color : Show CSS colors
+# if [ ! -f ${VIM_DIR}/after/syntax/css.vim ]; then
+# 
+#     cd /tmp/
+#     git clone https://github.com/skammer/vim-css-color.git
+#     mkdir -p ${VIM_DIR}/after/syntax
+#     mv vim-css-color/after/syntax/css.vim ${VIM_DIR}/after/syntax/
+# 
+# fi
+
 # DelimitMate : automatic closing of quotes, parenthesis, brackets, etc.
 if     [ ! -f ${VIM_DIR}/doc/delimitMate.txt ] \
     || [ ! -f ${VIM_DIR}/plugin/delimitMate.vim ];then
@@ -210,12 +220,9 @@ if [ ! -d ${VIM_DIR}/bundle/vim-coffee-script ]; then
 fi
 
 # CSS3
-if [ ! -f ${VIM_DIR}/after/syntax/css.vim ]; then
-    cd /tmp/
-    git clone git://github.com/kight/CSS3-syntax-file-for-vim.git
-    mkdir -p ${VIM_DIR}/after/syntax
-    mv CSS3-syntax-file-for-vim/after/syntax/css.vim \
-        ${VIM_DIR}/after/syntax/css.vim
+if [ ! -d ${VIM_DIR}/bundle/vim-css3-syntax ]; then
+    cd ${VIM_DIR}/bundle
+    git clone https://github.com/hail2u/vim-css3-syntax.git
 fi
 
 # Forth

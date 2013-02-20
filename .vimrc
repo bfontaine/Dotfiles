@@ -151,6 +151,8 @@ let g:CommandTMaxHeight=25
 
 " DelimitMate
 let delimitMate_expand_cr=1
+" CSS colors
+let g:cssColorVimDoNotMessMyUpdatetime = 1
 " Gundo
 nnoremap <leader>g :GundoToggle<cr>
 " NERDTree
