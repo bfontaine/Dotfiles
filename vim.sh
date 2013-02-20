@@ -95,6 +95,14 @@ if [ ! -d ${VIM_DIR}/bundle/gundo ]; then
     git clone http://github.com/sjl/gundo.vim.git ${VIM_DIR}/bundle/gundo
 fi
 
+# Jedi : completion for Python
+if [ ! -d ${VIM_DIR}/bundle/jedi-vim ]; then
+    git clone https://github.com/davidhalter/jedi-vim.git \
+        ${VIM_DIR}/bundle/jedi-vim
+    cd ${VIM_DIR}/bundle/jedi-vim/
+    git clone https://github.com/davidhalter/jedi.git
+fi
+
 # Matchit : extended % matching for HTML, LaTeX, etc
 if     [ ! -f ${VIM_DIR}/plugin/matchit.vim ] \
     || [ ! -f ${VIM_DIR}/doc/matchit.txt ]; then
