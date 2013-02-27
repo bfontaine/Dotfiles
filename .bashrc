@@ -224,6 +224,8 @@ alias closurecompiler="java -jar $APPS_DIR/GoogleClosureCompiler/compiler.jar"
 [ -f $APPS_DIR/Chunky/Chunky.jar ] && alias chunky="java -jar $APPS_DIR/Chunky/Chunky.jar"
 [ -x $APPS_DIR/tetris    ] && alias tetris="$APPS_DIR/tetris";
 
+[ -x $HOME/bin/djsd ] && function dotjs-start() { djsd -d 2> $HOME/.dotjs_err.log; };
+
 alias sl='sl -e'
 alias LS='LS -e'
 
@@ -252,5 +254,3 @@ rm -Rf ~/.macromedia/*
 clear
 echo Bonjour \! # Hello !
 echo 
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
