@@ -252,5 +252,3 @@ rm -Rf ~/.macromedia/*
 
 # starting
 clear
-echo Bonjour \! # Hello !
-echo 
