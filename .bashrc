@@ -215,7 +215,10 @@ function cg() { if [ $# -eq 1 ]; then cd ~/Github/${1}*; else cd ~/Github; fi }
 
 # apps
 alias chromium='chromium-browser'
-[ -f $APPS_DIR/minecraft.jar ] && alias minecraft="padsp java -jar $APPS_DIR/minecraft.jar"
+if [ -f $APPS_DIR/minecraft.jar ]; then
+    alias minecraft="padsp java -jar $APPS_DIR/minecraft.jar";
+    alias mc=minecraft;
+fi
 [ -x $APPS_DIR/MoM/MoM ] && alias MoM="$APPS_DIR/MoM/MoM"
 alias gephi="$APPS_DIR/gephi/bin/gephi"
 alias yuicompressor="java -jar $APPS_DIR/yuicompressor-2.4.7.jar"
