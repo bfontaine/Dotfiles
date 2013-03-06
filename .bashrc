@@ -184,25 +184,18 @@ alias reload='source ~/.bashrc'
 
 # one-letter shortcuts
 alias c=cd
-alias e=egrep
 alias g=git
-alias j=java
 alias l=ls
 alias m=mv
 alias n=node
-alias p=cp
 alias s=sudo
 alias v=vim
-alias w=wc
 
 # two-letters ones
 alias ct=cat
 alias fn='find . -name'
 alias f~='find . -name "*~" -delete'
 alias gr=grep
-alias jc=javac
-alias jj='java -jar'
-alias jk=jake
 alias mt=maintenance
 alias wl='wc -l'
 alias xc=xclip
