@@ -113,6 +113,9 @@ alias vim='vim -p'
 # C. Lisp
 alias clisp="clisp -q"
 
+# Java
+export JAVA_HOME=/usr/
+
 # OCaml
 alias locaml='ledit ocaml'
 
@@ -124,6 +127,7 @@ alias python='python3'
 alias py3='python3'
 alias py='python3'
 alias py2='python2'
+export PYTHONSTARTUP=~/.pythonrc.py
 
 # Node
 export NODE_PATH="/usr/lib/node_modules"
