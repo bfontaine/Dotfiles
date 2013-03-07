@@ -14,6 +14,7 @@ set cursorline                  " highlight current line
 set encoding=utf-8              " set UTF-8 encoding
 set expandtab                   " replace tabs with spaces
 set ff=unix                     " default file types: UNIX
+set foldmethod=manual           " manual folding
 set formatoptions+=n            " recognize lists when formatting text
 set hidden                      " buffers can exists in bg w/o being in a window
 set history=100                 " more command history
@@ -103,7 +104,6 @@ inoremap <leader>z <esc>zza
 inoremap <leader>A <esc>A
 nnoremap <leader>z :set scrolloff=100<cr>
 nnoremap <leader>Z :set scrolloff=3<cr>
-nnoremap <space> <c-d>
 
 " command line like Bash
 cnoremap <c-a> <Home>
@@ -136,11 +136,12 @@ vnoremap <leader>s :sort u<cr>
 " redraw the console screen (<c-l> has been remapped)
 nnoremap L :redraw<cr>
 
-" Adding a ';' at the end of the current line
-nnoremap ; A;
-
 " showing trailing spaces at the end of lines
 nnoremap <leader>$ :set list!<cr>
+
+" folding
+vnoremap <space> zf
+nnoremap <space> zA
 
 " - plugins options/mappings -
 
@@ -165,7 +166,7 @@ nnoremap <F3> :NumbersToggle<cr>
 let g:Powerline_symbols='fancy'
 set laststatus=2
 " Tabular
-vnoremap <leader>t :Tabular<space>
+vnoremap <leader>t :Tabular<space>/
 " Taglist
 nnoremap <leader>t :TlistToggle<cr>
 " Zencoding
@@ -178,10 +179,6 @@ let g:user_zen_expandabbr_key='<leader>h'
 command W :w
 command WQ :wq
 command SudoW :w !sudo tee % > /dev/null
-" misc
-command Clr !rm -f *~
-" strip trailing whitespaces
-command Strip :%s/ \+$//gc
 
 " -- functions --
 
@@ -191,27 +188,17 @@ fun Set_indent(width)
     execute "set shiftwidth=".a:width
 endf
 
-"fun Load_skeleton(name)
-"    if glob("~/.vim/skeletons/".a:name) != ""
-"        execute "0r ~/.vim/skeletons/".a:name
-"    endif
-"endf
-
-fun Use_css()
-    set ofu=csscomplete#CompleteCSS
-endf
-
 fun Use_html()
     " puts a 'Lorem Ipsum' <p> block on the line
     " under the current one. You need 'lorem' program,
     " download the package 'libtext-lorem-perl' for Ubuntu
     nnoremap <leader>l o<p><esc>:r!lorem<cr>kJxA</p><esc>
-    set ofu=htmlcomplete#CompleteTags
+    setlocal ofu=htmlcomplete#CompleteTags
 endf
 
 fun Use_js()
     inoremap <leader>c console.log();<left><left>
-    set ofu=javascriptcomplete#CompleteJS
+    setlocal ofu=javascriptcomplete#CompleteJS
     let b:delimitMate_expand_space=1
 endf
 
@@ -245,13 +232,14 @@ if has("autocmd")
     au BufNewFile,BufRead */templates/*.html set ft=htmljinja
 
     " autocomplete
-    au FileType c          set ofu=ccomplete#Complete
-    au FileType java       set ofu=javacomplete#Complete
-    au FileType php        set ofu=phpcomplete#CompletePHP
-    au FileType python     set ofu=pythoncomplete#Complete
-    au FileType ruby       set ofu=rubycomplete#Complete
-    au FileType sql        set ofu=sqlcomplete#Complete
-    au FileType xml        set ofu=xmlcomplete#CompleteTags
+    au FileType c          setlocal ofu=ccomplete#Complete
+    au FileType css        setlocal ofu=csscomplete#CompleteCSS
+    au FileType java       setlocal ofu=javacomplete#Complete
+    au FileType php        setlocal ofu=phpcomplete#CompletePHP
+    au FileType python     setlocal ofu=pythoncomplete#Complete
+    au FileType ruby       setlocal ofu=rubycomplete#Complete
+    au FileType sql        setlocal ofu=sqlcomplete#Complete
+    au FileType xml        setlocal ofu=xmlcomplete#CompleteTags
 
     " filetypes settings
     au FileType markdown,txt set tw=80
@@ -260,14 +248,13 @@ if has("autocmd")
 
     au FileType ruby,coffeescript nnoremap <leader>s viwc#{<c-r>"}<esc>
 
-    au FileType css        call Use_css()
     au FileType html       call Use_html()
     au FileType javascript call Use_js()
-    au FileType json       set nocursorline
+    au FileType json       setlocal nocursorline
     au FileType lisp       let b:delimitMate_quotes = "\""
     au FileType markdown   call Use_markdown()
-    au FileType txt        set spell
-    au FileType xml        set fdm=indent fdl=1
+    au FileType txt        setlocal spell
+    au FileType xml        setlocal fdm=indent fdl=1
 
     " mutt
     au BufRead /tmp/mutt* set tw=72
