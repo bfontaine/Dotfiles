@@ -158,6 +158,7 @@ alias egrep="egrep $DIRCOLOR"
 
 alias ls="ls -Fhg $DIRCOLOR --group-directories-first"
 alias la='ls -a'
+alias lr='ls -R'
 alias lszip='unzip -l'
 
 function mkcd() { mkdir -p $1 && cd $1; }
