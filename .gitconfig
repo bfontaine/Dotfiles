@@ -6,21 +6,22 @@
 [color "branch"]
     current = bold
 [alias]
-    bd = branch -d
-    br = branch
-    ci = commit
-    cl = clone
-    cm = commit -m
-    co = checkout
-    f  = fetch
-    fo = fetch origin
-    fp = format-patch
-    lg = log --graph --pretty=format:'%Cred%h%Creset - %C(blue bold)%an%Creset: %C(cyan)%s%Creset %Cgreen(%ar)%Creset'
-    lgs = log --graph --pretty=format:'%Cred%h%Creset: %s' # short
-    m = mv
+    bd  = branch -d
+    br  = branch
+    ci  = commit
+    cl  = clone
+    cm  = commit -m
+    co  = checkout
+    f   = fetch
+    fo  = fetch origin
+    fp  = format-patch
+    lg  = log --graph --pretty = format:'%Cred%h%Creset - %C(blue bold)%an%Creset: %C(cyan)%s%Creset %Cgreen(%ar)%Creset'
+    lgs = log --graph --pretty = format:'%Cred%h%Creset: %s' # short
+    m   = mv
     plo = pull origin
     pso = push origin
-    st = status
+    st  = status
+    s   = status
 [core]
     pager = cat
     editor = vim
