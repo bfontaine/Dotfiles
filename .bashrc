@@ -96,7 +96,7 @@ ignoreeof=1
 # variables
 export EDITOR='vim'
 export PS2='… '
-export PATH="$PATH:$HOME/bin"
+export PATH="$PATH:$HOME/Documents/Programmation/Android/sdk/tools:$HOME/bin"
 
 export DEBFULLNAME='Baptiste Fontaine'
 export DEBEMAIL='batifon@yahoo.fr'
@@ -226,6 +226,8 @@ alias closurecompiler="java -jar $APPS_DIR/GoogleClosureCompiler/compiler.jar"
 [ -x $APPS_DIR/tetris    ] && alias tetris="$APPS_DIR/tetris";
 
 [ -x $HOME/bin/djsd ] && function dotjs-start() { djsd -d 2> $HOME/.dotjs_err.log; };
+
+[ -x $APPS_DIR/brogue/brogue ] && alias brogue="$APPS_DIR/brogue/brogue";
 
 alias sl='sl -e'
 alias LS='LS -e'
