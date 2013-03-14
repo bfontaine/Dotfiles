@@ -168,9 +168,6 @@ function base64() { uuencode -m $1 /dev/stdout | sed '1d' | sed '$d' | tr -d '\n
 
 alias xclip='xclip -selection "clipboard"'
 
-# perso
-alias up7c='~/Documents/Programmation/UP7_Tools/up7connect.rb'
-
 alias sag='sudo apt-get'
 alias sai='sudo apt-get install'
 alias saupg='sudo apt-get upgrade'
