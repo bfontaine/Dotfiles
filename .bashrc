@@ -2,7 +2,6 @@
 [ -z "$PS1" ] && return
 
 # don't put duplicate lines in the history.
-# … or force ignoredups and ignorespace
 HISTCONTROL=ignoredups:ignorespace
 
 # append to the history file, don't overwrite it
@@ -98,9 +97,6 @@ export EDITOR='vim'
 export PS2='… '
 export PATH="$PATH:$HOME/Documents/Programmation/Android/sdk/tools:$HOME/bin"
 
-export DEBFULLNAME='Baptiste Fontaine'
-export DEBEMAIL='batifon@yahoo.fr'
-
 # Add home directory to the cd PATH
 export CDPATH=:~
 
@@ -109,9 +105,6 @@ APPS_DIR="$HOME/Applications"
 # == Programming ==
 
 alias vim='vim -p'
-
-# C. Lisp
-alias clisp="clisp -q"
 
 # Java
 export JAVA_HOME=/usr/
@@ -124,13 +117,10 @@ alias processing="sh $APPS_DIR/processing-1.5.1/processing"
 
 # Python
 alias python='python3'
-alias py3='python3'
-alias py='python3'
-alias py2='python2'
 export PYTHONSTARTUP=~/.pythonrc.py
 
 # Node
-export NODE_PATH="/usr/lib/node_modules"
+export NODE_PATH='/usr/lib/node_modules'
 
 # R
 export R_HOME='/usr/lib/R'
@@ -138,14 +128,8 @@ export R_HOME='/usr/lib/R'
 # Ruby
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
-# Scala
-export PATH="$PATH:/opt/scala/bin"
-
-. "$HOME/bin/z.sh";
-
 # usual
 alias rm='rm -i'
-alias rmdir='rm -Ri'
 alias ps='ps x'
 alias top='htop'
 alias cd='cd -P'
@@ -156,10 +140,8 @@ alias  grep="grep $DIRCOLOR"
 alias fgrep="fgrep $DIRCOLOR"
 alias egrep="egrep $DIRCOLOR"
 
-alias ls="ls -Fhg $DIRCOLOR --group-directories-first"
 alias la='ls -a'
 alias lr='ls -R'
-alias lszip='unzip -l'
 
 function mkcd() { mkdir -p $1 && cd $1; }
 function prettyjson() { python -mjson.tool < $1; }
@@ -173,7 +155,7 @@ alias sai='sudo apt-get install'
 alias saupg='sudo apt-get upgrade'
 alias saupd='sudo apt-get update'
 
-alias maintenance='saupd; saupg --yes && sag dist-upgrade --yes && sag autoremove --yes && sag autoclean'
+alias mt='saupd; saupg --yes && sag dist-upgrade --yes && sag autoremove --yes && sag autoclean'
 
 alias aptis='aptitude search'
 
@@ -186,8 +168,9 @@ alias reload='source ~/.bashrc'
 
 # one-letter shortcuts
 alias c=cd
+alias f=find
 alias g=git
-alias l=ls
+alias l="ls -Fhg $DIRCOLOR --group-directories-first"
 alias m=mv
 alias n=node
 alias s=sudo
@@ -195,13 +178,8 @@ alias v=vim
 
 # two-letters ones
 alias ct=cat
-alias fn='find . -name'
 alias f~='find . -name "*~" -delete'
 alias gr=grep
-alias mt=maintenance
-alias wl='wc -l'
-alias xc=xclip
-alias yc=yuicompressor
 
 function cg() { if [ $# -eq 1 ]; then cd ~/Github/${1}*; else cd ~/Github; fi }
 
@@ -214,17 +192,12 @@ if [ -f $APPS_DIR/minecraft.jar ]; then
     alias minecraft="padsp java -jar $APPS_DIR/minecraft.jar";
     alias mc=minecraft;
 fi
-[ -x $APPS_DIR/MoM/MoM ] && alias MoM="$APPS_DIR/MoM/MoM"
-alias gephi="$APPS_DIR/gephi/bin/gephi"
 alias yuicompressor="java -jar $APPS_DIR/yuicompressor-2.4.7.jar"
 alias closurecompiler="java -jar $APPS_DIR/GoogleClosureCompiler/compiler.jar"
 
 [ -f $APPS_DIR/Chunky/Chunky.jar ] && alias chunky="java -jar $APPS_DIR/Chunky/Chunky.jar"
-[ -x $APPS_DIR/tetris    ] && alias tetris="$APPS_DIR/tetris";
 
 [ -x $HOME/bin/djsd ] && function dotjs-start() { djsd -d 2> $HOME/.dotjs_err.log; };
-
-[ -x $APPS_DIR/brogue/brogue ] && alias brogue="$APPS_DIR/brogue/brogue";
 
 alias sl='sl -e'
 alias LS='LS -e'

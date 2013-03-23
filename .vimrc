@@ -31,7 +31,7 @@ set numberwidth=1               " use only 1 column (+ 1 space) while possible
 set nospell                     " do not use spell checking
 set pumheight=10                " size of completion window: 10 lines
 set ruler                       " show the cursor position all the time
-set scrolloff=5                 " keep 3 context lines above/below the cursor
+set scrolloff=5                 " keep 5 context lines above/below the cursor
 set shell=/bin/bash             " set Bash shell
 set shiftwidth=4                " use 4-spaces indentation
 set showcmd                     " show current incomplete command
@@ -48,6 +48,7 @@ set title                       " show title in console title bar
 set undodir=~/.vim/backups      " keep undo history accross sessions
 set undofile                    " see 'undodir'
 set wildignore=*~,*.swp,*.class " files to ignore when tab completing
+set wildignore+=*.cmo,*.cmx
 set wildignore+=*.o,.git/**
 set wildmenu                    " show completion possibilities in command mode
 
@@ -61,20 +62,6 @@ colorscheme 256-jungle
 inoremap jj <esc>
 
 let mapleader = ","
-
-" get used to hjkl
-" nnoremap <up> <nop>
-" inoremap <up> <nop>
-" vnoremap <up> <nop>
-" nnoremap <down> <nop>
-" inoremap <down> <nop>
-" vnoremap <down> <nop>
-" nnoremap <left> <nop>
-" inoremap <left> <nop>
-" vnoremap <left> <nop>
-" nnoremap <right> <nop>
-" inoremap <right> <nop>
-" vnoremap <right> <nop>
 
 " move up and down on long wrapped lines
 nnoremap j gj
@@ -94,7 +81,7 @@ nnoremap <leader>ds :tabnew ~/.ssh/config<cr>
 nnoremap <leader>dv :tabnew ~/.vimrc<cr>
 
 " toggle paste mode
-nnoremap <leader>p :set paste!<cr>
+nnoremap <leader>p <esc>:set paste!<cr>
 
 " saving
 inoremap <leader>w <esc>:w<cr>a
@@ -120,9 +107,9 @@ noremap <c-l> <c-w>l
 
 " tabs
 noremap <c-down> :tabn<cr>
-noremap <c-up> :tabp<cr>
+noremap <c-up>   :tabp<cr>
 inoremap <c-down> <esc>:tabn<cr>
-inoremap <c-up> <esc>:tabp<cr>
+inoremap <c-up>   <esc>:tabp<cr>
 
 noremap <leader>T :tabnew<cr>
 nnoremap gt <c-w>gf
@@ -160,8 +147,6 @@ let g:cssColorVimDoNotMessMyUpdatetime = 1
 nnoremap <leader>g :GundoToggle<cr>
 " NERDTree
 nnoremap <leader>n :NERDTreeToggle<cr>
-" Numbers
-nnoremap <F3> :NumbersToggle<cr>
 " Powerline
 let g:Powerline_symbols='fancy'
 set laststatus=2
@@ -188,16 +173,7 @@ fun Set_indent(width)
     execute "set shiftwidth=".a:width
 endf
 
-fun Use_html()
-    " puts a 'Lorem Ipsum' <p> block on the line
-    " under the current one. You need 'lorem' program,
-    " download the package 'libtext-lorem-perl' for Ubuntu
-    nnoremap <leader>l o<p><esc>:r!lorem<cr>kJxA</p><esc>
-    setlocal ofu=htmlcomplete#CompleteTags
-endf
-
 fun Use_js()
-    inoremap <leader>c console.log();<left><left>
     setlocal ofu=javascriptcomplete#CompleteJS
     let b:delimitMate_expand_space=1
 endf
@@ -217,17 +193,13 @@ if has("autocmd")
 
     " filetypes
     " - general
-    au BufNewFile,BufRead *.bf,*.brainfuck set ft=brainfuck
     au BufNewFile,BufRead *.e,*.E          set ft=e
     au BufNewFile,BufRead *.ft,*.fh,*.fth  set ft=forth
     au BufNewFile,BufRead *.go             set ft=go
-    au BufNewFile,BufRead *.groovy         set ft=groovy
-    au BufNewFile,BufRead *.gs             set ft=golfscript
     au BufNewFile,BufRead *.io             set ft=io
     au BufNewFile,BufRead *.json           set ft=json
     au BufNewFile,BufRead *.liquid         set ft=liquid
     au BufNewFile,BufRead *.mustache       set ft=mustache
-    au BufNewFile,BufRead *.omgrofl        set ft=omgrofl
     " - perso
     au BufNewFile,BufRead */templates/*.html set ft=htmljinja
 
@@ -246,8 +218,6 @@ if has("autocmd")
     au FileType lisp,ocaml,scala,sql,yaml call Set_indent(2)
     au FileType css,javascript,markdown,sql,vim,txt call Candy()
 
-    au FileType ruby,coffeescript nnoremap <leader>s viwc#{<c-r>"}<esc>
-
     au FileType html       call Use_html()
     au FileType javascript call Use_js()
     au FileType json       setlocal nocursorline
@@ -263,7 +233,6 @@ if has("autocmd")
     au BufNewFile *.c      0r ~/.vim/skeletons/c.c
     au BufNewFile *.cpp    0r ~/.vim/skeletons/cpp.cpp
     au BufNewFile *.e,*.E  0r ~/.vim/skeletons/e.e
-    au BufNewFile *.groovy 0r ~/.vim/skeletons/groovy.groovy
     au BufNewFile *.html   0r ~/.vim/skeletons/html.html
     au BufNewFile *.io     0r ~/.vim/skeletons/io.io
     au BufNewFile *.pl     0r ~/.vim/skeletons/perl.pl
