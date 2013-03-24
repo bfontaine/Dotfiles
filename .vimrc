@@ -5,7 +5,6 @@ call pathogen#infect()
 " call pathogen#helptags()
 filetype on
 filetype plugin indent on
-|
 
 set autoindent                  " auto-indentation
 set backspace=indent,eol,start  " allow backspace on everything in insert mode
@@ -26,7 +25,7 @@ set linebreak                   " don't wrap text in the middle of a word
 set magic                       " set magic for regex
 set modelines=0                 " no modelines
 set noautoread                  " don't re-read a file changed outside of Vim
-set nolazyredraw                " turn off lazy redraw
+set lazyredraw                  " turn on lazy redraw (performance++)
 set number                      " display line numbers
 set numberwidth=1               " use only 1 column (+ 1 space) while possible
 set nospell                     " do not use spell checking
@@ -86,7 +85,7 @@ nnoremap <leader>ds :tabnew ~/.ssh/config<cr>
 nnoremap <leader>dv :tabnew ~/.vimrc<cr>
 
 " toggle paste mode
-nnoremap <leader>p <esc>:set paste!<cr>
+nnoremap <leader>p <esc>:setlocal paste!<cr>
 
 " saving
 inoremap <leader>w <esc>:w<cr>a
@@ -122,6 +121,9 @@ nnoremap <leader><space> :set nohlsearch!<cr>
 
 " sort
 vnoremap <leader>s :sort u<cr>
+
+" spell
+map <leader>ss :setlocal spell!<cr>
 
 " showing trailing spaces at the end of lines
 nnoremap <leader>$ :set list!<cr>
