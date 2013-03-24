@@ -17,7 +17,7 @@ set ff=unix                     " default file types: UNIX
 set foldmethod=manual           " manual folding
 set formatoptions+=n            " recognize lists when formatting text
 set hidden                      " buffers can exists in bg w/o being in a window
-set history=100                 " more command history
+set history=25                  " more command history
 set hlsearch                    " highlight current search
 set ignorecase                  " ignore case for '/regex' search
 set incsearch                   " incremental search with '/regex' search
@@ -39,8 +39,8 @@ set smartcase                   " check case if upper case chars in /regex
 set smartindent                 " no autoindent when starting a new line
 set softtabstop=4               " 1 tab = 4 spaces
 set spelllang=fr,en             " Spell languages: FRench, ENglish
-set suffixes=,*.aux,*.toc       " last used files when tab completing
-set tabpagemax=10               " only show 10 tabs
+set suffixes=,*.aux,*.toc,*lock " last used files when tab completing
+set tabpagemax=8                " only show 10 tabs
 set tabstop=4                   " 1 tab = 4 spaces
 " set textwidth=80              " text width = 80 characters
 set timeout                     " Wait max 1sec for :mappings
@@ -51,6 +51,9 @@ set wildignore=*~,*.swp,*.class " files to ignore when tab completing
 set wildignore+=*.cmo,*.cmx
 set wildignore+=*.o,.git/**
 set wildmenu                    " show completion possibilities in command mode
+
+syntax sync minlines=256
+syntax sync maxlines=1024
 
 " -- Colorscheme
 
@@ -76,6 +79,7 @@ vnoremap <f1> <esc>
 nnoremap <leader>db :tabnew ~/.bashrc<cr>
 nnoremap <leader>dc :tabnew ~/.curlrc<cr>
 nnoremap <leader>dg :tabnew ~/.gitconfig<cr>
+nnoremap <leader>di :tabnew ~/.irbrc<cr>
 nnoremap <leader>dm :tabnew ~/.muttrc<cr>
 nnoremap <leader>ds :tabnew ~/.ssh/config<cr>
 nnoremap <leader>dv :tabnew ~/.vimrc<cr>
@@ -100,10 +104,8 @@ inoremap <c-e> <esc>$a
 noremap <c-e> $
 
 " windows
-noremap <c-j> <c-w>j
-noremap <c-k> <c-w>k
-noremap <c-h> <c-w>h
-noremap <c-l> <c-w>l
+noremap <c-left> <c-w>h
+noremap <c-right> <c-w>l
 
 " tabs
 noremap <c-down> :tabn<cr>
@@ -120,15 +122,11 @@ nnoremap <leader><space> :set nohlsearch!<cr>
 " sort
 vnoremap <leader>s :sort u<cr>
 
-" redraw the console screen (<c-l> has been remapped)
-nnoremap L :redraw<cr>
-
 " showing trailing spaces at the end of lines
 nnoremap <leader>$ :set list!<cr>
 
 " folding
 vnoremap <space> zf
-nnoremap <space> zA
 
 " - plugins options/mappings -
 
