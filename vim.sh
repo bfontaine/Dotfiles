@@ -140,6 +140,13 @@ if [ ! -f ${VIM_DIR}/autoload/snipMate.vim ]; then
     unzip /tmp/sm.zip -d ~/.vim
 fi
 
+# Table-mode : easy table editing/formatting
+
+if [ ! -d ${VIM_DIR}/bundle/vim-table-mode ]; then
+        git clone git://github.com/dhruvasagar/vim-table-mode.git \
+            ${VIM_DIR}/bundle/vim-table-mode
+fi
+
 # Tabular : text line up made easy
 if [ ! -d ${VIM_DIR}/bundle/tabular ]; then
     cd ${VIM_DIR}/bundle/

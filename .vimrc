@@ -5,6 +5,7 @@ call pathogen#infect()
 " call pathogen#helptags()
 filetype on
 filetype plugin indent on
+|
 
 set autoindent                  " auto-indentation
 set backspace=indent,eol,start  " allow backspace on everything in insert mode
@@ -148,6 +149,8 @@ nnoremap <leader>n :NERDTreeToggle<cr>
 " Powerline
 let g:Powerline_symbols='fancy'
 set laststatus=2
+" TableMode
+let g:table_mode_toggle_map = '<leader>-'
 " Tabular
 vnoremap <leader>t :Tabular<space>/
 " Taglist
