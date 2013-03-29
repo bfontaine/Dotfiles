@@ -155,6 +155,7 @@ set laststatus=2
 let g:table_mode_toggle_map = '<leader>-'
 " Tabular
 vnoremap <leader>t :Tabular<space>/
+vnoremap <leader>{ :Tabular<space>/{<cr>gv:Tabular<space>/}<cr>
 " Taglist
 nnoremap <leader>t :TlistToggle<cr>
 " Zencoding
