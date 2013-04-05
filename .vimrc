@@ -197,6 +197,7 @@ if has("autocmd")
 
     " filetypes
     " - general
+    au BufNewFile,BufRead *.conflicts      set ft=conflicts
     au BufNewFile,BufRead *.e,*.E          set ft=e
     au BufNewFile,BufRead *.ft,*.fh,*.fth  set ft=forth
     au BufNewFile,BufRead *.go             set ft=go

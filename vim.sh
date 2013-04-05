@@ -214,6 +214,9 @@ fi
 # Brainfuck
 install_if_absent syntax/brainfuck 14054
 
+# *.conflicts files
+install_if_absent syntax/conflicts.vim 19764
+
 # Clojure
 if [ ! -f ${VIM_DIR}/syntax/clojure.vim ]; then
 
@@ -279,7 +282,7 @@ if [ ! -f ${VIM_DIR}/syntax/jade.vim ]; then
 
 fi
 
-# Javascript
+# JavaScript
 if     [ ! -f ${VIM_DIR}/syntax/javascript.vim ] \
     || [ ! -f ${VIM_DIR}/indent/javascript.vim ]; then
     cd /tmp/
