@@ -6,17 +6,21 @@
 [color "branch"]
     current = bold
 [alias]
+    a    = add
     br   = branch
     ci   = commit
     cl   = clone
+    ca   = commit --amend
     cm   = commit -m
     co   = checkout
+    df   = diff
     f    = fetch
     lg   = log --graph --pretty=format:'%Cred%h%Creset - %C(blue bold)%an%Creset: %C(cyan)%s%Creset %Cgreen(%ar)%Creset'
     lgs  = log --pretty=format:'%Cblue%h%Creset: %s' # short
     m    = mv
     purr = pull --rebase
     s    = status -sb
+    st   = status
 [core]
     pager = cat
     editor = vim
