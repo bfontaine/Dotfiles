@@ -26,3 +26,5 @@
 	enabled = true
 [push]
 	default = tracking
+[web]
+	browser = chromium-browser
