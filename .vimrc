@@ -223,7 +223,6 @@ if has("autocmd")
     au FileType lisp,ocaml,scala,sql,yaml call Set_indent(2)
     au FileType css,javascript,markdown,sql,vim,txt call Candy()
 
-    au FileType html       call Use_html()
     au FileType javascript call Use_js()
     au FileType json       setlocal nocursorline
     au FileType lisp       let b:delimitMate_quotes = "\""
