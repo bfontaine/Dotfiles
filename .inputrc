@@ -1,0 +1,29 @@
+# Tip: re-read this file with <c-x><c-r>
+
+# up
+"\e[A": history-search-backward
+
+# down
+"\e[B": history-search-forward
+
+# show all possibilities on one <tab> instead of two
+set show-all-if-ambiguous on
+
+# case-insensitive completion, e.g.:
+# vim ~/.BASHR<tab> --> vim ~/.bashrc
+set completion-ignore-case on
+
+# No beep
+set bell-style none
+
+# From Bash manual
+$if Bash
+# prepare to type a quoted word --
+# insert open and close double quotes
+# and move to just after the open quote
+"\C-x\"": "\"\"\C-b"
+# Quote the current or previous word
+"\C-xq": "\eb\"\ef\""
+# Add a binding to refresh the line, which is unbound
+"\C-xr": redraw-current-line
+$endif
