@@ -111,6 +111,8 @@ export JAVA_HOME=/usr/
 
 # OCaml
 alias locaml='ledit ocaml'
+# OPAM configuration
+. /home/baptiste/.opam/opam-init/init.sh > /dev/null 2>&1
 
 # Processing
 alias processing="sh $APPS_DIR/processing-1.5.1/processing"
@@ -221,6 +223,3 @@ fi
 # Flash cookies
 rm -Rf ~/.adobe/*
 rm -Rf ~/.macromedia/*
-
-# starting
-clear
