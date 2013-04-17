@@ -129,7 +129,6 @@ export R_HOME='/usr/lib/R'
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 # usual
-alias rm='rm -i'
 alias ps='ps x'
 alias top='htop'
 alias cd='cd -P'
