@@ -17,7 +17,7 @@ set ff=unix                     " default file types: UNIX
 set foldmethod=manual           " manual folding
 set formatoptions+=n            " recognize lists when formatting text
 set hidden                      " buffers can exists in bg w/o being in a window
-set history=25                  " more command history
+set history=15                  " more command history
 set hlsearch                    " highlight current search
 set ignorecase                  " ignore case for '/regex' search
 set incsearch                   " incremental search with '/regex' search
@@ -81,6 +81,7 @@ nnoremap <leader>dc :tabnew ~/.curlrc<cr>
 nnoremap <leader>dg :tabnew ~/.gitconfig<cr>
 nnoremap <leader>di :tabnew ~/.irbrc<cr>
 nnoremap <leader>dm :tabnew ~/.muttrc<cr>
+nnoremap <leader>dr :tabnew ~/.inputrc<cr>
 nnoremap <leader>ds :tabnew ~/.ssh/config<cr>
 nnoremap <leader>dv :tabnew ~/.vimrc<cr>
 
@@ -92,7 +93,6 @@ inoremap <leader>w <esc>:w<cr>a
 
 " moving into the file
 inoremap <leader>z <esc>zza
-inoremap <leader>A <esc>A
 nnoremap <leader>z :set scrolloff=100<cr>
 nnoremap <leader>Z :set scrolloff=3<cr>
 
@@ -117,7 +117,7 @@ noremap <leader>T :tabnew<cr>
 nnoremap gt <c-w>gf
 
 " search
-nnoremap <leader><space> :set nohlsearch!<cr>
+nnoremap <leader><space> :setlocal nohlsearch!<cr>
 
 " sort
 vnoremap <leader>s :sort u<cr>
@@ -127,9 +127,6 @@ map <leader>ss :setlocal spell!<cr>
 
 " showing trailing spaces at the end of lines
 nnoremap <leader>$ :set list!<cr>
-
-" folding
-vnoremap <space> zf
 
 " - plugins options/mappings -
 
@@ -143,7 +140,7 @@ let delimitMate_expand_cr=1
 " Closetag
 au Filetype html,xhtml,xml,xsl,htmljinja so ~/.vim/scripts/closetag.vim 
 " CSS colors
-let g:cssColorVimDoNotMessMyUpdatetime = 1
+let g:cssColorVimDoNotMessMyUpdatetime=1
 " Gundo
 nnoremap <leader>g :GundoToggle<cr>
 " NERDTree
@@ -152,7 +149,7 @@ nnoremap <leader>n :NERDTreeToggle<cr>
 let g:Powerline_symbols='fancy'
 set laststatus=2
 " TableMode
-let g:table_mode_toggle_map = '<leader>-'
+" let g:table_mode_toggle_map = '<leader>-'
 " Tabular
 vnoremap <leader>t :Tabular<space>/
 vnoremap <leader>{ :Tabular<space>/{<cr>gv:Tabular<space>/}<cr>
