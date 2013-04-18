@@ -32,3 +32,5 @@
 	default = tracking
 [web]
 	browser = chromium-browser
+[github]
+	user = bfontaine
