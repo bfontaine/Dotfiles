@@ -9,10 +9,6 @@
 # show all possibilities on one <tab> instead of two
 set show-all-if-ambiguous on
 
-# case-insensitive completion, e.g.:
-# vim ~/.BASHR<tab> --> vim ~/.bashrc
-set completion-ignore-case on
-
 # No beep
 set bell-style none
 
