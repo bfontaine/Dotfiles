@@ -137,6 +137,8 @@ alias cd='cd -P'
 alias du='du -h'
 alias df='df -h'
 
+alias ack='ack-grep'
+
 alias  grep="grep $DIRCOLOR"
 alias fgrep="fgrep $DIRCOLOR"
 alias egrep="egrep $DIRCOLOR"
