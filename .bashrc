@@ -64,11 +64,14 @@ function _bash_prompt_command() {
 
     fi
 
+    # Replace "/home/foo" with "~"
+    NEWPWD=${PWD//$HOME/\~}
+
     # get current path, with only the first letter of the parent directoy, e.g.:
     #
     #  /home/alice/foo -> a/foo
     #
-    NEWPWD=$(pwd | perl -pe 's%.*/(.)[^/]*(?=/)%\1%')
+    NEWPWD=$(echo $NEWPWD | perl -pe 's%.*/(.)[^/]*(?=/)%\1%')
     
     if [ $DIRCOLOR ]; then
         # colors
