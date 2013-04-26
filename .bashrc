@@ -64,11 +64,11 @@ function _bash_prompt_command() {
 
     fi
 
-    # replace $HOME with '~'
-    NEWPWD=${PWD//$HOME/\~}
-
-    # if pwd > 30 chars, add '…' before and keep only 30 chars
-    [ ${#NEWPWD} -gt $l ] && NEWPWD=…${NEWPWD:$((${#NEWPWD}-${l})):${#NEWPWD}}
+    # get current path, with only the first letter of the parent directoy, e.g.:
+    #
+    #  /home/alice/foo -> a/foo
+    #
+    NEWPWD=$(pwd | perl -pe 's%.*/(.)[^/]*(?=/)%\1%')
     
     if [ $DIRCOLOR ]; then
         # colors
