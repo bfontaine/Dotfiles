@@ -1,0 +1,7 @@
+## General Settings
+
+# only search with case sensitivity if there is mixed case
+--smart-case
+# follow symlinks
+--follow
+
