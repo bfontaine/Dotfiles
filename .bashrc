@@ -158,10 +158,8 @@ alias xclip='xclip -selection "clipboard"'
 
 alias sag='sudo apt-get'
 alias sai='sudo apt-get install'
-alias saupg='sudo apt-get upgrade'
-alias saupd='sudo apt-get update'
-
-alias mt='saupd; saupg --yes && sag dist-upgrade --yes && sag autoremove --yes && sag autoclean'
+alias mt='sag update; sag upgrade --yes && sag dist-upgrade --yes \
+            && sag autoremove --yes && sag autoclean'
 
 alias aptis='aptitude search'
 
@@ -173,6 +171,7 @@ alias reload='source ~/.bashrc'
 [ $(which git-achievements) ] && alias git='git-achievements'
 
 # one-letter shortcuts
+alias a=ack
 alias c=cd
 alias f=find
 alias g=git
@@ -185,9 +184,6 @@ alias v=vim
 # two-letters ones
 alias ct=cat
 alias f~='find . -name "*~" -delete'
-alias gr=grep
-
-function cg() { if [ $# -eq 1 ]; then cd ~/Github/${1}*; else cd ~/Github; fi }
 
 # gi : copy ~/.gitignore in the current dir and call `git init`
 [ -f ~/.gitignore ] && alias gi='cp ~/.gitignore ./ && git init'
