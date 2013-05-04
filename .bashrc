@@ -1,14 +1,24 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-# don't put duplicate lines in the history.
-HISTCONTROL=ignoredups:ignorespace
+# don't put duplicate lines in the history, nor lines starting with a space
+HISTCONTROL=ignoreboth
 
 # append to the history file, don't overwrite it
 shopt -s histappend
+# git-like `**` path expansion
+shopt -s globstar
+# don't try to complete empty lines
+shopt -s no_empty_cmd_completion
+# `echo` expands backslash-escape sequences by default
+shopt -s xpg_echo
+
+# avoid some pranks based on infinite loops, e.g.:
+# while(true); do a_long_process & done
+ulimit -u 200
 
 # history length (very large for stats)
-HISTSIZE=20000
+HISTSIZE=600
 HISTFILESIZE=30000
 
 # update the values of LINES and COLUMNS after each command
@@ -27,69 +37,79 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-function _bash_prompt_command() {
+if [ $COLUMNS -gt 35 ]; then
 
-    local NEWPWD=$PWD
-    local l=30
-    local GITPROMPT=' '
-    local TMP=
-    local GITBR=
-    local ROOTPROMPT=
+    function _bash_prompt_command {
 
-    [ "$PROMPT_DIR_LEN" ] && l=$PROMPT_DIR_LEN;
+        local NEWPWD=$PWD
+        local l=30
+        local GITPROMPT=' '
+        local TMP=
+        local GITBR=
+        local ROOTPROMPT=
 
-    [ $EUID -eq 0 ] && ROOTPROMPT='[#]'
+        [ $EUID -eq 0 ] && ROOTPROMPT='[#]'
 
-    local GITSTATUS=$(git status 2> /dev/null)
-
-    if [ $? -eq 0 ]; then
-        echo $GITSTATUS | grep 'not staged' > /dev/null 2>&1
-        if [ $? -eq 0 ]; then
-            if [ $DIRCOLOR ]; then
-                GITPROMPT="\[\033[1;31m\]+\[\033[0m\]"
-            else
-                GITPROMPT='+'
-            fi
-        fi
-
-        GITBR=$(git describe --contains --all HEAD 2>/dev/null)
+        local GITSTATUS=$(git status 2> /dev/null)
 
         if [ $? -eq 0 ]; then
-            if [ $DIRCOLOR ]; then
-                GITPROMPT=" \033[0;36m{$GITBR}\[\033[0m\]$GITPROMPT";
-            else
-                GITPROMPT=" {$GITBR}$GITPROMPT";
+            echo $GITSTATUS | grep 'not staged' &> /dev/null
+            if [ $? -eq 0 ]; then
+                if [ $DIRCOLOR ]; then
+                    GITPROMPT="\[\033[1;31m\]+\[\033[0m\]"
+                else
+                    GITPROMPT='+'
+                fi
             fi
+
+            GITBR=$(git describe --contains --all HEAD 2> /dev/null)
+
+            if [ $? -eq 0 ]; then
+                if [ $DIRCOLOR ]; then
+                    GITPROMPT=" \033[0;36m{$GITBR}\[\033[0m\]$GITPROMPT";
+                else
+                    GITPROMPT=" {$GITBR}$GITPROMPT";
+                fi
+            fi
+
         fi
 
-    fi
+        # Replace "/home/foo" with "~"
+        NEWPWD=${PWD//$HOME/\~}
 
-    # Replace "/home/foo" with "~"
-    NEWPWD=${PWD//$HOME/\~}
+        # get current path, with only the first letter of the parent directoy, e.g.:
+        #
+        #  /home/alice/foo -> a/foo
+        #
+        NEWPWD=$(echo $NEWPWD | perl -pe 's%.*/(.)[^/]*(?=/)%\1%')
+        
+        if [ $DIRCOLOR ]; then
+            # colors
+            PS1="\h:${NEWPWD}${ROOTPROMPT}${GITPROMPT}\[\033[1;33m\]⚡\[\033[0m\] "
+        else
+            # no colors
+            PS1="\h:${NEWPWD}${ROOTPROMPT}${GITPROMPT}⚡ "
+        fi
+    }
 
-    # get current path, with only the first letter of the parent directoy, e.g.:
-    #
-    #  /home/alice/foo -> a/foo
-    #
-    NEWPWD=$(echo $NEWPWD | perl -pe 's%.*/(.)[^/]*(?=/)%\1%')
-    
-    if [ $DIRCOLOR ]; then
-        # colors
-        PS1="\h:${NEWPWD}${ROOTPROMPT}${GITPROMPT}\[\033[1;33m\]⚡\[\033[0m\] "
-    else
-        # no colors
-        PS1="\h:${NEWPWD}${ROOTPROMPT}${GITPROMPT}⚡ "
-    fi
-}
+    case $TERM in
+        xterm*|rxvt*|aterm|kterm|gnome*)
+            _bash_prompt_command;
+            PROMPT_COMMAND='_bash_prompt_command';;
+        *)
+            ;;
+    esac
 
-case $TERM in
-    xterm*|rxvt*|aterm|kterm|gnome*)
-        _bash_prompt_command;
-        PROMPT_COMMAND='_bash_prompt_command';;
-    *)
-        ;;
-esac
+else
 
+    # small terminal
+    export PROMPT_COMMAND=
+    PS1='∞ '
+    alias ls="ls -F $DIRCOLOR --group-directories-first";
+
+fi
+
+# Print to PDF files
 mkdir -p ~/PDF
 
 # need <C-d> twice to quit
@@ -99,9 +119,6 @@ ignoreeof=1
 export EDITOR='vim'
 export PS2='… '
 export PATH="$PATH:$HOME/Documents/Programmation/Android/sdk/tools:$HOME/bin"
-
-# Add home directory to the cd PATH
-export CDPATH=:~
 
 APPS_DIR="$HOME/Applications"
 
@@ -115,10 +132,7 @@ export JAVA_HOME=/usr/
 # OCaml
 alias locaml='ledit ocaml'
 # OPAM configuration
-. /home/baptiste/.opam/opam-init/init.sh > /dev/null 2>&1
-
-# Processing
-alias processing="sh $APPS_DIR/processing-1.5.1/processing"
+[[ -d "$HOME/opam" ]] && . "$HOME/.opam/opam-init/init.sh"
 
 # Python
 alias python='python3'
@@ -149,10 +163,10 @@ alias egrep="egrep $DIRCOLOR"
 alias la='ls -a'
 alias lr='ls -R'
 
-function mkcd() { mkdir -p $1 && cd $1; }
-function prettyjson() { python -mjson.tool < $1; }
+function mkcd { mkdir -p $1 && cd $1; }
+function prettyjson { python -mjson.tool < $1; }
 # adapted from http://www.commandlinefu.com/commands/view/3837/encode-image-to-base64-and-copy-to-clipboard
-function base64() { uuencode -m $1 /dev/stdout | sed '1d' | sed '$d' | tr -d '\n'; }
+function base64 { uuencode -m $1 /dev/stdout | sed '1d' | sed '$d' | tr -d '\n'; }
 
 alias xclip='xclip -selection "clipboard"'
 
@@ -199,27 +213,15 @@ alias closurecompiler="java -jar $APPS_DIR/GoogleClosureCompiler/compiler.jar"
 
 [ -f $APPS_DIR/Chunky/Chunky.jar ] && alias chunky="java -jar $APPS_DIR/Chunky/Chunky.jar"
 
-[ -x $HOME/bin/djsd ] && function dotjs-start() { djsd -d 2> $HOME/.dotjs_err.log; };
-
 alias sl='sl -e'
 alias LS='LS -e'
 
-for f in $HOME/bin/functions/*.sh;
-do
-    [ -x $f ] && . $f;
-done
+# Personal scripts
+for f in $HOME/bin/functions/*.sh; do [ -x $f ] && . $f; done
 
 # Internet
 alias flushDNS='sudo rndc flush'
 alias pker='ping -c 1 -w 1 kernel.org'
-
-if [ $COLUMNS -lt 35 ];
-then
-        # small terminal
-        export PROMPT_COMMAND=
-        PS1='∞ '
-        alias ls="ls -F $DIRCOLOR --group-directories-first";
-fi
 
 # Flash cookies
 rm -Rf ~/.adobe/*
