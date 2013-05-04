@@ -12,6 +12,10 @@ set show-all-if-ambiguous on
 # No beep
 set bell-style none
 
+# if the cursor is in the middle of a word, don't insert text
+# in it when completing.
+set skip-completed-text on
+
 # From Bash manual
 $if Bash
 # prepare to type a quoted word --
@@ -20,6 +24,8 @@ $if Bash
 "\C-x\"": "\"\"\C-b"
 # Quote the current or previous word
 "\C-xq": "\eb\"\ef\""
-# Add a binding to refresh the line, which is unbound
+# Refresh the current line
 "\C-xr": redraw-current-line
+# Kill the current line
+"\C-xc": kill-whole-line
 $endif
