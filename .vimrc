@@ -40,13 +40,13 @@ set smartindent                 " no autoindent when starting a new line
 set softtabstop=4               " 1 tab = 4 spaces
 set spelllang=fr,en             " Spell languages: FRench, ENglish
 set suffixes=,*.aux,*.toc,*lock " last used files when tab completing
-set tabpagemax=8                " only show 10 tabs
+set tabpagemax=8                " only show 8 tabs
 set tabstop=4                   " 1 tab = 4 spaces
 " set textwidth=80              " text width = 80 characters
 set timeout                     " Wait max 1sec for :mappings
 set title                       " show title in console title bar
 set undodir=~/.vim/backups      " keep undo history accross sessions
-set undofile                    " see 'undodir'
+set undofile
 set wildignore=*~,*.swp,*.class " files to ignore when tab completing
 set wildignore+=*.cmo,*.cmx
 set wildignore+=*.o,.git/**
