@@ -15,7 +15,7 @@ shopt -s xpg_echo
 
 # avoid some pranks based on infinite loops, e.g.:
 # while(true); do a_long_process & done
-ulimit -u 200
+ulimit -u 1024
 
 # history length (very large for stats)
 HISTSIZE=600
