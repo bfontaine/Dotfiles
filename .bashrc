@@ -13,10 +13,6 @@ shopt -s no_empty_cmd_completion
 # `echo` expands backslash-escape sequences by default
 shopt -s xpg_echo
 
-# avoid some pranks based on infinite loops, e.g.:
-# while(true); do a_long_process & done
-ulimit -u 1024
-
 # history length (very large for stats)
 HISTSIZE=600
 HISTFILESIZE=30000
