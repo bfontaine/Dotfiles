@@ -20,7 +20,7 @@
     m    = mv
     purr = pull --rebase
     s    = status -sb
-    st   = status
+    undo = reset --soft HEAD^
 [core]
     pager = cat
     editor = vim
