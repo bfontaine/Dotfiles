@@ -33,77 +33,66 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-if [ $COLUMNS -gt 35 ]; then
+function _bash_prompt_command {
 
-    function _bash_prompt_command {
+    local NEWPWD=$PWD
+    local l=30
+    local GITPROMPT=' '
+    local TMP=
+    local GITBR=
+    local ROOTPROMPT=
 
-        local NEWPWD=$PWD
-        local l=30
-        local GITPROMPT=' '
-        local TMP=
-        local GITBR=
-        local ROOTPROMPT=
+    [ $EUID -eq 0 ] && ROOTPROMPT='[#]'
 
-        [ $EUID -eq 0 ] && ROOTPROMPT='[#]'
+    local GITSTATUS=$(git status 2> /dev/null)
 
-        local GITSTATUS=$(git status 2> /dev/null)
+    if [ $? -eq 0 ]; then
+        echo $GITSTATUS | grep 'not staged' &> /dev/null
+        if [ $? -eq 0 ]; then
+            if [ $DIRCOLOR ]; then
+                GITPROMPT="\[\033[1;31m\]+\[\033[0m\]"
+            else
+                GITPROMPT='+'
+            fi
+        fi
+
+        GITBR=$(git describe --contains --all HEAD 2> /dev/null)
 
         if [ $? -eq 0 ]; then
-            echo $GITSTATUS | grep 'not staged' &> /dev/null
-            if [ $? -eq 0 ]; then
-                if [ $DIRCOLOR ]; then
-                    GITPROMPT="\[\033[1;31m\]+\[\033[0m\]"
-                else
-                    GITPROMPT='+'
-                fi
+            if [ $DIRCOLOR ]; then
+                GITPROMPT=" \033[0;36m{$GITBR}\[\033[0m\]$GITPROMPT";
+            else
+                GITPROMPT=" {$GITBR}$GITPROMPT";
             fi
-
-            GITBR=$(git describe --contains --all HEAD 2> /dev/null)
-
-            if [ $? -eq 0 ]; then
-                if [ $DIRCOLOR ]; then
-                    GITPROMPT=" \033[0;36m{$GITBR}\[\033[0m\]$GITPROMPT";
-                else
-                    GITPROMPT=" {$GITBR}$GITPROMPT";
-                fi
-            fi
-
         fi
 
-        # Replace "/home/foo" with "~"
-        NEWPWD=${PWD//$HOME/\~}
+    fi
 
-        # get current path, with only the first letter of the parent directoy, e.g.:
-        #
-        #  /home/alice/foo -> a/foo
-        #
-        NEWPWD=$(echo $NEWPWD | perl -pe 's%.*/(.)[^/]*(?=/)%\1%')
-        
-        if [ $DIRCOLOR ]; then
-            # colors
-            PS1="\h:${NEWPWD}${ROOTPROMPT}${GITPROMPT}\[\033[1;33m\]⚡\[\033[0m\] "
-        else
-            # no colors
-            PS1="\h:${NEWPWD}${ROOTPROMPT}${GITPROMPT}⚡ "
-        fi
-    }
+    # Replace "/home/foo" with "~"
+    NEWPWD=${PWD//$HOME/\~}
 
-    case $TERM in
-        xterm*|rxvt*|aterm|kterm|gnome*)
-            _bash_prompt_command;
-            PROMPT_COMMAND='_bash_prompt_command';;
-        *)
-            ;;
-    esac
+    # get current path, with only the first letter of the parent directoy, e.g.:
+    #
+    #  /home/alice/foo -> a/foo
+    #
+    NEWPWD=$(echo $NEWPWD | perl -pe 's%.*/(.)[^/]*(?=/)%\1%')
+    
+    if [ $DIRCOLOR ]; then
+        # colors
+        PS1="\h:${NEWPWD}${ROOTPROMPT}${GITPROMPT}\[\033[1;33m\]⚡\[\033[0m\] "
+    else
+        # no colors
+        PS1="\h:${NEWPWD}${ROOTPROMPT}${GITPROMPT}⚡ "
+    fi
+}
 
-else
-
-    # small terminal
-    export PROMPT_COMMAND=
-    PS1='∞ '
-    alias ls="ls -F $DIRCOLOR --group-directories-first";
-
-fi
+case $TERM in
+    xterm*|rxvt*|aterm|kterm|gnome*)
+        _bash_prompt_command;
+        PROMPT_COMMAND='_bash_prompt_command';;
+    *)
+        ;;
+esac
 
 # Print to PDF files
 mkdir -p ~/PDF
