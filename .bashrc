@@ -182,6 +182,7 @@ alias v=vim
 
 # two-letters ones
 alias ct=cat
+alias ev=evince
 alias f~='find . -name "*~" -delete'
 
 # gi : copy ~/.gitignore in the current dir and call `git init`
