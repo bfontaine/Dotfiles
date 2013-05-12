@@ -12,13 +12,14 @@ shopt -s globstar
 shopt -s no_empty_cmd_completion
 # `echo` expands backslash-escape sequences by default
 shopt -s xpg_echo
+# update the values of LINES and COLUMNS after each command
+shopt -s checkwinsize
+# if a command name is the name of a directory, cd into it
+shopt -s autocd
 
 # history length (very large for stats)
 HISTSIZE=600
 HISTFILESIZE=30000
-
-# update the values of LINES and COLUMNS after each command
-shopt -s checkwinsize
 
 # make less more friendly for non-text input files
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
