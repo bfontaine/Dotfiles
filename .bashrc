@@ -17,6 +17,11 @@ shopt -s checkwinsize
 # if a command name is the name of a directory, cd into it
 shopt -s autocd
 
+# This option is used to map ^W, and even if you bind another action
+# on ^W in your .inputrc, it always take precedence, so you have
+# to explicitely undefine it.
+stty werase undef
+
 # history length (very large for stats)
 HISTSIZE=600
 HISTFILESIZE=30000

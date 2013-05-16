@@ -6,6 +6,11 @@
 # down
 "\e[B": history-search-forward
 
+# Remove last word, like original ^W, but adding slashes to the
+# words separators. You need to use 'stty werase undef' in your
+# .bashrc for this to work.
+"\C-w": backward-kill-word
+
 # show all possibilities on one <tab> instead of two
 set show-all-if-ambiguous on
 
