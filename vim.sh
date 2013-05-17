@@ -218,17 +218,10 @@ install_if_absent syntax/brainfuck 14054
 install_if_absent syntax/conflicts.vim 19764
 
 # Clojure
-if [ ! -f ${VIM_DIR}/syntax/clojure.vim ]; then
+if [ ! -d ${VIM_DIR}/bundle/vim-clojure-static ]; then
 
-    cd /tmp/
-    mkdir -p clojure-vim && cd clojure-vim
-    wget http://www.vim.org/scripts/download_script.php?src_id=18485 \
-            -O clj-vim.zip
-
-    unzip clj-vim.zip
-
-    mv ftdetect/clojure.vim ${VIM_DIR}/ftdetect/clojure.vim
-    mv syntax/clojure.vim   ${VIM_DIR}/syntax/clojure.vim
+    cd ${VIM_DIR}/bundle
+    git clone https://github.com/guns/vim-clojure-static.git
 
 fi
 
