@@ -117,8 +117,14 @@ APPS_DIR="$HOME/Applications"
 
 alias vim='vim -p'
 
+# Clojure
+alias clj=clojure
+
 # Java
 export JAVA_HOME=/usr/
+
+# Node
+export NODE_PATH='/usr/lib/node_modules'
 
 # OCaml
 alias locaml='ledit ocaml'
@@ -128,9 +134,6 @@ alias locaml='ledit ocaml'
 # Python
 alias python='python3'
 export PYTHONSTARTUP=~/.pythonrc.py
-
-# Node
-export NODE_PATH='/usr/lib/node_modules'
 
 # R
 export R_HOME='/usr/lib/R'
@@ -178,9 +181,7 @@ alias reload='source ~/.bashrc'
 [ $(which git-achievements) ] && alias git='git-achievements'
 
 # one-letter shortcuts
-alias a=ack
 alias c=cd
-alias f=find
 alias g=git
 alias l="ls -Fhg $DIRCOLOR --group-directories-first"
 alias m=mv
@@ -192,6 +193,8 @@ alias v=vim
 alias ct=cat
 alias ev=evince
 alias f~='find . -name "*~" -delete'
+alias fn='find . -name'
+alias mk=make
 
 # gi : copy ~/.gitignore in the current dir and call `git init`
 [ -f ~/.gitignore ] && alias gi='cp ~/.gitignore ./ && git init'
