@@ -38,7 +38,7 @@ cd ${VIM_DIR}/bundle/
 
 for plugin in endwise haml markdown surround; do
     if [ ! -d ${VIM_DIR}/bundle/vim-${plugin} ]; then
-        git clone git://github.com/tpope/vim-${plugin}.git
+        git clone https://github.com/tpope/vim-${plugin}.git
     fi
 done
 
@@ -51,7 +51,7 @@ install_if_absent doc/alternate 6347
 # you need Clang installed (package 'clang' on Ubuntu)
 if     [ ! -f ${VIM_DIR}/plugin/clang_complete.vim ]; then 
     cd /tmp/
-    git clone git://github.com/Rip-Rip/clang_complete.git
+    git clone https://github.com/Rip-Rip/clang_complete.git
     cd clang_complete/
     make install
     cd ..
@@ -84,7 +84,7 @@ fi
 if     [ ! -f ${VIM_DIR}/doc/delimitMate.txt ] \
     || [ ! -f ${VIM_DIR}/plugin/delimitMate.vim ];then
     cd /tmp/
-    git clone git://github.com/Raimondi/delimitMate.git
+    git clone https://github.com/Raimondi/delimitMate.git
     cd delimitMate/
     mv autoload/delimitMate.vim ${VIM_DIR}/autoload/
     mv doc/delimitMate.txt ${VIM_DIR}/doc/
@@ -118,7 +118,7 @@ fi
 # NerdTree : File tree
 if [ ! -d ${VIM_DIR}/bundle/nerdtree ]; then
     cd ${VIM_DIR}/bundle/
-    git clone git://github.com/scrooloose/nerdtree.git
+    git clone https://github.com/scrooloose/nerdtree.git
 fi
 
 # Numbers : better line numbers
@@ -130,7 +130,7 @@ fi
 # Powerline : better status line
 if [ ! -d ${VIM_DIR}/bundle/vim-powerline ]; then
     cd ${VIM_DIR}/bundle/
-    git clone git://github.com/Lokaltog/vim-powerline.git
+    git clone https://github.com/Lokaltog/vim-powerline.git
 fi
 
 # SnipMate : allow TextMate's snippets in Vim
@@ -143,14 +143,14 @@ fi
 # Table-mode : easy table editing/formatting
 
 if [ ! -d ${VIM_DIR}/bundle/vim-table-mode ]; then
-        git clone git://github.com/dhruvasagar/vim-table-mode.git \
+        git clone https://github.com/dhruvasagar/vim-table-mode.git \
             ${VIM_DIR}/bundle/vim-table-mode
 fi
 
 # Tabular : text line up made easy
 if [ ! -d ${VIM_DIR}/bundle/tabular ]; then
     cd ${VIM_DIR}/bundle/
-    git clone git://github.com/godlygeek/tabular.git
+    git clone https://github.com/godlygeek/tabular.git
 fi
 
 # Taglist : source code browser
@@ -198,14 +198,14 @@ install_if_absent colors/candycode 6066
 # Molokai
 if [ ! -f ${VIM_DIR}/colors/molokai.vim ]; then
     cd /tmp/
-    git clone git://github.com/tomasr/molokai.git
+    git clone https://github.com/tomasr/molokai.git
     mv molokai/colors/molokai.vim ${VIM_DIR}/colors/
 fi
 
 # Tomorrow
 if [ ! -f ${VIM_DIR}/colors/Tomorrow.vim ]; then
     cd /tmp/
-    git clone git://github.com/chriskempson/tomorrow-theme.git
+    git clone https://github.com/chriskempson/tomorrow-theme.git
     mv tomorrow-theme/vim/colors/Tomorrow* ${VIM_DIR}/colors/
 fi
 
@@ -299,7 +299,7 @@ install_if_absent syntax/json 10853
 if [ ! -d ${VIM_DIR}/bundle/mustache ]; then
     cd ${VIM_DIR}
     [ ! -d .git ] && git init
-    git submodule add git://github.com/juvenn/mustache.vim.git bundle/mustache
+    git submodule add https://github.com/juvenn/mustache.vim.git bundle/mustache
 fi
 
 # Omgrofl
