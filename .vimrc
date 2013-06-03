@@ -194,6 +194,7 @@ if has("autocmd")
 
     " filetypes
     " - general
+    au BufNewFile,BufRead *.clap           set ft=clap
     au BufNewFile,BufRead *.conflicts      set ft=conflicts
     au BufNewFile,BufRead *.e,*.E          set ft=e
     au BufNewFile,BufRead *.ft,*.fh,*.fth  set ft=forth
@@ -217,7 +218,7 @@ if has("autocmd")
 
     " filetypes settings
     au FileType markdown,txt set tw=80
-    au FileType lisp,ocaml,scala,sql,yaml call Set_indent(2)
+    au FileType lisp,ocaml,ruby,scala,sql,yaml call Set_indent(2)
     au FileType css,javascript,markdown,sql,vim,txt call Candy()
 
     au FileType javascript call Use_js()
