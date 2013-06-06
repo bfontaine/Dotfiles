@@ -1,0 +1,17 @@
+# Vim
+*~
+.*.swp
+.*.swo
+
+# Java
+*.class
+
+# Zip & Co
+*.zip
+*.tar
+*.gz
+*.tgz
+*.tbz2
+*.bzip2
+*.7z
+*.rar

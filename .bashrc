@@ -196,9 +196,6 @@ alias f~='find . -name "*~" -delete'
 alias fn='find . -name'
 alias mk=make
 
-# gi : copy ~/.gitignore in the current dir and call `git init`
-[ -f ~/.gitignore ] && alias gi='cp ~/.gitignore ./ && git init'
-
 # apps
 alias chromium='chromium-browser'
 if [ -f $APPS_DIR/minecraft.jar ]; then
