@@ -21,9 +21,11 @@
     purr = pull --rebase
     s    = status -sb
     undo = reset --soft HEAD^
+    who  = shortlog -s --
 [core]
     pager = cat
     editor = vim
+    excludesfile = /home/baptiste/.global_ignore
 [branch]
 	autosetupmerge = true
 [rerere]
