@@ -118,7 +118,7 @@ APPS_DIR="$HOME/Applications"
 alias vim='vim -p'
 
 # Clojure
-alias clj=clojure
+hash clojure 2>/dev/null && alias clj=clojure
 
 # Java
 export JAVA_HOME=/usr/
