@@ -35,6 +35,7 @@ set scrolloff=5                 " keep 5 context lines above/below the cursor
 set shell=/bin/bash             " set Bash shell
 set shiftwidth=4                " use 4-spaces indentation
 set showcmd                     " show current incomplete command
+set showmatch                   " show matching braces/brackets/etc
 set smartcase                   " check case if upper case chars in /regex
 set smartindent                 " no autoindent when starting a new line
 set softtabstop=4               " 1 tab = 4 spaces
@@ -54,6 +55,7 @@ set wildmenu                    " show completion possibilities in command mode
 
 syntax sync minlines=256
 syntax sync maxlines=1024
+syntax on
 
 " -- Colorscheme
 
@@ -112,6 +114,10 @@ noremap <c-down> :tabn<cr>
 noremap <c-up>   :tabp<cr>
 inoremap <c-down> <esc>:tabn<cr>
 inoremap <c-up>   <esc>:tabp<cr>
+
+" When <c-up/down> is already mapped by the OS
+noremap <c-w> :tabp<cr>
+nnoremap <c-x> :tabn<cr>
 
 noremap <leader>T :tabnew<cr>
 nnoremap gt <c-w>gf
@@ -185,11 +191,6 @@ fun Use_markdown()
     inoremap <leader>H= <esc>yypVr=ki
 endf
 
-fun Candy()
-    colorscheme candycode
-    :hi CursorLine cterm=NONE ctermbg=DarkCyan ctermfg=NONE
-endf
-
 if has("autocmd")
 
     " filetypes
@@ -219,7 +220,7 @@ if has("autocmd")
     " filetypes settings
     au FileType markdown,txt set tw=80
     au FileType lisp,ocaml,ruby,scala,sql,yaml call Set_indent(2)
-    au FileType css,javascript,markdown,sql,vim,txt call Candy()
+    au FileType css,javascript,markdown,sql,vim,txt colorscheme molokai
 
     au FileType javascript call Use_js()
     au FileType json       setlocal nocursorline
