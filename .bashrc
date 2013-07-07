@@ -33,11 +33,15 @@ HISTFILESIZE=30000
 
 # enable color support of ls/grep/…
 DIRCOLOR=
-[ -x /usr/bin/dircolors ] && DIRCOLOR='--color=auto'
+[ -x /usr/bin/dircolors ] ||
+    [[ $(tput -T$TERM colors) -ge 8 ]] && DIRCOLOR='--color=auto'
 
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
+prompt_special_char="⚡"
+if [ "$(uname)" == "Darwin" ]; then prompt_special_char="%";fi
 
 function _bash_prompt_command {
 
@@ -85,10 +89,10 @@ function _bash_prompt_command {
     
     if [ $DIRCOLOR ]; then
         # colors
-        PS1="\h:${NEWPWD}${ROOTPROMPT}${GITPROMPT}\[\033[1;33m\]⚡\[\033[0m\] "
+        PS1="\h:${NEWPWD}${ROOTPROMPT}${GITPROMPT}\[\033[1;33m\]${prompt_special_char}\[\033[0m\] "
     else
         # no colors
-        PS1="\h:${NEWPWD}${ROOTPROMPT}${GITPROMPT}⚡ "
+        PS1="\h:${NEWPWD}${ROOTPROMPT}${GITPROMPT}${prompt_special_char} "
     fi
 }
 
@@ -164,7 +168,8 @@ function prettyjson { python -mjson.tool < $1; }
 # adapted from http://www.commandlinefu.com/commands/view/3837/encode-image-to-base64-and-copy-to-clipboard
 function base64 { uuencode -m $1 /dev/stdout | sed '1d' | sed '$d' | tr -d '\n'; }
 
-alias xclip='xclip -selection "clipboard"'
+hash xclip 2>/dev/null && \
+    alias xclip='xclip -selection "clipboard"'
 
 alias sag='sudo apt-get'
 alias sai='sudo apt-get install'
