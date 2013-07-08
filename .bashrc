@@ -171,12 +171,20 @@ function base64 { uuencode -m $1 /dev/stdout | sed '1d' | sed '$d' | tr -d '\n';
 hash xclip 2>/dev/null && \
     alias xclip='xclip -selection "clipboard"'
 
-alias sag='sudo apt-get'
-alias sai='sudo apt-get install'
-alias mt='sag update; sag upgrade --yes && sag dist-upgrade --yes \
-            && sag autoremove --yes && sag autoclean'
+hash apt-get 2>/dev/null
+if [ $? -eq 0 ]; then
+
+    alias sag='sudo apt-get'
+    alias sai='sudo apt-get install'
+    alias mt='sag update; sag upgrade --yes && sag dist-upgrade --yes \
+                && sag autoremove --yes && sag autoclean'
+
+else
+    hash brew 2>/dev/null && alias mt="brew update"
+fi
 
 alias aptis='aptitude search'
+
 
 # bashrc
 alias reload='source ~/.bashrc'
@@ -188,7 +196,7 @@ alias reload='source ~/.bashrc'
 # one-letter shortcuts
 alias c=cd
 alias g=git
-alias l="ls -Fhg $DIRCOLOR --group-directories-first"
+alias l="ls -Fhg"
 alias m=mv
 alias n=node
 alias s=sudo
