@@ -1,0 +1,9 @@
+# .bashrc with stuff for OS X only
+
+alias mt='brew upgrade; brew update'
+
+alias emacs='emacs-24.3'
+
+# One-letter aliases
+alias b='brew'
+alias l='ls -Fhg'

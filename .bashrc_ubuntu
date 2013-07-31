@@ -1,0 +1,60 @@
+# .bashrc with stuff for Ubuntu only
+#
+
+# Print to PDF files
+mkdir -p ~/PDF
+
+# == Programming ==
+
+# Clojure
+hash clojure 2>/dev/null && alias clj=clojure
+
+# Java
+export JAVA_HOME=/usr/
+
+# Apps
+APPS_DIR="$HOME/Applications"
+
+# these scripts are installed on my Ubuntu machines only
+alias chromium='chromium-browser'
+alias yuicompressor="java -jar $APPS_DIR/yuicompressor-2.4.7.jar"
+alias closurecompiler="java -jar $APPS_DIR/GoogleClosureCompiler/compiler.jar"
+
+if [ -f $APPS_DIR/minecraft.jar ]; then
+    alias minecraft="padsp java -jar $APPS_DIR/minecraft.jar";
+    alias mc=minecraft;
+    [ -f $APPS_DIR/Chunky/Chunky.jar ] && \
+        alias chunky="java -jar $APPS_DIR/Chunky/Chunky.jar"
+fi
+
+# apt-get -related aliases
+alias sag='sudo apt-get'
+alias sai='sudo apt-get install'
+alias mt='sag update; sag upgrade --yes && sag dist-upgrade --yes \
+            && sag autoremove --yes && sag autoclean'
+alias aptis='aptitude search'
+
+alias xclip='xclip -selection "clipboard"'
+
+# Git
+# see github.com/icefox/git-achievements
+[ $(which git-achievements) ] && alias git='git-achievements'
+
+# Common aliases
+
+# --group-directories-first is a non-standard option
+alias l="ls -Fhg --color=auto --group-directories-first"
+
+alias ack='ack-grep'
+
+alias sl='sl -e'
+alias LS='LS -e'
+
+alias ev=evince
+
+# Internet
+alias flushDNS='sudo rndc flush'
+
+# Flash cookies
+rm -Rf ~/.adobe/*
+rm -Rf ~/.macromedia/*

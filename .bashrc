@@ -40,9 +40,6 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-prompt_special_char="⚡"
-if [ "$(uname)" == "Darwin" ]; then prompt_special_char="%";fi
-
 function _bash_prompt_command {
 
     local NEWPWD=$PWD
@@ -89,10 +86,10 @@ function _bash_prompt_command {
     
     if [ $DIRCOLOR ]; then
         # colors
-        PS1="\h:${NEWPWD}${ROOTPROMPT}${GITPROMPT}\[\033[1;33m\]${prompt_special_char}\[\033[0m\] "
+        PS1="\h:${NEWPWD}${ROOTPROMPT}${GITPROMPT}\[\033[1;33m\]%\[\033[0m\] "
     else
         # no colors
-        PS1="\h:${NEWPWD}${ROOTPROMPT}${GITPROMPT}${prompt_special_char} "
+        PS1="\h:${NEWPWD}${ROOTPROMPT}${GITPROMPT}% "
     fi
 }
 
@@ -104,36 +101,23 @@ case $TERM in
         ;;
 esac
 
-# Print to PDF files
-mkdir -p ~/PDF
-
 # need <C-d> twice to quit
 ignoreeof=1
 
 # variables
 export EDITOR='vim'
 export PS2='… '
-export PATH="$PATH:$HOME/Documents/Programmation/Android/sdk/tools:$HOME/bin"
-
-APPS_DIR="$HOME/Applications"
+export PATH="$PATH:/usr/local/sbin:$HOME/bin"
 
 # == Programming ==
 
 alias vim='vim -p'
-
-# Clojure
-hash clojure 2>/dev/null && alias clj=clojure
-
-# Java
-export JAVA_HOME=/usr/
 
 # Node
 export NODE_PATH='/usr/lib/node_modules'
 
 # OCaml
 alias locaml='ledit ocaml'
-# OPAM configuration
-[[ -d "$HOME/opam" ]] && . "$HOME/.opam/opam-init/init.sh"
 
 # Python
 alias python='python3'
@@ -141,9 +125,6 @@ export PYTHONSTARTUP=~/.pythonrc.py
 
 # R
 export R_HOME='/usr/lib/R'
-
-# Ruby
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 # usual
 alias ps='ps x'
@@ -153,8 +134,7 @@ alias du='du -h'
 alias df='df -h'
 
 alias -- -='cd -'
-
-alias ack='ack-grep'
+alias +x='chmod u+x'
 
 alias  grep="grep $DIRCOLOR"
 alias fgrep="fgrep $DIRCOLOR"
@@ -163,40 +143,13 @@ alias egrep="egrep $DIRCOLOR"
 alias la='ls -a'
 alias lr='ls -R'
 
-function mkcd { mkdir -p $1 && cd $1; }
-function prettyjson { python -mjson.tool < $1; }
-# adapted from http://www.commandlinefu.com/commands/view/3837/encode-image-to-base64-and-copy-to-clipboard
-function base64 { uuencode -m $1 /dev/stdout | sed '1d' | sed '$d' | tr -d '\n'; }
+function mkcd { mkdir -p "$1" && cd "$1"; }
 
-hash xclip 2>/dev/null && \
-    alias xclip='xclip -selection "clipboard"'
-
-hash apt-get 2>/dev/null
-if [ $? -eq 0 ]; then
-
-    alias sag='sudo apt-get'
-    alias sai='sudo apt-get install'
-    alias mt='sag update; sag upgrade --yes && sag dist-upgrade --yes \
-                && sag autoremove --yes && sag autoclean'
-
-else
-    hash brew 2>/dev/null && alias mt="brew update"
-fi
-
-alias aptis='aptitude search'
-
-
-# bashrc
 alias reload='source ~/.bashrc'
-
-# git
-# see github.com/icefox/git-achievements
-[ $(which git-achievements) ] && alias git='git-achievements'
 
 # one-letter shortcuts
 alias c=cd
 alias g=git
-alias l="ls -Fhg"
 alias m=mv
 alias n=node
 alias s=sudo
@@ -204,32 +157,18 @@ alias v=vim
 
 # two-letters ones
 alias ct=cat
-alias ev=evince
 alias f~='find . -name "*~" -delete'
 alias fn='find . -name'
 alias mk=make
-
-# apps
-alias chromium='chromium-browser'
-if [ -f $APPS_DIR/minecraft.jar ]; then
-    alias minecraft="padsp java -jar $APPS_DIR/minecraft.jar";
-    alias mc=minecraft;
-fi
-alias yuicompressor="java -jar $APPS_DIR/yuicompressor-2.4.7.jar"
-alias closurecompiler="java -jar $APPS_DIR/GoogleClosureCompiler/compiler.jar"
-
-[ -f $APPS_DIR/Chunky/Chunky.jar ] && alias chunky="java -jar $APPS_DIR/Chunky/Chunky.jar"
-
-alias sl='sl -e'
-alias LS='LS -e'
 
 # Personal scripts
 for f in $HOME/bin/functions/*.sh; do [ -x $f ] && . $f; done
 
 # Internet
-alias flushDNS='sudo rndc flush'
 alias pker='ping -c 1 -w 1 kernel.org'
 
-# Flash cookies
-rm -Rf ~/.adobe/*
-rm -Rf ~/.macromedia/*
+if [ "`uname`" = "Darwin" ] && [ -f "$HOME/.bashrc_osx" ]; then
+    . $HOME/.bashrc_osx
+elif [[ "`uname`" =~ "Ubuntu" ]] && [ -f "$HOME/.bashrc_ubuntu" ]; then
+    . $HOME/.bashrc_ubuntu
+fi
