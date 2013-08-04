@@ -30,7 +30,7 @@ fi
 # apt-get -related aliases
 alias sag='sudo apt-get'
 alias sai='sudo apt-get install'
-alias mt='sag update; sag upgrade --yes && sag dist-upgrade --yes \
+alias mt='sag update; sag upgrade -f --yes && sag dist-upgrade --yes \
             && sag autoremove --yes && sag autoclean'
 alias aptis='aptitude search'
 
