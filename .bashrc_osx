@@ -1,13 +1,19 @@
 # .bashrc with stuff for OS X only
 
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
+BREW_PREFIX=$(brew --prefix)
+
+_Z_NO_PROMPT_COMMAND=1
+. $BREW_PREFIX/etc/profile.d/z.sh
+
+if [ -f $BREW_PREFIX/etc/bash_completion ]; then
+    . $BREW_PREFIX/etc/bash_completion
 fi
 
 alias mt='brew upgrade; brew update'
 
+# Programming
 alias emacs='emacs-24.3'
 
 # One-letter aliases
 alias b='brew'
-alias l='ls -Fhg'
+alias l='ls -FGhg'
