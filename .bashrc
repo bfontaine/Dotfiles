@@ -143,7 +143,7 @@ alias egrep="egrep $DIRCOLOR"
 alias la='ls -a'
 alias lr='ls -R'
 
-function mkcd { mkdir -p "$1" && cd "$1"; }
+function mkcd() { mkdir -p "$1" && cd "$1"; }
 
 alias reload='source ~/.bashrc'
 
@@ -169,6 +169,6 @@ alias pker='ping -c 1 -w 1 kernel.org'
 
 if [ "`uname`" = "Darwin" ] && [ -f "$HOME/.bashrc_osx" ]; then
     . $HOME/.bashrc_osx
-elif [[ "`uname`" =~ "Ubuntu" ]] && [ -f "$HOME/.bashrc_ubuntu" ]; then
+elif [[ "`uname -a`" =~ "Ubuntu" ]] && [ -f "$HOME/.bashrc_ubuntu" ]; then
     . $HOME/.bashrc_ubuntu
 fi
