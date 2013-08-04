@@ -2,7 +2,6 @@
 
 BREW_PREFIX=$(brew --prefix)
 
-_Z_NO_PROMPT_COMMAND=1
 . $BREW_PREFIX/etc/profile.d/z.sh
 
 if [ -f $BREW_PREFIX/etc/bash_completion ]; then
