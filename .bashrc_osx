@@ -1,5 +1,9 @@
 # .bashrc with stuff for OS X only
 
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+fi
+
 alias mt='brew upgrade; brew update'
 
 alias emacs='emacs-24.3'
