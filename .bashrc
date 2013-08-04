@@ -160,6 +160,7 @@ alias ct=cat
 alias f~='find . -name "*~" -delete'
 alias fn='find . -name'
 alias mk=make
+alias sv='sudo vim -p'
 
 # Personal scripts
 for f in $HOME/bin/functions/*.sh; do [ -x $f ] && . $f; done
