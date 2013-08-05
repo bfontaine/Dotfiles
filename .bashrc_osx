@@ -2,11 +2,17 @@
 
 BREW_PREFIX=$(brew --prefix)
 
+# z
 . $BREW_PREFIX/etc/profile.d/z.sh
 
+# Bash completion
 if [ -f $BREW_PREFIX/etc/bash_completion ]; then
     . $BREW_PREFIX/etc/bash_completion
 fi
+
+# sub (qs)
+eval "$($HOME/.qs/bin/qs init -)"
+
 
 alias mt='brew upgrade; brew update'
 
@@ -16,3 +22,4 @@ alias emacs='emacs-24.3'
 # One-letter aliases
 alias b='brew'
 alias l='ls -FGhg'
+
