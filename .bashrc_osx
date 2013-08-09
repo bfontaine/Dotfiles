@@ -13,7 +13,6 @@ fi
 # sub (qs)
 eval "$($HOME/.qs/bin/qs init -)"
 
-
 alias mt='brew upgrade; brew update'
 
 # Programming
@@ -27,3 +26,8 @@ alias es="elasticsearch -f -D \
 alias b='brew'
 alias l='ls -FGhg'
 
+# Prompt
+# the MAIN_HOSTNAME variable is set in ~/.private_bashrc
+if [ "`hostname`" = "$MAIN_HOSTNAME" ]; then
+    PS1_PREFIX=' '
+fi

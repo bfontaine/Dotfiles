@@ -40,6 +40,9 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
+PS1_PREFIX='\h:'
+PS1_SYMBOL='λ'
+
 function _bash_prompt_command {
 
     local NEWPWD=$PWD
@@ -83,13 +86,14 @@ function _bash_prompt_command {
     #  /home/alice/foo -> a/foo
     #
     NEWPWD=$(echo $NEWPWD | perl -pe 's%.*/(.)[^/]*(?=/)%\1%')
-    
+
+    PS1="${PS1_PREFIX}${NEWPWD}${ROOTPROMPT}${GITPROMPT}";
     if [ $DIRCOLOR ]; then
         # colors
-        PS1="\h:${NEWPWD}${ROOTPROMPT}${GITPROMPT}\[\033[1;33m\]λ\[\033[0m\] "
+        PS1="${PS1}\[\033[1;33m\]${PS1_SYMBOL}\[\033[0m\] "
     else
         # no colors
-        PS1="\h:${NEWPWD}${ROOTPROMPT}${GITPROMPT}λ "
+        PS1="${PS1}${PS1_SYMBOL} "
     fi
 }
 
