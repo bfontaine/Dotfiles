@@ -86,10 +86,10 @@ function _bash_prompt_command {
     
     if [ $DIRCOLOR ]; then
         # colors
-        PS1="\h:${NEWPWD}${ROOTPROMPT}${GITPROMPT}\[\033[1;33m\]%\[\033[0m\] "
+        PS1="\h:${NEWPWD}${ROOTPROMPT}${GITPROMPT}\[\033[1;33m\]λ\[\033[0m\] "
     else
         # no colors
-        PS1="\h:${NEWPWD}${ROOTPROMPT}${GITPROMPT}% "
+        PS1="\h:${NEWPWD}${ROOTPROMPT}${GITPROMPT}λ "
     fi
 }
 
