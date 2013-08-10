@@ -78,14 +78,9 @@ function _bash_prompt_command {
 
     fi
 
-    # Replace "/home/foo" with "~"
+    # Replace "/home/foo" with "~", and keep only the current directory
     NEWPWD=${PWD//$HOME/\~}
-
-    # get current path, with only the first letter of the parent directoy, e.g.:
-    #
-    #  /home/alice/foo -> a/foo
-    #
-    NEWPWD=$(echo $NEWPWD | perl -pe 's%.*/(.)[^/]*(?=/)%\1%')
+    NEWPWD=${NEWPWD##*/}
 
     PS1="${PS1_PREFIX}${NEWPWD}${ROOTPROMPT}${GITPROMPT}";
     if [ $DIRCOLOR ]; then
