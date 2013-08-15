@@ -148,6 +148,7 @@ alias reload='source ~/.bashrc'
 
 # one-letter shortcuts
 alias c=cd
+alias f=find
 alias g=git
 alias m=mv
 alias n=node
@@ -157,12 +158,8 @@ alias v=vim
 # two-letters ones
 alias ct=cat
 alias f~='find . -name "*~" -delete'
-alias fn='find . -name'
 alias mk=make
 alias sv='sudo vim -p'
-
-# Personal scripts
-for f in $HOME/bin/functions/*.sh; do [ -x $f ] && . $f; done
 
 # Internet
 alias pker='ping -c 1 -w 1 kernel.org'

@@ -40,6 +40,11 @@ alias xclip='xclip -selection "clipboard"'
 # see github.com/icefox/git-achievements
 [ $(which git-achievements) ] && alias git='git-achievements'
 
+# Personal scripts
+if [ -d "$HOME/bin/functions" ]; then
+    for f in $HOME/bin/functions/*.sh; do [ -x $f ] && . $f; done
+fi
+
 # Common aliases
 
 # --group-directories-first is a non-standard option
