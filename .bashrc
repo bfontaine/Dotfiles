@@ -91,6 +91,10 @@ function _bash_prompt_command {
         PS1="${PS1}${PS1_SYMBOL} "
     fi
 }
+# the MAIN_HOSTNAME variable is set in ~/.private_bashrc
+if [ "`hostname`" = "$MAIN_HOSTNAME" ]; then
+    PS1_PREFIX=' '
+fi
 
 case $TERM in
     xterm*|rxvt*|aterm|kterm|gnome*)
@@ -134,6 +138,11 @@ alias df='df -h'
 
 alias -- -='cd -'
 alias +x='chmod u+x'
+
+alias less='less -R'
+if [ -d "$HOME/.bash_utils" ]; then
+    export LESSOPEN="|$HOME/.bash_utils/lesspipe.sh %s"
+fi
 
 alias  grep="grep $DIRCOLOR"
 alias fgrep="fgrep $DIRCOLOR"

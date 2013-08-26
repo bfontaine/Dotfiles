@@ -3,7 +3,9 @@
 BREW_PREFIX=$(brew --prefix)
 
 # z
-. $BREW_PREFIX/etc/profile.d/z.sh
+if [ -f $BREW_PREFIX/etc/profile.d/z.sh ]; then
+    . $BREW_PREFIX/etc/profile.d/z.sh
+fi
 
 # Bash completion
 if [ -f $BREW_PREFIX/etc/bash_completion ]; then
@@ -22,15 +24,3 @@ alias es="elasticsearch -f -D \
 # One-letter aliases
 alias b='brew'
 alias l='ls -FGhg'
-
-# less
-alias less='less -R'
-if [ -d "$HOME/.bash_utils" ]; then
-    export LESSOPEN="|$HOME/.bash_utils/lesspipe.sh %s"
-fi
-
-# Prompt
-# the MAIN_HOSTNAME variable is set in ~/.private_bashrc
-if [ "`hostname`" = "$MAIN_HOSTNAME" ]; then
-    PS1_PREFIX=' '
-fi
