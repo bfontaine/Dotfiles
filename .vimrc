@@ -79,11 +79,7 @@ vnoremap <f1> <esc>
 
 " open dotfiles
 nnoremap <leader>db :tabnew ~/.bashrc<cr>
-nnoremap <leader>dc :tabnew ~/.curlrc<cr>
 nnoremap <leader>dg :tabnew ~/.gitconfig<cr>
-nnoremap <leader>di :tabnew ~/.irbrc<cr>
-nnoremap <leader>dm :tabnew ~/.muttrc<cr>
-nnoremap <leader>dr :tabnew ~/.inputrc<cr>
 nnoremap <leader>ds :tabnew ~/.ssh/config<cr>
 nnoremap <leader>dv :tabnew ~/.vimrc<cr>
 
@@ -103,7 +99,7 @@ cnoremap <c-a> <Home>
 inoremap <c-a> <esc>^i
 cnoremap <c-e> <End>
 inoremap <c-e> <esc>$a
-noremap <c-e> $
+noremap  <c-e> $
 
 " windows
 noremap <c-left> <c-w>h
@@ -116,8 +112,8 @@ inoremap <c-down> <esc>:tabn<cr>
 inoremap <c-up>   <esc>:tabp<cr>
 
 " When <c-up/down> is already mapped by the OS
-noremap <c-w> :tabp<cr>
-nnoremap <c-x> :tabn<cr>
+noremap ÷ :tabp<cr>
+nnoremap ≠ :tabn<cr>
 
 noremap <leader>T :tabnew<cr>
 nnoremap gt <c-w>gf
@@ -127,9 +123,6 @@ nnoremap <leader><space> :setlocal nohlsearch!<cr>
 
 " sort
 vnoremap <leader>s :sort u<cr>
-
-" spell
-map <leader>ss :setlocal spell!<cr>
 
 " showing trailing spaces at the end of lines
 nnoremap <leader>$ :set list!<cr>
@@ -159,8 +152,6 @@ set laststatus=2
 " Tabular
 vnoremap <leader>t :Tabular<space>/
 vnoremap <leader>{ :Tabular<space>/{<cr>gv:Tabular<space>/}<cr>
-" Taglist
-nnoremap <leader>t :TlistToggle<cr>
 " Zencoding
 " au FileType htmljinja,html,xhtml"
 let g:user_zen_expandabbr_key='<leader>h'
@@ -170,7 +161,6 @@ let g:user_zen_expandabbr_key='<leader>h'
 " saving
 command W :w
 command WQ :wq
-command SudoW :w !sudo tee % > /dev/null
 
 " -- functions --
 
@@ -183,12 +173,6 @@ endf
 fun Use_js()
     setlocal ofu=javascriptcomplete#CompleteJS
     let b:delimitMate_expand_space=1
-endf
-
-fun Use_markdown()
-    " make titles
-    inoremap <leader>H- <esc>yypVr-ki
-    inoremap <leader>H= <esc>yypVr=ki
 endf
 
 if has("autocmd")
@@ -208,14 +192,14 @@ if has("autocmd")
     au BufNewFile,BufRead */templates/*.html set ft=htmljinja
 
     " autocomplete
-    au FileType c          setlocal ofu=ccomplete#Complete
-    au FileType css        setlocal ofu=csscomplete#CompleteCSS
-    au FileType java       setlocal ofu=javacomplete#Complete
-    au FileType php        setlocal ofu=phpcomplete#CompletePHP
-    au FileType python     setlocal ofu=pythoncomplete#Complete
-    au FileType ruby       setlocal ofu=rubycomplete#Complete
-    au FileType sql        setlocal ofu=sqlcomplete#Complete
-    au FileType xml        setlocal ofu=xmlcomplete#CompleteTags
+    au FileType c      setlocal ofu=ccomplete#Complete
+    au FileType css    setlocal ofu=csscomplete#CompleteCSS
+    au FileType java   setlocal ofu=javacomplete#Complete
+    au FileType php    setlocal ofu=phpcomplete#CompletePHP
+    au FileType python setlocal ofu=pythoncomplete#Complete
+    au FileType ruby   setlocal ofu=rubycomplete#Complete
+    au FileType sql    setlocal ofu=sqlcomplete#Complete
+    au FileType xml    setlocal ofu=xmlcomplete#CompleteTags
 
     " filetypes settings
     au FileType markdown,txt set tw=80
@@ -225,7 +209,6 @@ if has("autocmd")
     au FileType javascript call Use_js()
     au FileType json       setlocal nocursorline
     au FileType lisp       let b:delimitMate_quotes = "\""
-    au FileType markdown   call Use_markdown()
     au FileType txt        setlocal spell
     au FileType xml        setlocal fdm=indent fdl=1
 
@@ -233,15 +216,13 @@ if has("autocmd")
     au BufRead /tmp/mutt* set tw=72
 
     " files skeletons
-    au BufNewFile *.c      0r ~/.vim/skeletons/c.c
-    au BufNewFile *.cpp    0r ~/.vim/skeletons/cpp.cpp
-    au BufNewFile *.e,*.E  0r ~/.vim/skeletons/e.e
-    au BufNewFile *.html   0r ~/.vim/skeletons/html.html
-    au BufNewFile *.io     0r ~/.vim/skeletons/io.io
-    au BufNewFile *.pl     0r ~/.vim/skeletons/perl.pl
-    au BufNewFile *.php    0r ~/.vim/skeletons/php.php
-    au BufNewFile *.py     0r ~/.vim/skeletons/python.py
-    au BufNewFile *.rb     0r ~/.vim/skeletons/ruby.rb
-    au BufNewFile *.sh     0r ~/.vim/skeletons/bash.sh
+    au BufNewFile *.c     0r ~/.vim/skeletons/c.c
+    au BufNewFile *.cpp   0r ~/.vim/skeletons/cpp.cpp
+    au BufNewFile *.html  0r ~/.vim/skeletons/html.html
+    au BufNewFile *.pl    0r ~/.vim/skeletons/perl.pl
+    au BufNewFile *.php   0r ~/.vim/skeletons/php.php
+    au BufNewFile *.py    0r ~/.vim/skeletons/python.py
+    au BufNewFile *.rb    0r ~/.vim/skeletons/ruby.rb
+    au BufNewFile *.sh    0r ~/.vim/skeletons/bash.sh
 
 endif " has("autocmd")
