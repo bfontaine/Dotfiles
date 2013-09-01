@@ -12,6 +12,24 @@ if [ -f $BREW_PREFIX/etc/bash_completion ]; then
     . $BREW_PREFIX/etc/bash_completion
 fi
 
+# local websites
+# see blog.bfontaine.net/2013/08/26/use-a-custom-tld-for-local-development/
+if [ -d $HOME/www-dev/vhosts ]; then
+
+# Usage: add_vhost <domain> <relative path>
+# e.g.:  $ add_vhost foo.dev foo/site
+function add_vhost() {
+     local name="$HOME/www-dev/vhosts/$1";shift
+     local target="$PWD/$1"
+
+     if [ -e $name ]; then
+         echo "$name already exists.";
+     else
+        ln -s $target $name
+     fi
+}
+fi
+
 alias mt='brew upgrade; brew update'
 
 # Programming
