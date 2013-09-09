@@ -106,14 +106,15 @@ noremap <c-left> <c-w>h
 noremap <c-right> <c-w>l
 
 " tabs
-noremap <c-down> :tabn<cr>
-noremap <c-up>   :tabp<cr>
-inoremap <c-down> <esc>:tabn<cr>
-inoremap <c-up>   <esc>:tabp<cr>
-
-" When <c-up/down> is already mapped by the OS
-noremap ÷ :tabp<cr>
-nnoremap ≠ :tabn<cr>
+if has("mac")
+    noremap ÷ :tabp<cr>
+    nnoremap ≠ :tabn<cr>
+else
+    noremap <c-down> :tabn<cr>
+    noremap <c-up>   :tabp<cr>
+    inoremap <c-down> <esc>:tabn<cr>
+    inoremap <c-up>   <esc>:tabp<cr>
+endif
 
 noremap <leader>T :tabnew<cr>
 nnoremap gt <c-w>gf
