@@ -81,6 +81,7 @@ function _bash_prompt_command {
     # Replace "/home/foo" with "~", and keep only the current directory
     NEWPWD=${PWD//$HOME/\~}
     NEWPWD=${NEWPWD##*/}
+    [ -z "$NEWPWD" ] && NEWPWD='/'
 
     PS1="${PS1_PREFIX}${NEWPWD}${ROOTPROMPT}${GITPROMPT}";
     if [ $DIRCOLOR ]; then
