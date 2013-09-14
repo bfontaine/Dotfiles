@@ -1,0 +1,5 @@
+# read RFC 42
+rfc 42
+
+# search for 'foo bar' in local RFCs
+rfc search foo bar
