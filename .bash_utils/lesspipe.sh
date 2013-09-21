@@ -3,15 +3,20 @@
 
 case "$1" in
     *.sh|\
-    *.[ch]|*.[ch]pp|*.[ch]xx|*.cc|\
+    *.[chCH]|*.[ch]pp|*.[ch]xx|*.cc|*.c++|\
     *.clj|\
-    *.java|\
+    *.html|*.xhtml|\
     *.js|\
+    *.java|\
+    *.json|\
+    *.md|*.markdown|\
+    *.ml|*.mli|\
     *.pl|*.pm|*.pod|\
     *.php|\
     *.py|\
-    *.rb|*.gem|\
-    *.xml|*.xsl|*.html|*.xhtml|*.yml|*.yaml|*.json|\
+    *.rb|Rakefile|\
+    *.xml|*.xsl|\
+    *.yml|*.yaml|\
     *.diff|*.patch)
        pygmentize -g "$1" ;;
     *) exit 0;;
