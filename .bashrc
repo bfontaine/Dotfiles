@@ -133,7 +133,6 @@ export R_HOME='/usr/lib/R'
 # usual
 alias ps='ps x'
 alias top='htop'
-alias cd='cd -P'
 alias du='du -h'
 alias df='df -h'
 
@@ -157,7 +156,7 @@ function mkcd() { mkdir -p "$1" && cd "$1"; }
 alias reload='source ~/.bashrc'
 
 # one-letter shortcuts
-alias c=cd
+alias c='cd -P'
 alias f=find
 alias g=git
 alias m=mv
