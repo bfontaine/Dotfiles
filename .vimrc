@@ -155,7 +155,7 @@ vnoremap <leader>t :Tabular<space>/
 vnoremap <leader>{ :Tabular<space>/{<cr>gv:Tabular<space>/}<cr>
 " Zencoding
 " au FileType htmljinja,html,xhtml"
-let g:user_zen_expandabbr_key='<leader>h'
+let g:user_emmet_expandabbr_key='<leader>h'
 
 
 " -- Command Aliasing --
@@ -189,6 +189,8 @@ if has("autocmd")
     au BufNewFile,BufRead *.json           set ft=json
     au BufNewFile,BufRead *.liquid         set ft=liquid
     au BufNewFile,BufRead *.mustache       set ft=mustache
+    au BufNewFile,BufRead *.pastek         set ft=pastek
+    au BufNewFile,BufRead *.pl             set ft=prolog
     " - perso
     au BufNewFile,BufRead */templates/*.html set ft=htmljinja
 
@@ -220,7 +222,7 @@ if has("autocmd")
     au BufNewFile *.c     0r ~/.vim/skeletons/c.c
     au BufNewFile *.cpp   0r ~/.vim/skeletons/cpp.cpp
     au BufNewFile *.html  0r ~/.vim/skeletons/html.html
-    au BufNewFile *.pl    0r ~/.vim/skeletons/perl.pl
+   "au BufNewFile *.pl    0r ~/.vim/skeletons/perl.pl
     au BufNewFile *.php   0r ~/.vim/skeletons/php.php
     au BufNewFile *.py    0r ~/.vim/skeletons/python.py
     au BufNewFile *.rb    0r ~/.vim/skeletons/ruby.rb

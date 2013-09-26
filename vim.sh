@@ -175,15 +175,13 @@ if     [ ! -d ${VIM_DIR}/bundle/textobj-word-column ]; then
     rm -f textobj-word-column/README*
 fi
 
-# Zencoding : HTML coding made faster
-if     [ ! -f ${VIM_DIR}/plugin/zencoding.vim ] \
-    || [ ! -f ${VIM_DIR}/autoload/zencoding.vim ]; then
+# Emmet Zencoding-like plugin
+if     [ ! -d ${VIM_DIR}/bundle/emmet ]; then
 
     cd /tmp/
-    git clone http://github.com/mattn/zencoding-vim.git
-    cd zencoding-vim/
-    mv plugin/zencoding.vim ${VIM_DIR}/plugin/
-    mv autoload/zencoding.vim ${VIM_DIR}/autoload/
+    git clone http://github.com/mattn/emmet-vim.git
+    rm -rf emmet-vim/.git
+    mv emmet-vim ${VIM_DIR}/bundle/
     
 fi
 
