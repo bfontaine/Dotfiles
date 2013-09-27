@@ -1,0 +1,3 @@
+#! /bin/bash
+# from http://stackoverflow.com/a/1654042/735926
+perl -i -pe 'chomp if eof' $1
