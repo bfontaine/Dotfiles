@@ -1,2 +1,3 @@
-#! /bin/bash
-perl -e "print('-' x $1 . \"\\n\")"
+#! /usr/bin/perl
+
+print('-' x $ARGV[0] . "\n");
