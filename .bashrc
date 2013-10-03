@@ -40,7 +40,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-PS1_PREFIX='\h:'
+PS1_PREFIX=' '
 PS1_SYMBOL='λ'
 
 function _bash_prompt_command {
@@ -92,9 +92,10 @@ function _bash_prompt_command {
         PS1="${PS1}${PS1_SYMBOL} "
     fi
 }
-# the MAIN_HOSTNAME variable is set in ~/.private_bashrc
-if [ "`hostname`" = "$MAIN_HOSTNAME" ]; then
-    PS1_PREFIX=' '
+
+# If connected through SSH, print the hostname
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] || [ -n "$SSH_CONNECTION" ]; then
+    PS1_PREFIX='\h:'
 fi
 
 case $TERM in
@@ -178,3 +179,5 @@ if [ "`uname`" = "Darwin" ] && [ -f "$HOME/.bashrc_osx" ]; then
 elif [[ "`uname -a`" =~ "Ubuntu" ]] && [ -f "$HOME/.bashrc_ubuntu" ]; then
     . $HOME/.bashrc_ubuntu
 fi
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
