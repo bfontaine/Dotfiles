@@ -45,7 +45,6 @@ PS1_SYMBOL='λ'
 
 function _bash_prompt_command {
 
-    local NEWPWD=$PWD
     local l=30
     local GITPROMPT=' '
     local TMP=
@@ -78,12 +77,7 @@ function _bash_prompt_command {
 
     fi
 
-    # Replace "/home/foo" with "~", and keep only the current directory
-    NEWPWD=${PWD//$HOME/\~}
-    NEWPWD=${NEWPWD##*/}
-    [ -z "$NEWPWD" ] && NEWPWD='/'
-
-    PS1="${PS1_PREFIX}${NEWPWD}${ROOTPROMPT}${GITPROMPT}";
+    PS1="${PS1_PREFIX}\W${ROOTPROMPT}${GITPROMPT}";
     if [ $DIRCOLOR ]; then
         # colors
         PS1="${PS1}\[\033[1;33m\]${PS1_SYMBOL}\[\033[0m\] "
