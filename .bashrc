@@ -29,6 +29,7 @@ HISTFILESIZE=30000
 # make less more friendly for non-text input files
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
+# load a private .bashrc (i.e. not in dotfiles repo) if it exists
 [ -f ~/.private_bashrc ] && . ~/.private_bashrc;
 
 # enable color support of ls/grep/…
@@ -45,13 +46,10 @@ PS1_SYMBOL='λ'
 
 function _bash_prompt_command {
 
-    local l=30
-    local GITPROMPT=' '
-    local TMP=
+    local GITPROMPT=
     local GITBR=
-    local ROOTPROMPT=
 
-    [ $EUID -eq 0 ] && ROOTPROMPT='[#]'
+    [ $EUID -eq 0 ] && PS1_SYMBOL='#'
 
     local GITSTATUS=$(git status 2> /dev/null)
 
@@ -69,15 +67,15 @@ function _bash_prompt_command {
 
         if [ $? -eq 0 ]; then
             if [ $DIRCOLOR ]; then
-                GITPROMPT=" \033[0;36m{$GITBR}\[\033[0m\]$GITPROMPT";
+                GITPROMPT="\033[0;36m{$GITBR}\[\033[0m\]$GITPROMPT";
             else
-                GITPROMPT=" {$GITBR}$GITPROMPT";
+                GITPROMPT="{$GITBR}$GITPROMPT";
             fi
         fi
 
     fi
 
-    PS1="${PS1_PREFIX}\W${ROOTPROMPT}${GITPROMPT}";
+    PS1="${PS1_PREFIX}\W ${GITPROMPT}";
     if [ $DIRCOLOR ]; then
         # colors
         PS1="${PS1}\[\033[1;33m\]${PS1_SYMBOL}\[\033[0m\] "
@@ -148,7 +146,7 @@ alias lr='ls -R'
 
 function mkcd() { mkdir -p "$1" && cd "$1"; }
 
-alias reload='source ~/.bashrc'
+alias reload='source ~/.bash_profile'
 
 # one-letter shortcuts
 alias c='cd -P'
@@ -162,7 +160,6 @@ alias v=vim
 # two-letters ones
 alias ct=cat
 alias f~='find . -name "*~" -delete'
-alias mk=make
 alias sv='sudo vim -p'
 
 # Internet
