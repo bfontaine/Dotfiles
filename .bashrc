@@ -47,6 +47,7 @@ PS1_SYMBOL='λ'
 function _bash_prompt_command {
 
     local GITPROMPT=
+    local GITUNSTAGED=' '
     local GITBR=
 
     [ $EUID -eq 0 ] && PS1_SYMBOL='#'
@@ -57,21 +58,19 @@ function _bash_prompt_command {
         echo $GITSTATUS | grep 'not staged' &> /dev/null
         if [ $? -eq 0 ]; then
             if [ $DIRCOLOR ]; then
-                GITPROMPT="\[\033[1;31m\]+\[\033[0m\]"
+                GITUNSTAGED="\[\033[1;31m\]+\[\033[0m\]"
             else
-                GITPROMPT='+'
+                GITUNSTAGED='+'
             fi
-        else
-            GITPROMPT=' '
         fi
 
         GITBR=$(git describe --contains --all HEAD 2> /dev/null)
 
         if [ $? -eq 0 ]; then
             if [ $DIRCOLOR ]; then
-                GITPROMPT="\033[0;36m{$GITBR}\[\033[0m\]$GITPROMPT";
+                GITPROMPT="\033[0;36m{$GITBR}\[\033[0m\]$GITUNSTAGED";
             else
-                GITPROMPT="{$GITBR}$GITPROMPT";
+                GITPROMPT="{$GITBR}$GITUNSTAGED";
             fi
         fi
     fi
