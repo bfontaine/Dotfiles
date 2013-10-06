@@ -67,9 +67,9 @@ function _bash_prompt_command {
 
         if [ $? -eq 0 ]; then
             if [ $DIRCOLOR ]; then
-                GITPROMPT="\033[0;36m{$GITBR}\[\033[0m\]$GITPROMPT";
+                GITPROMPT="\033[0;36m{$GITBR}\[\033[0m\] $GITPROMPT";
             else
-                GITPROMPT="{$GITBR}$GITPROMPT";
+                GITPROMPT="{$GITBR} $GITPROMPT";
             fi
         fi
 
