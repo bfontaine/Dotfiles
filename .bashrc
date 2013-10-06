@@ -61,18 +61,19 @@ function _bash_prompt_command {
             else
                 GITPROMPT='+'
             fi
+        else
+            GITPROMPT=' '
         fi
 
         GITBR=$(git describe --contains --all HEAD 2> /dev/null)
 
         if [ $? -eq 0 ]; then
             if [ $DIRCOLOR ]; then
-                GITPROMPT="\033[0;36m{$GITBR}\[\033[0m\] $GITPROMPT";
+                GITPROMPT="\033[0;36m{$GITBR}\[\033[0m\]$GITPROMPT";
             else
-                GITPROMPT="{$GITBR} $GITPROMPT";
+                GITPROMPT="{$GITBR}$GITPROMPT";
             fi
         fi
-
     fi
 
     PS1="${PS1_PREFIX}\W ${GITPROMPT}";
