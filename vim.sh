@@ -188,24 +188,24 @@ fi
 # == themes ==
 
 # 256-jungle
-install_if_absent colors/256-jungle 8685
-
+# install_if_absent colors/256-jungle 8685
+#
 # Candycode
-install_if_absent colors/candycode 6066
-
+# install_if_absent colors/candycode 6066
+#
 # Molokai
-if [ ! -f ${VIM_DIR}/colors/molokai.vim ]; then
-    cd /tmp/
-    git clone https://github.com/tomasr/molokai.git
-    mv molokai/colors/molokai.vim ${VIM_DIR}/colors/
-fi
-
+#if [ ! -f ${VIM_DIR}/colors/molokai.vim ]; then
+#    cd /tmp/
+#    git clone https://github.com/tomasr/molokai.git
+#    mv molokai/colors/molokai.vim ${VIM_DIR}/colors/
+#fi
+#
 # Tomorrow
-if [ ! -f ${VIM_DIR}/colors/Tomorrow.vim ]; then
-    cd /tmp/
-    git clone https://github.com/chriskempson/tomorrow-theme.git
-    mv tomorrow-theme/vim/colors/Tomorrow* ${VIM_DIR}/colors/
-fi
+#if [ ! -f ${VIM_DIR}/colors/Tomorrow.vim ]; then
+#    cd /tmp/
+#    git clone https://github.com/chriskempson/tomorrow-theme.git
+#    mv tomorrow-theme/vim/colors/Tomorrow* ${VIM_DIR}/colors/
+#fi
 
 # == syntax ==
 
