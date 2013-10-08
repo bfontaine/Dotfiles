@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# z for vim. 'v' is already an alias for 'vim', so I renamed this
+# script 'vv'.
+# See https://github.com/rupa/v
 
 [ "$vim" ] || vim=vim
 [ $viminfo ] || viminfo=~/.viminfo
