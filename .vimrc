@@ -191,8 +191,7 @@ if has("autocmd")
     au BufNewFile,BufRead *.mustache       set ft=mustache
     au BufNewFile,BufRead *.pastek         set ft=pastek
     au BufNewFile,BufRead *.pl             set ft=prolog
-    " - perso
-    au BufNewFile,BufRead */templates/*.html set ft=htmljinja
+    au BufNewFile,BufRead Vagrantfile      set ft=ruby
 
     " autocomplete
     au FileType c      setlocal ofu=ccomplete#Complete
