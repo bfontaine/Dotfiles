@@ -59,7 +59,10 @@ syntax on
 
 " -- Colorscheme
 
+" Molokai won't display correctly if we remove this line
+" FIXME: find why, and remove this line
 colorscheme 256-jungle
+colorscheme molokai
 :hi CursorLine cterm=NONE ctermbg=black ctermfg=NONE
 
 " -- Global Mappings --
@@ -171,15 +174,9 @@ fun Set_indent(width)
     execute "set shiftwidth=".a:width
 endf
 
-fun Use_js()
-    setlocal ofu=javascriptcomplete#CompleteJS
-    let b:delimitMate_expand_space=1
-endf
-
 if has("autocmd")
 
     " filetypes
-    " - general
     au BufNewFile,BufRead *.clap           set ft=clap
     au BufNewFile,BufRead *.conflicts      set ft=conflicts
     au BufNewFile,BufRead *.e,*.E          set ft=e
@@ -189,30 +186,34 @@ if has("autocmd")
     au BufNewFile,BufRead *.json           set ft=json
     au BufNewFile,BufRead *.liquid         set ft=liquid
     au BufNewFile,BufRead *.mustache       set ft=mustache
-    au BufNewFile,BufRead *.pastek         set ft=pastek
+    au BufNewFile,BufRead *.pastek,*.pstk  set ft=pastek
     au BufNewFile,BufRead *.pl             set ft=prolog
     au BufNewFile,BufRead Vagrantfile      set ft=ruby
 
     " autocomplete
-    au FileType c      setlocal ofu=ccomplete#Complete
-    au FileType css    setlocal ofu=csscomplete#CompleteCSS
-    au FileType java   setlocal ofu=javacomplete#Complete
-    au FileType php    setlocal ofu=phpcomplete#CompletePHP
-    au FileType python setlocal ofu=pythoncomplete#Complete
-    au FileType ruby   setlocal ofu=rubycomplete#Complete
-    au FileType sql    setlocal ofu=sqlcomplete#Complete
-    au FileType xml    setlocal ofu=xmlcomplete#CompleteTags
+    au FileType c          setlocal ofu=ccomplete#Complete
+    au FileType css        setlocal ofu=csscomplete#CompleteCSS
+    au FileType java       setlocal ofu=javacomplete#Complete
+    au FileType javascript setlocal ofu=javascriptcomplete#CompleteJS
+    au FileType php        setlocal ofu=phpcomplete#CompletePHP
+    au FileType python     setlocal ofu=pythoncomplete#Complete
+    au FileType ruby       setlocal ofu=rubycomplete#Complete
+    au FileType sql        setlocal ofu=sqlcomplete#Complete
+    au FileType xml        setlocal ofu=xmlcomplete#CompleteTags
 
     " filetypes settings
-    au FileType markdown,txt set tw=80
-    au FileType lisp,ocaml,ruby,scala,sql,yaml call Set_indent(2)
-    au FileType css,javascript,markdown,sql,vim,txt colorscheme molokai
+    au FileType markdown,pastek,txt set tw=80
+    au FileType clojure,javascript,lisp,ocaml,ruby,scala,sql,yaml call Set_indent(2)
 
-    au FileType javascript call Use_js()
+    au FileType javascript let b:delimitMate_expand_space=1
     au FileType json       setlocal nocursorline
-    au FileType lisp       let b:delimitMate_quotes = "\""
     au FileType txt        setlocal spell
     au FileType xml        setlocal fdm=indent fdl=1
+
+    " these languages allow usage of a single quote alone, e.g.: 'a
+    au FileType clojure,ocaml,lisp let b:delimitMate_quotes = "\""
+    " Vim comments start with "
+    au FileType vim let b:delimitMate_quotes = "'"
 
     " mutt
     au BufRead /tmp/mutt* set tw=72
@@ -221,7 +222,6 @@ if has("autocmd")
     au BufNewFile *.c     0r ~/.vim/skeletons/c.c
     au BufNewFile *.cpp   0r ~/.vim/skeletons/cpp.cpp
     au BufNewFile *.html  0r ~/.vim/skeletons/html.html
-   "au BufNewFile *.pl    0r ~/.vim/skeletons/perl.pl
     au BufNewFile *.php   0r ~/.vim/skeletons/php.php
     au BufNewFile *.py    0r ~/.vim/skeletons/python.py
     au BufNewFile *.rb    0r ~/.vim/skeletons/ruby.rb
