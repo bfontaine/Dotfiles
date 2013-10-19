@@ -1,95 +1,9 @@
 # Some useful Unicode entities
-# Non-Breaking Space
-snippet nbs
-	&nbsp;
-# ←
-snippet left
-	&#x2190;
-# →
-snippet right
-	&#x2192;
-# ↑
-snippet up
-	&#x2191;
-# ↓
-snippet down
-	&#x2193;
-# ↩
-snippet return
-	&#x21A9;
-# ⇤
-snippet backtab
-	&#x21E4;
-# ⇥
-snippet tab
-	&#x21E5;
-# ⇧
-snippet shift
-	&#x21E7;
-# ⌃
-snippet control
-	&#x2303;
-# ⌅
-snippet enter
-	&#x2305;
-# ⌘
-snippet command
-	&#x2318;
-# ⌥
-snippet option
-	&#x2325;
-# ⌦
-snippet delete
-	&#x2326;
-# ⌫
-snippet backspace
-	&#x232B;
-# ⎋
-snippet escape
-	&#x238B;
-# HTML Doctype 5
 snippet doct5
 	<!DOCTYPE HTML>
-snippet title
-	<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>${2}
-snippet script
-	<script>
-		${1}
-	</script>${2}
-snippet scriptsrc
+snippet js
 	<script src="${1}.js"></script>${2}
-snippet style
-	<style media="${1:screen}">
-		${2}
-	</style>${3}
-snippet r
-	<br/>
-snippet div
-	<div id="${1:name}">
-		${2}
-	</div>
-snippet input
-	<input type="${1:text/submit/hidden/button}" name="${2:some_name}" value="${3}" />${4}
-snippet link
-	<link rel="${1:stylesheet}" href="${2:/css/master.css}" media="${3:screen}" charset="utf-8" />${4}
-snippet mailto
-	<a href="mailto:${1:joe@example.com}?subject=${2:feedback}">${3:email me}</a>
+snippet css
+	<link rel="stylesheet" href="${1}" media="all" />${2}
 snippet meta
 	<meta name="${1:name}" content="${2:content}" />${3}
-snippet opt
-	<option value="${1:option}">${2:$1}</option>${3}
-snippet optt
-	<option>${1:option}</option>${2}
-snippet select
-	<select name="${1:some_name}" id="${2:$1}">
-		<option value="${3:option}">${4:$3}</option>
-	</select>${5}
-snippet textarea
-	<textarea name="${1:Name}" rows="${2:8}" cols="${3:40}">${4}</textarea>${5}
-# pretty input, see github.com/bfontaine/PrettyInputs
-snippet pi
-	<div class="input-field">
-		<label for="_inp_$2" class="inset-label">${1:Username}</label>
-		<input type="text" id="_inp_$2" name="${2:username}" />
-	</div>
-	$3

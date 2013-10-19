@@ -1,0 +1,27 @@
+snippet model
+	var ${1:model} = Backbone.Model.extend({
+	    initialize: function () {
+		}   
+	}); 
+
+	var ${2:$1}s = Backbone.Collection.extend({
+		model: ${3:$1},
+		url: "${4}"
+	}); 
+
+
+snippet view
+	var ${1} = Backbone.View.extend({
+		tagName: "${2}",
+
+		events: {
+			${3}
+		},  
+
+		initialize: function () {
+			_.bindAll(this, "render", ${4});
+		},  
+
+		render: function () {
+		}   
+	}); 
