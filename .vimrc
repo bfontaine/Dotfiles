@@ -13,6 +13,7 @@ set backup                      " keep a backup file
 set cursorline                  " highlight current line
 set encoding=utf-8              " set UTF-8 encoding
 set expandtab                   " replace tabs with spaces
+set exrc                        " allow per directory .vimrc
 set ff=unix                     " default file types: UNIX
 set foldmethod=manual           " manual folding
 set formatoptions+=n            " recognize lists when formatting text
@@ -32,6 +33,7 @@ set nospell                     " do not use spell checking
 set pumheight=10                " size of completion window: 10 lines
 set ruler                       " show the cursor position all the time
 set scrolloff=5                 " keep 5 context lines above/below the cursor
+set secure                      " disable unsafe commands in local .vimrc files
 set shell=/bin/bash             " set Bash shell
 set shiftwidth=4                " use 4-spaces indentation
 set showcmd                     " show current incomplete command
@@ -203,7 +205,7 @@ if has("autocmd")
 
     " filetypes settings
     au FileType markdown,pastek,txt set tw=80
-    au FileType clojure,javascript,lisp,ocaml,ruby,scala,sql,yaml call Set_indent(2)
+    au FileType clojure,lisp,ocaml,ruby,scala,sql,yaml call Set_indent(2)
 
     au FileType javascript let b:delimitMate_expand_space=1
     au FileType json       setlocal nocursorline
