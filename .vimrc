@@ -33,7 +33,6 @@ set nospell                     " do not use spell checking
 set pumheight=10                " size of completion window: 10 lines
 set ruler                       " show the cursor position all the time
 set scrolloff=5                 " keep 5 context lines above/below the cursor
-set secure                      " disable unsafe commands in local .vimrc files
 set shell=/bin/bash             " set Bash shell
 set shiftwidth=4                " use 4-spaces indentation
 set showcmd                     " show current incomplete command
@@ -230,3 +229,5 @@ if has("autocmd")
     au BufNewFile *.sh    0r ~/.vim/skeletons/bash.sh
 
 endif " has("autocmd")
+
+set secure " disable unsafe commands in (local) .vimrc files
