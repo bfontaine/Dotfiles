@@ -4,8 +4,12 @@
 # don't put duplicate lines in the history, nor lines starting with a space
 HISTCONTROL=ignoreboth
 
+# Save multi-lines commands in the history
+shopt -s cmdhist
 # append to the history file, don't overwrite it
 shopt -s histappend
+# Enable re-edition of failed commands
+shopt -s histreedit
 # git-like `**` path expansion
 shopt -s globstar
 # don't try to complete empty lines
@@ -154,6 +158,7 @@ alias f=find
 alias g=git
 alias m=mv
 alias n=node
+alias o=open
 alias s=sudo
 alias v=vim
 
