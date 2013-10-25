@@ -11,6 +11,7 @@
     ci   = commit
     cl   = clone
     ca   = commit --amend
+    chp  = cherry-pick
     cm   = commit -m
     co   = checkout
     df   = diff
