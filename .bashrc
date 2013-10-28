@@ -166,9 +166,10 @@ alias v=vim
 alias ct=cat
 alias f~='find . -name "*~" -delete'
 alias sv='sudo vim -p'
+alias vg=vagrant
 
 # Internet
-alias pker='ping -c 1 -w 1 kernel.org'
+alias pker='ping -c 1 kernel.org'
 
 if [ "`uname`" = "Darwin" ] && [ -f "$HOME/.bashrc_osx" ]; then
     . $HOME/.bashrc_osx
