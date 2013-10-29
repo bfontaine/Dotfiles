@@ -6,40 +6,40 @@ function fish_prompt
     set_color normal
 end
 
+# no greeting
+function fish_greeting;end
+
 ## common aliases
 
-function +x
-    command chmod u+x $argv
-end
+alias c "cd -P"
+alias f "find"
+alias g "git"
+alias l "ls -FGhg"
+alias m "mv"
+alias n "node"
+alias o "open"
+alias s "sudo"
+alias v "vim -p"
 
-function du
-    command du -h $argv
-end
+alias ct "cat"
+alias du "du -h"
+alias df "df -h"
+alias f~ "find . -name \"*~\" -delete"
+alias la "ls -a"
+alias lr "ls -R"
+alias ps "ps -x"
+alias sv "sudo vim -p"
+alias vg "vagrant"
 
-function df
-    command df -h $argv
-end
+alias -  "cd -"
+alias +x "chmod u+x"
 
-function g
-    command git $argv
-end
+alias less   "less -R"
+alias locaml "ledit ocaml"
+alias python "python3"
+alias pker   "ping -c 1 kernel.org"
+alias top    "htop"
 
-function l
-    command ls -FGhg $argv
-end
-
-function locaml
-    command ledit ocaml $argv
-end
-
-function ps
-    command ps -x $argv
-end
-
-function top
-    command htop $argv
-end
-
-function v
-    command vim -p $argv
+function mkcd
+    mkdir -p $argv ; and cd $argv
 end
