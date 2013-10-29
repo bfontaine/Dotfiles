@@ -181,6 +181,7 @@ if has("autocmd")
     au BufNewFile,BufRead *.clap           set ft=clap
     au BufNewFile,BufRead *.conflicts      set ft=conflicts
     au BufNewFile,BufRead *.e,*.E          set ft=e
+    au BufNewFile,BufRead *.fish           set ft=fish
     au BufNewFile,BufRead *.ft,*.fh,*.fth  set ft=forth
     au BufNewFile,BufRead *.go             set ft=go
     au BufNewFile,BufRead *.io             set ft=io

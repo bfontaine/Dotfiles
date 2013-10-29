@@ -241,6 +241,12 @@ if [ ! -f ${VIM_DIR}/syntax/e.vim ]; then
         -O ${VIM_DIR}/syntax/e.vim
 fi
 
+# Fish
+if [ ! -d ${VIM_DIR}/bundle/fish ]; then
+    git clone https://github.com/dag/vim-fish.git \
+        ${VIM_DIR}/bundle/vim-fish
+fi
+
 # Forth
 install_if_absent syntax/forth 18049
 
