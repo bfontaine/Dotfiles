@@ -164,7 +164,7 @@ alias v=vim
 
 # two-letters ones
 alias ct=cat
-alias f~='find . -name "*~" -delete'
+alias ff='find . -name "*~" -delete'
 alias sv='sudo vim -p'
 alias vg=vagrant
 
