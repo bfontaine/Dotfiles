@@ -27,7 +27,7 @@ function fish_greeting;end
 
 ## common aliases
 
-alias c "cd -P"
+alias c "cd"
 alias f "find"
 alias g "git"
 alias l "ls -FGhg"
