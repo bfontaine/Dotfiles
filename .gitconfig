@@ -19,9 +19,7 @@
     lg   = log --graph --pretty=format:'%Cred%h%Creset - %C(blue bold)%an%Creset: %C(cyan)%s%Creset %Cgreen(%ar)%Creset'
     lgs  = log --pretty=format:'%Cblue%h%Creset: %s' # short
     m    = mv
-    purr = pull --rebase
     s    = status -sb
-    undo = reset --soft HEAD^
     who  = shortlog -s --
 [core]
     pager = cat
