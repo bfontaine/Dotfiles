@@ -30,7 +30,7 @@
 [rerere]
 	enabled = true
 [push]
-	default = tracking
+	default = upstream
 [web]
 	browser = chromium-browser
 [github]
