@@ -1,20 +1,22 @@
 #!/bin/sh
-# from http://pythonic.pocoo.org/2008/3/28/using-pygments-with-less
+# idea from http://pythonic.pocoo.org/2008/3/28/using-pygments-with-less
 
 case "$1" in
-    *.sh|\
-    *.[chCH]|*.[ch]pp|*.[ch]xx|*.cc|*.c++|\
+    *.ada|\
+    *.[chCH]|*.[ch]pp|*.[ch]xx|*.cc|*.[ch]++|\
     *.clj|\
     *.html|*.xhtml|\
     *.js|\
     *.java|\
     *.json|\
-    *.md|*.markdown|\
+    *.lua|\
+    Makefile|\
     *.ml|*.mli|\
-    *.pl|*.pm|*.pod|\
+    *.pl|*.perl|*.perl6|*.pm|*.pod|\
     *.php|\
-    *.py|\
+    *.py|*.py2|*.py3|*.python2|*.python3|\
     *.rb|Rakefile|\
+    *.sh|\
     *.xml|*.xsl|\
     *.yml|*.yaml|\
     *.diff|*.patch)
