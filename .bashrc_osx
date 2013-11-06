@@ -42,3 +42,5 @@ alias es="elasticsearch -f -D \
 # One-letter aliases
 alias b='brew'
 alias l='ls -FGhg'
+
+. $HOME/.bash_utils/wrap_alias.sh
