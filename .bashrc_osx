@@ -2,6 +2,9 @@
 
 BREW_PREFIX=$(brew --prefix)
 
+# Set the color for directories in 'ls' output to bold cyan
+export LSCOLORS=Gxfxcxdxbxegedabagacad
+
 # z
 if [ -f $BREW_PREFIX/etc/profile.d/z.sh ]; then
     . $BREW_PREFIX/etc/profile.d/z.sh
