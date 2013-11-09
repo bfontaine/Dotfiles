@@ -28,7 +28,7 @@ stty werase undef
 
 # history length (very large for stats)
 HISTSIZE=600
-HISTFILESIZE=30000
+HISTFILESIZE=300000
 
 # make less more friendly for non-text input files
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -156,9 +156,10 @@ alias reload='source ~/.bash_profile'
 alias c='cd -P'
 alias f=find
 alias g=git
+alias h=heroku
 alias m=mv
+alias M=make
 alias n=node
-alias o=open
 alias s=sudo
 alias v=vim
 
