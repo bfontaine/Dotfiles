@@ -162,12 +162,12 @@ alias M=make
 alias n=node
 alias s=sudo
 alias v=vim
+alias V=vagrant
 
 # two-letters ones
 alias ct=cat
 alias ff='find . -name "*~" -delete'
 alias sv='sudo vim -p'
-alias vg=vagrant
 
 # Internet
 alias pker='ping -c 1 kernel.org'
