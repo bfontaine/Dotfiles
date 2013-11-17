@@ -176,7 +176,7 @@ if     [ ! -d ${VIM_DIR}/bundle/textobj-word-column ]; then
 fi
 
 # Emmet Zencoding-like plugin
-if     [ ! -d ${VIM_DIR}/bundle/emmet ]; then
+if     [ ! -d ${VIM_DIR}/bundle/emmet-vim ]; then
 
     cd /tmp/
     git clone http://github.com/mattn/emmet-vim.git
@@ -242,7 +242,7 @@ if [ ! -f ${VIM_DIR}/syntax/e.vim ]; then
 fi
 
 # Fish
-if [ ! -d ${VIM_DIR}/bundle/fish ]; then
+if [ ! -d ${VIM_DIR}/bundle/vim-fish ]; then
     git clone https://github.com/dag/vim-fish.git \
         ${VIM_DIR}/bundle/vim-fish
 fi
@@ -298,6 +298,15 @@ install_if_absent syntax/htmljinja 6961
 
 # JSON
 install_if_absent syntax/json 10853
+
+# LaTeX
+#if [ ! -d ${VIM_DIR}/bundle/vim-latex ]; then
+#    cd /tmp
+#    wget http://bit.ly/vim-latex \
+#        -O vl.tgz
+#    tar -xzf vl.tgz
+#    mv vim-latex-* ${VIM_DIR}/bundle/vim-latex
+#fi
 
 # Mustache
 if [ ! -d ${VIM_DIR}/bundle/mustache ]; then
