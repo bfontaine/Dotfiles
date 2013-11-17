@@ -204,7 +204,7 @@ if has("autocmd")
     au FileType xml        setlocal ofu=xmlcomplete#CompleteTags
 
     " filetypes settings
-    au FileType markdown,pastek,txt set tw=80
+    au FileType markdown,pastek,tex,txt set tw=80
     au FileType clojure,lisp,ocaml,ruby,scala,sql,yaml call Set_indent(2)
 
     au FileType javascript let b:delimitMate_expand_space=1
