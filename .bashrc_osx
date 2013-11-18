@@ -5,6 +5,9 @@ BREW_PREFIX=$(brew --prefix)
 # Set the color for directories in 'ls' output to bold cyan
 export LSCOLORS=Gxfxcxdxbxegedabagacad
 
+# lolcommits
+export LOLCOMMITS_DELAY=2
+
 # z
 if [ -f $BREW_PREFIX/etc/profile.d/z.sh ]; then
     . $BREW_PREFIX/etc/profile.d/z.sh
@@ -32,6 +35,8 @@ function add_vhost() {
      fi
 }
 fi
+
+alias rm='safe-rm'
 
 alias mt='brew upgrade; brew update'
 
