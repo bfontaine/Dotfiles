@@ -17,6 +17,7 @@ set exrc                        " allow per directory .vimrc
 set ff=unix                     " default file types: UNIX
 set foldmethod=manual           " manual folding
 set formatoptions+=n            " recognize lists when formatting text
+set grepprg=grep\ -nH\ $*       " always display filename when grepping
 set hidden                      " buffers can exists in bg w/o being in a window
 set history=15                  " more command history
 set hlsearch                    " highlight current search
@@ -157,10 +158,11 @@ set laststatus=2
 " Tabular
 vnoremap <leader>t :Tabular<space>/
 vnoremap <leader>{ :Tabular<space>/{<cr>gv:Tabular<space>/}<cr>
+" Vim-latex
+let g:tex_flavor='latex'
 " Zencoding
 " au FileType htmljinja,html,xhtml"
 let g:user_emmet_expandabbr_key='<leader>h'
-
 
 " -- Command Aliasing --
 " saving
@@ -178,7 +180,7 @@ endf
 if has("autocmd")
 
     " filetypes
-    au BufNewFile,BufRead *.clap           set ft=clap
+    au BufNewFile,BufRead *.bf             set ft=brainfuck
     au BufNewFile,BufRead *.conflicts      set ft=conflicts
     au BufNewFile,BufRead *.e,*.E          set ft=e
     au BufNewFile,BufRead *.fish           set ft=fish
