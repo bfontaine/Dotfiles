@@ -38,7 +38,7 @@ fi
 
 alias rm='safe-rm'
 
-alias mt='brew upgrade; brew update'
+alias mt='brew update; brew upgrade'
 
 # Programming
 alias emacs='emacs-24.3'
