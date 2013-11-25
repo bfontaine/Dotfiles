@@ -51,8 +51,7 @@ set title                       " show title in console title bar
 set undodir=~/.vim/backups      " keep undo history accross sessions
 set undofile
 set wildignore=*~,*.swp,*.class " files to ignore when tab completing
-set wildignore+=*.cmo,*.cmx
-set wildignore+=*.o,.git/**
+set wildignore+=*.cmo,*.cmx,*.o,.git/**,*.pdf
 set wildmenu                    " show completion possibilities in command mode
 
 syntax sync minlines=256
@@ -206,7 +205,7 @@ if has("autocmd")
     au FileType xml        setlocal ofu=xmlcomplete#CompleteTags
 
     " filetypes settings
-    au FileType markdown,pastek,tex,txt set tw=80
+    au FileType c,cpp,markdown,pastek,tex,txt set tw=80 cc=80
     au FileType clojure,lisp,ocaml,ruby,scala,sql,yaml call Set_indent(2)
 
     au FileType javascript let b:delimitMate_expand_space=1
