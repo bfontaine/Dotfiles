@@ -167,6 +167,7 @@ alias V=vagrant
 # two-letters ones
 alias ct=cat
 alias ff='find . -name "*~" -delete'
+alias sc=screen
 alias sv='sudo vim -p'
 
 # Internet
