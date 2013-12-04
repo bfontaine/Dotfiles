@@ -56,11 +56,10 @@ function _bash_prompt_command {
 
     [ $EUID -eq 0 ] && PS1_SYMBOL='#'
 
-    local GITSTATUS=$(git status 2> /dev/null)
+    local GITSTATUS=$(git status --porcelain 2> /dev/null)
 
     if [ $? -eq 0 ]; then
-        echo $GITSTATUS | grep 'not staged' &> /dev/null
-        if [ $? -eq 0 ]; then
+        if [ "$GITSTATUS" ]; then
             if [ $DIRCOLOR ]; then
                 GITUNSTAGED="\[\033[1;31m\]+\[\033[0m\]"
             else
