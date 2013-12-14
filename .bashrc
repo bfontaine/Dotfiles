@@ -172,6 +172,11 @@ alias sv='sudo vim -p'
 # Internet
 alias pker='ping -c 1 kernel.org'
 
+# custom autocomplete scripts
+if [ -d "$HOME/.bash_utils/autocomplete" ]; then
+    source "$HOME"/.bash_utils/autocomplete/*.sh
+fi
+
 if [ "`uname`" = "Darwin" ] && [ -f "$HOME/.bashrc_osx" ]; then
     . $HOME/.bashrc_osx
 elif [[ "`uname -a`" =~ "Ubuntu" ]] && [ -f "$HOME/.bashrc_ubuntu" ]; then
