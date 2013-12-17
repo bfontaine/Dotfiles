@@ -17,6 +17,7 @@
     df   = diff
     f    = fetch
     lg   = log --graph --pretty=format:'%Cred%h%Creset - %C(blue bold)%an%Creset: %C(cyan)%s%Creset %Cgreen(%ar)%Creset'
+    llg  = log --pretty=format:'%h - %an: %s (%ar)'  # no colors nor graph
     lgs  = log --pretty=format:'%Cblue%h%Creset: %s' # short
     m    = mv
     s    = status -sb
