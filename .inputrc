@@ -34,3 +34,8 @@ $if Bash
 # Kill the current line
 "\C-xc": kill-whole-line
 $endif
+
+# Map (UTF-8) non-breaking space to regular space, in case the user
+# accidentally types Option-Space when they meant Space.
+#  -- from https://discussions.apple.com/message/20068300#20068300
+"\xC2\xA0": " "
