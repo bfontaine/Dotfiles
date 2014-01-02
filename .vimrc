@@ -176,6 +176,10 @@ fun Set_indent(width)
     execute "set shiftwidth=".a:width
 endf
 
+fun Set_programming_defaults()
+    set tw=79 cc=80
+endf
+
 if has("autocmd")
 
     " filetypes
@@ -205,7 +209,15 @@ if has("autocmd")
     au FileType xml        setlocal ofu=xmlcomplete#CompleteTags
 
     " filetypes settings
-    au FileType c,cpp,markdown,pastek,tex,txt set tw=80 cc=80
+    " - programming
+    au FileType bash,brainfuck,c,clojure,cpp,e,fish,go,io,java,
+              \javascript,lisp,ocaml,perl,php,prolog,python,ruby,
+              \sql,vim
+              \ call Set_programming_defaults()
+
+    " - other types
+    au FileType c,cpp call Set_indent(8)
+    au FileType markdown,pastek,tex,txt set tw=79 cc=80
     au FileType clojure,lisp,ocaml,ruby,scala,sql,yaml call Set_indent(2)
 
     au FileType javascript let b:delimitMate_expand_space=1
