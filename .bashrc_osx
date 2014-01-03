@@ -36,6 +36,13 @@ function add_vhost() {
 }
 fi
 
+if [ -d $HOME/.sounds ]; then
+# play random sounds from the command line
+function pouf () {
+    \ls -1 $HOME/.sounds/*$1*.mp3 | head -1 | xargs afplay
+}
+fi
+
 alias rm='safe-rm'
 
 alias mt='brew update; brew upgrade'
@@ -50,6 +57,7 @@ alias es="elasticsearch -f -D \
 # One-letter aliases
 alias b='brew'
 alias l='ls -FGhg'
+alias ll="ls -FGhgl"
 alias o=open
 
 . $HOME/.bash_utils/wrap_alias.sh
