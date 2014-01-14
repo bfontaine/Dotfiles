@@ -13,7 +13,6 @@ set backup                      " keep a backup file
 set cursorline                  " highlight current line
 set encoding=utf-8              " set UTF-8 encoding
 set expandtab                   " replace tabs with spaces
-set exrc                        " allow per directory .vimrc
 set ff=unix                     " default file types: UNIX
 set foldmethod=manual           " manual folding
 set formatoptions+=n            " recognize lists when formatting text
@@ -243,5 +242,3 @@ if has("autocmd")
     au BufNewFile *.sh    0r ~/.vim/skeletons/bash.sh
 
 endif " has("autocmd")
-
-set secure " disable unsafe commands in (local) .vimrc files
