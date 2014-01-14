@@ -8,17 +8,18 @@
 [alias]
     a    = add
     br   = branch
-    ci   = commit
-    cl   = clone
     ca   = commit --amend
     chp  = cherry-pick
+    ci   = commit
+    cl   = clone
     cm   = commit -m
     co   = checkout
     df   = diff
     f    = fetch
+    i    = init
     lg   = log --graph --pretty=format:'%Cred%h%Creset - %C(blue bold)%an%Creset: %C(cyan)%s%Creset %Cgreen(%ar)%Creset'
-    llg  = log --pretty=format:'%h - %an: %s (%ar)'  # no colors nor graph
     lgs  = log --pretty=format:'%Cblue%h%Creset: %s' # short
+    llg  = log --pretty=format:'%h - %an: %s (%ar)'
     m    = mv
     s    = status -sb
     who  = shortlog -s --
