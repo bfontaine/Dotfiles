@@ -198,6 +198,7 @@ if has("autocmd")
 
     " autocomplete
     au FileType c          setlocal ofu=ccomplete#Complete
+    au FileType cpp        setlocal ofu=moni#cpp#complete#Main
     au FileType css        setlocal ofu=csscomplete#CompleteCSS
     au FileType java       setlocal ofu=javacomplete#Complete
     au FileType javascript setlocal ofu=javascriptcomplete#CompleteJS
@@ -215,7 +216,7 @@ if has("autocmd")
               \ call Set_programming_defaults()
 
     " - other types
-    au FileType c,cpp call Set_indent(8)
+    au FileType c call Set_indent(8)
     au FileType markdown,pastek,tex,txt set tw=79 cc=80
     au FileType clojure,lisp,ocaml,ruby,scala,sql,yaml call Set_indent(2)
 

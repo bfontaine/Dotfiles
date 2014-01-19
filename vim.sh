@@ -362,6 +362,15 @@ fi
 
 # == Omnicomplete ==
 
+# C++
+if [ ! -f ${VIM_DIR}/doc/clang_complete.txt ]; then
+    cd /tmp/
+    wget http://www.vim.org/scripts/download_script.php?src_id=19588 \
+        -Oclang_complete.vmb
+    vim clang_complete.vmb -c 'so %' -c 'q'
+fi
+
+# Java
 if     [ ! -f ${VIM_DIR}/autoload/javacomplete.vim ] \
     || [ ! -f ${VIM_DIR}/autoload/Reflection.java ] \
     || [ ! -f ${VIM_DIR}/autoload/java_parser.vim ] \
