@@ -321,6 +321,12 @@ if [ ! -f ${VIM_DIR}/syntax/omgrofl.vim ]; then
         -O ${VIM_DIR}/syntax/omgrofl.vim
 fi
 
+# PlantUML
+if [ ! -f ${VIM_DIR}/syntax/plantuml.vim ]; then
+    wget https://raw.github.com/aklt/plantuml-syntax/master/syntax/plantuml.vim \
+        -O ${VIM_DIR}/syntax/plantuml.vim
+fi
+
 # Scala
 for dir in ftdetect indent syntax; do
 

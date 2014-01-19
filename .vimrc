@@ -194,11 +194,11 @@ if has("autocmd")
     au BufNewFile,BufRead *.mustache       set ft=mustache
     au BufNewFile,BufRead *.pastek,*.pstk  set ft=pastek
     au BufNewFile,BufRead *.pl             set ft=prolog
+    au BufNewFile,BufRead *.pu             set ft=plantuml
     au BufNewFile,BufRead Vagrantfile      set ft=ruby
 
     " autocomplete
     au FileType c          setlocal ofu=ccomplete#Complete
-    au FileType cpp        setlocal ofu=moni#cpp#complete#Main
     au FileType css        setlocal ofu=csscomplete#CompleteCSS
     au FileType java       setlocal ofu=javacomplete#Complete
     au FileType javascript setlocal ofu=javascriptcomplete#CompleteJS
