@@ -159,6 +159,7 @@ alias h=heroku
 alias m=mv
 alias M=make
 alias n=node
+alias R=rake
 alias s=sudo
 alias v=vim
 alias V=vagrant
