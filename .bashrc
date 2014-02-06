@@ -157,11 +157,13 @@ alias f=find
 alias g=git
 alias h=heroku
 alias m=mv
-alias M=make
 alias n=node
-alias R=rake
 alias s=sudo
 alias v=vim
+
+alias L=lein
+alias M=make
+alias R=rake
 alias V=vagrant
 
 # two-letters ones
@@ -184,4 +186,4 @@ elif [[ "`uname -a`" =~ "Ubuntu" ]] && [ -f "$HOME/.bashrc_ubuntu" ]; then
     . $HOME/.bashrc_ubuntu
 fi
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
