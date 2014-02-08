@@ -120,7 +120,6 @@ export NODE_PATH='/usr/lib/node_modules'
 alias locaml='ledit ocaml'
 
 # Python
-alias python='python3'
 export PYTHONSTARTUP=~/.pythonrc.py
 
 # R
