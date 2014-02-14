@@ -16,7 +16,7 @@
     co   = checkout
     df   = diff
     f    = fetch
-    i    = init
+    i    = !git init && cp ~/.global_ignore .gitignore
     lg   = log --graph --pretty=format:'%Cred%h%Creset - %C(blue bold)%an%Creset: %C(cyan)%s%Creset %Cgreen(%ar)%Creset'
     lgs  = log --pretty=format:'%Cblue%h%Creset: %s' # short
     llg  = log --pretty=format:'%h - %an: %s (%ar)'
