@@ -160,6 +160,7 @@ alias n=node
 alias s=sudo
 alias v=vim
 
+alias G=gulp
 alias L=lein
 alias M=make
 alias R=rake
