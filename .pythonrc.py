@@ -52,15 +52,14 @@ class TermColors(dict):
         ("Purple"      , "0;35"),
         ("Cyan"        , "0;36"),
         ("LightGray"   , "0;37"),
-        ("DarkGray"    , "1;30"),
-        ("LightRed"    , "1;31"),
+        ("DarkGray"    , "1;30"), ("LightRed"    , "1;31"),
         ("LightGreen"  , "1;32"),
         ("Yellow"      , "1;33"),
         ("LightBlue"   , "1;34"),
         ("LightPurple" , "1;35"),
         ("LightCyan"   , "1;36"),
         ("White"       , "1;37"),
-        ("Normal"      , "0"   ),
+        ("Normal"      , "0"),
     )
 
     NoColor = ''
@@ -95,3 +94,25 @@ def my_displayhook(value):
         del pprint
 
 sys.displayhook = my_displayhook
+
+if 'DJANGO_SETTINGS_MODULE' in os.environ:
+    from django.db.models.loading import get_models
+    from django.test.client import Client
+    from django.test.utils import setup_test_environment, teardown_test_environment
+    from django.conf import settings as S
+
+    class DjangoModels(object):
+        """Loop through all the models in INSTALLED_APPS and import them."""
+        def __init__(self):
+            for m in get_models():
+                setattr(self, m.__name__, m)
+
+    A = DjangoModels()
+    C = Client()
+
+    WELCOME += """%(Green)s
+    Django environment detected.
+* Your INSTALLED_APPS models are available as `A`.
+* Your project settings are available as `S`.
+* The Django test client is available as `C`.
+%(Normal)s""" % _c
