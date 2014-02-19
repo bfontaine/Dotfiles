@@ -50,6 +50,8 @@ PS1_SYMBOL='λ'
 
 function _bash_prompt_command {
 
+    ## git prompt
+
     local GITPROMPT=
     local GITUNSTAGED=' '
     local GITBR=
@@ -85,6 +87,11 @@ function _bash_prompt_command {
     else
         # no colors
         PS1="${PS1}${PS1_SYMBOL} "
+    fi
+
+    ## ./venv autoloading
+    if [ -d venv ] && [ "$VIRTUAL_ENV" != "$(pwd -P)/venv" ]; then
+        source venv/bin/activate
     fi
 }
 
