@@ -9,7 +9,7 @@ filetype plugin indent on
 set autoindent                  " auto-indentation
 set backspace=indent,eol,start  " allow backspace on everything in insert mode
 set backup                      " keep a backup file
-" set colorcolumn=80            " color 80th column
+set colorcolumn=80              " color 80th column
 set cursorline                  " highlight current line
 set encoding=utf-8              " set UTF-8 encoding
 set expandtab                   " replace tabs with spaces
@@ -44,7 +44,7 @@ set spelllang=fr,en             " Spell languages: FRench, ENglish
 set suffixes=,*.aux,*.toc,*lock " last used files when tab completing
 set tabpagemax=8                " only show 8 tabs
 set tabstop=4                   " 1 tab = 4 spaces
-" set textwidth=80              " text width = 80 characters
+set textwidth=79                " text width = 79 columns
 set timeout                     " Wait max 1sec for :mappings
 set title                       " show title in console title bar
 set undodir=~/.vim/backups      " keep undo history accross sessions
@@ -59,8 +59,7 @@ syntax on
 
 " -- Colorscheme
 
-" Molokai won't display correctly if we remove this line
-" FIXME: find why, and remove this line
+" Molokai will look better if we apply 256-jungle before
 colorscheme 256-jungle
 colorscheme molokai
 :hi CursorLine cterm=NONE ctermbg=black ctermfg=NONE
@@ -128,8 +127,17 @@ nnoremap <leader><space> :setlocal nohlsearch!<cr>
 " sort
 vnoremap <leader>s :sort u<cr>
 
-" showing trailing spaces at the end of lines
+" indenting
+nnoremap > >>
+nnoremap < <<
+
+" showing trailing spaces
 nnoremap <leader>$ :set list!<cr>
+" remove trailing spaces
+nnoremap <C-L> :%s/\s\+$//g<cr>
+
+" avoid accidently switching to ex mode (from Rémi Prévost’s Vim settings)
+nnoremap Q :echo "ex mode is disabled"<cr>
 
 " - plugins options/mappings -
 
@@ -175,10 +183,6 @@ fun Set_indent(width)
     execute "set shiftwidth=".a:width
 endf
 
-fun Set_programming_defaults()
-    set tw=79 cc=80
-endf
-
 if has("autocmd")
 
     " filetypes
@@ -209,16 +213,8 @@ if has("autocmd")
     au FileType xml        setlocal ofu=xmlcomplete#CompleteTags
 
     " filetypes settings
-    " - programming
-    au FileType bash,brainfuck,c,clojure,cpp,e,fish,go,io,java,
-              \javascript,lisp,ocaml,perl,php,prolog,python,ruby,
-              \sql,vim
-              \ call Set_programming_defaults()
-
-    " - other types
     au FileType c call Set_indent(8)
-    au FileType markdown,pastek,tex,txt set tw=79 cc=80
-    au FileType clojure,lisp,ocaml,ruby,scala,sql,yaml call Set_indent(2)
+    au FileType clojure,lisp,ocaml,ruby,scala,sql,html,yaml call Set_indent(2)
 
     au FileType javascript let b:delimitMate_expand_space=1
     au FileType json       setlocal nocursorline
