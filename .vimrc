@@ -46,6 +46,7 @@ set tabpagemax=8                " only show 8 tabs
 set tabstop=4                   " 1 tab = 4 spaces
 set textwidth=79                " text width = 79 columns
 set timeout                     " Wait max 1sec for :mappings
+set timeoutlen=800              " Reduce waiting time to 0.8sec
 set title                       " show title in console title bar
 set undodir=~/.vim/backups      " keep undo history accross sessions
 set undofile
@@ -58,6 +59,9 @@ syntax sync maxlines=1024
 syntax on
 
 " -- Colorscheme
+
+" the terminal has 256 colors
+set t_Co=256
 
 " Molokai will look better if we apply 256-jungle before
 colorscheme 256-jungle
