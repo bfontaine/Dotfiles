@@ -91,6 +91,12 @@ if     [ ! -f ${VIM_DIR}/doc/delimitMate.txt ] \
     mv plugin/delimitMate.vim ${VIM_DIR}/plugin/
 fi
 
+# GitHub-issues : GitHub issues autocomplete
+if [ ! -d ${VIM_DIR}/bundle/github-issues.vim ]; then
+    cd ${VIM_DIR}/bundle/
+    git clone https://github.com/jaxbot/github-issues.vim
+fi
+
 # Gundo : easier undo tree visualization
 if [ ! -d ${VIM_DIR}/bundle/gundo ]; then
     git clone http://github.com/sjl/gundo.vim.git ${VIM_DIR}/bundle/gundo
