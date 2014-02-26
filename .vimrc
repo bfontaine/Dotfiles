@@ -141,8 +141,6 @@ nnoremap < <<
 
 " showing trailing spaces
 nnoremap <leader>$ :set list!<cr>
-" remove trailing spaces
-nnoremap <C-L> :%s/\s\+$//g<cr>
 
 " avoid accidently switching to ex mode (from Rémi Prévost’s Vim settings)
 nnoremap Q :echo "ex mode is disabled"<cr>
