@@ -86,8 +86,12 @@ vnoremap <f1> <esc>
 " open dotfiles
 nnoremap <leader>db :tabnew ~/.bashrc<cr>
 nnoremap <leader>dg :tabnew ~/.gitconfig<cr>
+nnoremap <leader>dl :tabnew ~/.lein/profiles.clj<cr>
 nnoremap <leader>ds :tabnew ~/.ssh/config<cr>
 nnoremap <leader>dv :tabnew ~/.vimrc<cr>
+
+nnoremap <leader>do :tabnew ~/.bashrc_osx<cr>
+nnoremap <leader>du :tabnew ~/.bashrc_ubuntu<cr>
 
 " toggle paste mode
 nnoremap <leader>p <esc>:setlocal paste!<cr>
