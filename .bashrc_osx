@@ -5,9 +5,6 @@ BREW_PREFIX=$(brew --prefix)
 # Set the color for directories in 'ls' output to bold cyan
 export LSCOLORS=Gxfxcxdxbxegedabagacad
 
-# lolcommits
-export LOLCOMMITS_DELAY=2
-
 # z
 if [ -f $BREW_PREFIX/etc/profile.d/z.sh ]; then
     . $BREW_PREFIX/etc/profile.d/z.sh
@@ -41,6 +38,7 @@ fi
 
 alias rm='safe-rm'
 
+# same alias name that on Ubuntu but with different commands
 alias mt='brew update; brew upgrade'
 
 # Programming
@@ -50,11 +48,21 @@ alias prove='prove5.12'
 alias es="elasticsearch -f -D \
     es.config=$BREW_PREFIX/opt/elasticsearch/config/elasticsearch.yml"
 
-# One-letter aliases
-alias b='brew'
+# common aliases
 alias l='ls -FGhg'
 alias ll="ls -FGhgl"
+
+# OSX-specific aliases
+alias b='brew'
 alias o=open
 
+# usage:
+# 1. copy an URL
+# 2. use it as `curl` but without pasting the URL, e.g.: pcurl > foo.bar
+pcurl() { curl -sL "`pbpaste`" $*; }
+
+# nvm
 . $(brew --prefix nvm)/nvm.sh
+
+# get completion for aliases too
 . $HOME/.bash_utils/wrap_alias.sh
