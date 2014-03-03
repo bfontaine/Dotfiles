@@ -1,0 +1,2 @@
+#! /bin/sh
+git remote add origin gh:`git config github.user`/${PWD##*/}.git
