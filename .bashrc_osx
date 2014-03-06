@@ -15,9 +15,6 @@ if [ -f $BREW_PREFIX/etc/bash_completion ]; then
     . $BREW_PREFIX/etc/bash_completion
 fi
 
-# Python w/ Homebrew
-export PATH="/usr/local/share/python:$PATH"
-
 # local websites
 # see blog.bfontaine.net/2013/08/26/use-a-custom-tld-for-local-development/
 if [ -d $HOME/www-dev/vhosts ]; then
