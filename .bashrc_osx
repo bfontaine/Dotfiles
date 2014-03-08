@@ -47,11 +47,11 @@ alias es="elasticsearch -f -D \
 
 # common aliases
 alias l='ls -FGhg'
-alias ll="ls -FGhgl"
+alias ll='ls -FGhgl'
 
 # OSX-specific aliases
 alias b='brew'
-alias o=open
+alias o='open'
 
 # usage:
 # 1. copy an URL
