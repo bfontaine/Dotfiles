@@ -135,10 +135,6 @@ nnoremap <leader><space> :setlocal nohlsearch!<cr>
 " sort
 vnoremap <leader>s :sort u<cr>
 
-" indenting
-nnoremap > >>
-nnoremap < <<
-
 " showing trailing spaces
 nnoremap <leader>$ :set list!<cr>
 
