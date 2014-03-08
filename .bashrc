@@ -139,6 +139,10 @@ alias top='htop'
 alias du='du -h'
 alias df='df -h'
 
+if [ -x "$HOME/bin/git-achievements" ]; then
+    alias git=git-achievements
+fi
+
 alias -- -='cd -'
 alias +x='chmod u+x'
 
@@ -194,4 +198,4 @@ elif [[ "`uname -a`" =~ "Ubuntu" ]] && [ -f "$HOME/.bashrc_ubuntu" ]; then
     . $HOME/.bashrc_ubuntu
 fi
 
-PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
+export PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
