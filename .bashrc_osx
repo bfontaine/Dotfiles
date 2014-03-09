@@ -58,6 +58,8 @@ alias o='open'
 
 if [ -f "$HOME/.bash_utils/osascripts/SpotifyControl.scpt" ]; then
     alias spotify="osascript $HOME/.bash_utils/osascripts/SpotifyControl.scpt"
+    alias sp='spotify'
+    alias si='spotify info'
 fi
 
 # usage:
