@@ -229,7 +229,7 @@ if has("autocmd")
     au FileType vim let b:delimitMate_quotes = "'"
 
     " mutt
-    au BufRead /tmp/mutt* set tw=72
+    au BufRead /tmp/mutt*, COMMIT_EDITMSG set tw=72
 
     " files skeletons
     au BufNewFile *.c     0r ~/.vim/skeletons/c.c
