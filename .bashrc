@@ -199,3 +199,6 @@ elif [[ "`uname -a`" =~ "Ubuntu" ]] && [ -f "$HOME/.bashrc_ubuntu" ]; then
 fi
 
 export PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
+
+# added by travis gem
+[ -f /Users/baptiste/.travis/travis.sh ] && source /Users/baptiste/.travis/travis.sh
