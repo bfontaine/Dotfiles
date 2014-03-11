@@ -185,6 +185,11 @@ fun Set_indent(width)
     execute "set shiftwidth=".a:width
 endf
 
+fun Set_tw(width)
+    execute "set cc=".(a:width+1)
+    execute "set tw=".a:width
+endfun
+
 if has("autocmd")
 
     " filetypes
@@ -229,7 +234,9 @@ if has("autocmd")
     au FileType vim let b:delimitMate_quotes = "'"
 
     " mutt
-    au BufRead /tmp/mutt*, COMMIT_EDITMSG set tw=72
+    au BufRead /tmp/mutt* call Set_tw(72)
+    " git commits
+    au FileType gitcommit call Set_tw(72)
 
     " files skeletons
     au BufNewFile *.c     0r ~/.vim/skeletons/c.c
