@@ -91,7 +91,9 @@ function _bash_prompt_command {
 
     ## ./venv autoloading
     if [ -d venv ] && [ "$VIRTUAL_ENV" != "$(pwd -P)/venv" ]; then
+        local p="$PATH"
         source venv/bin/activate
+        export PATH="$PATH:$p" # hack to preserve custom PATH
     fi
 }
 
