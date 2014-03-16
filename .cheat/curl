@@ -1,8 +1,0 @@
-# get headers
-curl -sI http://example.com
-
-# get headers (verbose mode)
-curl -vI http://example.com
-
-# dump request headers
-curl -v -D - http://example.com

@@ -1,3 +1,0 @@
-# compile a simple program with most of the available
-# warnings
-gcc -Wall -Wextra myprog.c -o myprog

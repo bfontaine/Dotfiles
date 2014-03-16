@@ -1,5 +1,0 @@
-# get some definitions for 'foo bar'
-ud foo bar
-
-# get the first definition for 'foo bar'
-ud -n 1 foo bar
