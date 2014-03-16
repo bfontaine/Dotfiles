@@ -27,6 +27,8 @@ set magic                       " set magic for regex
 set modelines=0                 " no modelines
 set noautoread                  " don't re-read a file changed outside of Vim
 set lazyredraw                  " turn on lazy redraw (performance++)
+set list                        " display unprintable chars (see listchars)
+set listchars=tab:▸\ ,trail:·   " see 'list' above
 set number                      " display line numbers
 set numberwidth=1               " use only 1 column (+ 1 space) while possible
 set nospell                     " do not use spell checking
