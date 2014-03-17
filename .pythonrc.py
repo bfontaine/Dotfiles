@@ -38,19 +38,3 @@ finally:
     del rlcompleter
 
 WELCOME=''
-
-# Enable Pretty Printing for stdout
-def my_displayhook(value):
-    if value is not None:
-        try:
-            import __builtin__
-        except ImportError:
-            pass
-
-        __builtins__._ = value
-
-        import pprint
-        pprint.pprint(value)
-        del pprint
-
-sys.displayhook = my_displayhook
