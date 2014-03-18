@@ -249,4 +249,9 @@ if has("autocmd")
     au BufNewFile *.rb    0r ~/.vim/skeletons/ruby.rb
     au BufNewFile *.sh    0r ~/.vim/skeletons/bash.sh
 
+    " UI tweaks
+    " -- hide trailing spaces on insert mode
+    au InsertEnter * set listchars=tab:▸\ ,
+    au InsertLeave * set listchars=tab:▸\ ,trail:·
+
 endif " has("autocmd")
