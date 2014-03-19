@@ -1,6 +1,9 @@
 # Initially stollen from github.com/coderholic/config
 # Most of these from http://sontek.net/tips-and-tricks-for-the-python-interpreter
+
+## useful modules
 import os
+import re
 import sys
 
 try:
