@@ -72,3 +72,12 @@ pcurl() { curl -sL "`pbpaste`" $*; }
 
 # get completion for aliases too
 . $HOME/.bash_utils/wrap_alias.sh
+
+# pyenv
+if which pyenv > /dev/null; then
+    export PATH="$HOME/.pyenv/shims:$PATH"
+    eval "$(pyenv init -)";
+fi
+
+# see github.com/bfontaine/brew-command-not-found
+. "$HOME/.bash_utils/handler.sh"
