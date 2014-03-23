@@ -204,5 +204,3 @@ export PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
 
 # travis gem
 [ -f /Users/baptiste/.travis/travis.sh ] && source /Users/baptiste/.travis/travis.sh
-# pythonbrew
-[[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && source "$HOME/.pythonbrew/etc/bashrc"
