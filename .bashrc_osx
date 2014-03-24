@@ -81,3 +81,7 @@ fi
 
 # see github.com/bfontaine/brew-command-not-found
 . "$HOME/.bash_utils/handler.sh"
+
+# Go
+export GOPATH="$HOME/.go"
+export PATH="$GOPATH/bin:$PATH"
