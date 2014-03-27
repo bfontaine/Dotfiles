@@ -215,6 +215,9 @@ fi
 
 # == syntax ==
 
+# Asciidoc
+install_if_absent syntax/asciidoc 6891
+
 # Brainfuck
 install_if_absent syntax/brainfuck 14054
 
@@ -333,6 +336,12 @@ if [ ! -f ${VIM_DIR}/syntax/plantuml.vim ]; then
         -O ${VIM_DIR}/syntax/plantuml.vim
 fi
 
+# Rust
+if [ ! -d ${VIM_DIR}/bundle/rust.vim ]; then
+    cd ${VIM_DIR}/bundle
+    git clone https://github.com/wting/rust.vim.git
+fi
+
 # Scala
 for dir in ftdetect indent syntax; do
 
@@ -358,9 +367,6 @@ if [ ! -f ${VIM_DIR}/doc/textile.txt ]; then
         mv textile*/${d}/textile.* ${VIM_DIR}/${d}/
     done
 fi
-
-# Asciidoc
-install_if_absent syntax/asciidoc 6891
 
 # == snippets (for SnipMate plugin) ==
 
