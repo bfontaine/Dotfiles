@@ -7,6 +7,7 @@ filetype on
 filetype plugin indent on
 
 set autoindent                  " auto-indentation
+set background=dark             " dark background
 set backspace=indent,eol,start  " allow backspace on everything in insert mode
 set backup                      " keep a backup file
 set colorcolumn=80              " color 80th column
@@ -18,7 +19,7 @@ set foldmethod=manual           " manual folding
 set formatoptions+=n            " recognize lists when formatting text
 set grepprg=grep\ -nH\ $*       " always display filename when grepping
 set hidden                      " buffers can exists in bg w/o being in a window
-set history=15                  " more command history
+set history=40                  " more command history
 set hlsearch                    " highlight current search
 set ignorecase                  " ignore case for '/regex' search
 set incsearch                   " incremental search with '/regex' search
@@ -26,6 +27,7 @@ set linebreak                   " don't wrap text in the middle of a word
 set magic                       " set magic for regex
 set modelines=0                 " no modelines
 set noautoread                  " don't re-read a file changed outside of Vim
+set nofoldenable                " don't fold by default
 set lazyredraw                  " turn on lazy redraw (performance++)
 set list                        " display unprintable chars (see listchars)
 set listchars=tab:▸\ ,trail:·   " see 'list' above
