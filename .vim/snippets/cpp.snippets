@@ -31,4 +31,8 @@ snippet cl
 # using namespace
 snippet using
 	using namespace ${1:std};
-
+snippet ifn
+	#ifndef ${1:`toupper(Filename('_$1_H', '_HEADER_H'))`}
+	#define $1 1
+	${2}
+	#endif
