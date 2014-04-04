@@ -218,6 +218,14 @@ fi
 # Asciidoc
 install_if_absent syntax/asciidoc 6891
 
+# *sh
+if [ ! -f ${VIM_DIR}/syntax/sh.vim ]; then
+    cd tmp
+    wget http://www.drchip.org/astronaut/vim/syntax/sh.vim.gz
+    gunzip sh.vim.gz
+    mv sh.vim ${VIM_DIR}/syntax/
+fi
+
 # Brainfuck
 install_if_absent syntax/brainfuck 14054
 

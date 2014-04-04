@@ -152,7 +152,6 @@ nnoremap Q :echo "ex mode is disabled"<cr>
 nnoremap <leader>f :CommandT<CR>
 let g:CommandTMaxFiles=2000
 let g:CommandTMaxHeight=25
-
 " DelimitMate
 let delimitMate_expand_cr=1
 " Closetag
@@ -176,6 +175,9 @@ let g:tex_flavor='latex'
 " Zencoding
 " au FileType htmljinja,html,xhtml"
 let g:user_emmet_expandabbr_key='<leader>h'
+
+" *sh syntax
+let g:sg_no_error=1
 
 " -- Command Aliasing --
 " saving
