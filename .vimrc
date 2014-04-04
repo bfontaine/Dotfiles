@@ -56,6 +56,7 @@ set undodir=~/.vim/backups      " keep undo history accross sessions
 set undofile
 set wildignore=*~,*.swp,*.class " files to ignore when tab completing
 set wildignore+=*.cmo,*.cmx,*.o,.git/**,*.pdf
+set wildignore+=*.pyc
 set wildmenu                    " show completion possibilities in command mode
 
 syntax sync minlines=256
