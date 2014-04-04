@@ -145,7 +145,7 @@ if [ -x "$HOME/bin/git-achievements" ]; then
     alias git=git-achievements
 fi
 
-alias -- -='cd -'
+alias -- -='cd - >/dev/null'
 alias +x='chmod u+x'
 
 alias less='less -R'
