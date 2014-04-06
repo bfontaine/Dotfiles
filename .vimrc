@@ -148,10 +148,6 @@ nnoremap Q :echo "ex mode is disabled"<cr>
 
 " - plugins options/mappings -
 
-" Command T
-nnoremap <leader>f :CommandT<CR>
-let g:CommandTMaxFiles=2000
-let g:CommandTMaxHeight=25
 " DelimitMate
 let delimitMate_expand_cr=1
 " Closetag
@@ -165,8 +161,6 @@ nnoremap <leader>n :NERDTreeToggle<cr>
 " Powerline
 let g:Powerline_symbols='fancy'
 set laststatus=2
-" TableMode
-" let g:table_mode_toggle_map = '<leader>-'
 " Tabular
 vnoremap <leader>t :Tabular<space>/
 vnoremap <leader>{ :Tabular<space>/{<cr>gv:Tabular<space>/}<cr>

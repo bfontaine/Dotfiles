@@ -42,11 +42,6 @@ for plugin in endwise haml markdown surround; do
     fi
 done
 
-# Alternate : switch quickly between .c & .h files
-
-install_if_absent plugin/a 7218
-install_if_absent doc/alternate 6347
-
 # Clang complete : C/C++ autocompletion
 # you need Clang installed (package 'clang' on Ubuntu)
 if     [ ! -f ${VIM_DIR}/plugin/clang_complete.vim ]; then 
@@ -60,15 +55,6 @@ fi
 
 # Close tag : close (X)HTML/XML tags
 install_if_absent scripts/closetag.vim 4318
-
-# Command-T : Quickly open files
-if [ ! -d ${VIM_DIR}/bundle/command-t ]; then
-    cd ${VIM_DIR}
-    git clone git://git.wincent.com/command-t.git bundle/command-t
-    cd ${VIM_DIR}/bundle/command-t/ruby/command-t
-    ruby extconf.rb
-    make
-fi
 
 # CSS-Color : Show CSS colors
 # if [ ! -f ${VIM_DIR}/after/syntax/css.vim ]; then
@@ -89,12 +75,6 @@ if     [ ! -f ${VIM_DIR}/doc/delimitMate.txt ] \
     mv autoload/delimitMate.vim ${VIM_DIR}/autoload/
     mv doc/delimitMate.txt ${VIM_DIR}/doc/
     mv plugin/delimitMate.vim ${VIM_DIR}/plugin/
-fi
-
-# GitHub-issues : GitHub issues autocomplete
-if [ ! -d ${VIM_DIR}/bundle/github-issues.vim ]; then
-    cd ${VIM_DIR}/bundle/
-    git clone https://github.com/jaxbot/github-issues.vim
 fi
 
 # Gundo : easier undo tree visualization
@@ -127,12 +107,6 @@ if [ ! -d ${VIM_DIR}/bundle/nerdtree ]; then
     git clone https://github.com/scrooloose/nerdtree.git
 fi
 
-# Numbers : better line numbers
-# if [ ! -d ${VIM_DIR}/bundle/numbers ]; then
-#     git clone https://github.com/myusuf3/numbers.vim.git \
-#         ~/.vim/bundle/numbers
-# fi
-
 # Powerline : better status line
 if [ ! -d ${VIM_DIR}/bundle/vim-powerline ]; then
     cd ${VIM_DIR}/bundle/
@@ -144,13 +118,6 @@ if [ ! -f ${VIM_DIR}/autoload/snipMate.vim ]; then
     wget http://www.vim.org/scripts/download_script.php?src_id=11006 \
         -O /tmp/sm.zip
     unzip /tmp/sm.zip -d ~/.vim
-fi
-
-# Table-mode : easy table editing/formatting
-
-if [ ! -d ${VIM_DIR}/bundle/vim-table-mode ]; then
-        git clone https://github.com/dhruvasagar/vim-table-mode.git \
-            ${VIM_DIR}/bundle/vim-table-mode
 fi
 
 # Tabular : text line up made easy
@@ -171,14 +138,6 @@ if     [ ! -f ${VIM_DIR}/plugin/taglist.vim ] \
     unzip taglist.zip
     mv plugin/taglist.vim ${VIM_DIR}/plugin/taglist.vim
     mv doc/taglist.txt ${VIM_DIR}/doc/taglist.txt
-fi
-
-# Textobj-word-column: add a new text-object: word-based column
-if     [ ! -d ${VIM_DIR}/bundle/textobj-word-column ]; then
-
-    cd ${VIM_DIR}/bundle
-    git clone https://github.com/coderifous/textobj-word-column.vim.git textobj-word-column
-    rm -f textobj-word-column/README*
 fi
 
 # Emmet Zencoding-like plugin
@@ -362,7 +321,7 @@ for dir in ftdetect indent syntax; do
 done
 
 # Textile
-# 
+#
 # need Ruby & RedCloth :
 # sudo apt-get install ruby rubygems
 # sudo gem install RedCloth
