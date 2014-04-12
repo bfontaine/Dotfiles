@@ -24,6 +24,12 @@
     m    = mv
     s    = status -sb
     who  = shortlog -s --
+
+    # Copied from https://github.com/jdavis/dotfiles
+    # See http://blog.pagebakers.nl/2009/01/29/git-ignoring-changes-in-tracked-files/
+    untrack = update-index --assume-unchanged
+    track = update-index --no-assume-unchanged
+
 [core]
     pager = cat
     editor = vim
