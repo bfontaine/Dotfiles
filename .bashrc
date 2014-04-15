@@ -10,8 +10,6 @@ shopt -s cmdhist
 shopt -s histappend
 # Enable re-edition of failed commands
 shopt -s histreedit
-# git-like `**` path expansion
-shopt -s globstar
 # don't try to complete empty lines
 shopt -s no_empty_cmd_completion
 # `echo` expands backslash-escape sequences by default
@@ -28,7 +26,7 @@ stty werase undef
 
 # history length (very large for stats)
 HISTSIZE=600
-HISTFILESIZE=300000
+HISTFILESIZE=50000
 
 # make less more friendly for non-text input files
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
