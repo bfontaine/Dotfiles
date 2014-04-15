@@ -90,7 +90,7 @@ function _bash_prompt_command {
     ## ./venv autoloading
     if [ -d venv ] && [ "$VIRTUAL_ENV" != "$(pwd -P)/venv" ]; then
         local p="$PATH"
-        source venv/bin/activate
+        . venv/bin/activate
         export PATH="$PATH:$p" # hack to preserve custom PATH
     fi
 }
@@ -160,7 +160,7 @@ alias lr='ls -R'
 
 function mkcd() { mkdir -p "$1" && cd "$1"; }
 
-alias reload='source ~/.bash_profile'
+alias reload='. ~/.bash_profile'
 
 # one-letter shortcuts
 alias c='cd -P'
@@ -189,7 +189,7 @@ alias pker='ping -c 1 kernel.org'
 
 # custom autocomplete scripts
 if [ -d "$HOME/.bash_utils/autocomplete" ]; then
-    source "$HOME"/.bash_utils/autocomplete/*.sh
+    . "$HOME"/.bash_utils/autocomplete/*.sh
 fi
 
 if [ "`uname`" = "Darwin" ] && [ -f "$HOME/.bashrc_osx" ]; then
@@ -201,4 +201,4 @@ fi
 export PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
 
 # travis gem
-[ -f /Users/baptiste/.travis/travis.sh ] && source /Users/baptiste/.travis/travis.sh
+[ -f /Users/baptiste/.travis/travis.sh ] && . /Users/baptiste/.travis/travis.sh
