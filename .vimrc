@@ -151,7 +151,7 @@ nnoremap Q :echo "ex mode is disabled"<cr>
 " DelimitMate
 let delimitMate_expand_cr=1
 " Closetag
-au Filetype html,xhtml,xml,xsl,htmljinja so ~/.vim/scripts/closetag.vim 
+au Filetype html,xhtml,xml,xsl,htmljinja so ~/.vim/scripts/closetag.vim
 " CSS colors
 let g:cssColorVimDoNotMessMyUpdatetime=1
 " Gundo
@@ -234,8 +234,6 @@ if has("autocmd")
     " Vim comments start with "
     au FileType vim let b:delimitMate_quotes = "'"
 
-    " mutt
-    au BufRead /tmp/mutt* call Set_tw(72)
     " git commits
     au FileType gitcommit call Set_tw(72)
 
