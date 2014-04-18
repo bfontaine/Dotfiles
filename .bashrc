@@ -184,6 +184,8 @@ alias ff='find . -name "*~" -delete'
 alias sc=screen
 alias sv='sudo vim -p'
 
+alias pwd='pwd -P'
+
 # Internet
 alias pker='ping -c 1 kernel.org'
 
