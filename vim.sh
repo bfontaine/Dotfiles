@@ -44,7 +44,7 @@ done
 
 # Clang complete : C/C++ autocompletion
 # you need Clang installed (package 'clang' on Ubuntu)
-if     [ ! -f ${VIM_DIR}/plugin/clang_complete.vim ]; then 
+if     [ ! -f ${VIM_DIR}/plugin/clang_complete.vim ]; then
     cd /tmp/
     git clone https://github.com/Rip-Rip/clang_complete.git
     cd clang_complete/
@@ -58,12 +58,12 @@ install_if_absent scripts/closetag.vim 4318
 
 # CSS-Color : Show CSS colors
 # if [ ! -f ${VIM_DIR}/after/syntax/css.vim ]; then
-# 
+#
 #     cd /tmp/
 #     git clone https://github.com/skammer/vim-css-color.git
 #     mkdir -p ${VIM_DIR}/after/syntax
 #     mv vim-css-color/after/syntax/css.vim ${VIM_DIR}/after/syntax/
-# 
+#
 # fi
 
 # DelimitMate : automatic closing of quotes, parenthesis, brackets, etc.
@@ -131,7 +131,7 @@ fi
 # (exuberant-ctags package in Ubuntu)
 if     [ ! -f ${VIM_DIR}/plugin/taglist.vim ] \
     || [ ! -f ${VIM_DIR}/doc/taglist.txt ]; then
-    
+
     cd /tmp/
     wget http://www.vim.org/scripts/download_script.php?src_id=7701 \
         -O taglist.zip
@@ -145,9 +145,8 @@ if     [ ! -d ${VIM_DIR}/bundle/emmet-vim ]; then
 
     cd /tmp/
     git clone http://github.com/mattn/emmet-vim.git
-    rm -rf emmet-vim/.git
     mv emmet-vim ${VIM_DIR}/bundle/
-    
+
 fi
 
 # == themes ==
