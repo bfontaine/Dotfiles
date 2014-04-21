@@ -33,7 +33,7 @@
 [core]
     pager = cat
     editor = vim
-    excludesfile = /home/baptiste/.global_ignore
+    excludesfile = ~/.cvsignore
 [branch]
 	autosetupmerge = true
 [rerere]
