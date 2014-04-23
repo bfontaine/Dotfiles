@@ -1,39 +1,39 @@
 [user]
-    name = Baptiste Fontaine
-    email = batifon@yahoo.fr
+	name  = Baptiste Fontaine
+	email = batifon@yahoo.fr
 [color]
 	ui = auto
 [color "branch"]
-    current = bold
+	current = bold
 [alias]
-    a    = add
-    br   = branch
-    ca   = commit --amend
-    chp  = cherry-pick
-    c    = commit
-    cl   = clone
-    cm   = commit -m
-    co   = checkout
-    df   = diff
-    f    = fetch
-    i    = !git init && [ ! -f .gitignore ] && cp ~/.cvsignore .gitignore
-    l1   = !git lg -n 1 && echo
-    lg   = log --graph --pretty=format:'%Cred%h%Creset - %C(blue bold)%an%Creset: %C(cyan)%s%Creset %Cgreen(%ar)%Creset'
-    lgs  = log --pretty=format:'%Cblue%h%Creset: %s' # short
-    llg  = log --pretty=format:'%h - %an: %s (%ar)'
-    m    = mv
-    s    = status -sb
-    who  = shortlog -s --
+	a    = add
+	br   = branch
+	ca   = commit --amend
+	chp  = cherry-pick
+	c    = commit
+	cl   = clone
+	cm   = commit -m
+	co   = checkout
+	df   = diff
+	f    = fetch
+	i    = !git init && [ ! -f .gitignore ] && cp ~/.cvsignore .gitignore
+	l1   = !git lg -n 1 && echo
+	lg   = log --graph --pretty=format:'%Cred%h%Creset - %C(blue bold)%an%Creset: %C(cyan)%s%Creset %Cgreen(%ar)%Creset'
+	lgs  = log --pretty=format:'%Cblue%h%Creset: %s' # short
+	llg  = log --pretty=format:'%h - %an: %s (%ar)'
+	m    = mv
+	s    = status -sb
+	who  = shortlog -s --
 
-    # Copied from https://github.com/jdavis/dotfiles
-    # See http://blog.pagebakers.nl/2009/01/29/git-ignoring-changes-in-tracked-files/
-    untrack = update-index --assume-unchanged
-    track = update-index --no-assume-unchanged
+	# Copied from https://github.com/jdavis/dotfiles
+	# See http://blog.pagebakers.nl/2009/01/29/git-ignoring-changes-in-tracked-files/
+	untrack = update-index --assume-unchanged
+	track   = update-index --no-assume-unchanged
 
 [core]
-    pager = cat
-    editor = vim
-    excludesfile = ~/.cvsignore
+	pager = cat
+	editor = vim
+	excludesfile = ~/.cvsignore
 [branch]
 	autosetupmerge = true
 [rerere]
