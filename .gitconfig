@@ -18,9 +18,9 @@
 	f    = fetch
 	i    = !git init && [ ! -f .gitignore ] && cp ~/.cvsignore .gitignore
 	l1   = !git lg -n 1 && echo
-	lg   = log --graph --pretty=format:'%Cred%h%Creset - %C(blue bold)%an%Creset: %C(cyan)%s%Creset %Cgreen(%ar)%Creset'
-	lgs  = log --pretty=format:'%Cblue%h%Creset: %s' # short
-	llg  = log --pretty=format:'%h - %an: %s (%ar)'
+	lg   = !git log --graph --pretty=format:'%Cred%h%Creset - %C(blue bold)%an%Creset: %C(cyan)%s%Creset %Cgreen(%ar)%Creset' && echo
+	lgs  = !git log --pretty=format:'%Cblue%h%Creset: %s' && echo # short
+	llg  = !git log --pretty=format:'%h - %an: %s (%ar)' && echo
 	m    = mv
 	s    = status -sb
 	who  = shortlog -s --
