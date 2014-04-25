@@ -16,6 +16,7 @@
 	co   = checkout
 	df   = diff
 	f    = fetch
+	fuck = reset HEAD --hard
 	i    = !git init && [ ! -f .gitignore ] && cp ~/.cvsignore .gitignore
 	l1   = !git lg -n 1 && echo
 	lg   = !git log --graph --pretty=format:'%Cred%h%Creset - %C(blue bold)%an%Creset: %C(cyan)%s%Creset %Cgreen(%ar)%Creset' && echo
