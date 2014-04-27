@@ -4,12 +4,14 @@
 # don't put duplicate lines in the history, nor lines starting with a space
 HISTCONTROL=ignoreboth
 
-# Save multi-lines commands in the history
+# save multi-lines commands in the history
 shopt -s cmdhist
 # append to the history file, don't overwrite it
 shopt -s histappend
-# Enable re-edition of failed commands
+# enable re-edition of failed commands
 shopt -s histreedit
+# load history substitutions in the readline buffer
+shopt -s histverify
 # don't try to complete empty lines
 shopt -s no_empty_cmd_completion
 # `echo` expands backslash-escape sequences by default
@@ -19,6 +21,9 @@ shopt -s checkwinsize
 # if a command name is the name of a directory, cd into it
 shopt -s autocd
 
+# disable file overriding with >
+set -C
+
 # This option is used to map ^W, and even if you bind another action
 # on ^W in your .inputrc, it always take precedence, so you have
 # to explicitely undefine it.
@@ -27,6 +32,9 @@ stty werase undef
 # history length (very large for stats)
 HISTSIZE=600
 HISTFILESIZE=50000
+
+# suffixes to remove from tab-completion.
+FIGNORE=.swp:swo:~
 
 # make less more friendly for non-text input files
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
