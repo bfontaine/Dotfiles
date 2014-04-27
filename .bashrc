@@ -114,6 +114,8 @@ ignoreeof=1
 # variables
 export EDITOR='vim'
 export PS2='… '
+
+# more binaries
 export PATH="$PATH:/usr/local/sbin:$HOME/bin"
 
 # == Programming ==
@@ -189,6 +191,16 @@ alias pwd='pwd -P'
 # Internet
 alias pker='ping -c 1 kernel.org'
 
+# Useless stuff
+alias LOL="nyancat -sn"
+
+# Setup Amazon EC2 Command-Line Tools
+export EC2_HOME=$HOME/.ec2
+export PATH=$PATH:$EC2_HOME/bin
+export EC2_PRIVATE_KEY=`\ls $EC2_HOME/pk-*.pem`
+export EC2_CERT=`\ls $EC2_HOME/cert-*.pem`
+export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home/"
+
 # custom autocomplete scripts
 if [ -d "$HOME/.bash_utils/autocomplete" ]; then
     . "$HOME"/.bash_utils/autocomplete/*.sh
@@ -200,7 +212,8 @@ elif [[ "`uname -a`" =~ "Ubuntu" ]] && [ -f "$HOME/.bashrc_ubuntu" ]; then
     . $HOME/.bashrc_ubuntu
 fi
 
-export PATH=$HOME/.rvm/bin:$PATH # Add RVM to PATH for scripting
+# RVM
+export PATH="$HOME/.rvm/bin:$PATH"
 
 # travis gem
 [ -f /Users/baptiste/.travis/travis.sh ] && . /Users/baptiste/.travis/travis.sh
