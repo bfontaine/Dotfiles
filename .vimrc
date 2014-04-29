@@ -75,8 +75,6 @@ colorscheme molokai
 
 " -- Global Mappings --
 
-inoremap jj <esc>
-
 let mapleader = ","
 
 " move up and down on long wrapped lines
@@ -95,14 +93,8 @@ nnoremap <leader>dl :tabnew ~/.lein/profiles.clj<cr>
 nnoremap <leader>ds :tabnew ~/.ssh/config<cr>
 nnoremap <leader>dv :tabnew ~/.vimrc<cr>
 
-nnoremap <leader>do :tabnew ~/.bashrc_osx<cr>
-nnoremap <leader>du :tabnew ~/.bashrc_ubuntu<cr>
-
 " toggle paste mode
 nnoremap <leader>p <esc>:setlocal paste!<cr>
-
-" saving
-inoremap <leader>w <esc>:w<cr>a
 
 " moving into the file
 inoremap <leader>z <esc>zza
@@ -139,9 +131,6 @@ nnoremap <leader><space> :setlocal nohlsearch!<cr>
 
 " sort
 vnoremap <leader>s :sort u<cr>
-
-" showing trailing spaces
-nnoremap <leader>$ :set list!<cr>
 
 " avoid accidently switching to ex mode (from Rémi Prévost’s Vim settings)
 nnoremap Q :echo "ex mode is disabled"<cr>
@@ -195,7 +184,6 @@ if has("autocmd")
 
     " filetypes
     au BufNewFile,BufRead *.bf             set ft=brainfuck
-    au BufNewFile,BufRead *.conflicts      set ft=conflicts
     au BufNewFile,BufRead *.e,*.E          set ft=e
     au BufNewFile,BufRead *.fish           set ft=fish
     au BufNewFile,BufRead *.ft,*.fh,*.fth  set ft=forth
