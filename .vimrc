@@ -139,6 +139,10 @@ nnoremap Q :echo "ex mode is disabled"<cr>
 
 " DelimitMate
 let delimitMate_expand_cr=1
+" Clang-complete
+if isdirectory("/Applications")
+    let g:clang_library_path="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib"
+endif
 " Closetag
 au Filetype html,xhtml,xml,xsl,htmljinja so ~/.vim/scripts/closetag.vim
 " CSS colors
