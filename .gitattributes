@@ -1,0 +1,7 @@
+# normalize EOL
+* text=auto
+
+# language-aware diffs
+*.py diff=python
+*.rb diff=ruby
+.irbrc diff=ruby
