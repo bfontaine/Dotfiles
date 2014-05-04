@@ -52,3 +52,5 @@
 	smudge = git-media-smudge %f
 [achievement]
 	upload = false
+[git-up "bundler"]
+	check = true
