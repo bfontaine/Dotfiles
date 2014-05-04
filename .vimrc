@@ -28,6 +28,7 @@ set magic                       " set magic for regex
 set modelines=0                 " no modelines
 set noautoread                  " don't re-read a file changed outside of Vim
 set nofoldenable                " don't fold by default
+set nojoinspaces                " use only one space after a dot
 set lazyredraw                  " turn on lazy redraw (performance++)
 set list                        " display unprintable chars (see listchars)
 set listchars=tab:▸\ ,trail:·   " see 'list' above
