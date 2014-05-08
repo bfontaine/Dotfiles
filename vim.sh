@@ -82,6 +82,9 @@ if [ ! -d ${VIM_DIR}/bundle/gundo ]; then
     git clone http://github.com/sjl/gundo.vim.git ${VIM_DIR}/bundle/gundo
 fi
 
+# Java complete
+
+
 # Jedi : completion for Python
 if [ ! -d ${VIM_DIR}/bundle/jedi-vim ]; then
     git clone https://github.com/davidhalter/jedi-vim.git \
@@ -363,11 +366,8 @@ if     [ ! -f ${VIM_DIR}/autoload/javacomplete.vim ] \
     cd /tmp/
     wget http://www.vim.org/scripts/download_script.php?src_id=14914 \
         -O javacomplete.zip
-    unzip javacomplete.zip && rm javacomplete.zip
-    for f in java_parser.vim javacomplete.vim Reflection.java; do
-        mv autoload/$f ${VIM_DIR}/autoload/$f
-    done
-    mv doc/javacomplete.txt ${VIM_DIR}/doc/
+    unzip javacomplete.zip -d ${VIM_DIR}
+    rm -f javacomplete.zip
 
     # Note: for the first use, Reflection.java will be compiled
     #       to ~/Reflection.class . You should move it to ${VIM_DIR}/autoload/
