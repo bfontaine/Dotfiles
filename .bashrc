@@ -149,6 +149,9 @@ alias top='htop'
 alias du='du -h'
 alias df='df -h'
 
+alias pwd='pwd -P'
+alias mkp='mkdir -p'
+
 if [ -x "$HOME/bin/git-achievements" ]; then
     alias git=git-achievements
 fi
@@ -179,10 +182,11 @@ alias g=git
 alias h=heroku
 alias m=mv
 alias n=node
+alias p=pip
 alias s=sudo
 alias v=vim
 
-alias G=gulp
+alias A=ant
 alias L=lein
 alias M=make
 alias R=rake
@@ -194,8 +198,6 @@ alias ff='find . -name "*~" -delete'
 alias py=python
 alias sc=screen
 alias sv='sudo vim -p'
-
-alias pwd='pwd -P'
 
 # Internet
 alias pker='ping -c 1 kernel.org'
