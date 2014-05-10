@@ -55,7 +55,7 @@ set timeoutlen=800              " Reduce waiting time to 0.8sec
 set title                       " show title in console title bar
 set undodir=~/.vim/backups      " keep undo history accross sessions
 set undofile
-set wildignore=*~,*.swp,*.class " files to ignore when tab completing
+set wildignore=*~,*.swp         " files to ignore when tab completing
 set wildignore+=*.cmo,*.cmx,*.o,.git/**,*.pdf
 set wildignore+=*.pyc
 set wildmenu                    " show completion possibilities in command mode
