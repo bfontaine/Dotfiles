@@ -219,8 +219,10 @@ fi
 
 if [ "`uname`" = "Darwin" ] && [ -f "$HOME/.bashrc_osx" ]; then
     . $HOME/.bashrc_osx
-elif [[ "`uname -a`" =~ "Ubuntu" ]] && [ -f "$HOME/.bashrc_ubuntu" ]; then
-    . $HOME/.bashrc_ubuntu
+elif [[ "`uname -a`" =~ "Ubuntu" ]] || [[ "`uname -a`" =~ "Linux" ]]; then
+    if [ -f "$HOME/.bashrc_ubuntu" ]; then
+        . $HOME/.bashrc_ubuntu
+    fi
 fi
 
 # RVM
