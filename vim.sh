@@ -82,9 +82,6 @@ if [ ! -d ${VIM_DIR}/bundle/gundo ]; then
     git clone http://github.com/sjl/gundo.vim.git ${VIM_DIR}/bundle/gundo
 fi
 
-# Java complete
-
-
 # Jedi : completion for Python
 if [ ! -d ${VIM_DIR}/bundle/jedi-vim ]; then
     git clone https://github.com/davidhalter/jedi-vim.git \
@@ -357,7 +354,8 @@ if [ ! -f ${VIM_DIR}/doc/clang_complete.txt ]; then
     vim clang_complete.vmb -c 'so %' -c 'q'
 fi
 
-# Java
+# Java complete
+
 if     [ ! -f ${VIM_DIR}/autoload/javacomplete.vim ] \
     || [ ! -f ${VIM_DIR}/autoload/Reflection.java ] \
     || [ ! -f ${VIM_DIR}/autoload/java_parser.vim ] \
