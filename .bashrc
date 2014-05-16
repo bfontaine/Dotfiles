@@ -202,6 +202,9 @@ alias sv='sudo vim -p'
 # Internet
 alias pker='ping -c 1 kernel.org'
 
+# Git
+function gcl() { git clone gh:${1}.git; }
+
 # Useless stuff
 alias LOL="nyancat -sn"
 
@@ -210,6 +213,7 @@ export EC2_HOME=$HOME/.ec2
 export PATH=$PATH:$EC2_HOME/bin
 export EC2_PRIVATE_KEY=`\ls $EC2_HOME/pk-*.pem`
 export EC2_CERT=`\ls $EC2_HOME/cert-*.pem`
+
 export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home/"
 
 # custom autocomplete scripts
