@@ -144,8 +144,6 @@ let delimitMate_expand_cr=1
 if isdirectory("/Applications")
     let g:clang_library_path="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib"
 endif
-" Closetag
-au Filetype html,xhtml,xml,xsl,htmljinja so ~/.vim/scripts/closetag.vim
 " CSS colors
 let g:cssColorVimDoNotMessMyUpdatetime=1
 " Gundo
@@ -161,7 +159,6 @@ vnoremap <leader>{ :Tabular<space>/{<cr>gv:Tabular<space>/}<cr>
 " Vim-latex
 let g:tex_flavor='latex'
 " Zencoding
-" au FileType htmljinja,html,xhtml"
 let g:user_emmet_expandabbr_key='<leader>h'
 
 " *sh syntax
@@ -186,6 +183,11 @@ fun Set_tw(width)
 endfun
 
 if has("autocmd")
+
+    " - plugins autocmds
+    "
+    " Closetag
+    au Filetype html,xhtml,xml,xsl,htmljinja so ~/.vim/scripts/closetag.vim
 
     " filetypes
     au BufNewFile,BufRead *.bf             set ft=brainfuck
