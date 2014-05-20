@@ -99,7 +99,7 @@ function _bash_prompt_command {
     if [ -d venv ] && [ "$VIRTUAL_ENV" != "$(pwd -P)/venv" ]; then
         local p="$PATH"
         . venv/bin/activate
-        export PATH="$PATH:$p" # hack to preserve custom PATH
+        export PATH="$HOME/.rvm/bin:$PATH:$p" # hack to preserve custom PATH
     fi
 }
 
