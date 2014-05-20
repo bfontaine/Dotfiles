@@ -202,6 +202,7 @@ if has("autocmd")
     au BufNewFile,BufRead *.pastek,*.pstk  set ft=pastek
     au BufNewFile,BufRead *.pl             set ft=prolog
     au BufNewFile,BufRead *.pu             set ft=plantuml
+    au BufNewFile,BufRead Procfile         set ft=yaml
     au BufNewFile,BufRead Vagrantfile      set ft=ruby
 
     " autocomplete
