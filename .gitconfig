@@ -54,3 +54,5 @@
 	upload = false
 [git-up "bundler"]
 	check = true
+[diff]
+	algorithm = patience
