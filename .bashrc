@@ -139,6 +139,7 @@ alias locaml='ledit ocaml'
 # Python
 export PYTHONSTARTUP=~/.pythonrc.py
 export VIRTUAL_ENV_DISABLE_PROMPT=1
+export PYTHONIOENCODING=utf-8
 
 # R
 export R_HOME='/usr/lib/R'
