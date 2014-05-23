@@ -24,6 +24,16 @@ install_if_absent() {
     fi
 }
 
+gh_bundle() {
+    local user=$1
+    local name=$2
+
+    if [ ! -d ${VIM_DIR}/bundle/${name} ]; then
+        git clone https://github.com/${user}/${name}.git \
+            ${VIM_DIR}/bundle/${name}
+    fi
+}
+
 # == plugins ==
 
 # Pathogen
@@ -37,9 +47,7 @@ cd ${VIM_DIR}/bundle/
 # surround   : parentheses, quotes, XML/HTML tags
 
 for plugin in endwise haml markdown surround; do
-    if [ ! -d ${VIM_DIR}/bundle/vim-${plugin} ]; then
-        git clone https://github.com/tpope/vim-${plugin}.git
-    fi
+    gh_bundle tpope vim-${plugin}
 done
 
 # Clang complete : C/C++ autocompletion
@@ -78,9 +86,7 @@ if     [ ! -f ${VIM_DIR}/doc/delimitMate.txt ] \
 fi
 
 # Gundo : easier undo tree visualization
-if [ ! -d ${VIM_DIR}/bundle/gundo ]; then
-    git clone http://github.com/sjl/gundo.vim.git ${VIM_DIR}/bundle/gundo
-fi
+gh_bundle sjl gundo.vim
 
 # Jedi : completion for Python
 if [ ! -d ${VIM_DIR}/bundle/jedi-vim ]; then
@@ -102,16 +108,10 @@ if     [ ! -f ${VIM_DIR}/plugin/matchit.vim ] \
 fi
 
 # NerdTree : File tree
-if [ ! -d ${VIM_DIR}/bundle/nerdtree ]; then
-    cd ${VIM_DIR}/bundle/
-    git clone https://github.com/scrooloose/nerdtree.git
-fi
+gh_bundle scrooloose nerdtree
 
 # Powerline : better status line
-if [ ! -d ${VIM_DIR}/bundle/vim-powerline ]; then
-    cd ${VIM_DIR}/bundle/
-    git clone https://github.com/Lokaltog/vim-powerline.git
-fi
+gh_bundle Lokaltog vim-powerline
 
 # SnipMate : allow TextMate's snippets in Vim
 if [ ! -f ${VIM_DIR}/autoload/snipMate.vim ]; then
@@ -120,11 +120,11 @@ if [ ! -f ${VIM_DIR}/autoload/snipMate.vim ]; then
     unzip /tmp/sm.zip -d ~/.vim
 fi
 
+# Splitjoin: toggle between multiline and single-line code
+gh_bundle AndrewRadev splitjoin.vim
+
 # Tabular : text line up made easy
-if [ ! -d ${VIM_DIR}/bundle/tabular ]; then
-    cd ${VIM_DIR}/bundle/
-    git clone https://github.com/godlygeek/tabular.git
-fi
+gh_bundle godlygeek tabular
 
 # Taglist : source code browser
 # note: you need to install Ctags before
@@ -141,13 +141,7 @@ if     [ ! -f ${VIM_DIR}/plugin/taglist.vim ] \
 fi
 
 # Emmet Zencoding-like plugin
-if     [ ! -d ${VIM_DIR}/bundle/emmet-vim ]; then
-
-    cd /tmp/
-    git clone http://github.com/mattn/emmet-vim.git
-    mv emmet-vim ${VIM_DIR}/bundle/
-
-fi
+gh_bundle mattn emmet-vim
 
 # == themes ==
 
@@ -191,24 +185,13 @@ install_if_absent syntax/brainfuck 14054
 install_if_absent syntax/conflicts.vim 19764
 
 # Clojure
-if [ ! -d ${VIM_DIR}/bundle/vim-clojure-static ]; then
-
-    cd ${VIM_DIR}/bundle
-    git clone https://github.com/guns/vim-clojure-static.git
-
-fi
+gh_bundle guns vim-clojure-static
 
 # CoffeeScript
-if [ ! -d ${VIM_DIR}/bundle/vim-coffee-script ]; then
-    cd ${VIM_DIR}/bundle/
-    git clone https://github.com/kchmck/vim-coffee-script.git
-fi
+gh_bundle kchmck vim-coffee-script
 
 # CSS3
-if [ ! -d ${VIM_DIR}/bundle/vim-css3-syntax ]; then
-    cd ${VIM_DIR}/bundle
-    git clone https://github.com/hail2u/vim-css3-syntax.git
-fi
+gh_bundle hailu vim-css3-syntax
 
 # E
 if [ ! -f ${VIM_DIR}/syntax/e.vim ]; then
@@ -217,10 +200,7 @@ if [ ! -f ${VIM_DIR}/syntax/e.vim ]; then
 fi
 
 # Fish
-if [ ! -d ${VIM_DIR}/bundle/vim-fish ]; then
-    git clone https://github.com/dag/vim-fish.git \
-        ${VIM_DIR}/bundle/vim-fish
-fi
+gh_bundle dag vim-fish
 
 # Forth
 install_if_absent syntax/forth 18049
@@ -284,11 +264,7 @@ install_if_absent syntax/json 10853
 #fi
 
 # Mustache
-if [ ! -d ${VIM_DIR}/bundle/mustache ]; then
-    cd ${VIM_DIR}
-    [ ! -d .git ] && git init
-    git submodule add https://github.com/juvenn/mustache.vim.git bundle/mustache
-fi
+gh_bundle juvenn mustache.vim
 
 # Omgrofl
 if [ ! -f ${VIM_DIR}/syntax/omgrofl.vim ]; then
@@ -303,10 +279,7 @@ if [ ! -f ${VIM_DIR}/syntax/plantuml.vim ]; then
 fi
 
 # Rust
-if [ ! -d ${VIM_DIR}/bundle/rust.vim ]; then
-    cd ${VIM_DIR}/bundle
-    git clone https://github.com/wting/rust.vim.git
-fi
+gh_bundle wting rust.vim
 
 # Scala
 for dir in ftdetect indent syntax; do
