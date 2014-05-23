@@ -34,10 +34,21 @@ gh_bundle() {
     fi
 }
 
+raw_gh() {
+    local repo=$1
+    local path=$2
+    local target=${VIM_DIR}/$3
+
+    if [ ! -f ${target} ]; then
+        wget -q https://raw.github.com/${repo}/master/${path} \
+            -O ${target}
+    fi
+}
+
 # == plugins ==
 
-# Pathogen
-install_if_absent autoload/pathogen 16224
+install_if_absent autoload/pathogen    16224 # Pathogen
+install_if_absent scripts/closetag.vim  4318 # Close tag
 
 # endwise    : add 'end' in Ruby files when using if/def/…
 # haml       : HAML, Sass, SCSS syntax
@@ -57,8 +68,6 @@ if     [ ! -f ${VIM_DIR}/plugin/clang_complete.vim ]; then
     rm -Rf clang_complete
 fi
 
-# Close tag : close (X)HTML/XML tags
-install_if_absent scripts/closetag.vim 4318
 
 # CSS-Color : Show CSS colors
 # if [ ! -f ${VIM_DIR}/after/syntax/css.vim ]; then
@@ -81,9 +90,6 @@ if     [ ! -f ${VIM_DIR}/doc/delimitMate.txt ] \
     mv plugin/delimitMate.vim ${VIM_DIR}/plugin/
 fi
 
-# Gundo : easier undo tree visualization
-gh_bundle sjl gundo.vim
-
 # Jedi : completion for Python
 if [ ! -d ${VIM_DIR}/bundle/jedi-vim ]; then
     git clone https://github.com/davidhalter/jedi-vim.git \
@@ -103,11 +109,12 @@ if     [ ! -f ${VIM_DIR}/plugin/matchit.vim ] \
     rm -f matchit.zip
 fi
 
-# NerdTree : File tree
-gh_bundle scrooloose nerdtree
-
-# Powerline : better status line
-gh_bundle Lokaltog vim-powerline
+gh_bundle sjl         gundo.vim     # Gundo
+gh_bundle mattn       emmet-vim     # Emmet (Zencoding-like plugin)
+gh_bundle scrooloose  nerdtree      # NerdTree
+gh_bundle Lokaltog    vim-powerline # Powerline
+gh_bundle AndrewRadev splitjoin.vim # Splitjoin
+gh_bundle godlygeek   tabular       # Tabular
 
 # SnipMate : allow TextMate's snippets in Vim
 if [ ! -f ${VIM_DIR}/autoload/snipMate.vim ]; then
@@ -115,12 +122,6 @@ if [ ! -f ${VIM_DIR}/autoload/snipMate.vim ]; then
         -O /tmp/sm.zip
     unzip /tmp/sm.zip -d ~/.vim
 fi
-
-# Splitjoin: toggle between multiline and single-line code
-gh_bundle AndrewRadev splitjoin.vim
-
-# Tabular : text line up made easy
-gh_bundle godlygeek tabular
 
 # Taglist : source code browser
 # note: you need to install Ctags before
@@ -136,16 +137,10 @@ if     [ ! -f ${VIM_DIR}/plugin/taglist.vim ] \
     mv doc/taglist.txt ${VIM_DIR}/doc/taglist.txt
 fi
 
-# Emmet Zencoding-like plugin
-gh_bundle mattn emmet-vim
-
 # == themes ==
 
-# 256-jungle
-# install_if_absent colors/256-jungle 8685
-#
-# Candycode
-# install_if_absent colors/candycode 6066
+# install_if_absent colors/256-jungle 8685 # 256-jungle
+# install_if_absent colors/candycode  6066 # Candycode
 #
 # Molokai
 #if [ ! -f ${VIM_DIR}/colors/molokai.vim ]; then
@@ -163,9 +158,6 @@ gh_bundle mattn emmet-vim
 
 # == syntax ==
 
-# Asciidoc
-install_if_absent syntax/asciidoc 6891
-
 # *sh
 if [ ! -f ${VIM_DIR}/syntax/sh.vim ]; then
     cd tmp
@@ -174,52 +166,35 @@ if [ ! -f ${VIM_DIR}/syntax/sh.vim ]; then
     mv sh.vim ${VIM_DIR}/syntax/
 fi
 
-# Brainfuck
-install_if_absent syntax/brainfuck 14054
+install_if_absent syntax/asciidoc       6891 # Asciidoc
+install_if_absent syntax/brainfuck     14054 # Brainfuck
+install_if_absent syntax/conflicts.vim 19764 # *.conflicts files
+install_if_absent syntax/forth         18049 # Forth
+install_if_absent syntax/io             8129 # Io
+install_if_absent syntax/jinja          8666 # Jinja
+install_if_absent syntax/htmljinja      6961 # (same)
+install_if_absent syntax/json          10853 # JSON
 
-# *.conflicts files
-install_if_absent syntax/conflicts.vim 19764
-
-# Clojure
-gh_bundle guns vim-clojure-static
-
-# CoffeeScript
-gh_bundle kchmck vim-coffee-script
-
-# CSS3
-gh_bundle hailu vim-css3-syntax
+gh_bundle guns   vim-clojure-static # Clojure
+gh_bundle kchmck vim-coffee-script  # CoffeeScript
+gh_bundle hailu  vim-css3-syntax    # CSS3
+gh_bundle dag    vim-fish           # Fish
+gh_bundle juvenn mustache.vim       # Mustache
+gh_bundle wting  rust.vim           # Rust
 
 # E
-if [ ! -f ${VIM_DIR}/syntax/e.vim ]; then
-    wget http://raw.github.com/bfontaine/e.vim/master/e.vim \
-        -O ${VIM_DIR}/syntax/e.vim
-fi
-
-# Fish
-gh_bundle dag vim-fish
-
-# Forth
-install_if_absent syntax/forth 18049
+raw_gh bfontaine/e.vim e.vim syntax/e.vim
 
 # Go
 for f in syntax indent ftdetect; do
-    if [ ! -f ${VIM_DIR}/syntax/go.vim ]; then
-        wget https://raw.github.com/jnwhiteh/vim-golang/master/$f/go.vim \
-            -O ${VIM_DIR}/$f/go.vim
-    fi
+    raw_gh jnwhiteh/vim-golang $f/go.vim $f/go.vim
 done
 
-# Io
-install_if_absent syntax/io 8129
-
-if [ ! -f ${VIM_DIR}/indent/io.vim ]; then
-    wget https://raw.github.com/xhr/vim-io/master/indent/io.vim \
-        -O ${VIM_DIR}/indent/io.vim
-fi
+# Io (again)
+raw_gh xhr/vim-io indent/io.vim indent/io.vim
 
 # Jade
 if [ ! -f ${VIM_DIR}/syntax/jade.vim ]; then
-
     wget http://www.vim.org/scripts/download_script.php?src_id=13895 \
         -O jade.zip
     unzip jade.zip
@@ -227,7 +202,6 @@ if [ ! -f ${VIM_DIR}/syntax/jade.vim ]; then
     for d in ftdetect ftplugin indent syntax; do
         mv ${d}/jade.vim ${VIM_DIR}/$d/jade.vim
     done
-
 fi
 
 # JavaScript
@@ -243,13 +217,6 @@ if     [ ! -f ${VIM_DIR}/syntax/javascript.vim ] \
     rm -f javascript.zip
 fi
 
-# Jinja
-install_if_absent syntax/jinja 8666
-install_if_absent syntax/htmljinja 6961
-
-# JSON
-install_if_absent syntax/json 10853
-
 # LaTeX
 #if [ ! -d ${VIM_DIR}/bundle/vim-latex ]; then
 #    cd /tmp
@@ -259,23 +226,11 @@ install_if_absent syntax/json 10853
 #    mv vim-latex-* ${VIM_DIR}/bundle/vim-latex
 #fi
 
-# Mustache
-gh_bundle juvenn mustache.vim
-
 # Omgrofl
-if [ ! -f ${VIM_DIR}/syntax/omgrofl.vim ]; then
-    wget https://raw.github.com/bfontaine/omgrofl.vim/master/omgrofl.vim \
-        -O ${VIM_DIR}/syntax/omgrofl.vim
-fi
+raw_gh bfontaine/omgrofl.vim omgrofl.vim syntax/omgrofl.vim
 
 # PlantUML
-if [ ! -f ${VIM_DIR}/syntax/plantuml.vim ]; then
-    wget https://raw.github.com/aklt/plantuml-syntax/master/syntax/plantuml.vim \
-        -O ${VIM_DIR}/syntax/plantuml.vim
-fi
-
-# Rust
-gh_bundle wting rust.vim
+raw_gh aklt/plantuml-syntax syntax/plantuml.vim syntax/plantuml.vim
 
 # Scala
 for dir in ftdetect indent syntax; do
@@ -305,14 +260,6 @@ fi
 
 # == snippets (for SnipMate plugin) ==
 
-# Backbone
-
-if [ ! -f ${VIM_DIR}/snippets/backbone.snippets ];then
-    url='https://raw.github.com/gist/959876/ab6981b2a882'
-    url="${url}57e823ebd0cc4ecc5eaf54eb5634/backbone.snippets"
-    wget $url -O ${VIM_DIR}/snippets/backbone.snippets
-fi
-
 # == Omnicomplete ==
 
 # C++
@@ -324,7 +271,6 @@ if [ ! -f ${VIM_DIR}/doc/clang_complete.txt ]; then
 fi
 
 # Java complete
-
 if     [ ! -f ${VIM_DIR}/autoload/javacomplete.vim ] \
     || [ ! -f ${VIM_DIR}/autoload/Reflection.java ] \
     || [ ! -f ${VIM_DIR}/autoload/java_parser.vim ] \
