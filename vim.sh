@@ -39,8 +39,6 @@ gh_bundle() {
 # Pathogen
 install_if_absent autoload/pathogen 16224
 
-cd ${VIM_DIR}/bundle/
-
 # endwise    : add 'end' in Ruby files when using if/def/…
 # haml       : HAML, Sass, SCSS syntax
 # markdown   : Markdown syntax
@@ -55,9 +53,7 @@ done
 if     [ ! -f ${VIM_DIR}/plugin/clang_complete.vim ]; then
     cd /tmp/
     git clone https://github.com/Rip-Rip/clang_complete.git
-    cd clang_complete/
-    make install
-    cd ..
+    make -C clang_complete install
     rm -Rf clang_complete
 fi
 
