@@ -8,7 +8,7 @@ VIM_DIR=~/.vim
 
 for dir in after autoload backups bundle colors doc \
                     ftdetect indent plugin scripts \
-                    snippets syntax; do
+                    snippets syntax after/syntax; do
     mkdir -p ${VIM_DIR}/$dir
 done
 
@@ -67,7 +67,7 @@ done
 
 # Clang complete : C/C++ autocompletion
 # you need Clang installed (package 'clang' on Ubuntu)
-if     [ ! -f ${VIM_DIR}/plugin/clang_complete.vim ]; then
+if [ ! -f ${VIM_DIR}/plugin/clang_complete.vim ]; then
     cd /tmp/
     git clone https://github.com/Rip-Rip/clang_complete.git
     make -C clang_complete install
@@ -76,14 +76,7 @@ fi
 
 
 # CSS-Color : Show CSS colors
-# if [ ! -f ${VIM_DIR}/after/syntax/css.vim ]; then
-#
-#     cd /tmp/
-#     git clone https://github.com/skammer/vim-css-color.git
-#     mkdir -p ${VIM_DIR}/after/syntax
-#     mv vim-css-color/after/syntax/css.vim ${VIM_DIR}/after/syntax/
-#
-# fi
+# raw_gh skammer/vim-css-color after/syntax/css.vim
 
 # DelimitMate : automatic closing of quotes, parenthesis, brackets, etc.
 if     [ ! -f ${VIM_DIR}/doc/delimitMate.txt ] \
@@ -98,8 +91,7 @@ fi
 
 # Jedi : completion for Python
 if [ ! -d ${VIM_DIR}/bundle/jedi-vim ]; then
-    git clone https://github.com/davidhalter/jedi-vim.git \
-        ${VIM_DIR}/bundle/jedi-vim
+    gh_bundle davidhalter jedi-vim
     cd ${VIM_DIR}/bundle/jedi-vim/
     git clone https://github.com/davidhalter/jedi.git
 fi
@@ -107,12 +99,9 @@ fi
 # Matchit : extended % matching for HTML, LaTeX, etc
 if     [ ! -f ${VIM_DIR}/plugin/matchit.vim ] \
     || [ ! -f ${VIM_DIR}/doc/matchit.txt ]; then
-
-    cd ${VIM_DIR}
     wget http://www.vim.org/scripts/download_script.php?src_id=8196 \
-        -O matchit.zip
-    unzip matchit.zip
-    rm -f matchit.zip
+        -O /tmp/matchit.zip
+    unzip /tmp/matchit.zip -d ${VIM_DIR}
 fi
 
 gh_bundle sjl         gundo.vim     # Gundo
@@ -126,7 +115,7 @@ gh_bundle godlygeek   tabular       # Tabular
 if [ ! -f ${VIM_DIR}/autoload/snipMate.vim ]; then
     wget http://www.vim.org/scripts/download_script.php?src_id=11006 \
         -O /tmp/sm.zip
-    unzip /tmp/sm.zip -d ~/.vim
+    unzip /tmp/sm.zip -d ${VIM_DIR}
 fi
 
 # Taglist : source code browser
@@ -149,11 +138,7 @@ fi
 # install_if_absent colors/candycode  6066 # Candycode
 #
 # Molokai
-#if [ ! -f ${VIM_DIR}/colors/molokai.vim ]; then
-#    cd /tmp/
-#    git clone https://github.com/tomasr/molokai.git
-#    mv molokai/colors/molokai.vim ${VIM_DIR}/colors/
-#fi
+# raw_gh tomasr/molokai colors/molokai.vim
 #
 # Tomorrow
 #if [ ! -f ${VIM_DIR}/colors/Tomorrow.vim ]; then
@@ -188,16 +173,16 @@ gh_bundle dag    vim-fish           # Fish
 gh_bundle juvenn mustache.vim       # Mustache
 gh_bundle wting  rust.vim           # Rust
 
-# E
-raw_gh bfontaine/e.vim e.vim syntax/e.vim
+raw_gh bfontaine/e.vim e.vim syntax/e.vim        # E
+raw_gh xhr/vim-io            indent/io.vim       # Io (again)
+raw_gh bfontaine/omgrofl.vim omgrofl.vim syntax/omgrofl.vim # Omgrofl
+raw_gh aklt/plantuml-syntax  syntax/plantuml.vim # PlantUML
 
 # Go
 for f in syntax indent ftdetect; do
     raw_gh jnwhiteh/vim-golang $f/go.vim
 done
 
-# Io (again)
-raw_gh xhr/vim-io indent/io.vim
 
 # Jade
 if [ ! -f ${VIM_DIR}/syntax/jade.vim ]; then
@@ -232,12 +217,6 @@ fi
 #    mv vim-latex-* ${VIM_DIR}/bundle/vim-latex
 #fi
 
-# Omgrofl
-raw_gh bfontaine/omgrofl.vim omgrofl.vim syntax/omgrofl.vim
-
-# PlantUML
-raw_gh aklt/plantuml-syntax syntax/plantuml.vim
-
 # Scala
 for dir in ftdetect indent syntax; do
 
@@ -251,7 +230,7 @@ done
 
 # Textile
 #
-# need Ruby & RedCloth :
+# need Ruby & RedCloth:
 # sudo apt-get install ruby rubygems
 # sudo gem install RedCloth
 if [ ! -f ${VIM_DIR}/doc/textile.txt ]; then
@@ -263,8 +242,6 @@ if [ ! -f ${VIM_DIR}/doc/textile.txt ]; then
         mv textile*/${d}/textile.* ${VIM_DIR}/${d}/
     done
 fi
-
-# == snippets (for SnipMate plugin) ==
 
 # == Omnicomplete ==
 
