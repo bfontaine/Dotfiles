@@ -34,7 +34,7 @@ gh_bundle() {
     fi
 }
 
-raw_gh() {
+gh_raw() {
     local repo=$1
     local path=$2
     local target=$3
@@ -76,7 +76,7 @@ fi
 
 
 # CSS-Color : Show CSS colors
-# raw_gh skammer/vim-css-color after/syntax/css.vim
+# gh_raw skammer/vim-css-color after/syntax/css.vim
 
 # DelimitMate : automatic closing of quotes, parenthesis, brackets, etc.
 if     [ ! -f ${VIM_DIR}/doc/delimitMate.txt ] \
@@ -138,7 +138,7 @@ fi
 # install_if_absent colors/candycode  6066 # Candycode
 #
 # Molokai
-# raw_gh tomasr/molokai colors/molokai.vim
+# gh_raw tomasr/molokai colors/molokai.vim
 #
 # Tomorrow
 #if [ ! -f ${VIM_DIR}/colors/Tomorrow.vim ]; then
@@ -173,14 +173,14 @@ gh_bundle dag    vim-fish           # Fish
 gh_bundle juvenn mustache.vim       # Mustache
 gh_bundle wting  rust.vim           # Rust
 
-raw_gh bfontaine/e.vim e.vim syntax/e.vim        # E
-raw_gh xhr/vim-io            indent/io.vim       # Io (again)
-raw_gh bfontaine/omgrofl.vim omgrofl.vim syntax/omgrofl.vim # Omgrofl
-raw_gh aklt/plantuml-syntax  syntax/plantuml.vim # PlantUML
+gh_raw bfontaine/e.vim e.vim syntax/e.vim        # E
+gh_raw xhr/vim-io            indent/io.vim       # Io (again)
+gh_raw bfontaine/omgrofl.vim omgrofl.vim syntax/omgrofl.vim # Omgrofl
+gh_raw aklt/plantuml-syntax  syntax/plantuml.vim # PlantUML
 
 # Go
 for f in syntax indent ftdetect; do
-    raw_gh jnwhiteh/vim-golang $f/go.vim
+    gh_raw jnwhiteh/vim-golang $f/go.vim
 done
 
 
