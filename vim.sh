@@ -51,6 +51,14 @@ gh_raw() {
     fi
 }
 
+wzip() { # script_id test_file
+    if [ ! -f "${VIM_DIR}/$2" ]; then
+        wget http://www.vim.org/scripts/download_script.php?src_id=$1 \
+            -O /tmp/w.zip
+        unzip /tmp/w.zip -d ${VIM_DIR}
+    fi
+}
+
 # == plugins ==
 
 install_if_absent autoload/pathogen    16224 # Pathogen
@@ -96,13 +104,8 @@ if [ ! -d ${VIM_DIR}/bundle/jedi-vim ]; then
     git clone https://github.com/davidhalter/jedi.git
 fi
 
-# Matchit : extended % matching for HTML, LaTeX, etc
-if     [ ! -f ${VIM_DIR}/plugin/matchit.vim ] \
-    || [ ! -f ${VIM_DIR}/doc/matchit.txt ]; then
-    wget http://www.vim.org/scripts/download_script.php?src_id=8196 \
-        -O /tmp/matchit.zip
-    unzip /tmp/matchit.zip -d ${VIM_DIR}
-fi
+wzip  8196 plugin/matchit.vim    # Matchit
+wzip 11006 autoload/snipMate.vim # SnipMate
 
 gh_bundle sjl         gundo.vim     # Gundo
 gh_bundle mattn       emmet-vim     # Emmet (Zencoding-like plugin)
@@ -111,26 +114,10 @@ gh_bundle Lokaltog    vim-powerline # Powerline
 gh_bundle AndrewRadev splitjoin.vim # Splitjoin
 gh_bundle godlygeek   tabular       # Tabular
 
-# SnipMate : allow TextMate's snippets in Vim
-if [ ! -f ${VIM_DIR}/autoload/snipMate.vim ]; then
-    wget http://www.vim.org/scripts/download_script.php?src_id=11006 \
-        -O /tmp/sm.zip
-    unzip /tmp/sm.zip -d ${VIM_DIR}
-fi
-
 # Taglist : source code browser
 # note: you need to install Ctags before
 # (exuberant-ctags package in Ubuntu)
-if     [ ! -f ${VIM_DIR}/plugin/taglist.vim ] \
-    || [ ! -f ${VIM_DIR}/doc/taglist.txt ]; then
-
-    cd /tmp/
-    wget http://www.vim.org/scripts/download_script.php?src_id=7701 \
-        -O taglist.zip
-    unzip taglist.zip
-    mv plugin/taglist.vim ${VIM_DIR}/plugin/taglist.vim
-    mv doc/taglist.txt ${VIM_DIR}/doc/taglist.txt
-fi
+wzip 7701 plugin/taglist.vim
 
 # == themes ==
 
@@ -184,29 +171,8 @@ for f in syntax indent ftdetect; do
 done
 
 
-# Jade
-if [ ! -f ${VIM_DIR}/syntax/jade.vim ]; then
-    wget http://www.vim.org/scripts/download_script.php?src_id=13895 \
-        -O jade.zip
-    unzip jade.zip
-
-    for d in ftdetect ftplugin indent syntax; do
-        mv ${d}/jade.vim ${VIM_DIR}/$d/jade.vim
-    done
-fi
-
-# JavaScript
-if     [ ! -f ${VIM_DIR}/syntax/javascript.vim ] \
-    || [ ! -f ${VIM_DIR}/indent/javascript.vim ]; then
-    cd /tmp/
-    wget http://www.vim.org/scripts/download_script.php?src_id=11296 \
-        -O javascript.zip
-    unzip javascript.zip -d js-vim
-    for d in syntax indent; do
-        mv js-vim/$d/javascript.vim ${VIM_DIR}/$d/
-    done
-    rm -f javascript.zip
-fi
+wzip 13895 syntax/jade.vim       # Jade
+wzip 11296 syntax/javascript.vim # JavaScript
 
 # LaTeX
 #if [ ! -d ${VIM_DIR}/bundle/vim-latex ]; then
@@ -219,13 +185,11 @@ fi
 
 # Scala
 for dir in ftdetect indent syntax; do
-
     if [ ! -f ${VIM_DIR}/${dir}/scala.vim ]; then
         url='https://lampsvn.epfl.ch/trac/scala/export/26099/scala-tool-'
         url="${url}support/trunk/src/vim/${dir}/scala.vim"
         wget $url -O ${VIM_DIR}/${dir}/scala.vim
     fi
-
 done
 
 # Textile
@@ -233,15 +197,7 @@ done
 # need Ruby & RedCloth:
 # sudo apt-get install ruby rubygems
 # sudo gem install RedCloth
-if [ ! -f ${VIM_DIR}/doc/textile.txt ]; then
-    cd /tmp/
-    wget http://www.vim.org/scripts/download_script.php?src_id=9427 \
-        -O textile.zip
-    unzip textile.zip
-    for d in doc ftplugin plugin syntax; do
-        mv textile*/${d}/textile.* ${VIM_DIR}/${d}/
-    done
-fi
+wzip 9427 doc/textile.txt
 
 # == Omnicomplete ==
 
@@ -254,20 +210,9 @@ if [ ! -f ${VIM_DIR}/doc/clang_complete.txt ]; then
 fi
 
 # Java complete
-if     [ ! -f ${VIM_DIR}/autoload/javacomplete.vim ] \
-    || [ ! -f ${VIM_DIR}/autoload/Reflection.java ] \
-    || [ ! -f ${VIM_DIR}/autoload/java_parser.vim ] \
-    || [ ! -f ${VIM_DIR}/doc/javacomplete.txt ]; then
-
-    cd /tmp/
-    wget http://www.vim.org/scripts/download_script.php?src_id=14914 \
-        -O javacomplete.zip
-    unzip javacomplete.zip -d ${VIM_DIR}
-    rm -f javacomplete.zip
-
-    # Note: for the first use, Reflection.java will be compiled
-    #       to ~/Reflection.class . You should move it to ${VIM_DIR}/autoload/
-fi
+# Note: for the first use, Reflection.java will be compiled
+#       to ~/Reflection.class . You should move it to ${VIM_DIR}/autoload/
+wzip 14914 doc/javacomplete.txt
 
 # Bundles cleaning
 rm -Rf ${VIM_DIR}/bundle/*/.git
