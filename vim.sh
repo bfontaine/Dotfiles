@@ -12,9 +12,7 @@ for dir in after autoload backups bundle colors doc \
     mkdir -p ${VIM_DIR}/$dir
 done
 
-install_if_absent() {
-    [ $# -ne 2 ] && return -1;
-
+install_if_absent() { # path num
     name=${VIM_DIR}/${1%%.vim}.vim
     url=http://www.vim.org/scripts/download_script.php?src_id=$2
 
@@ -64,16 +62,15 @@ wzip() { # script_id test_file
 install_if_absent autoload/pathogen    16224 # Pathogen
 install_if_absent scripts/closetag.vim  4318 # Close tag
 
-# endwise    : add 'end' in Ruby files when using if/def/…
-# haml       : HAML, Sass, SCSS syntax
-# markdown   : Markdown syntax
-# surround   : parentheses, quotes, XML/HTML tags
-
+# endwise : add 'end' in Ruby files when using if/def/…
+# haml    : HAML, Sass, SCSS syntax
+# markdown: Markdown syntax
+# surround: parentheses, quotes, XML/HTML tags
 for plugin in endwise haml markdown surround; do
     gh_bundle tpope vim-${plugin}
 done
 
-# Clang complete : C/C++ autocompletion
+# Clang complete: C/C++ autocompletion
 # you need Clang installed (package 'clang' on Ubuntu)
 if [ ! -f ${VIM_DIR}/plugin/clang_complete.vim ]; then
     cd /tmp/
@@ -82,22 +79,10 @@ if [ ! -f ${VIM_DIR}/plugin/clang_complete.vim ]; then
     rm -Rf clang_complete
 fi
 
-
-# CSS-Color : Show CSS colors
+# CSS-Color: Show CSS colors
 # gh_raw skammer/vim-css-color after/syntax/css.vim
 
-# DelimitMate : automatic closing of quotes, parenthesis, brackets, etc.
-if     [ ! -f ${VIM_DIR}/doc/delimitMate.txt ] \
-    || [ ! -f ${VIM_DIR}/plugin/delimitMate.vim ];then
-    cd /tmp/
-    git clone https://github.com/Raimondi/delimitMate.git
-    cd delimitMate/
-    mv autoload/delimitMate.vim ${VIM_DIR}/autoload/
-    mv doc/delimitMate.txt ${VIM_DIR}/doc/
-    mv plugin/delimitMate.vim ${VIM_DIR}/plugin/
-fi
-
-# Jedi : completion for Python
+# Jedi: completion for Python
 if [ ! -d ${VIM_DIR}/bundle/jedi-vim ]; then
     gh_bundle davidhalter jedi-vim
     cd ${VIM_DIR}/bundle/jedi-vim/
@@ -107,6 +92,7 @@ fi
 wzip  8196 plugin/matchit.vim    # Matchit
 wzip 11006 autoload/snipMate.vim # SnipMate
 
+gh_bundle Raimondi    delimitMate   # DelimitMate
 gh_bundle sjl         gundo.vim     # Gundo
 gh_bundle mattn       emmet-vim     # Emmet (Zencoding-like plugin)
 gh_bundle scrooloose  nerdtree      # NerdTree
@@ -114,7 +100,7 @@ gh_bundle Lokaltog    vim-powerline # Powerline
 gh_bundle AndrewRadev splitjoin.vim # Splitjoin
 gh_bundle godlygeek   tabular       # Tabular
 
-# Taglist : source code browser
+# Taglist: source code browser
 # note: you need to install Ctags before
 # (exuberant-ctags package in Ubuntu)
 wzip 7701 plugin/taglist.vim
@@ -170,7 +156,6 @@ for f in syntax indent ftdetect; do
     gh_raw jnwhiteh/vim-golang $f/go.vim
 done
 
-
 wzip 13895 syntax/jade.vim       # Jade
 wzip 11296 syntax/javascript.vim # JavaScript
 
@@ -184,11 +169,10 @@ wzip 11296 syntax/javascript.vim # JavaScript
 #fi
 
 # Scala
+url='https://lampsvn.epfl.ch/trac/scala/export/26099/scala-tool-support/trunk'
 for dir in ftdetect indent syntax; do
     if [ ! -f ${VIM_DIR}/${dir}/scala.vim ]; then
-        url='https://lampsvn.epfl.ch/trac/scala/export/26099/scala-tool-'
-        url="${url}support/trunk/src/vim/${dir}/scala.vim"
-        wget $url -O ${VIM_DIR}/${dir}/scala.vim
+        wget "${url}/src/vim/${dir}/scala.vim" -O ${VIM_DIR}/${dir}/scala.vim
     fi
 done
 
