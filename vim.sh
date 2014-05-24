@@ -37,7 +37,13 @@ gh_bundle() {
 raw_gh() {
     local repo=$1
     local path=$2
-    local target=${VIM_DIR}/$3
+    local target=$3
+
+    if [ -z "$target" ]; then
+        target=$path
+    fi
+
+    target="$VIM_DIR/$target"
 
     if [ ! -f ${target} ]; then
         wget -q https://raw.github.com/${repo}/master/${path} \
@@ -187,11 +193,11 @@ raw_gh bfontaine/e.vim e.vim syntax/e.vim
 
 # Go
 for f in syntax indent ftdetect; do
-    raw_gh jnwhiteh/vim-golang $f/go.vim $f/go.vim
+    raw_gh jnwhiteh/vim-golang $f/go.vim
 done
 
 # Io (again)
-raw_gh xhr/vim-io indent/io.vim indent/io.vim
+raw_gh xhr/vim-io indent/io.vim
 
 # Jade
 if [ ! -f ${VIM_DIR}/syntax/jade.vim ]; then
@@ -230,7 +236,7 @@ fi
 raw_gh bfontaine/omgrofl.vim omgrofl.vim syntax/omgrofl.vim
 
 # PlantUML
-raw_gh aklt/plantuml-syntax syntax/plantuml.vim syntax/plantuml.vim
+raw_gh aklt/plantuml-syntax syntax/plantuml.vim
 
 # Scala
 for dir in ftdetect indent syntax; do
