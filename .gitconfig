@@ -9,6 +9,7 @@
 	a    = add
 	br   = branch
 	ca   = commit --amend
+	caa  = !git add . && git commit --amend
 	chp  = cherry-pick
 	c    = commit
 	cl   = clone
