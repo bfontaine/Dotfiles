@@ -45,7 +45,7 @@ set showmatch                   " show matching braces/brackets/etc
 set smartcase                   " check case if upper case chars in /regex
 set smartindent                 " no autoindent when starting a new line
 set softtabstop=4               " 1 tab = 4 spaces
-set spelllang=fr,en             " Spell languages: FRench, ENglish
+set spelllang=en,fr             " Spell languages: FRench, ENglish
 set suffixes=,*.aux,*.toc,*lock " last used files when tab completing
 set tabpagemax=8                " only show 8 tabs
 set tabstop=4                   " 1 tab = 4 spaces
