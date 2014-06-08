@@ -34,7 +34,8 @@ alias mt='sag update; sag upgrade -f --yes && sag dist-upgrade --yes \
             && sag autoremove --yes && sag autoclean'
 alias aptis='aptitude search'
 
-alias xclip='xclip -selection "clipboard"'
+which xclip >/dev/null && \
+    alias xclip='xclip -selection "clipboard"'
 
 # Git
 # see github.com/icefox/git-achievements
