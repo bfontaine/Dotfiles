@@ -183,7 +183,6 @@ alias g=git
 alias h=heroku
 alias m=mv
 alias n=node
-alias p=pip
 alias s=sudo
 alias v=vim
 
@@ -192,6 +191,9 @@ alias L=lein
 alias M=make
 alias R=rake
 alias V=vagrant
+
+alias p=pushd
+alias P=popd
 
 # two-letters ones
 alias ct=cat
