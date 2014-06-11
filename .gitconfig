@@ -17,6 +17,7 @@
 	co   = checkout
 	df   = diff
 	f    = fetch
+	fp   = format-patch
 	fuck = reset HEAD --hard
 	i    = !git init && [ ! -f .gitignore ] && cp ~/.cvsignore .gitignore
 	l1   = !git lg -n 1 && echo
@@ -25,6 +26,7 @@
 	llg  = log --pretty=format:'%h - %an: %s (%ar)'
 	m    = mv
 	s    = status -sb
+	sm   = send-email
 	who  = shortlog -s --
 
 	# Copied from https://github.com/jdavis/dotfiles
