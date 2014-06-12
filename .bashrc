@@ -227,8 +227,8 @@ fi
 if [ "`uname`" = "Darwin" ] && [ -f "$HOME/.bashrc_osx" ]; then
     . $HOME/.bashrc_osx
 elif [[ "`uname -a`" =~ "Ubuntu" ]] || [[ "`uname -a`" =~ "Linux" ]]; then
-    if [ -f "$HOME/.bashrc_ubuntu" ]; then
-        . $HOME/.bashrc_ubuntu
+    if [ -f "$HOME/.bashrc_linux" ]; then
+        . $HOME/.bashrc_linux
     fi
 fi
 
