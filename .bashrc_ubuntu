@@ -16,7 +16,6 @@ export JAVA_HOME=/usr/
 APPS_DIR="$HOME/Applications"
 
 # these scripts are installed on my Ubuntu machines only
-alias chromium='chromium-browser'
 alias yuicompressor="java -jar $APPS_DIR/yuicompressor-2.4.7.jar"
 alias closurecompiler="java -jar $APPS_DIR/GoogleClosureCompiler/compiler.jar"
 
