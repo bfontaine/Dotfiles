@@ -24,6 +24,7 @@
 	lg   = log --graph --pretty=format:'%Cred%h%Creset - %C(blue bold)%an%Creset: %C(cyan)%s%Creset %Cgreen(%ar)%Creset'
 	lgs  = log --pretty=format:'%Cblue%h%Creset: %s'
 	llg  = log --pretty=format:'%h - %an: %s (%ar)'
+	ls   = ls-tree master
 	m    = mv
 	s    = status -sb
 	sm   = send-email
