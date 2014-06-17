@@ -99,6 +99,7 @@ gh_bundle scrooloose  nerdtree      # NerdTree
 gh_bundle Lokaltog    vim-powerline # Powerline
 gh_bundle AndrewRadev splitjoin.vim # Splitjoin
 gh_bundle godlygeek   tabular       # Tabular
+gh_bundle scrooloose  syntastic     # Syntastic
 
 # Taglist: source code browser
 # note: you need to install Ctags before
