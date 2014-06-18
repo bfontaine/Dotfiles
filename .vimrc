@@ -153,6 +153,11 @@ nnoremap <leader>n :NERDTreeToggle<cr>
 " Powerline
 let g:Powerline_symbols='fancy'
 set laststatus=2
+" Syntastic
+let g:syntastic_python_checkers = ['pyflakes']
+let g:syntastic_tex_checkers = ['chktex']
+let g:syntastic_tex_chktex_args = "-n 26 -n 36 -n 57"
+let g:syntastic_xml_checkers = []
 " Tabular
 vnoremap <leader>t :Tabular<space>/
 vnoremap <leader>{ :Tabular<space>/{<cr>gv:Tabular<space>/}<cr>
