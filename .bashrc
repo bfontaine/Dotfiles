@@ -94,13 +94,6 @@ function _bash_prompt_command {
         # no colors
         PS1="${PS1}${PS1_SYMBOL} "
     fi
-
-    ## ./venv autoloading
-    if [ -d venv ] && [ "$VIRTUAL_ENV" != "$(pwd -P)/venv" ]; then
-        local p="$PATH"
-        . venv/bin/activate
-        export PATH="$HOME/.rvm/bin:$PATH:$p" # hack to preserve custom PATH
-    fi
 }
 
 # If connected through SSH, print the hostname
