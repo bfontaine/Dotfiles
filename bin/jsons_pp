@@ -1,0 +1,9 @@
+#! /bin/bash
+
+__jsons_pp() {
+    while read -r line || [[ -n $line ]]; do
+        json_pp <<< "$line"
+    done < $1
+}
+
+__jsons_pp $*
