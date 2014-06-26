@@ -1,3 +1,10 @@
 *~
+*.tgz
 .*.sw*
 .DS_Store
+
+*.ps
+*.pdf
+
+*.key
+*.xls
