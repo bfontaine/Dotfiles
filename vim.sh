@@ -144,6 +144,7 @@ gh_bundle guns   vim-clojure-static # Clojure
 gh_bundle kchmck vim-coffee-script  # CoffeeScript
 gh_bundle hailu  vim-css3-syntax    # CSS3
 gh_bundle dag    vim-fish           # Fish
+gh_bundle groenewege vim-less       # LESS
 gh_bundle juvenn mustache.vim       # Mustache
 gh_bundle wting  rust.vim           # Rust
 
