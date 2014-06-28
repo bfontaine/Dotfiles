@@ -7,6 +7,7 @@
 	current = bold
 [alias]
 	a    = add
+	ack  = grep --break --heading --line-number
 	br   = branch
 	ca   = commit --amend
 	caa  = !git add . && git commit --amend
@@ -59,3 +60,5 @@
 	check = true
 [diff]
 	algorithm = patience
+[grep]
+	extendRegexp = true
