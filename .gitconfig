@@ -30,6 +30,7 @@
 	p    = log --graph --pretty=format:'%Cred%h%Creset - %C(blue bold)%an%Creset: %C(cyan)%s%Creset %Cgreen(%ar)%Creset' @{u}..
 	s    = status -sb
 	sm   = send-email
+	whatsnew = log ..@{u}
 	who  = shortlog -s --
 
 	# Copied from https://github.com/jdavis/dotfiles
