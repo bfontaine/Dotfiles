@@ -12,13 +12,24 @@ for dir in after autoload backups bundle colors doc \
     mkdir -p ${VIM_DIR}/$dir
 done
 
+__progress() { # string 0|1
+    local prefix='--->'
+    if [ "$2" -eq "1" ]; then
+        prefix='[ok]'
+    fi
+    echo "$prefix $1"
+}
+
 install_if_absent() { # path num
     name=${VIM_DIR}/${1%%.vim}.vim
     url=http://www.vim.org/scripts/download_script.php?src_id=$2
 
     if [ ! -f "${name}" ]; then
+        __progress $name 0
         echo "downloading ${name}..."
         wget -q $url -O "${name}";
+    else
+        __progress $name 1
     fi
 }
 
@@ -27,8 +38,11 @@ gh_bundle() {
     local name=$2
 
     if [ ! -d ${VIM_DIR}/bundle/${name} ]; then
+        __progress $name 0
         git clone https://github.com/${user}/${name}.git \
             ${VIM_DIR}/bundle/${name}
+    else
+        __progress $name 1
     fi
 }
 
@@ -44,16 +58,22 @@ gh_raw() {
     target="$VIM_DIR/$target"
 
     if [ ! -f ${target} ]; then
+        __progress $target 0
         wget -q https://raw.github.com/${repo}/master/${path} \
             -O ${target}
+    else
+        __progress $target 1
     fi
 }
 
 wzip() { # script_id test_file
     if [ ! -f "${VIM_DIR}/$2" ]; then
+        __progress $2 0
         wget http://www.vim.org/scripts/download_script.php?src_id=$1 \
             -O /tmp/w.zip
         unzip /tmp/w.zip -d ${VIM_DIR}
+    else
+        __progress $2 1
     fi
 }
 
@@ -79,14 +99,11 @@ if [ ! -f ${VIM_DIR}/plugin/clang_complete.vim ]; then
     rm -Rf clang_complete
 fi
 
-# CSS-Color: Show CSS colors
-# gh_raw skammer/vim-css-color after/syntax/css.vim
-
 # Jedi: completion for Python
 if [ ! -d ${VIM_DIR}/bundle/jedi-vim ]; then
     gh_bundle davidhalter jedi-vim
-    cd ${VIM_DIR}/bundle/jedi-vim/
-    git clone https://github.com/davidhalter/jedi.git
+    git clone https://github.com/davidhalter/jedi.git \
+        ${VIM_DIR}/bundle/jedi-vim/jedi
 fi
 
 wzip  8196 plugin/matchit.vim    # Matchit
@@ -100,11 +117,6 @@ gh_bundle Lokaltog    vim-powerline # Powerline
 gh_bundle AndrewRadev splitjoin.vim # Splitjoin
 gh_bundle godlygeek   tabular       # Tabular
 gh_bundle scrooloose  syntastic     # Syntastic
-
-# Taglist: source code browser
-# note: you need to install Ctags before
-# (exuberant-ctags package in Ubuntu)
-wzip 7701 plugin/taglist.vim
 
 # == themes ==
 
@@ -179,10 +191,7 @@ for dir in ftdetect indent syntax; do
 done
 
 # Textile
-#
-# need Ruby & RedCloth:
-# sudo apt-get install ruby rubygems
-# sudo gem install RedCloth
+# You need Ruby & RedCloth
 wzip 9427 doc/textile.txt
 
 # == Omnicomplete ==
@@ -197,7 +206,7 @@ fi
 
 # Java complete
 # Note: for the first use, Reflection.java will be compiled
-#       to ~/Reflection.class . You should move it to ${VIM_DIR}/autoload/
+#       to ~/Reflection.class. You should move it to ${VIM_DIR}/autoload/
 wzip 14914 doc/javacomplete.txt
 
 # Bundles cleaning
