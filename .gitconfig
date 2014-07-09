@@ -27,10 +27,10 @@
 	llg  = log --pretty=format:'%h - %an: %s (%ar)'
 	ls   = ls-tree master
 	m    = mv
-	p    = log --graph --pretty=format:'%Cred%h%Creset - %C(blue bold)%an%Creset: %C(cyan)%s%Creset %Cgreen(%ar)%Creset' @{u}..
+	p    = !git lg @{u}..
 	s    = status -sb
 	sm   = send-email
-	whatsnew = log ..@{u}
+	wazup = log ..@{u}
 	who  = shortlog -s --
 
 	# Copied from https://github.com/jdavis/dotfiles
