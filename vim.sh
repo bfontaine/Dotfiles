@@ -21,13 +21,13 @@ __progress() { # string 0|1
 }
 
 install_if_absent() { # path num
-    name=${VIM_DIR}/${1%%.vim}.vim
-    url=http://www.vim.org/scripts/download_script.php?src_id=$2
+    local name=${1%%.vim}.vim
+    local fname=${VIM_DIR}/${name}
+    local url=http://www.vim.org/scripts/download_script.php?src_id=$2
 
-    if [ ! -f "${name}" ]; then
+    if [ ! -f "${fname}" ]; then
         __progress $name 0
-        echo "downloading ${name}..."
-        wget -q $url -O "${name}";
+        wget -q $url -O "${fname}";
     else
         __progress $name 1
     fi
@@ -35,14 +35,14 @@ install_if_absent() { # path num
 
 gh_bundle() {
     local repo=$1
-    local name=$(echo "$repo" | cut -d/ -f2)
+    local target=bundle/$(echo "$repo" | cut -d/ -f2)
 
-    if [ ! -d ${VIM_DIR}/bundle/${name} ]; then
-        __progress $repo 0
+    if [ ! -d ${VIM_DIR}/$target ]; then
+        __progress $target 0
         git clone https://github.com/${repo}.git \
-            ${VIM_DIR}/bundle/${name}
+            ${VIM_DIR}/$target
     else
-        __progress $repo 1
+        __progress $target 1
     fi
 }
 
@@ -50,17 +50,18 @@ gh_raw() {
     local repo=$1
     local path=$2
     local target=$3
+    local fname=
 
     if [ -z "$target" ]; then
         target=$path
     fi
 
-    target="$VIM_DIR/$target"
+    fname="$VIM_DIR/$target"
 
-    if [ ! -f ${target} ]; then
+    if [ ! -f $fname ]; then
         __progress $target 0
         wget -q https://raw.github.com/${repo}/master/${path} \
-            -O ${target}
+            -O $fname
     else
         __progress $target 1
     fi
