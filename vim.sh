@@ -109,6 +109,7 @@ fi
 wzip  8196 plugin/matchit.vim    # Matchit
 wzip 11006 autoload/snipMate.vim # SnipMate
 
+gh_bundle ConradIrwin vim-bracketed-paste # Bracketed paste
 gh_bundle Raimondi    delimitMate   # DelimitMate
 gh_bundle sjl         gundo.vim     # Gundo
 gh_bundle mattn       emmet-vim     # Emmet (Zencoding-like plugin)
