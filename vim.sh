@@ -114,7 +114,6 @@ gh_bundle sjl         gundo.vim     # Gundo
 gh_bundle mattn       emmet-vim     # Emmet (Zencoding-like plugin)
 gh_bundle scrooloose  nerdtree      # NerdTree
 gh_bundle Lokaltog    vim-powerline # Powerline
-gh_bundle AndrewRadev splitjoin.vim # Splitjoin
 gh_bundle godlygeek   tabular       # Tabular
 gh_bundle scrooloose  syntastic     # Syntastic
 
@@ -156,6 +155,7 @@ gh_bundle guns   vim-clojure-static # Clojure
 gh_bundle kchmck vim-coffee-script  # CoffeeScript
 gh_bundle hailu  vim-css3-syntax    # CSS3
 gh_bundle dag    vim-fish           # Fish
+gh_bundle Blackrush vim-gocode      # Go
 gh_bundle groenewege vim-less       # LESS
 gh_bundle juvenn mustache.vim       # Mustache
 gh_bundle wting  rust.vim           # Rust
