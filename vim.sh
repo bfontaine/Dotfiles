@@ -34,15 +34,15 @@ install_if_absent() { # path num
 }
 
 gh_bundle() {
-    local user=$1
-    local name=$2
+    local repo=$1
+    local name=$(echo "$repo" | cut -d/ -f2)
 
     if [ ! -d ${VIM_DIR}/bundle/${name} ]; then
-        __progress $name 0
-        git clone https://github.com/${user}/${name}.git \
+        __progress $repo 0
+        git clone https://github.com/${repo}.git \
             ${VIM_DIR}/bundle/${name}
     else
-        __progress $name 1
+        __progress $repo 1
     fi
 }
 
@@ -87,7 +87,7 @@ install_if_absent scripts/closetag.vim  4318 # Close tag
 # markdown: Markdown syntax
 # surround: parentheses, quotes, XML/HTML tags
 for plugin in endwise haml markdown surround; do
-    gh_bundle tpope vim-${plugin}
+    gh_bundle tpope/vim-${plugin}
 done
 
 # Clang complete: C/C++ autocompletion
@@ -101,7 +101,7 @@ fi
 
 # Jedi: completion for Python
 if [ ! -d ${VIM_DIR}/bundle/jedi-vim ]; then
-    gh_bundle davidhalter jedi-vim
+    gh_bundle davidhalter/jedi-vim
     git clone https://github.com/davidhalter/jedi.git \
         ${VIM_DIR}/bundle/jedi-vim/jedi
 fi
@@ -109,14 +109,14 @@ fi
 wzip  8196 plugin/matchit.vim    # Matchit
 wzip 11006 autoload/snipMate.vim # SnipMate
 
-gh_bundle ConradIrwin vim-bracketed-paste # Bracketed paste
-gh_bundle Raimondi    delimitMate   # DelimitMate
-gh_bundle sjl         gundo.vim     # Gundo
-gh_bundle mattn       emmet-vim     # Emmet (Zencoding-like plugin)
-gh_bundle scrooloose  nerdtree      # NerdTree
-gh_bundle Lokaltog    vim-powerline # Powerline
-gh_bundle godlygeek   tabular       # Tabular
-gh_bundle scrooloose  syntastic     # Syntastic
+gh_bundle ConradIrwin/vim-bracketed-paste # Bracketed paste
+gh_bundle Raimondi/delimitMate   # DelimitMate
+gh_bundle sjl/gundo.vim          # Gundo
+gh_bundle mattn/emmet-vim        # Emmet (Zencoding-like plugin)
+gh_bundle scrooloose/nerdtree    # NerdTree
+gh_bundle Lokaltog/vim-powerline # Powerline
+gh_bundle godlygeek/tabular      # Tabular
+gh_bundle scrooloose/syntastic   # Syntastic
 
 # == themes ==
 
@@ -152,14 +152,14 @@ install_if_absent syntax/jinja          8666 # Jinja
 install_if_absent syntax/htmljinja      6961 # (same)
 install_if_absent syntax/json          10853 # JSON
 
-gh_bundle guns   vim-clojure-static # Clojure
-gh_bundle kchmck vim-coffee-script  # CoffeeScript
-gh_bundle hailu  vim-css3-syntax    # CSS3
-gh_bundle dag    vim-fish           # Fish
-gh_bundle Blackrush vim-gocode      # Go
-gh_bundle groenewege vim-less       # LESS
-gh_bundle juvenn mustache.vim       # Mustache
-gh_bundle wting  rust.vim           # Rust
+gh_bundle guns/vim-clojure-static  # Clojure
+gh_bundle kchmck/vim-coffee-script # CoffeeScript
+gh_bundle hailu/vim-css3-syntax    # CSS3
+gh_bundle dag/vim-fish             # Fish
+gh_bundle Blackrush/vim-gocode     # Go
+gh_bundle groenewege/vim-less      # LESS
+gh_bundle juvenn/mustache.vim      # Mustache
+gh_bundle wting/rust.vim           # Rust
 
 gh_raw bfontaine/e.vim e.vim syntax/e.vim        # E
 gh_raw xhr/vim-io            indent/io.vim       # Io (again)
