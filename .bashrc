@@ -124,7 +124,7 @@ export PATH="$PATH:/usr/local/sbin:$HOME/bin"
 alias vim='vim -p'
 
 # Go
-godoc() { $(which godoc) $* | less; }
+godoc() { command godoc $* | less; }
 
 # Node
 export NODE_PATH='/usr/lib/node_modules'
