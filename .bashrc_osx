@@ -53,6 +53,8 @@ alias ll='ls -FGhgl'
 alias b='brew'
 alias o='open'
 
+alias hemingway='open -a Hemingway\ Editor'
+
 # spotify from terminal
 # https://github.com/dronir/SpotifyControl
 
