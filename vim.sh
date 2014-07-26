@@ -39,7 +39,7 @@ gh_bundle() {
 
     if [ ! -d ${VIM_DIR}/$target ]; then
         __progress $target 0
-        git clone https://github.com/${repo}.git \
+        git clone --depth=1 https://github.com/${repo}.git \
             ${VIM_DIR}/$target
     else
         __progress $target 1
@@ -95,7 +95,7 @@ done
 # you need Clang installed (package 'clang' on Ubuntu)
 if [ ! -f ${VIM_DIR}/plugin/clang_complete.vim ]; then
     cd /tmp/
-    git clone https://github.com/Rip-Rip/clang_complete.git
+    git clone --depth=1 https://github.com/Rip-Rip/clang_complete.git
     make -C clang_complete install
     rm -Rf clang_complete
 fi
@@ -103,7 +103,7 @@ fi
 # Jedi: completion for Python
 if [ ! -d ${VIM_DIR}/bundle/jedi-vim ]; then
     gh_bundle davidhalter/jedi-vim
-    git clone https://github.com/davidhalter/jedi.git \
+    git clone --depth=1 https://github.com/davidhalter/jedi.git \
         ${VIM_DIR}/bundle/jedi-vim/jedi
 fi
 
@@ -130,7 +130,7 @@ gh_bundle scrooloose/syntastic   # Syntastic
 # Tomorrow
 #if [ ! -f ${VIM_DIR}/colors/Tomorrow.vim ]; then
 #    cd /tmp/
-#    git clone https://github.com/chriskempson/tomorrow-theme.git
+#    git clone --depth=1 https://github.com/chriskempson/tomorrow-theme.git
 #    mv tomorrow-theme/vim/colors/Tomorrow* ${VIM_DIR}/colors/
 #fi
 
