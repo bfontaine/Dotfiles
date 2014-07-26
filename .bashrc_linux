@@ -1,4 +1,4 @@
-# .bashrc with stuff for Ubuntu only
+# .bashrc with stuff for Ubuntu-like distribs only
 #
 
 # Print to PDF files
@@ -15,16 +15,8 @@ export JAVA_HOME=/usr/
 # Apps
 APPS_DIR="$HOME/Applications"
 
-# these scripts are installed on my Ubuntu machines only
 alias yuicompressor="java -jar $APPS_DIR/yuicompressor-2.4.7.jar"
 alias closurecompiler="java -jar $APPS_DIR/GoogleClosureCompiler/compiler.jar"
-
-if [ -f $APPS_DIR/minecraft.jar ]; then
-    alias minecraft="padsp java -jar $APPS_DIR/minecraft.jar";
-    alias mc=minecraft;
-    [ -f $APPS_DIR/Chunky/Chunky.jar ] && \
-        alias chunky="java -jar $APPS_DIR/Chunky/Chunky.jar"
-fi
 
 # apt-get -related aliases
 alias sag='sudo apt-get'
@@ -50,16 +42,12 @@ fi
 # --group-directories-first is a non-standard option
 alias l="ls -Fhg --color=auto --group-directories-first"
 
+alias y=yaourt
+
 alias ack='ack-grep'
 
 alias sl='sl -e'
 alias LS='LS -e'
 
-alias ev=evince
-
 # Internet
 alias flushDNS='sudo rndc flush'
-
-# Flash cookies
-rm -Rf ~/.adobe/*
-rm -Rf ~/.macromedia/*

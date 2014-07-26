@@ -18,7 +18,7 @@ fi
 alias rm='safe-rm'
 
 # same alias name that on Ubuntu but with different commands
-alias mt='brew update; brew upgrade'
+alias mt='up brew'
 
 # Programming
 alias emacs='emacs-24.3'
@@ -66,5 +66,4 @@ fi
 
 # Go
 export GOPATH="$HOME/.go"
-export PATH="$PATH:/usr/local/opt/go/libexec/bin"
-export PATH="$GOPATH/bin:$PATH"
+export PATH="$GOPATH/bin:$PATH:/usr/local/opt/go/libexec/bin"

@@ -40,7 +40,7 @@ FIGNORE=.swp:swo:~
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # load a private .bashrc (i.e. not in dotfiles repo) if it exists
-[ -f ~/.private_bashrc ] && . ~/.private_bashrc;
+[ -f $HOME/.private_bashrc ] && . $HOME/.private_bashrc;
 
 # enable color support of ls/grep/…
 DIRCOLOR=
@@ -98,7 +98,7 @@ function _bash_prompt_command {
 
 # If connected through SSH, print the hostname
 if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ] || [ -n "$SSH_CONNECTION" ]; then
-    PS1_PREFIX='\h:'
+    PS1_PREFIX=' \h:'
 fi
 
 case $TERM in
@@ -133,7 +133,7 @@ export NODE_PATH='/usr/lib/node_modules'
 alias locaml='ledit ocaml'
 
 # Python
-export PYTHONSTARTUP=~/.pythonrc.py
+export PYTHONSTARTUP=$HOME/.pythonrc.py
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 export PYTHONIOENCODING=utf-8
 
@@ -170,11 +170,10 @@ alias lr='ls -R'
 
 function mkcd() { mkdir -p "$1" && cd "$1"; }
 
-alias reload='. ~/.bash_profile'
+alias reload=". $HOME/.bash_profile"
 
 # one-letter shortcuts
 alias c='cd -P'
-alias f=find
 alias g=git
 alias h=heroku
 alias m=mv
@@ -188,24 +187,11 @@ alias M=make
 alias R=rake
 alias V=vagrant
 
-alias p=pushd
-alias P=popd
-
 # two-letters ones
 alias ct=cat
 alias ff='find . -name "*~" -delete'
 alias py=python
-alias sc=screen
 alias sv='sudo vim -p'
-
-# Internet
-alias pker='ping -c 1 kernel.org'
-
-# Git
-function gcl() { git clone gh:${1}.git; }
-
-# Useless stuff
-alias LOL="nyancat -sn"
 
 # Setup Amazon EC2 Command-Line Tools
 export EC2_HOME=$HOME/.ec2
@@ -232,4 +218,4 @@ fi
 export PATH="$HOME/.rvm/bin:$PATH"
 
 # travis gem
-[ -f /Users/baptiste/.travis/travis.sh ] && . /Users/baptiste/.travis/travis.sh
+[ -f $HOME/.travis/travis.sh ] && . $HOME/.travis/travis.sh
