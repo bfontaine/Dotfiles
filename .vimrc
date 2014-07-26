@@ -45,7 +45,7 @@ set showmatch                   " show matching braces/brackets/etc
 set smartcase                   " check case if upper case chars in /regex
 set smartindent                 " no autoindent when starting a new line
 set softtabstop=4               " 1 tab = 4 spaces
-set spelllang=en,fr             " Spell languages: FRench, ENglish
+set spelllang=en,fr             " Spell languages: ENglish, FRench
 set suffixes=,*.aux,*.toc,*lock " last used files when tab completing
 set tabpagemax=8                " only show 8 tabs
 set tabstop=4                   " 1 tab = 4 spaces
@@ -54,10 +54,10 @@ set timeout                     " Wait max 1sec for :mappings
 set timeoutlen=800              " Reduce waiting time to 0.8sec
 set title                       " show title in console title bar
 set undodir=~/.vim/backups      " keep undo history accross sessions
-set undofile
-set wildignore=*~,*.swp         " files to ignore when tab completing
-set wildignore+=*.cmo,*.cmx,*.o,.git/**,*.pdf
-set wildignore+=*.pyc
+set undofile                    " see 'undodir' above
+set wildignore=*~,*.swp         " files to ignore when tab completing (1/3)
+set wildignore+=*.cmo,*.cmx,*.o,.git/**,*.pdf " (2/3)
+set wildignore+=*.pyc           " (3/3)
 set wildmenu                    " show completion possibilities in command mode
 
 syntax sync minlines=256
@@ -160,6 +160,7 @@ let g:syntastic_python_checkers = ['pyflakes']
 let g:syntastic_tex_checkers = ['chktex']
 let g:syntastic_xml_checkers = []
 
+" don't display these warnings
 let g:syntastic_tex_chktex_args = "-n 26 -n 36 -n 57"
 " Tabular
 vnoremap <leader>t :Tabular<space>/
@@ -171,11 +172,6 @@ let g:user_emmet_expandabbr_key='<leader>h'
 
 " *sh syntax
 let g:sg_no_error=1
-
-" -- Command Aliasing --
-" saving
-command W :w
-command WQ :wq
 
 " -- functions --
 
