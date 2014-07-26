@@ -108,7 +108,11 @@ if [ ! -d ${VIM_DIR}/bundle/jedi-vim ]; then
 fi
 
 wzip  8196 plugin/matchit.vim    # Matchit
-wzip 11006 autoload/snipMate.vim # SnipMate
+
+# SnipMate and its dependencies
+gh_bundle tomtom/tlib_vim
+gh_bundle MarcWeber/vim-addon-mw-utils
+gh_bundle garbas/vim-snipmate
 
 gh_bundle ConradIrwin/vim-bracketed-paste # Bracketed paste
 gh_bundle Raimondi/delimitMate   # DelimitMate
