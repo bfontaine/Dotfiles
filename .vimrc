@@ -198,6 +198,7 @@ if has("autocmd")
     au BufNewFile,BufRead *.e,*.E          set ft=e
     au BufNewFile,BufRead *.fish           set ft=fish
     au BufNewFile,BufRead *.ft,*.fh,*.fth  set ft=forth
+    au BufNewFile,BufRead templates/*.html set ft=htmljinja
     au BufNewFile,BufRead *.io             set ft=io
     au BufNewFile,BufRead *.json           set ft=json
     au BufNewFile,BufRead *.liquid         set ft=liquid
