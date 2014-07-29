@@ -20,7 +20,7 @@ __progress() { # string 0|1
     echo "$prefix $1"
 }
 
-install_if_absent() { # path num
+vim_script() { # path num
     local name=${1%%.vim}.vim
     local fname=${VIM_DIR}/${name}
     local url=http://www.vim.org/scripts/download_script.php?src_id=$2
@@ -80,8 +80,8 @@ wzip() { # script_id test_file
 
 # == plugins ==
 
-install_if_absent autoload/pathogen    16224 # Pathogen
-install_if_absent scripts/closetag.vim  4318 # Close tag
+vim_script autoload/pathogen    16224 # Pathogen
+vim_script scripts/closetag.vim  4318 # Close tag
 
 # endwise : add 'end' in Ruby files when using if/def/…
 # haml    : HAML, Sass, SCSS syntax
@@ -125,8 +125,8 @@ gh_bundle scrooloose/syntastic   # Syntastic
 
 # == themes ==
 
-# install_if_absent colors/256-jungle 8685 # 256-jungle
-# install_if_absent colors/candycode  6066 # Candycode
+# vim_script colors/256-jungle 8685 # 256-jungle
+# vim_script colors/candycode  6066 # Candycode
 #
 # Molokai
 # gh_raw tomasr/molokai colors/molokai.vim
@@ -148,14 +148,14 @@ if [ ! -f ${VIM_DIR}/syntax/sh.vim ]; then
     mv sh.vim ${VIM_DIR}/syntax/
 fi
 
-install_if_absent syntax/asciidoc       6891 # Asciidoc
-install_if_absent syntax/brainfuck     14054 # Brainfuck
-install_if_absent syntax/conflicts.vim 19764 # *.conflicts files
-install_if_absent syntax/forth         18049 # Forth
-install_if_absent syntax/io             8129 # Io
-install_if_absent syntax/jinja          8666 # Jinja
-install_if_absent syntax/htmljinja      6961 # (same)
-install_if_absent syntax/json          10853 # JSON
+vim_script syntax/asciidoc       6891 # Asciidoc
+vim_script syntax/brainfuck     14054 # Brainfuck
+vim_script syntax/conflicts.vim 19764 # *.conflicts files
+vim_script syntax/forth         18049 # Forth
+vim_script syntax/io             8129 # Io
+vim_script syntax/jinja          8666 # Jinja
+vim_script syntax/htmljinja      6961 # (same)
+vim_script syntax/json          10853 # JSON
 
 gh_bundle guns/vim-clojure-static  # Clojure
 gh_bundle kchmck/vim-coffee-script # CoffeeScript
