@@ -29,6 +29,10 @@ set -C
 # to explicitely undefine it.
 stty werase undef
 
+# disable XON/XOFF flow control (^S & ^Q). This prevent Vim from freezing when
+# you accidentally type ^S.
+stty -ixon
+
 # history length (very large for stats)
 HISTSIZE=600
 HISTFILESIZE=50000
