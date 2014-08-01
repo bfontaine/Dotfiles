@@ -55,9 +55,9 @@ set timeoutlen=800              " Reduce waiting time to 0.8sec
 set title                       " show title in console title bar
 set undodir=~/.vim/backups      " keep undo history accross sessions
 set undofile                    " see 'undodir' above
-set wildignore=*~,*.swp         " files to ignore when tab completing (1/3)
-set wildignore+=*.cmo,*.cmx,*.o,.git/**,*.pdf " (2/3)
-set wildignore+=*.pyc           " (3/3)
+set wildignore=*~,.*.sw*,*.o    " files to ignore when tab completing
+set wildignore+=*.cmo,*.cmx,*.pdf,*.mo,*.pyc
+set wildignore+=.git/**,venv/**,__pycache__/**
 set wildmenu                    " show completion possibilities in command mode
 
 syntax sync minlines=256
@@ -147,6 +147,9 @@ if isdirectory("/Applications")
 endif
 " CSS colors
 let g:cssColorVimDoNotMessMyUpdatetime=1
+" CommandT
+let g:CommandTFileScanner="find"
+let g:CommandTMaxHeight=30
 " Gundo
 nnoremap <leader>g :GundoToggle<cr>
 " NERDTree
