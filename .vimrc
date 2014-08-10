@@ -3,7 +3,6 @@ set nocompatible " no compatible with VI
 filetype off
 call pathogen#infect()
 " call pathogen#helptags()
-filetype on
 filetype plugin indent on
 
 set autoindent                  " auto-indentation
@@ -150,6 +149,8 @@ let g:cssColorVimDoNotMessMyUpdatetime=1
 " CommandT
 let g:CommandTFileScanner="find"
 let g:CommandTMaxHeight=30
+" <leader>t is already taken by Tabular
+nnoremap <leader>o :CommandT<cr>
 " Gundo
 nnoremap <leader>g :GundoToggle<cr>
 " NERDTree
