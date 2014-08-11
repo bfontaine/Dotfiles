@@ -6,63 +6,7 @@ snippet pc
 	public class ${1:`Filename()`} {
 		${2}
 	}
-snippet cl
-	class ${1} {
-		${2}
-	}
-snippet if
-	if (${1}) { ${2} }
-snippet ife
-	if (${1}) {
-		${2}
-	} else {
-		${3}
-	}
-snippet elif
-	else if (${1}) { ${2} }
-snippet wh
-	while (${1}) {
-		${2}
-	}
-snippet for
-	for (${1}; ${2}; ${3}) {
-		${4}
-	}
-snippet p
-	System.out.println(${1});
 snippet println
 	System.out.println(${1});
 snippet print
 	System.out.print(${1});
-# Swing-related stuff
-snippet swing
-	import java.awt.*;
-	import java.awt.event.*;
-	import javax.swing.*;
-	${1}
-snippet ActionListener
-	class ${1:Listener} implements ActionListener {
-		public void actionPerformed(ActionEvent e) {
-			${2}
-		}
-	}
-snippet Run
-	class ${1:Run} implements Runnable {
-		public void run() {
-
-		}
-	}
-snippet Model
-	class ${1:Model} extends Observable {
-		// setChanged()
-		// notifyObservers()
-		${2}
-	}
-snippet View
-	class ${1:View} implements Observer {
-		public void update(Observable source, Object data) {
-			${2}
-		}
-	}
-snippet swing:start
-	SwingUtilities.invokeLater(${1});
