@@ -116,6 +116,7 @@ gh_bundle garbas/vim-snipmate
 
 gh_bundle ConradIrwin/vim-bracketed-paste # Bracketed paste
 gh_bundle Raimondi/delimitMate   # DelimitMate
+gh_bundle tpope/vim-fugitive     # Fugitive
 gh_bundle sjl/gundo.vim          # Gundo
 gh_bundle mattn/emmet-vim        # Emmet (Zencoding-like plugin)
 gh_bundle scrooloose/nerdtree    # NerdTree

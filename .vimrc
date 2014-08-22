@@ -151,8 +151,8 @@ let g:CommandTFileScanner="find"
 let g:CommandTMaxHeight=30
 " <leader>t is already taken by Tabular
 nnoremap <leader>o :CommandT<cr>
-" Gundo
-nnoremap <leader>g :GundoToggle<cr>
+" Fugitive
+nnoremap <leader>gb :Gblame<cr>
 " NERDTree
 nnoremap <leader>n :NERDTreeToggle<cr>
 " Powerline
