@@ -124,6 +124,16 @@ gh_bundle Lokaltog/vim-powerline # Powerline
 gh_bundle godlygeek/tabular      # Tabular
 gh_bundle scrooloose/syntastic   # Syntastic
 
+# Command-T
+if [ ! -d ${VIM_DIR}/bundle/Command-T ]; then
+    gh_bundle wincent/Command-T
+    pushd "$VIM_DIR/bundle/Command-T/ruby/command-t" >/dev/null
+    echo "Compiling Command-T's extensions..."
+    ruby extconf.rb
+    make
+    popd >/dev/null
+fi
+
 # == themes ==
 
 # vim_script colors/256-jungle 8685 # 256-jungle
