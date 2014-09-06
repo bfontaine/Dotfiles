@@ -149,8 +149,6 @@ let g:cssColorVimDoNotMessMyUpdatetime=1
 " CommandT
 let g:CommandTFileScanner="find"
 let g:CommandTMaxHeight=30
-" <leader>t is already taken by Tabular
-nnoremap <leader>o :CommandT<cr>
 " Fugitive
 nnoremap <leader>gb :Gblame<cr>
 " NERDTree
