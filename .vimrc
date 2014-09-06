@@ -38,16 +38,16 @@ set pumheight=10                " size of completion window: 10 lines
 set ruler                       " show the cursor position all the time
 set scrolloff=5                 " keep 5 context lines above/below the cursor
 set shell=/bin/bash             " set Bash shell
-set shiftwidth=4                " use 4-spaces indentation
+set shiftwidth=2                " use 2-spaces indentation
 set showcmd                     " show current incomplete command
 set showmatch                   " show matching braces/brackets/etc
 set smartcase                   " check case if upper case chars in /regex
 set smartindent                 " no autoindent when starting a new line
-set softtabstop=4               " 1 tab = 4 spaces
+set softtabstop=2               " 1 tab = 2 spaces
 set spelllang=en,fr             " Spell languages: ENglish, FRench
 set suffixes=,*.aux,*.toc,*lock " last used files when tab completing
 set tabpagemax=8                " only show 8 tabs
-set tabstop=4                   " 1 tab = 4 spaces
+set tabstop=2                   " 1 tab = 2 spaces
 set textwidth=79                " text width = 79 columns
 set timeout                     " Wait max 1sec for :mappings
 set timeoutlen=800              " Reduce waiting time to 0.8sec
@@ -226,7 +226,7 @@ if has("autocmd")
 
     " filetypes settings
     au FileType c call Set_indent(8)
-    au FileType clojure,lisp,ocaml,ruby,scala,sql,html,yaml call Set_indent(2)
+    au FileType python call Set_indent(4)
 
     au FileType javascript let b:delimitMate_expand_space=1
     au FileType json       setlocal nocursorline
