@@ -5,14 +5,11 @@ call pathogen#infect()
 " call pathogen#helptags()
 filetype plugin indent on
 
-set autoindent                  " auto-indentation
 set background=dark             " dark background
 set backspace=indent,eol,start  " allow backspace on everything in insert mode
 set backup                      " keep a backup file
-set colorcolumn=80              " color 80th column
 set cursorline                  " highlight current line
 set encoding=utf-8              " set UTF-8 encoding
-set expandtab                   " replace tabs with spaces
 set ff=unix                     " default file types: UNIX
 set foldmethod=manual           " manual folding
 set formatoptions+=n            " recognize lists when formatting text
@@ -39,28 +36,52 @@ set pumheight=10                " size of completion window: 10 lines
 set ruler                       " show the cursor position all the time
 set scrolloff=5                 " keep 5 context lines above/below the cursor
 set shell=/bin/bash             " set Bash shell
-set shiftround                  " > & < cmds round the indent to a multpl of sw
-set shiftwidth=2                " use 2-spaces indentation
 set showcmd                     " show current incomplete command
 set showmatch                   " show matching braces/brackets/etc
 set smartcase                   " check case if upper case chars in /regex
-set smartindent                 " no autoindent when starting a new line
-set softtabstop=2               " 1 tab = 2 spaces
 set spelllang=en,fr             " spell languages: ENglish, FRench
 set splitright                  " split windows on the right
 set suffixes=,*.aux,*.toc,*lock " last used files when tab completing
 set tabpagemax=8                " only show 8 tabs
-set tabstop=2                   " 1 tab = 2 spaces
-set textwidth=79                " text width = 79 columns
 set timeout                     " wait max 1sec for :mappings
 set timeoutlen=800              " reduce waiting time to 0.8sec
 set title                       " show title in console title bar
 set undodir=~/.vim/backups      " keep undo history accross sessions
 set undofile                    " see 'undodir' above
-set wildignore=*~,.*.sw*,*.o    " files to ignore when tab completing
-set wildignore+=*.cmo,*.cmx,*.pdf,*.mo,*.pyc
-set wildignore+=.git/**,venv/**,__pycache__/**,htmlcov/**
+set virtualedit+=block          " virtual editing in visual block mode
+
+" wildmenu
+
 set wildmenu                    " show completion possibilities in command mode
+
+set wildignore+=.hg,.git,.svn   " version control
+set wildignore+=*.jpg,*.png     " images
+set wildignore+=*~,*.sw?        " temporary/swap files
+set wildignore+=.DS_Store
+set wildignore+=*.o,*.cmo,*.cmx " compiled object files / bytecode
+set wildignore+=*.pyc
+set wildignore+=*.mo            " other compiled files
+set wildignore+=*.odt,*.pdf     " other binary files
+set wildignore+=venv/**         " directories
+set wildignore+=htmlcov/**
+set wildignore+=__pycache__
+
+" indenting
+
+set autoindent                  " auto-indentation
+set expandtab                   " replace tabs with spaces
+set smartindent                 " no autoindent when starting a new line
+set shiftround                  " > & < cmds round the indent to a multpl of sw
+set shiftwidth=2                " use 2-spaces indentation
+set softtabstop=2               " 1 tab = 2 spaces
+set tabstop=2                   " 1 tab = 2 spaces
+
+" text width
+
+set colorcolumn=+1              " color (textwidth + 1) th column
+set textwidth=79                " text width = 79 columns
+
+" syntax highlighting
 
 syntax sync minlines=256
 syntax sync maxlines=1024
@@ -89,6 +110,9 @@ nnoremap <f1> <esc>
 inoremap <f1> <esc>
 vnoremap <f1> <esc>
 
+" disable the manual key
+nnoremap K <nop>
+
 " open dotfiles
 nnoremap <leader>db :tabnew ~/.bashrc<cr>
 nnoremap <leader>dg :tabnew ~/.gitconfig<cr>
@@ -111,6 +135,9 @@ inoremap <c-a> <esc>^i
 cnoremap <c-e> <End>
 inoremap <c-e> <esc>$a
 noremap  <c-e> $
+
+" sudo to write
+cmap w!! w !sudo tee % >/dev/null
 
 " windows
 noremap <c-left> <c-w>h
