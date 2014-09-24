@@ -161,8 +161,9 @@ fi
 
 vim_script syntax/asciidoc       6891 # Asciidoc
 vim_script syntax/brainfuck     14054 # Brainfuck
-vim_script syntax/conflicts.vim 19764 # *.conflicts files
+vim_script syntax/conflicts     19764 # *.conflicts files
 vim_script syntax/forth         18049 # Forth
+vim_script syntax/icalendar      5573 # iCalendar
 vim_script syntax/io             8129 # Io
 vim_script syntax/jinja          8666 # Jinja
 vim_script syntax/htmljinja      6961 # (same)

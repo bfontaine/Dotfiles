@@ -201,12 +201,13 @@ if has("autocmd")
     au BufNewFile,BufRead *.fish           set ft=fish
     au BufNewFile,BufRead *.ft,*.fh,*.fth  set ft=forth
     au BufNewFile,BufRead templates/*.html set ft=htmljinja
+    au BufNewFile,BufRead *.ics            set ft=icalendar
     au BufNewFile,BufRead *.io             set ft=io
     au BufNewFile,BufRead *.json           set ft=json
     au BufNewFile,BufRead *.liquid         set ft=liquid
     au BufNewFile,BufRead *.mustache       set ft=mustache
     au BufNewFile,BufRead *.pastek,*.pstk  set ft=pastek
-    au BufNewFile,BufRead *.pl             set ft=prolog
+    au BufNewFile,BufRead *.pl             set ft=prolog " conflict with Perl
     au BufNewFile,BufRead *.pu             set ft=plantuml
     au BufNewFile,BufRead Procfile         set ft=yaml
     au BufNewFile,BufRead Vagrantfile      set ft=ruby
