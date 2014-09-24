@@ -24,6 +24,7 @@ set ignorecase                  " ignore case for '/regex' search
 set incsearch                   " incremental search with '/regex' search
 set linebreak                   " don't wrap text in the middle of a word
 set magic                       " set magic for regex
+set matchtime=3                 " show the matching parent .3sec (default: .5)
 set modelines=0                 " no modelines
 set noautoread                  " don't re-read a file changed outside of Vim
 set nofoldenable                " don't fold by default
@@ -38,19 +39,21 @@ set pumheight=10                " size of completion window: 10 lines
 set ruler                       " show the cursor position all the time
 set scrolloff=5                 " keep 5 context lines above/below the cursor
 set shell=/bin/bash             " set Bash shell
+set shiftround                  " > & < cmds round the indent to a multpl of sw
 set shiftwidth=2                " use 2-spaces indentation
 set showcmd                     " show current incomplete command
 set showmatch                   " show matching braces/brackets/etc
 set smartcase                   " check case if upper case chars in /regex
 set smartindent                 " no autoindent when starting a new line
 set softtabstop=2               " 1 tab = 2 spaces
-set spelllang=en,fr             " Spell languages: ENglish, FRench
+set spelllang=en,fr             " spell languages: ENglish, FRench
+set splitright                  " split windows on the right
 set suffixes=,*.aux,*.toc,*lock " last used files when tab completing
 set tabpagemax=8                " only show 8 tabs
 set tabstop=2                   " 1 tab = 2 spaces
 set textwidth=79                " text width = 79 columns
-set timeout                     " Wait max 1sec for :mappings
-set timeoutlen=800              " Reduce waiting time to 0.8sec
+set timeout                     " wait max 1sec for :mappings
+set timeoutlen=800              " reduce waiting time to 0.8sec
 set title                       " show title in console title bar
 set undodir=~/.vim/backups      " keep undo history accross sessions
 set undofile                    " see 'undodir' above
