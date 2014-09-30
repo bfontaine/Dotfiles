@@ -171,6 +171,8 @@ vim_script syntax/json          10853 # JSON
 
 gh_bundle guns/vim-clojure-static  # Clojure
 gh_bundle kchmck/vim-coffee-script # CoffeeScript
+gh_bundle def-lkb/vimbufsync       # Coq
+gh_bundle the-lambda-church/coquille
 gh_bundle rhysd/vim-crystal        # Crystal
 gh_bundle hailu/vim-css3-syntax    # CSS3
 gh_bundle dag/vim-fish             # Fish
