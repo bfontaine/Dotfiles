@@ -5,6 +5,7 @@
 	ui = auto
 [color "branch"]
 	current = bold
+	upstream = cyan
 [alias]
 	a    = add
 	ack  = grep --break --heading --line-number
@@ -49,8 +50,6 @@
 	enabled = true
 [push]
 	default = upstream
-[web]
-	browser = chromium-browser
 [github]
 	user = bfontaine
 [filter "media"]
@@ -68,3 +67,5 @@
 	blame = less -S
 [tag]
 	sort = version:refname
+[status]
+	showUntrackedFiles = all
