@@ -190,7 +190,7 @@ set laststatus=2
 let g:syntastic_css_checkers = []
 let g:syntastic_python_checkers = ['pyflakes']
 let g:syntastic_tex_checkers = ['chktex']
-let g:syntastic_xml_checkers = []
+let g:syntastic_html_checkers = []
 
 " don't display these warnings
 let g:syntastic_tex_chktex_args = "-n 26 -n 36 -n 57"
