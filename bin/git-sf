@@ -36,6 +36,11 @@
 
 EMAILS = `git config sf.emails`.split(',').map(&:strip)
 
+if EMAILS.empty?
+  puts "No email found. Use 'git config sf.emails a@a.com,b@b.com'"
+  exit 1
+end
+
 trap('INT') { exit 1 }
 
 def cmd(s)
