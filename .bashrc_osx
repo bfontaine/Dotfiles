@@ -17,9 +17,6 @@ fi
 
 alias rm='safe-rm'
 
-# same alias name that on Ubuntu but with different commands
-alias mt='up brew'
-
 # Programming
 alias emacs='emacs-24.3'
 alias prove='prove5.12'

@@ -151,7 +151,6 @@ alias du='du -h'
 alias df='df -h'
 
 alias pwd='pwd -P'
-alias mkp='mkdir -p'
 
 if [ -x "$HOME/bin/git-achievements" ]; then
     alias git=git-achievements
@@ -185,7 +184,6 @@ alias n=node
 alias s=sudo
 alias v=vim
 
-alias A=ant
 alias L=lein
 alias M=make
 alias R=rake
