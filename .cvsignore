@@ -2,9 +2,12 @@
 *.tgz
 .*.sw*
 .DS_Store
-
-*.ps
-*.pdf
-
-*.key
-*.xls
+# Python
+*.pyc
+__pycache__
+/venv
+/htmlcov
+/dist
+/TODO
+.coverage
+.tox
