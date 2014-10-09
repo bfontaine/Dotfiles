@@ -1,7 +1,0 @@
-#! /bin/bash
-
-if [ -d "$1" ]; then
-    ls $*
-else
-    cat $*
-fi
