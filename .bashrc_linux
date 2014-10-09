@@ -32,19 +32,16 @@ which xclip >/dev/null && \
 # see github.com/icefox/git-achievements
 [ $(which git-achievements) ] && alias git='git-achievements'
 
-# Personal scripts
-if [ -d "$HOME/bin/functions" ]; then
-    for f in $HOME/bin/functions/*.sh; do [ -x $f ] && . $f; done
-fi
-
 # Common aliases
 
 # --group-directories-first is a non-standard option
 alias l="ls -Fhg --color=auto --group-directories-first"
 
+# ArchLinux
 alias y=yaourt
 
-alias ack='ack-grep'
+which ack-grep >/dev/null && \
+  alias ack='ack-grep'
 
 alias sl='sl -e'
 alias LS='LS -e'
