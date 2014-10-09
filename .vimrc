@@ -56,15 +56,17 @@ set wildmenu                    " show completion possibilities in command mode
 
 set wildignore+=.hg,.git,.svn   " version control
 set wildignore+=*.jpg,*.png     " images
+set wildignore+=*.gif
 set wildignore+=*~,*.sw?        " temporary/swap files
 set wildignore+=.DS_Store
 set wildignore+=*.o,*.cmo,*.cmx " compiled object files / bytecode
 set wildignore+=*.pyc
 set wildignore+=*.mo            " other compiled files
 set wildignore+=*.odt,*.pdf     " other binary files
-set wildignore+=venv/**         " directories
-set wildignore+=htmlcov/**
+set wildignore+=venv,htmlcov    " directories
 set wildignore+=__pycache__
+set wildignore+=*.jar,*.zip     " archives / compressed files
+set wildignore+=*.gz,*.tar
 
 " indenting
 
@@ -92,7 +94,7 @@ syntax on
 " the terminal has 256 colors
 set t_Co=256
 
-" Molokai will look better if we apply 256-jungle before
+" Molokai looks better when we apply 256-jungle before it
 colorscheme 256-jungle
 colorscheme molokai
 :hi CursorLine cterm=NONE ctermbg=black ctermfg=NONE
@@ -117,6 +119,7 @@ nnoremap K <nop>
 nnoremap <leader>db :tabnew ~/.bashrc<cr>
 nnoremap <leader>dg :tabnew ~/.gitconfig<cr>
 nnoremap <leader>dl :tabnew ~/.lein/profiles.clj<cr>
+nnoremap <leader>do :tabnew ~/.bashrc_osx<cr>
 nnoremap <leader>dp :tabnew ~/.pythonrc.py<cr>
 nnoremap <leader>ds :tabnew ~/.ssh/config<cr>
 nnoremap <leader>dv :tabnew ~/.vimrc<cr>
