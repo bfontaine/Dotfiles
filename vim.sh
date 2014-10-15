@@ -180,6 +180,7 @@ gh_bundle Blackrush/vim-gocode     # Go
 gh_bundle groenewege/vim-less      # LESS
 gh_bundle juvenn/mustache.vim      # Mustache
 gh_bundle wting/rust.vim           # Rust
+gh_bundle derekwyatt/vim-scala     # Scala
 
 gh_raw bfontaine/e.vim e.vim syntax/e.vim        # E
 gh_raw xhr/vim-io            indent/io.vim       # Io (again)
@@ -202,14 +203,6 @@ wzip 11296 syntax/javascript.vim # JavaScript
 #    tar -xzf vl.tgz
 #    mv vim-latex-* ${VIM_DIR}/bundle/vim-latex
 #fi
-
-# Scala
-url='https://lampsvn.epfl.ch/trac/scala/export/26099/scala-tool-support/trunk'
-for dir in ftdetect indent syntax; do
-    if [ ! -f ${VIM_DIR}/${dir}/scala.vim ]; then
-        wget "${url}/src/vim/${dir}/scala.vim" -O ${VIM_DIR}/${dir}/scala.vim
-    fi
-done
 
 # Textile
 # You need Ruby & RedCloth
