@@ -260,7 +260,11 @@ if has("autocmd")
     au FileType c call Set_indent(8)
     au FileType python call Set_indent(4)
 
+    " plugins
     au FileType javascript let b:delimitMate_expand_space=1
+    au FileType scala RainbowParenthesesActivate
+    au FileType scala RainbowParenthesesLoadRound
+
     au FileType json       setlocal nocursorline
     au FileType txt        setlocal spell
     au FileType xml        setlocal fdm=indent fdl=1

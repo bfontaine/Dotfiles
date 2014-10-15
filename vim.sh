@@ -121,8 +121,9 @@ gh_bundle sjl/gundo.vim          # Gundo
 gh_bundle mattn/emmet-vim        # Emmet (Zencoding-like plugin)
 gh_bundle scrooloose/nerdtree    # NerdTree
 gh_bundle Lokaltog/vim-powerline # Powerline
-gh_bundle godlygeek/tabular      # Tabular
+gh_bundle kien/rainbow_parentheses.vim # Rainbow Parentheses (for Scala/Clojure)
 gh_bundle scrooloose/syntastic   # Syntastic
+gh_bundle godlygeek/tabular      # Tabular
 
 # Command-T
 if [ ! -d ${VIM_DIR}/bundle/Command-T ]; then
