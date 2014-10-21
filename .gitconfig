@@ -20,12 +20,8 @@
 	df   = diff
 	f    = fetch
 	fp   = format-patch
-	fuck = reset HEAD --hard
 	i    = !git init && [ ! -f .gitignore ] && cp ~/.cvsignore .gitignore
-	l1   = !git lg -n 1 && echo
 	lg   = log --graph --pretty=format:'%Cred%h%Creset - %C(blue bold)%an%Creset: %C(cyan)%s%Creset %Cgreen(%ar)%Creset'
-	lgs  = log --pretty=format:'%Cblue%h%Creset: %s'
-	llg  = log --pretty=format:'%h - %an: %s (%ar)'
 	ls   = ls-tree master
 	m    = mv
 	p    = log --graph --pretty=format:'%Cred%h%Creset - %C(blue bold)%an%Creset: %C(cyan)%s%Creset %Cgreen(%ar)%Creset' @{u}..
