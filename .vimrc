@@ -260,7 +260,7 @@ if has("autocmd")
 
     " filetypes settings
     au FileType c call Set_indent(8)
-    au FileType python call Set_indent(4)
+    au FileType markdown,php,python call Set_indent(4)
 
     " plugins
     au FileType javascript let b:delimitMate_expand_space=1
