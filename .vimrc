@@ -280,6 +280,7 @@ if has("autocmd")
     au FileType gitcommit call Set_tw(72)
 
     " files skeletons
+    " TODO: find a way to automate the discovery
     au BufNewFile *.c     0r ~/.vim/skeletons/c.c
     au BufNewFile *.cpp   0r ~/.vim/skeletons/cpp.cpp
     au BufNewFile *.html  0r ~/.vim/skeletons/html.html
@@ -287,6 +288,7 @@ if has("autocmd")
     au BufNewFile *.py    0r ~/.vim/skeletons/python.py
     au BufNewFile *.rb    0r ~/.vim/skeletons/ruby.rb
     au BufNewFile *.sh    0r ~/.vim/skeletons/bash.sh
+    au BufNewFile *.xml   0r ~/.vim/skeletons/xml.xml
 
     " UI tweaks
     " -- hide trailing spaces on insert mode
