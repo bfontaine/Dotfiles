@@ -216,8 +216,8 @@ elif [[ "`uname -a`" =~ "Ubuntu" ]] || [[ "`uname -a`" =~ "Linux" ]]; then
     fi
 fi
 
-# RVM
-export PATH="$HOME/.rvm/bin:$PATH"
+# # RVM
+# export PATH="$HOME/.rvm/bin:$PATH"
 
 # travis gem
 [ -f $HOME/.travis/travis.sh ] && . $HOME/.travis/travis.sh
