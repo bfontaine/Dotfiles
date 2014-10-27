@@ -33,14 +33,6 @@ alias b='brew'
 
 alias hemingway='open -a Hemingway\ Editor'
 
-# spotify from terminal
-# https://github.com/dronir/SpotifyControl
-
-if [ -f "$HOME/.bash_utils/osascripts/SpotifyControl.scpt" ]; then
-    alias spotify="osascript $HOME/.bash_utils/osascripts/SpotifyControl.scpt"
-    alias sp='spotify'
-fi
-
 # usage:
 # 1. copy an URL
 # 2. use it as `curl` but without pasting the URL, e.g.: pcurl > foo.bar
