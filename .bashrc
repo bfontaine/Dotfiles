@@ -203,6 +203,9 @@ export EC2_CERT=`\ls $EC2_HOME/cert-*.pem`
 
 export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home/"
 
+# Safe default
+export BROWSER='python -m webbrowser'
+
 # custom autocomplete scripts
 if [ -d "$HOME/.bash_utils/autocomplete" ]; then
     . "$HOME"/.bash_utils/autocomplete/*.sh
@@ -219,5 +222,8 @@ fi
 # # RVM
 # export PATH="$HOME/.rvm/bin:$PATH"
 
-# travis gem
-[ -f $HOME/.travis/travis.sh ] && . $HOME/.travis/travis.sh
+# p7pp
+# https://github.com/bfontaine/web-pp#from-the-terminal
+p7pp() {
+    $BROWSER "https://p7pp.herokuapp.com/search/url?q=$*"
+}
