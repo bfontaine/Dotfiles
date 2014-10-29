@@ -183,6 +183,8 @@ gh_bundle juvenn/mustache.vim      # Mustache
 gh_bundle wting/rust.vim           # Rust
 gh_bundle derekwyatt/vim-scala     # Scala
 
+gh_bundle gre/play2vim # Play (Scala framework)
+
 gh_raw bfontaine/e.vim e.vim syntax/e.vim        # E
 gh_raw xhr/vim-io            indent/io.vim       # Io (again)
 gh_raw bfontaine/omgrofl.vim omgrofl.vim syntax/omgrofl.vim # Omgrofl
