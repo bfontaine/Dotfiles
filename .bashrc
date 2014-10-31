@@ -1,7 +1,7 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-# don't put duplicate lines in the history, nor lines starting with a space
+# don't put duplicate lines in the history nor lines starting with a space
 HISTCONTROL=ignoreboth
 
 # save multi-lines commands in the history
@@ -198,8 +198,11 @@ alias sv='sudo vim -p'
 # Setup Amazon EC2 Command-Line Tools
 export EC2_HOME=$HOME/.ec2
 export PATH=$PATH:$EC2_HOME/bin
-export EC2_PRIVATE_KEY=`\ls $EC2_HOME/pk-*.pem`
-export EC2_CERT=`\ls $EC2_HOME/cert-*.pem`
+
+if [ -d "$EC2_HOME" ]; then
+    export EC2_PRIVATE_KEY=`\ls $EC2_HOME/pk-*.pem`
+    export EC2_CERT=`\ls $EC2_HOME/cert-*.pem`
+fi
 
 export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home/"
 
@@ -219,11 +222,6 @@ elif [[ "`uname -a`" =~ "Ubuntu" ]] || [[ "`uname -a`" =~ "Linux" ]]; then
     fi
 fi
 
-# # RVM
-# export PATH="$HOME/.rvm/bin:$PATH"
-
-# p7pp
-# https://github.com/bfontaine/web-pp#from-the-terminal
 p7pp() {
     $BROWSER "https://p7pp.herokuapp.com/search/url?q=$*"
 }
