@@ -24,12 +24,16 @@
 	lg   = log --graph --pretty=format:'%Cred%h%Creset - %C(blue bold)%an%Creset: %C(cyan)%s%Creset %Cgreen(%ar)%Creset'
 	ls   = ls-tree master
 	m    = mv
+  # show all commits present on the current branch but not on its attached
+  # remote.
 	p    = log --graph --pretty=format:'%Cred%h%Creset - %C(blue bold)%an%Creset: %C(cyan)%s%Creset %Cgreen(%ar)%Creset' @{u}..
 	s    = status -sb
 	sm   = send-email
 	sp   = stash pop
+  # open all files shown in 'git status' with 'vim -p'
+  vd   = !git status -s | cut -d' ' -f3 | xargs -o vim -p
+  # show all commits present on the remote branch but not the current one
 	wazup = log ..@{u}
-	who  = shortlog -s --
 
 	# Copied from https://github.com/jdavis/dotfiles
 	# See http://blog.pagebakers.nl/2009/01/29/git-ignoring-changes-in-tracked-files/
