@@ -204,8 +204,6 @@ if [ -d "$EC2_HOME" ]; then
     export EC2_CERT=`\ls $EC2_HOME/cert-*.pem`
 fi
 
-export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Home/"
-
 # Safe default
 export BROWSER='python -m webbrowser'
 
