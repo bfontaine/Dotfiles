@@ -57,3 +57,7 @@ fi
 # Go
 export GOPATH="$HOME/.go"
 export PATH="$GOPATH/bin:$PATH:/usr/local/opt/go/libexec/bin"
+
+# RVM
+[[ -s  "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
