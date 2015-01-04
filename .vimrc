@@ -184,8 +184,6 @@ let g:CommandTFileScanner="find"
 let g:CommandTMaxHeight=30
 " Fugitive
 nnoremap <leader>gb :Gblame<cr>
-" NERDTree
-nnoremap <leader>n :NERDTreeToggle<cr>
 " Powerline
 let g:Powerline_symbols='fancy'
 set laststatus=2
