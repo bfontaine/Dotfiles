@@ -63,3 +63,5 @@ if [[ -s  "$HOME/.rvm/scripts/rvm" ]]; then
   . "$HOME/.rvm/scripts/rvm"
   export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 fi
+
+export MACOSX_DEPLOYMENT_TARGET=10.10
