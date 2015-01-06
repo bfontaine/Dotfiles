@@ -18,6 +18,7 @@
 	co   = checkout
 	df   = diff
 	f    = fetch
+	fixup = !git add . && commit --amend --noedit
 	fp   = format-patch
 	i    = !git init && [ ! -f .gitignore ] && cp ~/.cvsignore .gitignore
 	lg   = log --graph --pretty=format:'%Cred%h%Creset - %C(blue bold)%an%Creset: %C(cyan)%s%Creset %Cgreen(%ar)%Creset'
