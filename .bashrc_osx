@@ -65,3 +65,6 @@ if [[ -s  "$HOME/.rvm/scripts/rvm" ]]; then
 fi
 
 export MACOSX_DEPLOYMENT_TARGET=10.10
+
+# Mozart/Oz
+export PATH="/Applications/Mozart2.app/Contents/Resources/bin:$PATH"
