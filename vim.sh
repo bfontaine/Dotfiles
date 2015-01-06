@@ -168,6 +168,7 @@ vim_script syntax/io             8129 # Io
 vim_script syntax/jinja          8666 # Jinja
 vim_script syntax/htmljinja      6961 # (same)
 vim_script syntax/json          10853 # JSON
+vim_script syntax/oz             1507 # Mozart/Oz
 
 gh_bundle guns/vim-clojure-static  # Clojure
 gh_bundle kchmck/vim-coffee-script # CoffeeScript
