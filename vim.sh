@@ -180,6 +180,7 @@ gh_bundle dag/vim-fish             # Fish
 gh_bundle Blackrush/vim-gocode     # Go
 gh_bundle groenewege/vim-less      # LESS
 gh_bundle juvenn/mustache.vim      # Mustache
+gh_bundle bfontaine/redcode.vim    # REDCODE
 gh_bundle wting/rust.vim           # Rust
 gh_bundle derekwyatt/vim-scala     # Scala
 
