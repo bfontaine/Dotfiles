@@ -1,7 +1,7 @@
 set nocompatible " no compatible with VI
 
 filetype off
-call pathogen#infect()
+execute pathogen#infect()
 " call pathogen#helptags()
 filetype plugin indent on
 
