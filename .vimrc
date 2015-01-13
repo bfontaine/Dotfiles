@@ -237,6 +237,7 @@ if has("autocmd")
     au BufNewFile,BufRead *.json           set ft=json
     au BufNewFile,BufRead *.liquid         set ft=liquid
     au BufNewFile,BufRead *.mustache       set ft=mustache
+    au BufNewFile,BufRead *.oz             set ft=oz
     au BufNewFile,BufRead *.pastek,*.pstk  set ft=pastek
     au BufNewFile,BufRead *.pl             set ft=prolog " conflict with Perl
     au BufNewFile,BufRead *.pu             set ft=plantuml
