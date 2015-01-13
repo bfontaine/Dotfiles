@@ -13,11 +13,6 @@
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 (el-get 'sync)
 
-
-;; ???
-(setq tab-always-indent 'complete)
-(add-to-list 'completion-styles 'initials t)
-
 ;; real meta key on OSX
 ;; http://stackoverflow.com/a/3378391/735926
 (setq mac-option-modifier nil
@@ -26,3 +21,10 @@
 
 ;; line numbers
 (global-linum-mode t)
+
+;; auto-close parentheses/braces/quotes/etc
+(electric-pair-mode t)
+
+;; ???
+(setq tab-always-indent 'complete)
+(add-to-list 'completion-styles 'initials t)
