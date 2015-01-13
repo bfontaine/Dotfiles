@@ -11,3 +11,6 @@
 (setq mac-option-modifier nil
       mac-command-modifier 'meta
       x-select-enable-clipboard t)
+
+;; line numbers
+(global-linum-mode t)
