@@ -18,7 +18,6 @@ fi
 alias rm='safe-rm'
 
 # Programming
-alias emacs='emacs-24.3'
 
 alias es="elasticsearch -f -D \
     es.config=$BREW_PREFIX/opt/elasticsearch/config/elasticsearch.yml"
