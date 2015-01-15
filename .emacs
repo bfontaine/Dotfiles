@@ -13,6 +13,13 @@
 (add-to-list 'el-get-recipe-path "~/.emacs.d/el-get-user/recipes")
 (el-get 'sync)
 
+;; el-get packages
+(setq my:el-get-packages
+      '(tuareg-mode
+        scala-mode2))
+
+(el-get 'sync my:el-get-packages)
+
 ;; real meta key on OSX
 ;; http://stackoverflow.com/a/3378391/735926
 (setq mac-option-modifier nil
