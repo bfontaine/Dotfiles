@@ -223,3 +223,6 @@ fi
 p7pp() {
     $BROWSER "https://p7pp.herokuapp.com/search/url?q=$*"
 }
+
+# avoid pranks where a script adds random stuff at the end of the ~/.bashrc
+return
