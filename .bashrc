@@ -225,4 +225,10 @@ p7pp() {
 }
 
 # avoid pranks where a script adds random stuff at the end of the ~/.bashrc
-return
+# http://blog.bfontaine.net/2015/01/17/preventing-bash-pranks/
+
+b=tu
+a=r
+c=rn
+d=n
+${a}e$b$c
