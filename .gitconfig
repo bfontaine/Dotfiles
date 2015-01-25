@@ -11,14 +11,15 @@
 	ack  = grep --break --heading --line-number
 	br   = branch
 	ca   = commit --amend
-	caa  = !git add . && git commit --amend
+  cae  = commit --amend --no-edit
+	caa  = git commit --amend .
 	chp  = cherry-pick
 	cl   = clone
 	cm   = commit -m
 	co   = checkout
 	df   = diff
 	f    = fetch
-	fixup = !git add . && commit --amend --noedit
+	fixup = commit --amend --no-edit .
 	fp   = format-patch
 	i    = !git init && [ ! -f .gitignore ] && cp ~/.cvsignore .gitignore
 	lg   = log --graph --pretty=format:'%Cred%h%Creset - %C(blue bold)%an%Creset: %C(cyan)%s%Creset %Cgreen(%ar)%Creset'
