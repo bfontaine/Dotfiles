@@ -28,14 +28,16 @@
       mac-command-modifier 'meta
       x-select-enable-clipboard t)
 
-;; line numbers
-(global-linum-mode t)
-
 ;; auto-close parentheses/braces/quotes/etc
 (electric-pair-mode t)
 
-;; show the column number
+;; show line numbers
+(global-linum-mode t)
+;; show column numbers
 (column-number-mode t)
+
+;; use spaces instead of tabs
+(setq-default indent-tabs-mode nil)
 
 ;; ???
 (setq tab-always-indent 'complete)
