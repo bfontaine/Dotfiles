@@ -34,6 +34,9 @@
 ;; auto-close parentheses/braces/quotes/etc
 (electric-pair-mode t)
 
+;; show the column number
+(column-number-mode t)
+
 ;; ???
 (setq tab-always-indent 'complete)
 (add-to-list 'completion-styles 'initials t)
