@@ -12,7 +12,7 @@
 	br   = branch
 	ca   = commit --amend
   cae  = commit --amend --no-edit
-	caa  = git commit --amend .
+	caa  = commit --amend .
 	chp  = cherry-pick
 	cl   = clone
 	cm   = commit -m
