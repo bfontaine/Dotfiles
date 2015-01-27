@@ -15,8 +15,10 @@
 
 ;; el-get packages
 (setq my:el-get-packages
-      '(tuareg-mode
-        scala-mode2))
+      '(tuareg-mode ; Tuareg Mode
+        scala-mode2 ; Scala
+        smartparens ; vim-endwise -like for emacs
+        ))
 
 (el-get 'sync my:el-get-packages)
 
