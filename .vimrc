@@ -238,6 +238,7 @@ if has("autocmd")
     au BufNewFile,BufRead *.json           set ft=json
     au BufNewFile,BufRead *.liquid         set ft=liquid
     au BufNewFile,BufRead *.mustache       set ft=mustache
+    au BufNewFile,BufRead *.mlw            set ft=why3
     au BufNewFile,BufRead *.oz             set ft=oz
     au BufNewFile,BufRead *.pastek,*.pstk  set ft=pastek
     au BufNewFile,BufRead *.pl             set ft=prolog " conflict with Perl
@@ -260,7 +261,7 @@ if has("autocmd")
 
     " filetypes settings
     au FileType c call Set_indent(8)
-    au FileType markdown,php,python call Set_indent(4)
+    au FileType go,markdown,php,python call Set_indent(4)
 
     " plugins
     au FileType javascript let b:delimitMate_expand_space=1

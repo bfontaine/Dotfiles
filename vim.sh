@@ -186,11 +186,12 @@ gh_bundle derekwyatt/vim-scala     # Scala
 
 gh_bundle gre/play2vim # Play (Scala framework)
 
-gh_raw bfontaine/e.vim e.vim syntax/e.vim        # E
-gh_raw xhr/vim-io            indent/io.vim       # Io (again)
-gh_raw bfontaine/omgrofl.vim omgrofl.vim syntax/omgrofl.vim # Omgrofl
-gh_raw aklt/plantuml-syntax  syntax/plantuml.vim # PlantUML
-gh_raw mth/yeti util/syntax/yeti.vim syntax/yeti.vim # Yeti
+gh_raw bfontaine/e.vim       e.vim syntax/e.vim                   # E
+gh_raw xhr/vim-io            indent/io.vim                        # Io (again)
+gh_raw bfontaine/omgrofl.vim omgrofl.vim          syntax/omgrofl.vim # Omgrofl
+gh_raw aklt/plantuml-syntax  syntax/plantuml.vim                  # PlantUML
+gh_raw jpdeplaix/why3        share/vim/why3.vim   syntax/why3.vim # Why3
+gh_raw mth/yeti              util/syntax/yeti.vim syntax/yeti.vim # Yeti
 
 # Go
 for f in syntax indent ftdetect; do
