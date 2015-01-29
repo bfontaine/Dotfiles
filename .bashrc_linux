@@ -15,8 +15,10 @@ export JAVA_HOME=/usr/
 # Apps
 APPS_DIR="$HOME/Applications"
 
+if [ -d "$APPS_DIR" ]; then
 alias yuicompressor="java -jar $APPS_DIR/yuicompressor-2.4.7.jar"
 alias closurecompiler="java -jar $APPS_DIR/GoogleClosureCompiler/compiler.jar"
+fi
 
 # apt-get -related aliases
 alias sag='sudo apt-get'
@@ -30,7 +32,8 @@ which xclip >/dev/null && \
 
 # Git
 # see github.com/icefox/git-achievements
-[ $(which git-achievements) ] && alias git='git-achievements'
+which git-achievements >/dev/null && \
+  alias git='git-achievements'
 
 # Common aliases
 
@@ -38,7 +41,8 @@ which xclip >/dev/null && \
 alias l="ls -Fhg --color=auto --group-directories-first"
 
 # ArchLinux
-alias y=yaourt
+which yaourt && \
+  alias y=yaourt
 
 which ack-grep >/dev/null && \
   alias ack='ack-grep'

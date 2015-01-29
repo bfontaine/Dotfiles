@@ -137,7 +137,7 @@ export NODE_PATH='/usr/lib/node_modules'
 alias locaml='ledit ocaml'
 
 # Python
-export PYTHONSTARTUP=$HOME/.pythonrc.py
+[ -f "$HOME/.pythonrc.py" ] && export PYTHONSTARTUP=$HOME/.pythonrc.py
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 export PYTHONIOENCODING=utf-8
 
@@ -197,11 +197,11 @@ alias sv='sudo vim -p'
 
 # Setup Amazon EC2 Command-Line Tools
 export EC2_HOME=$HOME/.ec2
-export PATH=$PATH:$EC2_HOME/bin
 
 if [ -d "$EC2_HOME" ]; then
     export EC2_PRIVATE_KEY=`\ls $EC2_HOME/pk-*.pem`
     export EC2_CERT=`\ls $EC2_HOME/cert-*.pem`
+    export PATH=$PATH:$EC2_HOME/bin
 fi
 
 # Safe default
