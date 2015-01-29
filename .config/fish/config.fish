@@ -40,7 +40,7 @@ alias v "vim -p"
 alias ct "cat"
 alias du "du -h"
 alias df "df -h"
-alias f~ "find . -name \"*~\" -delete"
+alias ff "find . -name \"*~\" -delete"
 alias la "ls -a"
 alias lr "ls -R"
 alias ps "ps -x"
@@ -52,8 +52,6 @@ alias +x "chmod u+x"
 
 alias less   "less -R"
 alias locaml "ledit ocaml"
-alias python "python3"
-alias pker   "ping -c 1 kernel.org"
 alias top    "htop"
 
 function mkcd
