@@ -24,6 +24,7 @@
 	s    = status --short --branch
 	sm   = send-email
 	sp   = stash pop
+	staged = diff --cached
 	# show all commits present on the remote branch but not the current one
 	wazup = log ..@{u}
 
