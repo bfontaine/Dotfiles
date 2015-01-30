@@ -3,14 +3,6 @@
 require 'rubygems'
 require 'irb/completion'
 
-# interactive editor: use vim from within irb
-begin
-  require 'interactive_editor'
-rescue LoadError => err
-  warn "Couldn't load interactive_editor: #{err}"
-  warn "Use 'gem install interactive_editor'"
-end
-
 # awesome print
 begin
   require 'awesome_print'
@@ -18,6 +10,11 @@ begin
 rescue LoadError => err
   warn "Couldn't load awesome_print: #{err}"
   warn "Use 'gem install awesome_print'"
+end
+
+# list methods of an object
+def w(obj)
+  obj.public_methods.sort - Object.methods
 end
 
 # configure irb
