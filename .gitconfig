@@ -21,7 +21,7 @@
 	# show all commits present on the current branch but not on its attached
 	# remote.
 	p    = !git lg @{u}..
-	s    = status -sb
+	s    = status --short --branch
 	sm   = send-email
 	sp   = stash pop
 	# show all commits present on the remote branch but not the current one
@@ -71,6 +71,8 @@
 # Remotes
 # =======
 
+[fetch]
+	prune = true
 [push]
 	default = upstream
 
