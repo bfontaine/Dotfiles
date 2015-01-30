@@ -1,14 +1,8 @@
 [user]
 	name  = Baptiste Fontaine
 	email = batifon@yahoo.fr
-[color]
-	ui = auto
-[color "branch"]
-	current = bold
-	upstream = cyan
 [alias]
 	a    = add
-	ack  = grep --break --heading --line-number
 	br   = branch
 	ca   = commit --amend
   cae  = commit --amend --no-edit
@@ -23,48 +17,69 @@
 	fp   = format-patch
 	i    = !git init && [ ! -f .gitignore ] && cp ~/.cvsignore .gitignore
 	lg   = log --graph --pretty=format:'%Cred%h%Creset - %C(blue bold)%an%Creset: %C(cyan)%s%Creset %Cgreen(%ar)%Creset'
-	ls   = ls-tree master
 	m    = mv
-  # show all commits present on the current branch but not on its attached
-  # remote.
+	# show all commits present on the current branch but not on its attached
+	# remote.
 	p    = !git lg @{u}..
 	s    = status -sb
 	sm   = send-email
 	sp   = stash pop
-  # show all commits present on the remote branch but not the current one
+	# show all commits present on the remote branch but not the current one
 	wazup = log ..@{u}
 
 	# Copied from https://github.com/jdavis/dotfiles
 	# See http://blog.pagebakers.nl/2009/01/29/git-ignoring-changes-in-tracked-files/
 	untrack = update-index --assume-unchanged
 	track   = update-index --no-assume-unchanged
-
 [core]
 	pager = cat
 	editor = vim
 	excludesfile = ~/.cvsignore
-[branch]
-	autosetupmerge = true
-[rerere]
-	enabled = true
-[push]
-	default = upstream
-[github]
-	user = bfontaine
-[filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
-[achievement]
-	upload = false
-[git-up "bundler"]
-	check = true
+
+# Reading
+# =======
+
+[color]
+	ui = auto
+[color "branch"]
+	current = bold
+	upstream = cyan
+
+[pager]
+	blame = less -S
+
+# Browsing
+# ========
+
 [diff]
 	algorithm = patience
 [grep]
 	extendRegexp = true
-[pager]
-	blame = less -S
-[tag]
-	sort = version:refname
 [status]
 	showUntrackedFiles = all
+
+# History
+# =======
+
+[branch]
+	autosetupmerge = true
+[rerere]
+	enabled = true
+[tag]
+	sort = version:refname
+
+# Remotes
+# =======
+
+[push]
+	default = upstream
+
+# Third Parties
+# =============
+
+[github]
+	user = bfontaine
+[achievement]
+	upload = false
+[git-up "bundler"]
+	check = true
