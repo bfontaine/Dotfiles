@@ -27,6 +27,7 @@
 	staged = diff --cached
 	# show all commits present on the remote branch but not the current one
 	wazup = log ..@{u}
+	sd   = !git staged
 
 	# Copied from https://github.com/jdavis/dotfiles
 	# See http://blog.pagebakers.nl/2009/01/29/git-ignoring-changes-in-tracked-files/
