@@ -22,11 +22,18 @@
 
 (el-get 'sync my:el-get-packages)
 
-;; real meta key on OSX
-;; http://stackoverflow.com/a/3378391/735926
-(setq mac-option-modifier nil
-      mac-command-modifier 'meta
-      x-select-enable-clipboard t)
+;; OS X -specific
+(if (eq system-type 'darwin)
+
+  ;; Scheme
+  ;; brew install scheme48
+  (setq scheme-program-name "scheme48")
+
+  ;; real meta key
+  ;; http://stackoverflow.com/a/3378391/735926
+  (setq mac-option-modifier nil
+        mac-command-modifier 'meta
+        x-select-enable-clipboard t))
 
 ;; auto-close parentheses/braces/quotes/etc
 (electric-pair-mode t)
