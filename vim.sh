@@ -101,11 +101,11 @@ if [ ! -f ${VIM_DIR}/plugin/clang_complete.vim ]; then
 fi
 
 # Jedi: completion for Python
-if [ ! -d ${VIM_DIR}/bundle/jedi-vim ]; then
-    gh_bundle davidhalter/jedi-vim
-    git clone --depth=1 https://github.com/davidhalter/jedi.git \
-        ${VIM_DIR}/bundle/jedi-vim/jedi
-fi
+# if [ ! -d ${VIM_DIR}/bundle/jedi-vim ]; then
+#     gh_bundle davidhalter/jedi-vim
+#     git clone --depth=1 https://github.com/davidhalter/jedi.git \
+#         ${VIM_DIR}/bundle/jedi-vim/jedi
+# fi
 
 wzip  8196 plugin/matchit.vim    # Matchit
 
@@ -178,6 +178,7 @@ gh_bundle rhysd/vim-crystal        # Crystal
 gh_bundle hail2u/vim-css3-syntax   # CSS3
 gh_bundle dag/vim-fish             # Fish
 gh_bundle Blackrush/vim-gocode     # Go
+gh_bundle bfontaine/vim-gosh       # Gosh
 gh_bundle groenewege/vim-less      # LESS
 gh_bundle juvenn/mustache.vim      # Mustache
 gh_bundle bfontaine/redcode.vim    # REDCODE
