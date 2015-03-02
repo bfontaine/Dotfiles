@@ -1,0 +1,24 @@
+#! /bin/bash -e
+#
+# ghcreate: enhanced 'hub create'
+#
+# * 'hub' uses https for the remote. This uses ssh
+# * push to the repo
+# * open the repo page on GH + Travis & Coveralls to enable it
+
+_ghcreate() {
+  local user=$(git config github.user)
+  local repo=$(basename $PWD)
+
+  hub create $*
+  git remote set-url origin "git@github:${user}/${repo}.git"
+  git push -u origin master
+
+  open "http://github.com/${user}/${repo}"
+
+  # we could use: travis enable -r "${user}/${repo}"
+  open "https://travis-ci.org/profile/${user}"
+  open "https://coveralls.io/repos/new"
+}
+
+_ghcreate $*
