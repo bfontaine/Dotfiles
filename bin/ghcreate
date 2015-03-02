@@ -12,11 +12,12 @@ _ghcreate() {
 
   hub create $*
   git remote set-url origin "git@github:${user}/${repo}.git"
+
+  # we could use `travis enable -r "${user}/${repo}"` here
+
   git push -u origin master
 
   open "http://github.com/${user}/${repo}"
-
-  # we could use: travis enable -r "${user}/${repo}"
   open "https://travis-ci.org/profile/${user}"
   open "https://coveralls.io/repos/new"
 }
