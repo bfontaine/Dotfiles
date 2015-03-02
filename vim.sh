@@ -181,6 +181,7 @@ gh_bundle Blackrush/vim-gocode     # Go
 gh_bundle bfontaine/vim-gosh       # Gosh
 gh_bundle groenewege/vim-less      # LESS
 gh_bundle juvenn/mustache.vim      # Mustache
+gh_bundle gf3/peg.vim              # Peg
 gh_bundle bfontaine/redcode.vim    # REDCODE
 gh_bundle wting/rust.vim           # Rust
 gh_bundle derekwyatt/vim-scala     # Scala
