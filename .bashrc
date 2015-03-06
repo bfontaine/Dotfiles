@@ -221,6 +221,9 @@ p7pp() {
     $BROWSER "https://p7pp.herokuapp.com/search/url?q=$*"
 }
 
+# Bash autocomplete for 'aws'
+which aws >/dev/null && complete -C aws_completer aws
+
 # avoid pranks where a script adds random stuff at the end of the ~/.bashrc
 # http://blog.bfontaine.net/2015/01/17/preventing-bash-pranks/
 
