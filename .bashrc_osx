@@ -19,7 +19,7 @@ alias rm='safe-rm'
 
 # Programming
 
-alias es="elasticsearch -f -D \
+alias es="elasticsearch -D \
     es.config=$BREW_PREFIX/opt/elasticsearch/config/elasticsearch.yml"
 
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/"
@@ -51,10 +51,10 @@ if which pyenv > /dev/null; then
 fi
 
 # see github.com/bfontaine/brew-command-not-found
-. "$HOME/.bash_utils/handler.sh"
+. $(brew --prefix)/Library/Taps/bfontaine/homebrew-command-not-found/handler.sh
 
 # Go
-export GOPATH="$HOME/.go"
+export GOPATH="$HOME/Documents/Programmation/Go"
 export PATH="$GOPATH/bin:$PATH:/usr/local/opt/go/libexec/bin"
 
 # RVM
@@ -64,6 +64,9 @@ if [[ -s  "$HOME/.rvm/scripts/rvm" ]]; then
 fi
 
 export MACOSX_DEPLOYMENT_TARGET=10.10
+
+# Enable Homebrew developers-specific warnings/features
+export HOMEBREW_DEVELOPER=1
 
 # Mozart/Oz
 export PATH="/Applications/Mozart2.app/Contents/Resources/bin:$PATH"
