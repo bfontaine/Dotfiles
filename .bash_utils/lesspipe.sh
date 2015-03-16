@@ -12,6 +12,7 @@ case "$1" in
     *.lua|\
     Makefile|\
     *.ml|*.mli|\
+    *.oz|\
     *.pl|*.perl|*.perl6|*.pm|*.pod|\
     *.php|\
     *.py|*.py2|*.py3|*.python2|*.python3|\
