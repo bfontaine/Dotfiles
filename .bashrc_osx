@@ -31,18 +31,15 @@ alias ll='ls -FGhgl'
 # OSX-specific aliases
 alias b='brew'
 
-alias hemingway='open -a Hemingway\ Editor'
-
 # usage:
 # 1. copy an URL
 # 2. use it as `curl` but without pasting the URL, e.g.: pcurl > foo.bar
 pcurl() { curl -sL "`pbpaste`" $*; }
 
-# nvm
-. $(brew --prefix nvm)/nvm.sh
-
+if [ -d "$HOME/.bash_utils" ]; then
 # get completion for aliases too
 . $HOME/.bash_utils/wrap_alias.sh
+fi
 
 # pyenv
 if which pyenv > /dev/null; then
@@ -50,8 +47,11 @@ if which pyenv > /dev/null; then
     eval "$(pyenv init -)";
 fi
 
+if [ -d "$BREW_PREFIX/Library/Taps/bfontaine/homebrew-command-not-found/" ];
+then
 # see github.com/bfontaine/brew-command-not-found
-. $(brew --prefix)/Library/Taps/bfontaine/homebrew-command-not-found/handler.sh
+. $BREW_PREFIX/Library/Taps/bfontaine/homebrew-command-not-found/handler.sh
+fi
 
 # Go
 export GOPATH="$HOME/Documents/Programmation/Go"
