@@ -177,7 +177,7 @@ gh_bundle the-lambda-church/coquille
 gh_bundle rhysd/vim-crystal        # Crystal
 gh_bundle hail2u/vim-css3-syntax   # CSS3
 gh_bundle dag/vim-fish             # Fish
-gh_bundle Blackrush/vim-gocode     # Go
+gh_bundle fatih/vim-go             # Go (you need to run :GoInstallBinaries)
 gh_bundle bfontaine/vim-gosh       # Gosh
 gh_bundle xu-cheng/brew.vim        # Homebrew formulae
 gh_bundle pangloss/vim-javascript  # JavaScript
@@ -196,11 +196,6 @@ gh_raw bfontaine/omgrofl.vim omgrofl.vim          syntax/omgrofl.vim # Omgrofl
 gh_raw aklt/plantuml-syntax  syntax/plantuml.vim                  # PlantUML
 gh_raw jpdeplaix/why3        share/vim/why3.vim   syntax/why3.vim # Why3
 gh_raw mth/yeti              util/syntax/yeti.vim syntax/yeti.vim # Yeti
-
-# Go
-for f in syntax indent ftdetect; do
-    gh_raw jnwhiteh/vim-golang $f/go.vim
-done
 
 wzip 13895 syntax/jade.vim       # Jade
 
