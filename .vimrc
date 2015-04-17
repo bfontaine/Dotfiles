@@ -174,34 +174,42 @@ nnoremap Q :echo "ex mode is disabled"<cr>
 
 " DelimitMate
 let delimitMate_expand_cr=1
+
 " Clang-complete
 if isdirectory("/Applications")
     let g:clang_library_path="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib"
 endif
+
 " CSS colors
 let g:cssColorVimDoNotMessMyUpdatetime=1
+
 " CommandT
 let g:CommandTFileScanner="find"
 let g:CommandTMaxHeight=30
+
 " Fugitive
 nnoremap <leader>gb :Gblame<cr>
+
 " Powerline
 let g:Powerline_symbols='fancy'
 set laststatus=2
+
 " Syntastic
 let g:syntastic_css_checkers = []
 let g:syntastic_python_checkers = ['pyflakes']
 let g:syntastic_ruby_checkers = ['rubocop', 'mri']
 let g:syntastic_tex_checkers = ['chktex']
 let g:syntastic_html_checkers = []
-
 " don't display these warnings
 let g:syntastic_tex_chktex_args = "-n 26 -n 36 -n 57"
+
 " Tabular
 vnoremap <leader>t :Tabular<space>/
 vnoremap <leader>{ :Tabular<space>/{<cr>gv:Tabular<space>/}<cr>
+
 " Vim-latex
 let g:tex_flavor='latex'
+
 " Zencoding
 let g:user_emmet_expandabbr_key='<leader>h'
 
