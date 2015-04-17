@@ -207,6 +207,9 @@ let g:syntastic_tex_chktex_args = "-n 26 -n 36 -n 57"
 vnoremap <leader>t :Tabular<space>/
 vnoremap <leader>{ :Tabular<space>/{<cr>gv:Tabular<space>/}<cr>
 
+" Vim-go
+let g:go_fmt_command = "goimports"
+
 " Vim-latex
 let g:tex_flavor='latex'
 
