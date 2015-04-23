@@ -19,9 +19,6 @@ alias rm='safe-rm'
 
 # Programming
 
-alias es="elasticsearch -D \
-    es.config=$BREW_PREFIX/opt/elasticsearch/config/elasticsearch.yml"
-
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/"
 
 # common aliases
