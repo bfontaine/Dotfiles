@@ -149,6 +149,9 @@ alias df='df -h'
 
 alias pwd='pwd -P'
 
+# print kill commands
+alias pkill='pkill -l'
+
 if [ -x "$HOME/bin/git-achievements" ]; then
     alias git=git-achievements
 fi
