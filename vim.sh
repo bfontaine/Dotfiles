@@ -187,6 +187,7 @@ gh_bundle gf3/peg.vim              # Peg
 gh_bundle bfontaine/redcode.vim    # REDCODE
 gh_bundle wting/rust.vim           # Rust
 gh_bundle derekwyatt/vim-scala     # Scala
+gh_bundle evidens/vim-twig         # Twig
 
 gh_bundle gre/play2vim # Play (Scala framework)
 
