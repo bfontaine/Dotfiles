@@ -44,10 +44,10 @@ if which pyenv > /dev/null; then
     eval "$(pyenv init -)";
 fi
 
-if [ -d "$BREW_PREFIX/Library/Taps/bfontaine/homebrew-command-not-found/" ];
-then
+which brew >/dev/null
+if [ "$?" = "0" ]; then
 # see github.com/bfontaine/brew-command-not-found
-. $BREW_PREFIX/Library/Taps/bfontaine/homebrew-command-not-found/handler.sh
+eval "$(brew command-not-found-init)"
 fi
 
 # Go
