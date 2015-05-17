@@ -65,5 +65,5 @@ export MACOSX_DEPLOYMENT_TARGET=10.10
 # Enable Homebrew developers-specific warnings/features
 export HOMEBREW_DEVELOPER=1
 
-# Mozart/Oz
-export PATH="/Applications/Mozart2.app/Contents/Resources/bin:$PATH"
+# Node
+export NODE_PATH="/usr/local/lib/node_modules:$NODE_PATH"
