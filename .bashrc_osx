@@ -67,3 +67,5 @@ export HOMEBREW_DEVELOPER=1
 
 # Node
 export NODE_PATH="/usr/local/lib/node_modules:$NODE_PATH"
+
+alias downcase-cd='cd $(pwd | tr "[:upper:]" "[:lower:]")'
