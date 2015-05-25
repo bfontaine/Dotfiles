@@ -186,7 +186,7 @@ let g:cssColorVimDoNotMessMyUpdatetime=1
 " CommandT
 let g:CommandTFileScanner="find"
 let g:CommandTMaxHeight=30
-let g:CommandTWildIgnore=&wildignore . ",**/Godeps/**,**/node_modules/**"
+let g:CommandTWildIgnore=&wildignore . ",Godeps/**,node_modules/**"
 
 " Fugitive
 nnoremap <leader>gb :Gblame<cr>
@@ -206,7 +206,6 @@ let g:syntastic_tex_chktex_args = "-n 26 -n 36 -n 57"
 
 " Tabular
 vnoremap <leader>t :Tabular<space>/
-vnoremap <leader>{ :Tabular<space>/{<cr>gv:Tabular<space>/}<cr>
 
 " Vim-go
 let g:go_fmt_command = "goimports"
