@@ -177,7 +177,6 @@ gh_bundle the-lambda-church/coquille
 gh_bundle rhysd/vim-crystal        # Crystal
 gh_bundle hail2u/vim-css3-syntax   # CSS3
 gh_bundle dag/vim-fish             # Fish
-gh_bundle fatih/vim-go             # Go (you need to run :GoInstallBinaries)
 gh_bundle bfontaine/vim-gosh       # Gosh
 gh_bundle xu-cheng/brew.vim        # Homebrew formulae
 gh_bundle pangloss/vim-javascript  # JavaScript
@@ -188,6 +187,13 @@ gh_bundle bfontaine/redcode.vim    # REDCODE
 gh_bundle wting/rust.vim           # Rust
 gh_bundle derekwyatt/vim-scala     # Scala
 gh_bundle evidens/vim-twig         # Twig
+
+if [ x"$(which go)" != x"" ]; then
+  go get github.com/nsf/gocode
+  gh_bundle Blackrush/vim-gocode # Go
+else
+  echo "WARN: Please install Golang and re-run this script to get Go support"
+fi
 
 gh_bundle gre/play2vim # Play (Scala framework)
 
