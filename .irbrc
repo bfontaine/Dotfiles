@@ -5,8 +5,8 @@ require 'irb/completion'
 
 # awesome print
 begin
-  require 'awesome_print'
-  AwesomePrint.irb!
+  #require 'awesome_print'
+  #AwesomePrint.irb!
 rescue LoadError => err
   warn "Couldn't load awesome_print: #{err}"
   warn "Use 'gem install awesome_print'"
@@ -25,3 +25,6 @@ IRB.conf[:AUTO_INDENT] = true
 IRB.conf[:EVAL_HISTORY] = 100
 IRB.conf[:SAVE_HISTORY] = 2000
 IRB.conf[:HISTORY_FILE] = File::expand_path('~/.irbhistory')
+
+# this is so I can test for this variable in my scripts
+$BFN_IRB = true
