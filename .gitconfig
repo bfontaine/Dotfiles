@@ -15,7 +15,7 @@
 	f    = fetch
 	fixup = commit --amend --no-edit .
 	fp   = format-patch
-	i    = !git init && [ ! -f .gitignore ] && cp ~/.cvsignore .gitignore
+	i    = !git init
 	lg   = log --graph --pretty=format:'%Cred%h%Creset - %C(blue bold)%an%Creset: %C(cyan)%s%Creset %Cgreen(%ar)%Creset'
 	m    = mv
 	# show all commits present on the current branch but not on its attached
