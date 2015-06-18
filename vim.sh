@@ -179,6 +179,7 @@ gh_bundle hail2u/vim-css3-syntax   # CSS3
 gh_bundle dag/vim-fish             # Fish
 gh_bundle bfontaine/vim-gosh       # Gosh
 gh_bundle xu-cheng/brew.vim        # Homebrew formulae
+gh_bundle bfontaine/Brewfile.vim   # Homebrew bundle
 gh_bundle pangloss/vim-javascript  # JavaScript
 gh_bundle groenewege/vim-less      # LESS
 gh_bundle juvenn/mustache.vim      # Mustache
