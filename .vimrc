@@ -191,9 +191,6 @@ let g:CommandTWildIgnore=&wildignore . ",**/Godeps/**,**/node_modules/**"
 " Fugitive
 nnoremap <leader>gb :Gblame<cr>
 
-" Vim-JSX
-let g:jsx_ext_required = 0
-
 " Powerline
 let g:Powerline_symbols='fancy'
 set laststatus=2
