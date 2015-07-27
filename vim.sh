@@ -176,6 +176,7 @@ gh_bundle def-lkb/vimbufsync       # Coq
 gh_bundle the-lambda-church/coquille
 gh_bundle rhysd/vim-crystal        # Crystal
 gh_bundle hail2u/vim-css3-syntax   # CSS3
+gh_bundle killphi/vim-ebnf         # EBNF
 gh_bundle dag/vim-fish             # Fish
 gh_bundle bfontaine/vim-gosh       # Gosh
 gh_bundle xu-cheng/brew.vim        # Homebrew formulae
