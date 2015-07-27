@@ -240,6 +240,7 @@ if has("autocmd")
     au Filetype html,xhtml,xml,xsl,htmljinja so ~/.vim/scripts/closetag.vim
 
     " filetypes
+    au BufNewFile,BufRead *.abnf           set ft=abnf
     au BufNewFile,BufRead *.bf             set ft=brainfuck
     au BufNewFile,BufRead *.e,*.E          set ft=e
     au BufNewFile,BufRead *.fish           set ft=fish

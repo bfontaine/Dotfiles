@@ -159,6 +159,7 @@ if [ ! -f ${VIM_DIR}/syntax/sh.vim ]; then
     mv sh.vim ${VIM_DIR}/syntax/
 fi
 
+vim_script syntax/abnf           5805 # ABNF
 vim_script syntax/asciidoc       6891 # Asciidoc
 vim_script syntax/brainfuck     14054 # Brainfuck
 vim_script syntax/conflicts     19764 # *.conflicts files
