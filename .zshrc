@@ -3,5 +3,5 @@
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
-# https://github.com/bfontaine/homebrew-command-not-found
-. $(brew --prefix)/Library/Taps/bfontaine/homebrew-command-not-found/handler.sh
+# https://github.com/homebrew/homebrew-command-not-found
+. $(brew --prefix)/Library/Taps/homebrew/homebrew-command-not-found/handler.sh
