@@ -178,21 +178,16 @@ alias reload=". $HOME/.bash_profile"
 # one-letter shortcuts
 alias c='cd -P'
 alias g=git
-alias h=heroku
 alias m=mv
 alias n=node
 alias s=sudo
 alias v=vim
 
-alias L=lein
 alias M=make
-alias R=rake
-alias V=vagrant
 
 # two-letters ones
 alias ct=cat
 alias ff='find . -name "*~" -delete'
-alias py=python
 alias sv='sudo vim -p'
 
 # Setup Amazon EC2 Command-Line Tools
