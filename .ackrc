@@ -4,3 +4,6 @@
 --smart-case
 # follow symlinks
 --follow
+
+# Go
+--ignore-dir=Godeps
