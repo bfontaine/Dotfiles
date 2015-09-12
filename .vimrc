@@ -119,8 +119,6 @@ nnoremap K <nop>
 " open dotfiles
 nnoremap <leader>db :tabnew ~/.bashrc<cr>
 nnoremap <leader>dg :tabnew ~/.gitconfig<cr>
-nnoremap <leader>dl :tabnew ~/.lein/profiles.clj<cr>
-nnoremap <leader>do :tabnew ~/.bashrc_osx<cr>
 nnoremap <leader>dp :tabnew ~/.pythonrc.py<cr>
 nnoremap <leader>ds :tabnew ~/.ssh/config<cr>
 nnoremap <leader>dv :tabnew ~/.vimrc<cr>
