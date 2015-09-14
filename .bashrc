@@ -37,6 +37,9 @@ stty -ixon
 HISTSIZE=600
 HISTFILESIZE=50000
 
+# don't add ls/cd to the history
+HISTIGNORE="ls:cd"
+
 # suffixes to remove from tab-completion.
 FIGNORE=.swp:swo:~
 
