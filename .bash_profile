@@ -1,8 +1,3 @@
-# OPAM
-if [ -d "$HOME/.opam" ]; then
-  . $HOME/.opam/opam-init/init.sh > /dev/null 2>&1
-  eval `opam config env`
-fi
 # NVM
 [ -d "$HOME/.nvm" ] && . /Users/baptiste/.nvm/nvm.sh
 # NPM
