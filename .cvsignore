@@ -11,3 +11,5 @@ __pycache__
 /TODO
 .coverage
 .tox
+# Redis
+dum.rdb
