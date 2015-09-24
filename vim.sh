@@ -175,6 +175,7 @@ gh_bundle guns/vim-clojure-static  # Clojure
 gh_bundle kchmck/vim-coffee-script # CoffeeScript
 gh_bundle def-lkb/vimbufsync       # Coq
 gh_bundle the-lambda-church/coquille
+gh_bundle elubow/cql-vim           # CQL
 gh_bundle rhysd/vim-crystal        # Crystal
 gh_bundle hail2u/vim-css3-syntax   # CSS3
 gh_bundle killphi/vim-ebnf         # EBNF
