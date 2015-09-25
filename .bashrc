@@ -225,6 +225,9 @@ p7pp() {
 # Bash autocomplete for 'aws'
 which aws >/dev/null && complete -C aws_completer aws
 
+# Use Go 1.5 vendor directory
+export GO15VENDOREXPERIMENT=1
+
 # avoid pranks where a script adds random stuff at the end of the ~/.bashrc
 # http://blog.bfontaine.net/2015/01/17/preventing-bash-pranks/
 
