@@ -66,7 +66,7 @@ if [[ -s  "$HOME/.rvm/scripts/rvm" ]]; then
   export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 fi
 
-export MACOSX_DEPLOYMENT_TARGET=10.10
+export MACOSX_DEPLOYMENT_TARGET=10.11
 
 # Node
 export NODE_PATH="/usr/local/lib/node_modules:$NODE_PATH"
