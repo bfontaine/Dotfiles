@@ -145,7 +145,6 @@ export PYTHONIOENCODING=utf-8
 export R_HOME='/usr/lib/R'
 
 # usual
-alias ps='ps x'
 alias top='htop'
 alias du='du -h'
 alias df='df -h'
