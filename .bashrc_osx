@@ -27,7 +27,10 @@ fi
 # Set the color for directories in 'ls' output to bold cyan
 export LSCOLORS=Gxfxcxdxbxegedabagacad
 
-alias rm='safe-rm'
+which safe-rm >/dev/null
+if [ "$?" = "0" ]; then
+  alias rm='safe-rm'
+fi
 
 # Programming
 
