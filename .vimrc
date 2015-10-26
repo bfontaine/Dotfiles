@@ -274,7 +274,7 @@ if has("autocmd")
     " filetypes settings
     au FileType c call Set_indent(8)
     au FileType go,markdown,php,python call Set_indent(4)
-    au FileType dockerfile setlocal tw=0
+    au FileType dockerfile,html setlocal tw=0
 
     " plugins
     au FileType javascript let b:delimitMate_expand_space=1
