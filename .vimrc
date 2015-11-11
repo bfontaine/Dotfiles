@@ -252,7 +252,6 @@ if has("autocmd")
     au BufNewFile,BufRead *.mlw            set ft=why3
     au BufNewFile,BufRead *.oz             set ft=oz
     au BufNewFile,BufRead *.pastek,*.pstk  set ft=pastek
-    au BufNewFile,BufRead *.pl             set ft=prolog " conflict with Perl
     au BufNewFile,BufRead *.pu             set ft=plantuml
 
     au BufNewFile,BufRead Dockerfile.*     set ft=dockerfile
