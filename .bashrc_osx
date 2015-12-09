@@ -74,6 +74,9 @@ export MACOSX_DEPLOYMENT_TARGET=10.11
 # Node
 export NODE_PATH="/usr/local/lib/node_modules:$NODE_PATH"
 
+# LaTeX
+export PATH="/usr/local/texlive/2015basic/bin/x86_64-darwin:$PATH"
+
 alias downcase-cd='cd $(pwd | tr "[:upper:]" "[:lower:]")'
 
 export BROWSER='open'
