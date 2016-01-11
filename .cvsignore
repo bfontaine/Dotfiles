@@ -4,6 +4,7 @@
 .DS_Store
 # Python
 *.pyc
+*.egg-info
 __pycache__
 /venv
 /htmlcov
@@ -11,5 +12,5 @@ __pycache__
 /TODO
 .coverage
 .tox
-# Redis
-dum.rdb
+# LibreOffice
+.~lock.*
