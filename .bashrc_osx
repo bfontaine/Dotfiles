@@ -63,11 +63,13 @@ fi
 export GOPATH="$HOME/Documents/Programmation/Go"
 export PATH="$GOPATH/bin:$PATH:/usr/local/opt/go/libexec/bin"
 
-# RVM
+# Ruby
 if [[ -s  "$HOME/.rvm/scripts/rvm" ]]; then
   . "$HOME/.rvm/scripts/rvm"
   export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 fi
+
+alias irb187="/usr/local/opt/ruby187/bin/irb"
 
 export MACOSX_DEPLOYMENT_TARGET=10.11
 
