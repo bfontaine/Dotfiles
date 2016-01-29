@@ -173,21 +173,17 @@ alias egrep="egrep $DIRCOLOR"
 alias la='ls -a'
 alias lr='ls -R'
 
-function mkcd() { mkdir -p "$1" && cd "$1"; }
+mkcd() { mkdir -p "$1" && cd "$1"; }
 
 alias reload=". $HOME/.bash_profile"
 
-# one-letter shortcuts
 alias c='cd -P'
 alias g=git
 alias m=mv
 alias n=node
 alias s=sudo
 alias v=vim
-
 alias M=make
-
-# two-letters ones
 alias ct=cat
 alias ff='find . -name "*~" -delete'
 alias sv='sudo vim -p'
@@ -217,21 +213,5 @@ elif [[ "`uname -a`" =~ "Ubuntu" ]] || [[ "`uname -a`" =~ "Linux" ]]; then
     fi
 fi
 
-p7pp() {
-    $BROWSER "https://p7pp.herokuapp.com/search/url?q=$*"
-}
-
-# Bash autocomplete for 'aws'
-which aws >/dev/null && complete -C aws_completer aws
-
 # Use Go 1.5 vendor directory
 export GO15VENDOREXPERIMENT=1
-
-# avoid pranks where a script adds random stuff at the end of the ~/.bashrc
-# http://blog.bfontaine.net/2015/01/17/preventing-bash-pranks/
-
-b=tu
-a=r
-c=rn
-d=n
-${a}e$b$c
