@@ -76,8 +76,14 @@
 
 [fetch]
 	prune = true
+	fsckobjects = true
 [push]
 	default = upstream
+# https://groups.google.com/forum/#!topic/binary-transparency/f-BI4o8HZW0
+[transfer]
+	fsckobjects = true
+[receive]
+	fsckObjects = true
 
 # Third Parties
 # =============
