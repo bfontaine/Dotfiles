@@ -100,13 +100,6 @@ if [ ! -f ${VIM_DIR}/plugin/clang_complete.vim ]; then
     rm -Rf clang_complete
 fi
 
-# Jedi: completion for Python
-# if [ ! -d ${VIM_DIR}/bundle/jedi-vim ]; then
-#     gh_bundle davidhalter/jedi-vim
-#     git clone --depth=1 https://github.com/davidhalter/jedi.git \
-#         ${VIM_DIR}/bundle/jedi-vim/jedi
-# fi
-
 wzip  8196 plugin/matchit.vim    # Matchit
 
 # SnipMate and its dependencies
