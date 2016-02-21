@@ -231,6 +231,8 @@ fun Set_tw(width)
 endfun
 
 if has("autocmd")
+augroup vimrc_autocmd
+    au!
 
     " - plugins autocmds
     "
@@ -308,4 +310,5 @@ if has("autocmd")
     au InsertEnter * set listchars=tab:▸\ ,
     au InsertLeave * set listchars=tab:▸\ ,trail:·
 
+augroup END
 endif " has("autocmd")
