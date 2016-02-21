@@ -129,18 +129,8 @@ fi
 
 # == themes ==
 
-# vim_script colors/256-jungle 8685 # 256-jungle
-# vim_script colors/candycode  6066 # Candycode
-#
-# Molokai
-# gh_raw tomasr/molokai colors/molokai.vim
-#
-# Tomorrow
-#if [ ! -f ${VIM_DIR}/colors/Tomorrow.vim ]; then
-#    cd /tmp/
-#    git clone --depth=1 https://github.com/chriskempson/tomorrow-theme.git
-#    mv tomorrow-theme/vim/colors/Tomorrow* ${VIM_DIR}/colors/
-#fi
+vim_script colors/256-jungle 8685        # 256-jungle
+gh_raw tomasr/molokai colors/molokai.vim # Molokai
 
 # == syntax ==
 
@@ -154,36 +144,24 @@ fi
 
 vim_script syntax/abnf           5805 # ABNF
 vim_script syntax/asciidoc       6891 # Asciidoc
-vim_script syntax/brainfuck     14054 # Brainfuck
-vim_script syntax/conflicts     19764 # *.conflicts files
-vim_script syntax/forth         18049 # Forth
 vim_script syntax/icalendar      5573 # iCalendar
 vim_script syntax/io             8129 # Io
 vim_script syntax/jinja          8666 # Jinja
 vim_script syntax/htmljinja      6961 # (same)
 vim_script syntax/json          10853 # JSON
-vim_script syntax/oz             1507 # Mozart/Oz
 
 gh_bundle guns/vim-clojure-static  # Clojure
 gh_bundle kchmck/vim-coffee-script # CoffeeScript
-gh_bundle def-lkb/vimbufsync       # Coq
-gh_bundle the-lambda-church/coquille
-gh_bundle elubow/cql-vim           # CQL
 gh_bundle rhysd/vim-crystal        # Crystal
 gh_bundle hail2u/vim-css3-syntax   # CSS3
 gh_bundle killphi/vim-ebnf         # EBNF
 gh_bundle dag/vim-fish             # Fish
-gh_bundle bfontaine/vim-gosh       # Gosh
 gh_bundle xu-cheng/brew.vim        # Homebrew formulae
 gh_bundle bfontaine/Brewfile.vim   # Homebrew bundle
 gh_bundle pangloss/vim-javascript  # JavaScript
 gh_bundle mxw/vim-jsx              # JSX
 gh_bundle groenewege/vim-less      # LESS
 gh_bundle juvenn/mustache.vim      # Mustache
-gh_bundle gf3/peg.vim              # Peg
-gh_bundle bfontaine/redcode.vim    # REDCODE
-gh_bundle wting/rust.vim           # Rust
-gh_bundle derekwyatt/vim-scala     # Scala
 gh_bundle evidens/vim-twig         # Twig
 
 if [ x"$(which go)" != x"" ]; then
@@ -193,17 +171,6 @@ else
   echo "WARN: Please install Golang and re-run this script to get Go support"
 fi
 
-gh_bundle gre/play2vim # Play (Scala framework)
-
-gh_raw bfontaine/e.vim       e.vim syntax/e.vim                   # E
-gh_raw xhr/vim-io            indent/io.vim                        # Io (again)
-gh_raw bfontaine/omgrofl.vim omgrofl.vim          syntax/omgrofl.vim # Omgrofl
-gh_raw aklt/plantuml-syntax  syntax/plantuml.vim                  # PlantUML
-gh_raw jpdeplaix/why3        share/vim/why3.vim   syntax/why3.vim # Why3
-gh_raw mth/yeti              util/syntax/yeti.vim syntax/yeti.vim # Yeti
-
-wzip 13895 syntax/jade.vim       # Jade
-
 # LaTeX
 #if [ ! -d ${VIM_DIR}/bundle/vim-latex ]; then
 #    cd /tmp
@@ -212,10 +179,6 @@ wzip 13895 syntax/jade.vim       # Jade
 #    tar -xzf vl.tgz
 #    mv vim-latex-* ${VIM_DIR}/bundle/vim-latex
 #fi
-
-# Textile
-# You need Ruby & RedCloth
-wzip 9427 doc/textile.txt
 
 # == Omnicomplete ==
 
