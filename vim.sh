@@ -129,8 +129,10 @@ fi
 
 # == themes ==
 
-vim_script colors/256-jungle 8685        # 256-jungle
-gh_raw tomasr/molokai colors/molokai.vim # Molokai
+# Those are already in the dotfiles repo:
+#
+# vim_script colors/256-jungle 8685        # 256-jungle
+# gh_raw tomasr/molokai colors/molokai.vim # Molokai
 
 # == syntax ==
 

@@ -296,10 +296,7 @@ augroup vimrc_autocmd
 
     " files skeletons
     " TODO: find a way to automate the discovery
-    au BufNewFile *.c     0r ~/.vim/skeletons/c.c
-    au BufNewFile *.cpp   0r ~/.vim/skeletons/cpp.cpp
     au BufNewFile *.html  0r ~/.vim/skeletons/html.html
-    au BufNewFile *.php   0r ~/.vim/skeletons/php.php
     au BufNewFile *.py    0r ~/.vim/skeletons/python.py
     au BufNewFile *.rb    0r ~/.vim/skeletons/ruby.rb
     au BufNewFile *.sh    0r ~/.vim/skeletons/bash.sh
