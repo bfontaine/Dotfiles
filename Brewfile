@@ -126,6 +126,7 @@ brew 'gnuplot', args: ['with-x11', 'with-qt']
 brew 'sdl2'
 brew 'sdl2_image'
 brew 'gource'
+brew 'gsl'
 brew 'gti'
 brew 'libyaml'
 brew 'ruby'
