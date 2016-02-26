@@ -134,7 +134,7 @@ alias vim='vim -p'
 export NODE_PATH='/usr/lib/node_modules'
 
 # OCaml
-alias locaml='ledit ocaml'
+alias locaml="ledit -x -h '$HOME/.ocaml_history' ocaml"
 
 # Python
 [ -f "$HOME/.pythonrc.py" ] && export PYTHONSTARTUP=$HOME/.pythonrc.py
@@ -215,3 +215,7 @@ fi
 
 # Use Go 1.5 vendor directory
 export GO15VENDOREXPERIMENT=1
+
+# OCaml
+which opam >/dev/null && . .opam/opam-init/init.sh &>/dev/null
+export OCAML_TOPLEVEL_PATH="$HOME/.opam/system/lib/toplevel"

@@ -18,3 +18,9 @@ __pycache__
 *.mo
 # Ruby
 *.gem
+# Ocaml
+*.cmi
+*.cmo
+*.cmx
+*.native
+/_build
