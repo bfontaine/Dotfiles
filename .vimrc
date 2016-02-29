@@ -240,21 +240,12 @@ augroup vimrc_autocmd
     au Filetype html,xhtml,xml,xsl,htmljinja so ~/.vim/scripts/closetag.vim
 
     " filetypes
-    au BufNewFile,BufRead *.abnf           set ft=abnf
     au BufNewFile,BufRead *.bf             set ft=brainfuck
-    au BufNewFile,BufRead *.e,*.E          set ft=e
+    au BufNewFile,BufRead *.eliom          set ft=ocaml
     au BufNewFile,BufRead *.fish           set ft=fish
-    au BufNewFile,BufRead *.ft,*.fh,*.fth  set ft=forth
     au BufNewFile,BufRead templates/*.html set ft=htmljinja
     au BufNewFile,BufRead *.ics            set ft=icalendar
-    au BufNewFile,BufRead *.io             set ft=io
     au BufNewFile,BufRead *.json           set ft=json
-    au BufNewFile,BufRead *.liquid         set ft=liquid
-    au BufNewFile,BufRead *.mustache       set ft=mustache
-    au BufNewFile,BufRead *.mlw            set ft=why3
-    au BufNewFile,BufRead *.oz             set ft=oz
-    au BufNewFile,BufRead *.pastek,*.pstk  set ft=pastek
-    au BufNewFile,BufRead *.pu             set ft=plantuml
 
     au BufNewFile,BufRead Dockerfile.*     set ft=dockerfile
     au BufNewFile,BufRead Procfile         set ft=yaml
