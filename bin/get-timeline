@@ -1,0 +1,2 @@
+#! /bin/bash
+t timeline --csv --long --number=10000 $*
