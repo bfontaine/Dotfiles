@@ -167,8 +167,7 @@ gh_bundle juvenn/mustache.vim      # Mustache
 gh_bundle evidens/vim-twig         # Twig
 
 if [ x"$(which go)" != x"" ]; then
-  go get github.com/nsf/gocode
-  gh_bundle Blackrush/vim-gocode # Go
+  gh_bundle "fatih/vim-go"
 else
   echo "WARN: Please install Golang and re-run this script to get Go support"
 fi
