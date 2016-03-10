@@ -189,8 +189,9 @@ let g:CommandTWildIgnore=&wildignore . ",**/Godeps/**,**/node_modules/**"
 " Fugitive
 nnoremap <leader>gb :Gblame<cr>
 
-" Powerline
-let g:Powerline_symbols='fancy'
+" Airline
+let g:airline_powerline_fonts=1
+let g:airline_extensions=[]
 set laststatus=2
 
 " Syntastic
@@ -201,6 +202,7 @@ let g:syntastic_tex_checkers = ['chktex']
 let g:syntastic_html_checkers = []
 " don't display these warnings
 let g:syntastic_tex_chktex_args = "-n 26 -n 36 -n 57"
+let g:syntastic_markdown_checkers = ['proselint']
 
 " Tabular
 vnoremap <leader>t :Tabular<space>/

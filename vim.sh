@@ -112,7 +112,9 @@ gh_bundle Raimondi/delimitMate   # DelimitMate
 gh_bundle tpope/vim-fugitive     # Fugitive
 gh_bundle sjl/gundo.vim          # Gundo
 gh_bundle mattn/emmet-vim        # Emmet (Zencoding-like plugin)
-gh_bundle Lokaltog/vim-powerline # Powerline
+# Use https://gist.github.com/baopham/1838072 for Monaco and
+# https://github.com/powerline/fonts for other fonts
+gh_bundle vim-airline/vim-airline # Airline
 gh_bundle kien/rainbow_parentheses.vim # Rainbow Parentheses (for Scala/Clojure)
 gh_bundle scrooloose/syntastic   # Syntastic
 gh_bundle godlygeek/tabular      # Tabular
