@@ -154,10 +154,6 @@ alias pwd='pwd -P'
 # print kill commands
 alias pkill='pkill -l'
 
-if [ -x "$HOME/bin/git-achievements" ]; then
-    alias git=git-achievements
-fi
-
 alias -- -='cd - >/dev/null'
 alias +x='chmod u+x'
 
@@ -171,6 +167,7 @@ alias fgrep="fgrep $DIRCOLOR"
 alias egrep="egrep $DIRCOLOR"
 
 alias la='ls -a'
+alias lr='ls -R'
 
 mkcd() { mkdir -p "$1" && cd "$1"; }
 
@@ -189,6 +186,7 @@ alias sv='sudo vim -p'
 
 # Setup Amazon EC2 Command-Line Tools
 export EC2_HOME=$HOME/.ec2
+
 if [ -d "$EC2_HOME" ]; then
     export EC2_PRIVATE_KEY=`\ls $EC2_HOME/pk-*.pem`
     export EC2_CERT=`\ls $EC2_HOME/cert-*.pem`
