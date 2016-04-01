@@ -12,14 +12,6 @@ hash clojure 2>/dev/null && alias clj=clojure
 # Java
 export JAVA_HOME=/usr/
 
-# Apps
-APPS_DIR="$HOME/Applications"
-
-if [ -d "$APPS_DIR" ]; then
-alias yuicompressor="java -jar $APPS_DIR/yuicompressor-2.4.7.jar"
-alias closurecompiler="java -jar $APPS_DIR/GoogleClosureCompiler/compiler.jar"
-fi
-
 # apt-get -related aliases
 alias sag='sudo apt-get'
 alias sai='sudo apt-get install'
@@ -29,11 +21,6 @@ alias aptis='aptitude search'
 
 which xclip >/dev/null && \
     alias xclip='xclip -selection "clipboard"'
-
-# Git
-# see github.com/icefox/git-achievements
-which git-achievements >/dev/null && \
-  alias git='git-achievements'
 
 # Common aliases
 
