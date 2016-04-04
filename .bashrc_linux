@@ -39,3 +39,10 @@ alias LS='LS -e'
 
 # Internet
 alias flushDNS='sudo rndc flush'
+
+if [ -x ~/.linuxbrew/bin/brew ]; then
+  alias b=brew
+  export PATH="$HOME/.linuxbrew/bin:$PATH"
+  export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+  export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+fi
