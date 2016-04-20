@@ -107,6 +107,7 @@ gh_bundle tomtom/tlib_vim
 gh_bundle MarcWeber/vim-addon-mw-utils
 gh_bundle garbas/vim-snipmate
 
+gh_bundle tell-k/vim-autopep8    # autopep8
 gh_bundle ConradIrwin/vim-bracketed-paste # Bracketed paste
 gh_bundle Raimondi/delimitMate   # DelimitMate
 gh_bundle tpope/vim-fugitive     # Fugitive
