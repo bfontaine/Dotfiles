@@ -251,6 +251,7 @@ augroup vimrc_autocmd
 
     au BufNewFile,BufRead Dockerfile.*     set ft=dockerfile
     au BufNewFile,BufRead Procfile         set ft=yaml
+    au BufNewFile,BufRead .cookiecutterrc  set ft=yaml
     au BufNewFile,BufRead pylintrc         set ft=config
     au BufNewFile,BufRead Vagrantfile      set ft=ruby
 
