@@ -1,6 +1,6 @@
 [user]
 	name  = Baptiste Fontaine
-	email = batifon@yahoo.fr
+	email = b@ptistefontaine.fr
 [alias]
 	a    = add
 	br   = branch
@@ -90,7 +90,5 @@
 
 [github]
 	user = bfontaine
-[achievement]
-	upload = false
 [git-up "bundler"]
 	check = true
