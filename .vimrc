@@ -273,8 +273,8 @@ augroup vimrc_autocmd
 
     " plugins
     au FileType javascript let b:delimitMate_expand_space=1
-    au FileType scala RainbowParenthesesActivate
-    au FileType scala RainbowParenthesesLoadRound
+    au FileType clojure,scala RainbowParenthesesActivate
+    au FileType clojure,scala RainbowParenthesesLoadRound
 
     au FileType json       setlocal nocursorline
     au FileType txt        setlocal spell
