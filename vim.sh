@@ -118,6 +118,7 @@ gh_bundle ConradIrwin/vim-bracketed-paste # Bracketed paste
 gh_bundle Raimondi/delimitMate   # DelimitMate
 gh_bundle tpope/vim-fugitive     # Fugitive
 gh_bundle sjl/gundo.vim          # Gundo
+gh_bundle venantius/vim-eastwood # Eastwood for Vim
 gh_bundle mattn/emmet-vim        # Emmet (Zencoding-like plugin)
 # Use https://gist.github.com/baopham/1838072 for Monaco and
 # https://github.com/powerline/fonts for other fonts
