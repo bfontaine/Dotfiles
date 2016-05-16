@@ -184,7 +184,7 @@ let g:cssColorVimDoNotMessMyUpdatetime=1
 " CommandT
 let g:CommandTFileScanner="find"
 let g:CommandTMaxHeight=30
-let g:CommandTWildIgnore=&wildignore . ",**/Godeps/**,**/node_modules/**"
+let g:CommandTWildIgnore=&wildignore . ",**/Godeps/**,**/node_modules/**,**/*.class"
 
 " Fugitive
 nnoremap <leader>gb :Gblame<cr>
