@@ -6,5 +6,6 @@
                   [com.jakemccrary/lein-test-refresh "0.3.4"]
                   [lein-pprint                       "1.1.1"]
                   [cider/cider-nrepl                 "0.12.0"]
+                  [lein-drip                         "0.1.1-SNAPSHOT"]
                   [venantius/ultra                   "0.4.1"]]
         :signing {:gpg-key "E5B26621"}}}
