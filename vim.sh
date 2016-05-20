@@ -166,6 +166,7 @@ gh_bundle guns/vim-clojure-static  # Clojure
 gh_bundle kchmck/vim-coffee-script # CoffeeScript
 gh_bundle rhysd/vim-crystal        # Crystal
 gh_bundle hail2u/vim-css3-syntax   # CSS3
+gh_bundle ekalinin/Dockerfile.vim  # Dockerfile
 gh_bundle killphi/vim-ebnf         # EBNF
 gh_bundle dag/vim-fish             # Fish
 gh_bundle xu-cheng/brew.vim        # Homebrew formulae

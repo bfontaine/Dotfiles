@@ -251,7 +251,6 @@ augroup vimrc_autocmd
     au BufNewFile,BufRead *.ics            set ft=icalendar
     au BufNewFile,BufRead *.json           set ft=json
 
-    au BufNewFile,BufRead Dockerfile.*     set ft=dockerfile
     au BufNewFile,BufRead Procfile         set ft=yaml
     au BufNewFile,BufRead .cookiecutterrc  set ft=yaml
     au BufNewFile,BufRead pylintrc         set ft=config
