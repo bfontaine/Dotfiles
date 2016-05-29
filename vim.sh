@@ -124,6 +124,8 @@ gh_bundle mattn/emmet-vim        # Emmet (Zencoding-like plugin)
 # https://github.com/powerline/fonts for other fonts
 gh_bundle vim-airline/vim-airline # Airline
 gh_bundle kien/rainbow_parentheses.vim # Rainbow Parentheses (for Scala/Clojure)
+gh_bundle tpope/vim-repeat       # Repeat plugin commands with "."
+gh_bundle tpope/vim-speeddating  # Increment dates w/ <C-A> and <C-X>
 gh_bundle scrooloose/syntastic   # Syntastic
 gh_bundle godlygeek/tabular      # Tabular
 
