@@ -12,6 +12,7 @@ __pycache__
 /TODO
 .coverage
 .tox
+.webassets-cache
 # LibreOffice
 .~lock.*
 # i18n/t10n
