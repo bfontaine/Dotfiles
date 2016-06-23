@@ -143,7 +143,6 @@ brew 'tree'
 brew 'unar'
 brew 'vim'
 brew 'wget'
-brew 'youtube-dl'
 brew 'yuicompressor'
 brew 'z', args: ['HEAD']
 brew 'zsh'
