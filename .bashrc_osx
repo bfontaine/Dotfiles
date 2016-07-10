@@ -22,6 +22,8 @@ eval "$(brew command-not-found-init)"
 
 # Enable Homebrew developers-specific warnings/features
 export HOMEBREW_DEVELOPER=1
+# Disable Homebrew autoupdate
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 # Old Ruby
 alias irb187="/usr/local/opt/ruby187/bin/irb"
