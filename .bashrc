@@ -181,7 +181,7 @@ alias s=sudo
 alias v=vim
 alias M=make
 alias ct=cat
-alias ff='find . -name "*~" -delete'
+alias ff='find . -name "*~" -type f -delete'
 alias sv='sudo vim -p'
 
 # Setup Amazon EC2 Command-Line Tools
