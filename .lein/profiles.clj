@@ -1,4 +1,4 @@
-{:user {:plugins [[lein-cloverage                    "1.0.2"]
+{:user {:plugins [[lein-cloverage                    "1.0.6"]
                   [lein-fore-prob                    "0.1.2"]
                   [lein-ancient                      "0.6.10"]
                   [jonase/eastwood                   "0.2.3"]
