@@ -27,6 +27,8 @@
 	sd   = diff --cached
 	# show all commits present on the remote branch but not the current one
 	wazup = log ..@{u}
+	# Not named 'changelog' not to conflict with git-changelog from git-extras
+	changes = !git lg $(git tag | tail -n 1).. && echo
 
 	# git-flow
 	ff  = flow feature
