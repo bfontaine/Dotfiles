@@ -30,12 +30,6 @@
 	# Not named 'changelog' not to conflict with git-changelog from git-extras
 	changes = !git lg $(git tag | tail -n 1).. && echo
 
-	# git-flow
-	ff  = flow feature
-	ffs = flow feature start
-	fff = flow feature finish
-	ffp = flow feature publish
-
 [core]
 	pager = cat
 	editor = vim
