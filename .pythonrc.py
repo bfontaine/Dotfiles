@@ -3,7 +3,12 @@
 
 ## useful modules
 import os
+import re
 import sys
+
+# Silent Pyflakes:
+if False:
+    re, sys
 
 try:
     import readline
