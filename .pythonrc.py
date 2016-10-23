@@ -16,7 +16,8 @@ except ImportError:
     pass
 else:
     import rlcompleter
-    if 'libedit' in readline.__doc__:
+    is_libedit = 'libedit' in readline.__doc__
+    if is_libedit:
         readline.parse_and_bind("bind ^I rl_complete")
     else:
         readline.parse_and_bind("tab: complete")
@@ -33,14 +34,15 @@ else:
     # Set maximum number of items that will be written to the history file
     readline.set_history_length(500)
 
-    def savehist():
-        import readline
-        global HISTFILE
-        readline.write_history_file(HISTFILE)
+    if not (sys.version_info.major == 2 and is_libedit):
+        def savehist():
+            import readline
+            global HISTFILE
+            readline.write_history_file(HISTFILE)
 
-    import atexit
-    atexit.register(savehist)
-    del atexit
+        import atexit
+        atexit.register(savehist)
+        del atexit
 finally:
     del rlcompleter
 
