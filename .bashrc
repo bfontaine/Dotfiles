@@ -33,9 +33,9 @@ stty werase undef
 # you accidentally type ^S.
 stty -ixon
 
-# history length (very large for stats)
-HISTSIZE=600
-HISTFILESIZE=50000
+# history length
+HISTSIZE=6000
+HISTFILESIZE=80000
 
 # don't add ls/cd to the history
 HISTIGNORE="ls:cd"
@@ -142,7 +142,7 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 export PYTHONIOENCODING=utf-8
 
 # R
-export R_HOME='/usr/lib/R'
+[ -d /usr/lib/R ] && export R_HOME='/usr/lib/R'
 
 # usual
 alias top='htop'
@@ -158,7 +158,7 @@ alias -- -='cd - >/dev/null'
 alias +x='chmod u+x'
 
 alias less='less -R'
-if [ -d "$HOME/.bash_utils" ]; then
+if [ -x "$HOME/.bash_utils/lesspipe.sh" ]; then
     export LESSOPEN="|$HOME/.bash_utils/lesspipe.sh %s"
 fi
 
