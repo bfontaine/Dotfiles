@@ -124,7 +124,7 @@ export EDITOR='vim'
 export PS2='… '
 
 # more binaries
-export PATH="$PATH:/usr/local/sbin:$HOME/bin"
+export PATH="$HOME/bin:$PATH:/usr/local/sbin"
 
 # == Programming ==
 
