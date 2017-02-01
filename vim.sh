@@ -177,6 +177,7 @@ gh_bundle pangloss/vim-javascript  # JavaScript
 gh_bundle mxw/vim-jsx              # JSX
 gh_bundle iqqmuT/vim-k             # K
 gh_bundle groenewege/vim-less      # LESS
+gh_bundle plasticboy/vim-markdown  # Markdown
 gh_bundle juvenn/mustache.vim      # Mustache
 gh_bundle evidens/vim-twig         # Twig
 
