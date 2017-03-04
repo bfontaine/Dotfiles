@@ -1,8 +1,8 @@
 tap 'bfontaine/languages', 'git@github.com:bfontaine/homebrew-languages.git'
+tap 'bfontaine/powersearch', 'gh:bfontaine/homebrew-powersearch.git'
 tap 'bfontaine/search', 'git@github.com:bfontaine/homebrew-search.git'
 tap 'bfontaine/tools', 'git@github.com:bfontaine/homebrew-tools.git'
 tap 'bfontaine/utils', 'git@github.com:bfontaine/homebrew-utils.git'
-tap 'bfontaine/powersearch', 'git@github.com:bfontaine/homebrew-powersearch.git'
 tap 'caskroom/cask', 'git@github.com:caskroom/homebrew-cask.git'
 tap 'caskroom/versions', 'git@github.com:caskroom/homebrew-versions.git'
 tap 'homebrew/aliases', 'git@github.com:Homebrew/homebrew-aliases.git'
@@ -14,13 +14,10 @@ tap 'homebrew/command-not-found', 'git@github.com:Homebrew/homebrew-command-not-
 tap 'homebrew/completions', 'git@github.com:Homebrew/homebrew-completions.git'
 tap 'homebrew/core', 'git@github.com:Homebrew/homebrew-core.git'
 tap 'homebrew/dev-tools', 'git@github.com:Homebrew/homebrew-dev-tools.git'
-tap 'homebrew/devel-only', 'git@github.com:Homebrew/homebrew-devel-only.git'
 tap 'homebrew/dupes', 'git@github.com:Homebrew/homebrew-dupes.git'
 tap 'homebrew/emacs', 'git@github.com:Homebrew/homebrew-emacs.git'
 tap 'homebrew/fuse', 'git@github.com:Homebrew/homebrew-fuse.git'
-tap 'homebrew/games', 'git@github.com:Homebrew/homebrew-games.git'
 tap 'homebrew/gui', 'git@github.com:Homebrew/homebrew-gui.git'
-tap 'homebrew/head-only', 'git@github.com:Homebrew/homebrew-head-only.git'
 tap 'homebrew/nginx', 'git@github.com:Homebrew/homebrew-nginx.git'
 tap 'homebrew/php', 'git@github.com:Homebrew/homebrew-php.git'
 tap 'homebrew/python', 'git@github.com:Homebrew/homebrew-python.git'
@@ -161,7 +158,6 @@ brew 'bfontaine/utils/rfc'
 brew 'bfontaine/utils/up'
 brew 'homebrew/dupes/gzip'
 brew 'homebrew/dupes/whois'
-brew 'homebrew/games/vitetris'
 cask 'emacs'
 cask 'java'
 cask 'launchrocket'
@@ -172,8 +168,8 @@ cask 'quicklook-json'
 cask 'skim'
 cask 'skype'
 cask 'virtualbox'
-mas 'MoneyWiz 2', id: 949724400
-mas 'Keynote', id: 409183694
 mas 'Amphetamine', id: 937984704
-mas 'Xcode', id: 497799835
+mas 'Keynote', id: 409183694
+mas 'MoneyWiz 2', id: 949724400
 mas 'Textual 5', id: 896450579
+mas 'Xcode', id: 497799835
