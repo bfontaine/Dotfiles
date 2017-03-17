@@ -20,6 +20,8 @@ shopt -s xpg_echo
 shopt -s checkwinsize
 # if a command name is the name of a directory, cd into it
 shopt -s autocd
+# don't expand PS1's value, e.g. PS1='$(echo yo)' doesn't become 'yo'
+shopt -u promptvars
 
 # disable file overriding with >
 set -C
