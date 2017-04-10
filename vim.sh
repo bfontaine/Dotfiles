@@ -113,6 +113,7 @@ gh_bundle tpope/vim-projectionist
 gh_bundle tpope/vim-dispatch      # Async build & test dispatcher
 gh_bundle tpope/vim-fireplace     # Clojure REPL support
 
+gh_bundle tpope/vim-abolish      # Abolish: %s on steroids
 gh_bundle tell-k/vim-autopep8    # autopep8
 gh_bundle ConradIrwin/vim-bracketed-paste # Bracketed paste
 gh_bundle Raimondi/delimitMate   # DelimitMate
