@@ -180,6 +180,7 @@ gh_bundle iqqmuT/vim-k             # K
 gh_bundle groenewege/vim-less      # LESS
 gh_bundle plasticboy/vim-markdown  # Markdown
 gh_bundle juvenn/mustache.vim      # Mustache
+gh_bundle cespare/vim-toml         # TOML
 gh_bundle evidens/vim-twig         # Twig
 
 if [ x"$(which go)" != x"" ]; then
