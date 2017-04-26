@@ -1,6 +1,7 @@
 {:user {:plugins [[lein-cloverage                    "1.0.6"]
                   [lein-fore-prob                    "0.1.2"]
                   [lein-ancient                      "0.6.10"]
+                  [lein-kibit                        "0.1.3"]
                   [lein-pprint                       "1.1.2"]
                   [lein-figwheel                     "0.5.9"]
                   [cider/cider-nrepl                 "0.14.0"]
