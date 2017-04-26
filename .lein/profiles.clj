@@ -7,7 +7,6 @@
                   ; Code quality
                   [lein-kibit                        "0.1.3"]
                   [lein-bikeshed                     "0.4.1"]
-                  [slamhound                         "1.5.5"]
                   [jonase/eastwood                   "0.2.3"]
 
                   [lein-pprint                       "1.1.2"]
@@ -15,5 +14,9 @@
                   [cider/cider-nrepl                 "0.14.0"]
                   [venantius/ultra                   "0.5.1"]
                   [venantius/yagni                   "0.1.4"]]
+
+        :dependencies [; Code quality
+                       [slamhound                    "1.5.5"]]
+
         :aliases {"slamhound" ["run" "-m" "slam.hound"]}
         :signing {:gpg-key "E5B26621"}}}
