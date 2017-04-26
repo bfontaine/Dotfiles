@@ -8,6 +8,7 @@
                   [lein-kibit                        "0.1.3"]
                   [lein-bikeshed                     "0.4.1"]
                   [slamhound                         "1.5.5"]
+                  [jonase/eastwood                   "0.2.3"]
 
                   [lein-pprint                       "1.1.2"]
                   [lein-figwheel                     "0.5.9"]
