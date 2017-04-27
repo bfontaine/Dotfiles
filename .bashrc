@@ -1,6 +1,9 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
+# Default language
+[ -z "$LC_ALL" ] && LC_ALL=en_US.UTF-8
+
 # don't put duplicate lines in the history nor lines starting with a space
 HISTCONTROL=ignoreboth
 
@@ -35,9 +38,9 @@ stty werase undef
 # you accidentally type ^S.
 stty -ixon
 
-# history length
+# history length (very large for stats)
 HISTSIZE=6000
-HISTFILESIZE=80000
+HISTFILESIZE=200000
 
 # don't add ls/cd to the history
 HISTIGNORE="ls:cd"
@@ -195,6 +198,12 @@ if [ -d "$EC2_HOME" ]; then
     export PATH=$PATH:$EC2_HOME/bin
 fi
 
+# Google Cloud
+if [ -d "$HOME/.gcloud" ]; then
+  . $HOME/.gcloud/google-cloud-sdk/path.bash.inc
+  . $HOME/.gcloud/google-cloud-sdk/completion.bash.inc
+fi
+
 # Safe default
 export BROWSER='python -m webbrowser'
 
@@ -217,3 +226,8 @@ export GO15VENDOREXPERIMENT=1
 # OCaml
 which opam >/dev/null && . .opam/opam-init/init.sh &>/dev/null
 export OCAML_TOPLEVEL_PATH="$HOME/.opam/system/lib/toplevel"
+
+export PLANTUML_LIMIT_SIZE=15000
+
+# Ansible
+export ANSIBLE_NOCOWS=1
