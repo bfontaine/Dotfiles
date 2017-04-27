@@ -1,12 +1,15 @@
 *~
 *.tgz
 .*.sw*
+*.log
+*.gz
 .DS_Store
 # Python
 *.pyc
 *.egg-info
+*.pickle
 __pycache__
-/venv
+venv
 /htmlcov
 /dist
 /TODO
@@ -25,3 +28,14 @@ __pycache__
 *.cmx
 *.native
 /_build
+# Ansible
+*.retry
+*.jsons
+*.edn
+*.csv
+*.db
+*.db.*
+*.bak
+*.xlsx
+node_modules
+.sass-cache
