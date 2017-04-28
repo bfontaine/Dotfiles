@@ -15,20 +15,14 @@
 	f    = fetch
 	fixup = commit --amend --no-edit .
 	fp   = format-patch
-	i    = init
 	lg   = log --graph --pretty=format:'%Cred%h%Creset - %C(blue bold)%an%Creset: %C(cyan)%s%Creset %Cgreen(%ar)%Creset'
 	m    = mv
 	# show all commits present on the current branch but not on its attached
 	# remote.
 	p    = !git lg @{u}..
 	s    = status --short --branch
-	sm   = send-email
 	sp   = stash pop
 	sd   = diff --cached
-	# show all commits present on the remote branch but not the current one
-	wazup = log ..@{u}
-	# Not named 'changelog' not to conflict with git-changelog from git-extras
-	changes = !git lg $(git tag | tail -n 1).. && echo
 
 [core]
 	pager = cat
