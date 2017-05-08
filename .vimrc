@@ -273,6 +273,7 @@ augroup vimrc_autocmd
     au FileType c call Set_indent(8)
     au FileType go,markdown,php,python call Set_indent(4)
     au FileType dockerfile,html,htmljinja,liquid setlocal tw=0
+    au FileType rust setlocal tw=79
 
     " plugins
     au FileType javascript let b:delimitMate_expand_space=1
