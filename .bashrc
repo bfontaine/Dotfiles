@@ -29,9 +29,8 @@ shopt -u promptvars
 # disable file overriding with >
 set -C
 
-# This option is used to map ^W, and even if you bind another action
-# on ^W in your .inputrc, it always take precedence, so you have
-# to explicitely undefine it.
+# This option is used to map ^W. It always take precedence even if you bind
+# another action in your .inputrc, so we have to explicitely undefine it.
 stty werase undef
 
 # disable XON/XOFF flow control (^S & ^Q). This prevent Vim from freezing when

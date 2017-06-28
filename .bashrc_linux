@@ -6,18 +6,12 @@ mkdir -p ~/PDF
 
 # == Programming ==
 
-# Clojure
-hash clojure 2>/dev/null && alias clj=clojure
-
 # Java
 export JAVA_HOME=/usr/
 
 # apt-get -related aliases
-alias sag='sudo apt-get'
-alias sai='sudo apt-get install'
-alias mt='sag update; sag upgrade -f --yes && sag dist-upgrade --yes \
-            && sag autoremove --yes && sag autoclean'
-alias aptis='aptitude search'
+alias sag='sudo apt'
+alias sai='sudo apt install'
 
 which xclip >/dev/null && \
     alias xclip='xclip -selection "clipboard"'
@@ -46,3 +40,14 @@ if [ -x ~/.linuxbrew/bin/brew ]; then
   export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
   export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 fi
+
+alias n=nodejs
+which p >/dev/null || \
+  alias p="sp play"
+
+alias mtr="mtr -t"
+
+export GOPATH="$HOME/Go"
+export GOBIN="$GOPATH/bin"
+export PATH="$GOBIN:$PATH"
+export XDG_DATA_DIRS="/home/baptiste/.linuxbrew/share:$XDG_DATA_DIRS"
