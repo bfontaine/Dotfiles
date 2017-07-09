@@ -54,7 +54,14 @@ fi
 export BROWSER="open"
 
 # Java
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/"
+JAVA7_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_40.jdk/Contents/Home/"
+JAVA8_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_131.jdk/Contents/Home/"
+
+if [ -d "$JAVA8_HOME" ]; then
+  export JAVA_HOME="$JAVA8_HOME"
+else
+  export JAVA_HOME="$JAVA7_HOME"
+fi
 
 # Go
 export GOPATH="$HOME/Documents/Programmation/Go"
@@ -66,3 +73,12 @@ export MACOSX_DEPLOYMENT_TARGET=10.12
 
 # LaTeX
 export PATH="/usr/local/texlive/2015basic/bin/x86_64-darwin:$PATH"
+
+# See http://matplotlib.org/faq/virtualenv_faq.html
+frameworkpython() {
+    if [[ ! -z "$VIRTUAL_ENV" ]]; then
+        PYTHONHOME=$VIRTUAL_ENV $BREW_PREFIX/bin/python "$@"
+    else
+        $BREW_PREFIX/bin/python "$@"
+    fi
+}
