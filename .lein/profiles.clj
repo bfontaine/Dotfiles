@@ -15,6 +15,8 @@
                   [venantius/ultra                   "0.5.1"]
                   [venantius/yagni                   "0.1.4"]]
 
+        :jvm-opts ["-XX:-OmitStackTraceInFastThrow"]
+
         :dependencies [; Code quality
                        [slamhound                    "1.5.5"]
                        [walmartlabs/datascope        "0.1.1"]
