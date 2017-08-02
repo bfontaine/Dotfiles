@@ -11,7 +11,7 @@
 
                   [lein-pprint                       "1.1.2"]
                   [lein-figwheel                     "0.5.10"]
-                  [cider/cider-nrepl                 "0.14.0"]
+                  [cider/cider-nrepl                 "0.15.0"]
                   [venantius/ultra                   "0.5.1"]
                   [venantius/yagni                   "0.1.4"]]
 
