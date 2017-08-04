@@ -68,6 +68,7 @@ set wildignore+=venv,htmlcov    " directories
 set wildignore+=__pycache__
 set wildignore+=*.jar,*.zip     " archives / compressed files
 set wildignore+=*.gz,*.tar
+set wildignore+=*.db
 
 " indenting
 
@@ -186,6 +187,7 @@ let g:CommandTFileScanner="find"
 let g:CommandTMaxHeight=30
 let g:CommandTWildIgnore=&wildignore
 let g:CommandTWildIgnore.=",**/Godeps/**,**/node_modules/**,**/*.class"
+let g:CommandTWildIgnore.=",**/*.db"
 let g:CommandTWildIgnore.=",venv/**"
 
 " Fugitive
