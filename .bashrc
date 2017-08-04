@@ -29,8 +29,9 @@ shopt -u promptvars
 # disable file overriding with >
 set -C
 
-# This option is used to map ^W. It always take precedence even if you bind
-# another action in your .inputrc, so we have to explicitely undefine it.
+# This option is used to map ^W, and even if you bind another action
+# on ^W in your .inputrc, it always take precedence, so you have
+# to explicitely undefine it.
 stty werase undef
 
 # disable XON/XOFF flow control (^S & ^Q). This prevent Vim from freezing when
@@ -38,8 +39,8 @@ stty werase undef
 stty -ixon
 
 # history length (very large for stats)
-HISTSIZE=6000
-HISTFILESIZE=200000
+HISTSIZE=100000
+HISTFILESIZE=400000
 
 # don't add ls/cd to the history
 HISTIGNORE="ls:cd"
@@ -128,7 +129,7 @@ export EDITOR='vim'
 export PS2='… '
 
 # more binaries
-export PATH="$HOME/bin:$PATH:/usr/local/sbin"
+export PATH="$PATH:/usr/local/sbin"
 
 # == Programming ==
 
@@ -197,12 +198,6 @@ if [ -d "$EC2_HOME" ]; then
     export PATH=$PATH:$EC2_HOME/bin
 fi
 
-# Google Cloud
-if [ -d "$HOME/.gcloud" ]; then
-  . $HOME/.gcloud/google-cloud-sdk/path.bash.inc
-  . $HOME/.gcloud/google-cloud-sdk/completion.bash.inc
-fi
-
 # Safe default
 export BROWSER='python -m webbrowser'
 
@@ -226,7 +221,17 @@ export GO15VENDOREXPERIMENT=1
 which opam >/dev/null && . .opam/opam-init/init.sh &>/dev/null
 export OCAML_TOPLEVEL_PATH="$HOME/.opam/system/lib/toplevel"
 
+if [ -d "$HOME/.gcloud" ]; then
+  . $HOME/.gcloud/google-cloud-sdk/path.bash.inc
+  . $HOME/.gcloud/google-cloud-sdk/completion.bash.inc
+fi
+
+PATH="$HOME/bin:$PATH"
+
 export PLANTUML_LIMIT_SIZE=15000
 
 # Ansible
 export ANSIBLE_NOCOWS=1
+
+vpython() { PYTHONPATH=. ./venv/bin/python $*; }
+vpip() { ./venv/bin/pip $*; }
