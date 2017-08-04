@@ -14,9 +14,8 @@
                        ;; http://docs.caudate.me/lucidity/lucid-core.html#core-inject
                        [im.chit/lucid.core.inject    "1.3.9"]]
 
-        ;; I get empty stacktrace with ultra 0.5.1. Check if it changes when it
-        ;; updates.
-        :ultra {:stacktraces false}
+        :ultra {:repl {:sort-keys false ; don't sort collections before printing
+                       }}
 
         :injections [(require 'lucid.core.inject)
                      (lucid.core.inject/in
