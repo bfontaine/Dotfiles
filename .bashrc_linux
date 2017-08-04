@@ -10,7 +10,6 @@ mkdir -p ~/PDF
 export JAVA_HOME=/usr/
 
 # apt-get -related aliases
-alias sag='sudo apt'
 alias sai='sudo apt install'
 
 which xclip >/dev/null && \
@@ -34,11 +33,13 @@ alias LS='LS -e'
 # Internet
 alias flushDNS='sudo rndc flush'
 
+# Linuxbrew
 if [ -x ~/.linuxbrew/bin/brew ]; then
   alias b=brew
-  export PATH="$HOME/.linuxbrew/bin:$PATH"
+  export PATH="$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH"
   export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
   export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+  . `brew --prefix`/etc/profile.d/z.sh
 fi
 
 alias n=nodejs
