@@ -4,6 +4,9 @@
                   ; Check for outdated dependencies
                   [lein-ancient                      "0.6.10"]
 
+                  ;; lein-test when something changes
+                  [com.jakemccrary/lein-test-refresh "0.21.1"]
+
                   [lein-figwheel                     "0.5.10"]
                   [venantius/ultra                   "0.5.1"]]
 
@@ -14,7 +17,8 @@
                        ;; http://docs.caudate.me/lucidity/lucid-core.html#core-inject
                        [im.chit/lucid.core.inject    "1.3.9"]]
 
-        :ultra {:repl {:sort-keys false ; don't sort collections before printing
+        :ultra {:stacktraces false ; don't break my stacktraces thanks
+                :repl {:sort-keys false ; don't sort collections before printing
                        }}
 
         :injections [(require 'lucid.core.inject)
