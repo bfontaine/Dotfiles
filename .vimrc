@@ -101,6 +101,17 @@ colorscheme 256-jungle
 colorscheme molokai
 :hi CursorLine cterm=NONE ctermbg=black ctermfg=NONE
 
+" shortcut to get a white background, e.g. when making a presentation with poor
+" video projectors.
+" Note you also need to change the terminal emulator's settings, or at least
+" its background color.
+fun White_bg()
+  set background=light
+  colorscheme default " necessary to get back a white background
+  colorscheme PaperColor " get slightly better colors
+  syntax on
+endfun
+
 " -- Global Mappings --
 
 let mapleader = ","
