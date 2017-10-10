@@ -2,6 +2,9 @@
 #
 # Post-Installation Script for Vim
 #
+# Author: Baptiste Fontaine <b@ptistefontaine.fr>
+# URL: https://github.com/bfontaine/Dotfiles/blob/master/vim.sh
+# License: MIT
 
 
 VIM_DIR=~/.vim
