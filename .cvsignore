@@ -4,6 +4,7 @@
 *.log
 *.gz
 .DS_Store
+/env.sh
 # Python
 *.pyc
 *.egg-info

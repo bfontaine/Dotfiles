@@ -27,6 +27,8 @@
 [core]
 	pager = cat
 	editor = vim
+	excludesFile = ~/.cvsignore
+	# Old gits
 	excludesfile = ~/.cvsignore
 
 # Reading
