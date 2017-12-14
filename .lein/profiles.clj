@@ -2,7 +2,7 @@
                   [lein-fore-prob                    "0.1.2"]
 
                   ; Check for outdated dependencies
-                  [lein-ancient                      "0.6.14"]
+                  [lein-ancient                      "0.6.15"]
 
                   ;; lein-test when something changes
                   [com.jakemccrary/lein-test-refresh "0.21.1"]
