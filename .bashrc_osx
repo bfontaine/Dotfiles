@@ -69,7 +69,7 @@ export PATH="$GOPATH/bin:$PATH:/usr/local/opt/go/libexec/bin"
 # Issue with Go imports casing on case-insensitive FSes
 alias downcase-cd='cd $(pwd | tr "[:upper:]" "[:lower:]")'
 
-export MACOSX_DEPLOYMENT_TARGET=10.12
+export MACOSX_DEPLOYMENT_TARGET=10.13
 
 # LaTeX
 export PATH="/usr/local/texlive/2015basic/bin/x86_64-darwin:$PATH"
