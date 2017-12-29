@@ -211,7 +211,7 @@ set laststatus=2
 
 " Syntastic
 let g:syntastic_css_checkers = []
-let g:syntastic_clojure_checkers = [] " temporary 'fix'
+let g:syntastic_clojure_checkers = ['joker']
 let g:syntastic_python_checkers = ['pyflakes']
 let g:syntastic_ruby_checkers = ['rubocop', 'mri']
 let g:syntastic_tex_checkers = ['chktex']
