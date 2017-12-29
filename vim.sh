@@ -192,6 +192,13 @@ else
   echo "WARN: Please install Golang and re-run this script to get Go support"
 fi
 
+# https://github.com/candid82/joker
+if [ x"$(which joker)" != x"" ]; then
+  gh_bundle aclaimant/syntastic-joker
+else
+  echo "WARN: Please install Joker and re-run this script to get Clojure linting support"
+fi
+
 # LaTeX
 #if [ ! -d ${VIM_DIR}/bundle/vim-latex ]; then
 #    cd /tmp
