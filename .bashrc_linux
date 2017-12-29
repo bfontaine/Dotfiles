@@ -39,6 +39,12 @@ if [ -x ~/.linuxbrew/bin/brew ]; then
   export PATH="$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH"
   export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
   export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+
+  # For some reason Linuxbrew tries to auto-update too often.
+  # e.g. "brew update && brew upgrade" triggers an update on the second part
+  # even if it's already up-to-date.
+  export HOMEBREW_NO_AUTOUPDATE=1
+
   . `brew --prefix`/etc/profile.d/z.sh
 fi
 
