@@ -61,6 +61,12 @@
 	autosetupmerge = true
 [merge]
 	conflictStyle = diff3
+[rebase]
+	# When interactively rebasing, automatically mark commits whose message
+	# starts with 'squash!' or 'fixup!' followed by a commit hash as
+	# squashes/fixups of the specified commit.
+	# See https://robots.thoughtbot.com/autosquashing-git-commits
+	autoSquash = true
 [rerere]
 	enabled = true
 [tag]
