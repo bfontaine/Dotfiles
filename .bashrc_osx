@@ -82,3 +82,11 @@ frameworkpython() {
         $BREW_PREFIX/bin/python "$@"
     fi
 }
+
+brew_link_ruby_but_keep_my_rake_thanks() {
+  local path=$(brew --prefix)/bin/rake
+  local tmppath=/tmp/_my_rake
+  mv -fv "$path" "$tmppath"
+  brew link --overwrite ruby
+  mv -fv "$tmppath" "$path"
+}
