@@ -129,7 +129,7 @@ export EDITOR='vim'
 export PS2='… '
 
 # more binaries
-export PATH="$PATH:/usr/local/sbin"
+export PATH="$HOME/bin:$PATH:/usr/local/sbin"
 
 # == Programming ==
 
@@ -226,12 +226,13 @@ if [ -d "$HOME/.gcloud" ]; then
   . $HOME/.gcloud/google-cloud-sdk/completion.bash.inc
 fi
 
-PATH="$HOME/bin:$PATH"
-
 export PLANTUML_LIMIT_SIZE=15000
 
 # Ansible
 export ANSIBLE_NOCOWS=1
 
+alias vpip=./venv/bin/pip
+alias v3="virtualenv --python python3 venv"
+alias freeze="./venv/bin/pip freeze >| requirements.txt"
+
 vpython() { PYTHONPATH=. ./venv/bin/python $*; }
-vpip() { ./venv/bin/pip $*; }
