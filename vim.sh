@@ -97,10 +97,11 @@ done
 # Clang complete: C/C++ autocompletion
 # you need Clang installed (package 'clang' on Ubuntu)
 if [ ! -f ${VIM_DIR}/plugin/clang_complete.vim ]; then
-    cd /tmp/
+    pushd /tmp
     git clone --depth=1 https://github.com/Rip-Rip/clang_complete.git
     make -C clang_complete install
     rm -Rf clang_complete
+    popd
 fi
 
 wzip  8196 plugin/matchit.vim    # Matchit
@@ -154,10 +155,11 @@ fi
 
 # *sh
 if [ ! -f ${VIM_DIR}/syntax/sh.vim ]; then
-    cd tmp
+    pushd /tmp
     wget http://www.drchip.org/astronaut/vim/syntax/sh.vim.gz
     gunzip sh.vim.gz
     mv sh.vim ${VIM_DIR}/syntax/
+    popd
 fi
 
 vim_script syntax/abnf           5805 # ABNF
@@ -201,21 +203,23 @@ fi
 
 # LaTeX
 #if [ ! -d ${VIM_DIR}/bundle/vim-latex ]; then
-#    cd /tmp
+#    pushd /tmp
 #    wget http://bit.ly/vim-latex \
 #        -O vl.tgz
 #    tar -xzf vl.tgz
 #    mv vim-latex-* ${VIM_DIR}/bundle/vim-latex
+#    popd
 #fi
 
 # == Omnicomplete ==
 
 # C++
 if [ ! -f ${VIM_DIR}/doc/clang_complete.txt ]; then
-    cd /tmp/
+    pushd /tmp
     wget http://www.vim.org/scripts/download_script.php?src_id=19588 \
         -Oclang_complete.vmb
     vim clang_complete.vmb -c 'so %' -c 'q'
+    popd
 fi
 
 # Java complete
