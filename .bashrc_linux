@@ -45,7 +45,9 @@ if [ -x ~/.linuxbrew/bin/brew ]; then
   # even if it's already up-to-date.
   export HOMEBREW_NO_AUTOUPDATE=1
 
-  . `brew --prefix`/etc/profile.d/z.sh
+  if [ -f ~/.linuxbrew/etc/profile.d/z.sh ]; then
+    . ~/.linuxbrew/etc/profile.d/z.sh
+  fi
 fi
 
 alias n=nodejs
