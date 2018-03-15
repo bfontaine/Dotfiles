@@ -36,7 +36,7 @@ alias flushDNS='sudo rndc flush'
 # Linuxbrew
 if [ -x ~/.linuxbrew/bin/brew ]; then
   alias b=brew
-  export PATH="$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH"
+  export PATH="$HOME/.linuxbrew/opt/python/libexec/bin:$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH"
   export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
   export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 
