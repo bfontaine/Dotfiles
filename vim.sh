@@ -198,7 +198,7 @@ fi
 if [ x"$(which joker)" != x"" ]; then
   gh_bundle aclaimant/syntastic-joker
 else
-  echo "WARN: Please install Joker and re-run this script to get Clojure linting support"
+  echo "WARN: Please install github.com/candid82/joker and re-run this script to get Clojure linting support"
 fi
 
 # LaTeX
