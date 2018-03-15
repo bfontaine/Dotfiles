@@ -128,7 +128,7 @@ export EDITOR='vim'
 export PS2='… '
 
 # more binaries
-export PATH="$HOME/bin:$PATH:/usr/local/sbin"
+export PATH="$PATH:/usr/local/sbin"
 
 # == Programming ==
 
@@ -212,6 +212,9 @@ elif [[ "`uname -a`" =~ "Ubuntu" ]] || [[ "`uname -a`" =~ "Linux" ]]; then
         . $HOME/.bashrc_linux
     fi
 fi
+
+# Ensure ~/bin is before everything else
+export PATH="$HOME/bin:$PATH"
 
 # Use Go 1.5 vendor directory
 export GO15VENDOREXPERIMENT=1
