@@ -126,7 +126,7 @@ inoremap <f1> <esc>
 vnoremap <f1> <esc>
 
 " disable the manual key
-nnoremap K <nop>
+" nnoremap K <nop>
 
 " open dotfiles
 nnoremap <leader>db :tabnew ~/.bashrc<cr>
