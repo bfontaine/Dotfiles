@@ -67,7 +67,6 @@ PS1_PREFIX=' '
 PS1_SYMBOL='λ'
 
 function _bash_prompt_command {
-
     ## git prompt
 
     local GITPROMPT=
@@ -221,7 +220,7 @@ export GO15VENDOREXPERIMENT=1
 which opam >/dev/null && . .opam/opam-init/init.sh &>/dev/null
 export OCAML_TOPLEVEL_PATH="$HOME/.opam/system/lib/toplevel"
 
-if [ -d "$HOME/.gcloud" ]; then
+if [ -f "$HOME/.gcloud/google-cloud-sdk/path.bash.inc" ]; then
   . $HOME/.gcloud/google-cloud-sdk/path.bash.inc
   . $HOME/.gcloud/google-cloud-sdk/completion.bash.inc
 fi
