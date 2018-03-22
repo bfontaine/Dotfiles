@@ -43,7 +43,7 @@ if [ -x ~/.linuxbrew/bin/brew ]; then
   # For some reason Linuxbrew tries to auto-update too often.
   # e.g. "brew update && brew upgrade" triggers an update on the second part
   # even if it's already up-to-date.
-  export HOMEBREW_NO_AUTOUPDATE=1
+  export HOMEBREW_NO_AUTO_UPDATE=1
 
   if [ -f ~/.linuxbrew/etc/profile.d/z.sh ]; then
     . ~/.linuxbrew/etc/profile.d/z.sh
