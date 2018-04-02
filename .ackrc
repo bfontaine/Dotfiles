@@ -5,6 +5,9 @@
 # follow symlinks
 --follow
 
+# Python
+--ignore-dir=venv
+
 # Go
 --ignore-dir=Godeps
 --ignore-dir=vendor
