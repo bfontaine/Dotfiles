@@ -8,6 +8,9 @@
 # Python
 --ignore-dir=venv
 
+# Java & friends
+--ignore-dir=target
+
 # Go
 --ignore-dir=Godeps
 --ignore-dir=vendor
