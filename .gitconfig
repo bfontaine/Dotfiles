@@ -49,6 +49,8 @@
 [diff]
 	algorithm = patience
 	compactionHeuristic = true
+	# https://git-scm.com/docs/git-diff#git-diff---color-movedltmodegt
+	colorMoved = default
 [grep]
 	extendRegexp = true
 [status]
