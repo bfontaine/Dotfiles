@@ -265,6 +265,7 @@ augroup vimrc_autocmd
     au BufNewFile,BufRead templates/*.html set ft=htmljinja
     au BufNewFile,BufRead *.ics            set ft=icalendar
     au BufNewFile,BufRead *.json           set ft=json
+    au BufNewFile,BufRead *.yml.j2         set ft=yaml
 
     au BufNewFile,BufRead Jenkinsfile      set ft=groovy
     au BufNewFile,BufRead Procfile         set ft=yaml
