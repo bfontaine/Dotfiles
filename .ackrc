@@ -10,6 +10,8 @@
 
 # Java & friends
 --ignore-dir=target
+# Clojure
+--ignore-dir=.lein-repl-history
 
 # Go
 --ignore-dir=Godeps
