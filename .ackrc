@@ -11,7 +11,8 @@
 # Java & friends
 --ignore-dir=target
 # Clojure
---ignore-dir=.lein-repl-history
+# https://beyondgrep.com/documentation/ack-2.04-man.html#is_filename
+--ignore-file=is:.lein-repl-history
 
 # Go
 --ignore-dir=Godeps
