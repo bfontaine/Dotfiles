@@ -35,6 +35,7 @@ venv
 *.edn
 *.csv
 *.db
+*.db-journal
 *.db.*
 *.bak
 *.xlsx
