@@ -2,7 +2,9 @@
 *.tgz
 .*.sw*
 *.log
+*.tar
 *.gz
+*.zip
 .DS_Store
 /env.sh
 # Python
@@ -41,3 +43,8 @@ venv
 *.xlsx
 node_modules
 .sass-cache
+*.edn-*
+*.jsons-*
+/target/classes
+/target/stale
+.lein-failures
