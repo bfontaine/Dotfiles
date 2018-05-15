@@ -1,50 +1,87 @@
+# OS specifics
+
+## macOS
+.DS_Store
+
+# Temporary files
+*.bak
+
+## Vim
 *~
-*.tgz
 .*.sw*
-*.log
+
+## Ansible
+*.retry
+
+## LibreOffice
+.~lock.*
+
+# Archives / compressed files
+*.tgz
 *.tar
 *.gz
 *.zip
-.DS_Store
-/env.sh
-# Python
+
+# Languages
+
+## Python
+venv
 *.pyc
 *.egg-info
 *.pickle
 __pycache__
-venv
 /htmlcov
 /dist
-/TODO
 .coverage
 .tox
 .webassets-cache
-# LibreOffice
-.~lock.*
-# i18n/t10n
-*.mo
-# Ruby
-*.gem
-# Ocaml
+/env.sh
+
+## Ocaml
 *.cmi
 *.cmo
 *.cmx
 *.native
 /_build
-# Ansible
-*.retry
-*.jsons
-*.edn
-*.csv
-*.db
-*.db-journal
-*.db.*
-*.bak
-*.xlsx
-node_modules
-.sass-cache
-*.edn-*
-*.jsons-*
+
+## Ruby
+*.gem
+
+## Clojure
 /target/classes
 /target/stale
 .lein-failures
+
+## Node
+node_modules
+
+## SASS
+.sass-cache
+
+## i18n/t10n
+*.mo
+
+# Personal notes
+/TODO
+/TODO.*
+/NOTES
+/NOTES.*
+
+# Databases
+*.dump
+
+## SQLite
+*.db
+*.db-journal
+*.db.*
+
+# Various data files
+*.jsons
+*.edn
+*.csv
+*.xlsx
+*.edn-*
+*.jsons-*
+
+# Logs
+*.log
