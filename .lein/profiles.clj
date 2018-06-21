@@ -4,6 +4,11 @@
                   ; Check for outdated dependencies
                   [lein-ancient                      "0.6.15"]
 
+                  ; Check for bad coding style
+                  [lein-bikeshed                      "0.5.1"]
+                  [lein-kibit                         "0.1.6"]
+                  [jonase/eastwood                    "0.2.6"]
+
                   ;; lein-test when something changes
                   [com.jakemccrary/lein-test-refresh "0.21.1"]
 
