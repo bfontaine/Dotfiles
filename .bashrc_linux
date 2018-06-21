@@ -50,7 +50,8 @@ if [ -x ~/.linuxbrew/bin/brew ]; then
   fi
 fi
 
-alias n=nodejs
+export BROWSER=google-chrome
+
 which p >/dev/null || \
   alias p="sp play"
 
