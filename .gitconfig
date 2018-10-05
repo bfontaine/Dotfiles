@@ -69,6 +69,7 @@
 	# squashes/fixups of the specified commit.
 	# See https://robots.thoughtbot.com/autosquashing-git-commits
 	autoSquash = true
+	autoStash = true
 [rerere]
 	enabled = true
 [tag]
@@ -82,6 +83,9 @@
 	fsckobjects = true
 [push]
 	default = upstream
+[pull]
+	# git pull == git pull --rebase
+	rebase = true
 # https://groups.google.com/forum/#!topic/binary-transparency/f-BI4o8HZW0
 [transfer]
 	fsckobjects = true
