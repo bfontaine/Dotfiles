@@ -8,13 +8,13 @@ BREW_PREFIX=$(brew --prefix)
 alias b=brew
 
 # z
-if [ -f $BREW_PREFIX/etc/profile.d/z.sh ]; then
-    . $BREW_PREFIX/etc/profile.d/z.sh
+if [ -f "$BREW_PREFIX/etc/profile.d/z.sh" ]; then
+    . "$BREW_PREFIX/etc/profile.d/z.sh"
 fi
 
 # Bash completion
-if [ -f $BREW_PREFIX/etc/bash_completion ]; then
-    . $BREW_PREFIX/etc/bash_completion
+if [ -f "$BREW_PREFIX/etc/bash_completion" ]; then
+    . "$BREW_PREFIX/etc/bash_completion"
 fi
 
 # see github.com/bfontaine/brew-command-not-found
@@ -25,14 +25,17 @@ export HOMEBREW_DEVELOPER=1
 # Disable Homebrew autoupdate
 export HOMEBREW_NO_AUTO_UPDATE=1
 
-# Old Ruby
-alias irb187="/usr/local/opt/ruby187/bin/irb"
-
 # Node
 export NODE_PATH="/usr/local/lib/node_modules:$NODE_PATH"
 
+# Ruby
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+
 # end of brew-related stuff
 fi
+
+# https://github.com/clojars/clojars-web/issues/643
+export GPG_TTY=$(tty)
 
 # Set the color for directories in 'ls' output to bold cyan
 export LSCOLORS=Gxfxcxdxbxegedabagacad
@@ -48,7 +51,7 @@ alias ll="ls -FGhgl"
 
 if [ -f "$HOME/.bash_utils/wrap_alias.sh" ]; then
   # get completion for aliases too
-  . $HOME/.bash_utils/wrap_alias.sh
+  . "$HOME/.bash_utils/wrap_alias.sh"
 fi
 
 export BROWSER="open"
@@ -77,16 +80,8 @@ export PATH="/usr/local/texlive/2015basic/bin/x86_64-darwin:$PATH"
 # See http://matplotlib.org/faq/virtualenv_faq.html
 frameworkpython() {
     if [[ ! -z "$VIRTUAL_ENV" ]]; then
-        PYTHONHOME=$VIRTUAL_ENV $BREW_PREFIX/bin/python "$@"
+        PYTHONHOME=$VIRTUAL_ENV "$BREW_PREFIX/bin/python" "$@"
     else
-        $BREW_PREFIX/bin/python "$@"
+        "$BREW_PREFIX/bin/python" "$@"
     fi
-}
-
-brew_link_ruby_but_keep_my_rake_thanks() {
-  local path=$(brew --prefix)/bin/rake
-  local tmppath=/tmp/_my_rake
-  mv -fv "$path" "$tmppath"
-  brew link --overwrite ruby
-  mv -fv "$tmppath" "$path"
 }
