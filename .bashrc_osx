@@ -1,5 +1,4 @@
-# .bashrc with stuff for OS X only
-
+# .bashrc with stuff for macOS only
 
 which brew >/dev/null
 if [ "$?" = "0" ]; then
@@ -30,6 +29,9 @@ export NODE_PATH="/usr/local/lib/node_modules:$NODE_PATH"
 
 # Ruby
 export PATH="/usr/local/opt/ruby/bin:$PATH"
+if [ -d "/usr/local/lib/ruby/gems/2.5.0/bin" ]; then
+  export PATH="/usr/local/lib/ruby/gems/2.5.0/bin:$PATH"
+fi
 
 # end of brew-related stuff
 fi
