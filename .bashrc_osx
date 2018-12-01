@@ -23,6 +23,8 @@ eval "$(brew command-not-found-init)"
 export HOMEBREW_DEVELOPER=1
 # Disable Homebrew autoupdate
 export HOMEBREW_NO_AUTO_UPDATE=1
+# Cleanup previous versions
+export HOMEBREW_INSTALL_CLEANUP=1
 
 # Node
 export NODE_PATH="/usr/local/lib/node_modules:$NODE_PATH"
