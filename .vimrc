@@ -9,6 +9,8 @@ set background=dark             " dark background
 set backspace=indent,eol,start  " allow backspace on everything in insert mode
 set backup                      " keep a backup file
 set cursorline                  " highlight current line
+set diffopt+=algorithm:patience " better diffs
+set diffopt+=indent-heuristic   " https://vimways.org/2018/the-power-of-diff/
 set encoding=utf-8              " set UTF-8 encoding
 set ff=unix                     " default file types: UNIX
 set foldmethod=manual           " manual folding
@@ -19,19 +21,19 @@ set history=40                  " more command history
 set hlsearch                    " highlight current search
 set ignorecase                  " ignore case for '/regex' search
 set incsearch                   " incremental search with '/regex' search
+set lazyredraw                  " turn on lazy redraw (performance++)
 set linebreak                   " don't wrap text in the middle of a word
+set list                        " display unprintable chars (see listchars)
+set listchars=tab:▸\ ,trail:·   " see 'list' above
 set magic                       " set magic for regex
 set matchtime=3                 " show the matching parent .3sec (default: .5)
 set modelines=0                 " no modelines
 set noautoread                  " don't re-read a file changed outside of Vim
 set nofoldenable                " don't fold by default
 set nojoinspaces                " use only one space after a dot
-set lazyredraw                  " turn on lazy redraw (performance++)
-set list                        " display unprintable chars (see listchars)
-set listchars=tab:▸\ ,trail:·   " see 'list' above
+set nospell                     " do not use spell checking
 set number                      " display line numbers
 set numberwidth=1               " use only 1 column (+ 1 space) while possible
-set nospell                     " do not use spell checking
 set pumheight=10                " size of completion window: 10 lines
 set ruler                       " show the cursor position all the time
 set scrolloff=5                 " keep 5 context lines above/below the cursor
