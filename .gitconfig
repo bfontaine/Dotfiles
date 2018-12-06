@@ -98,3 +98,5 @@
 	user = bfontaine
 [git-up "bundler"]
 	check = true
+[web]
+	browser = chrome
