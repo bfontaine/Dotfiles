@@ -276,6 +276,7 @@ augroup vimrc_autocmd
     au BufNewFile,BufRead pylintrc         set ft=config
     au BufNewFile,BufRead Vagrantfile      set ft=ruby
     au BufNewFile,BufRead .zprintrc        set ft=clojure
+    au BufNewFile,BufRead .jshintrc        set ft=json
 
     " autocomplete
     au FileType c          setlocal ofu=ccomplete#Complete
