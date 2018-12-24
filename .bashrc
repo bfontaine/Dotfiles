@@ -188,6 +188,12 @@ alias ct=cat
 alias ff='find . -name "*~" -type f -delete'
 alias sv='sudo vim -p'
 
+if [ x"$(which node)" != x ]; then
+  alias n=node
+else
+  alias n=nodejs
+fi
+
 # Setup Amazon EC2 Command-Line Tools
 export EC2_HOME=$HOME/.ec2
 
@@ -238,3 +244,4 @@ alias v3="virtualenv --python python3 venv"
 alias freeze="./venv/bin/pip freeze >| requirements.txt"
 
 vpython() { PYTHONPATH=. ./venv/bin/python $*; }
+zprint_inplace() { zprint < $1 | sponge $1; }
