@@ -68,9 +68,10 @@ set wildignore+=*.mo            " other compiled files
 set wildignore+=*.odt,*.pdf     " other binary files
 set wildignore+=venv,htmlcov    " directories
 set wildignore+=__pycache__
+set wildignore+=target,out,Godeps
 set wildignore+=*.jar,*.zip     " archives / compressed files
 set wildignore+=*.gz,*.tar
-set wildignore+=*.db
+set wildignore+=*.db            " SQLite
 
 " indenting
 
@@ -199,9 +200,14 @@ let g:cssColorVimDoNotMessMyUpdatetime=1
 let g:CommandTFileScanner="find"
 let g:CommandTMaxHeight=30
 let g:CommandTWildIgnore=&wildignore
-let g:CommandTWildIgnore.=",**/Godeps/**,**/node_modules/**,**/*.class"
-let g:CommandTWildIgnore.=",**/*.db"
-let g:CommandTWildIgnore.=",venv/**"
+
+" CommandT requires '/*' at the end of dirs to work
+" https://github.com/wincent/command-t/issues/305
+let g:CommandTWildIgnore.=",*/venv/*,*/target/*,*/target-back/*,*/out/*,*/Godeps/*"
+" Images
+let g:CommandTWildIgnore.=",*.svg,*.ico"
+" Java
+let g:CommandTWildIgnore.=",**/*.class"
 
 " Fugitive
 nnoremap <leader>gb :Gblame<cr>
