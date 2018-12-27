@@ -276,6 +276,7 @@ augroup vimrc_autocmd
     au BufNewFile,BufRead *.json           set ft=json
     au BufNewFile,BufRead *.yml.j2         set ft=yaml
 
+    au BufNewFile,BufRead build.boot       set ft=clojure
     au BufNewFile,BufRead Jenkinsfile      set ft=groovy
     au BufNewFile,BufRead Procfile         set ft=yaml
     au BufNewFile,BufRead .cookiecutterrc  set ft=yaml
