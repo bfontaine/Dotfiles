@@ -1,4 +1,4 @@
-{:user {:plugins [[lein-cloverage                    "1.0.9"]
+{:user {:plugins [[lein-cloverage                    "1.0.13"]
                   [lein-fore-prob                    "0.1.2"]
 
                   ; Check for outdated dependencies
@@ -7,13 +7,13 @@
                   ; Check for bad coding style
                   [lein-bikeshed                      "0.5.1"]
                   [lein-kibit                         "0.1.6"]
-                  [jonase/eastwood                    "0.2.6"]
+                  [jonase/eastwood                    "0.3.4"]
 
                   ;; lein-test when something changes
-                  [com.jakemccrary/lein-test-refresh "0.21.1"]
+                  [com.jakemccrary/lein-test-refresh "0.23.0"]
 
-                  [lein-figwheel                     "0.5.10"]
-                  [venantius/ultra                   "0.5.1"]]
+                  [lein-figwheel                     "0.5.18"]
+                  [venantius/ultra                   "0.5.2"]]
 
         :dependencies [[org.clojure/tools.namespace  "0.2.11"]]
 
