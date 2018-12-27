@@ -12,6 +12,10 @@
                   ;; lein-test when something changes
                   [com.jakemccrary/lein-test-refresh "0.23.0"]
 
+                  ;; generate tags file
+                  ;; https://acidwords.com/posts/2016-12-29-code-indexing-with-lein-codeindex.html
+                  [lein-codeindex                    "0.1.0"]
+
                   [lein-figwheel                     "0.5.18"]
                   [venantius/ultra                   "0.5.2"]]
 
