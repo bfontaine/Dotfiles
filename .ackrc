@@ -10,9 +10,11 @@
 
 # Java & friends
 --ignore-dir=target
+--ignore-dir=target-back
 # Clojure
 # https://beyondgrep.com/documentation/ack-2.04-man.html#is_filename
 --ignore-file=is:.lein-repl-history
+--ignore-dir=out
 
 # Go
 --ignore-dir=Godeps
