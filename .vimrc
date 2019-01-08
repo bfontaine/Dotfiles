@@ -313,8 +313,6 @@ augroup vimrc_autocmd
     au FileType clojure,scala RainbowParenthesesLoadRound
     " https://github.com/guns/vim-clojure-highlight#rainbow-parentheses-and-other-syntax-extensions
     au Syntax clojure RainbowParenthesesLoadRound
-    " https://github.com/guns/vim-clojure-highlight#eager-loading
-    au BufRead *.clj,*.cljc,*.cljs try | silent! Require | catch /^Fireplace/ | endtry
 
     au FileType json       setlocal nocursorline
     au FileType txt        setlocal spell
