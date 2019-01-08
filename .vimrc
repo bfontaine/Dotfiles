@@ -4,17 +4,26 @@ set nocompatible " no compatible with VI
 " https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/bundle')
 
-Plug 'tpope/vim-abolish'      " %s on steroids
-Plug 'tpope/vim-commentary'   " simpler mapping for line comments
-Plug 'tpope/vim-endwise'      " add 'end' in Ruby files when using if/def/…
+Plug 'tpope/vim-abolish'               " %s on steroids
+Plug 'tpope/vim-commentary'            " simpler mapping for line comments
+Plug 'tpope/vim-endwise'               " add 'end' in Ruby files when using if/def/…
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-haml'         " HAML, Sass, SCSS syntax
-Plug 'tpope/vim-markdown'     " Markdown syntax
-Plug 'tpope/vim-repeat'       " Repeat plugin commands with '.'
-Plug 'tpope/vim-speeddating'  " Increment dates w/ <C-A> and <C-X>
-Plug 'tpope/vim-surround'     " parentheses, quotes, XML/HTML tags
+Plug 'tpope/vim-haml'                  " HAML, Sass, SCSS syntax
+Plug 'tpope/vim-markdown'              " Markdown syntax
+Plug 'tpope/vim-repeat'                " Repeat plugin commands with '.'
+Plug 'tpope/vim-speeddating'           " Increment dates w/ <C-A> and <C-X>
+Plug 'tpope/vim-surround'              " parentheses, quotes, XML/HTML tags
+Plug 'tell-k/vim-autopep8'             " autopep8
+Plug 'ConradIrwin/vim-bracketed-paste' " Bracketed paste
+Plug 'Raimondi/delimitMate'            " DelimitMate
+Plug 'sjl/gundo.vim'                   " Gundo
+Plug 'mattn/emmet-vim'                 " Emmet (Zencoding-like plugin)
+Plug 'alvan/vim-closetag'              " Auto-insert HTML closing tags
+Plug 'godlygeek/tabular'               " Tabular
+Plug 'Rip-Rip/clang_complete'          " C/C++ completion
 
 " SnipMate and its dependencies
+" TODO use https://github.com/SirVer/ultisnips instead
 Plug 'tomtom/tlib_vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'garbas/vim-snipmate'
@@ -27,29 +36,25 @@ Plug 'guns/vim-clojure-highlight'
 Plug 'guns/vim-sexp'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
 
-Plug 'tell-k/vim-autopep8'             " autopep8
-Plug 'ConradIrwin/vim-bracketed-paste' " Bracketed paste
-Plug 'Raimondi/delimitMate'            " DelimitMate
-Plug 'sjl/gundo.vim'                   " Gundo
-Plug 'venantius/vim-eastwood'          " Eastwood for Vim
-Plug 'mattn/emmet-vim'                 " Emmet (Zencoding-like plugin)
-
 " Use https://gist.github.com/baopham/1838072 for Monaco and
 " https://github.com/powerline/fonts for other fonts
 Plug 'vim-airline/vim-airline'      " Airline
 Plug 'kien/rainbow_parentheses.vim' " Rainbow Parentheses (for Scala/Clojure)
-Plug 'scrooloose/syntastic'         " Syntastic
-Plug 'godlygeek/tabular'            " Tabular
+Plug 'scrooloose/syntastic'         " Syntastic (TODO use ALE: https://github.com/w0rp/ale)
 
+" = Syntax =
 Plug 'kchmck/vim-coffee-script'    " CoffeeScript
 Plug 'rhysd/vim-crystal'           " Crystal
 Plug 'hail2u/vim-css3-syntax'      " CSS3
 Plug 'ekalinin/Dockerfile.vim'     " Dockerfile
 Plug 'killphi/vim-ebnf'            " EBNF
 Plug 'dag/vim-fish'                " Fish
+Plug 'fatih/vim-go', {'for': 'go'} " Go
 Plug 'xu-cheng/brew.vim'           " Homebrew formulae
 Plug 'bfontaine/Brewfile.vim'      " Homebrew bundle
 Plug 'pangloss/vim-javascript'     " JavaScript
+Plug 'Glench/Vim-Jinja2-Syntax'    " Jinja
+Plug 'elzr/vim-json'               " JSON
 Plug 'mxw/vim-jsx'                 " JSX
 Plug 'iqqmuT/vim-k'                " K
 Plug 'groenewege/vim-less'         " LESS
@@ -57,7 +62,6 @@ Plug 'plasticboy/vim-markdown'     " Markdown
 Plug 'juvenn/mustache.vim'         " Mustache
 Plug 'cespare/vim-toml'            " TOML
 Plug 'evidens/vim-twig'            " Twig
-Plug 'fatih/vim-go', {'for': 'go'} " Go
 
 " TODO Use Denite instead
 Plug 'wincent/Command-T', {'do': 'cd ruby/command-t/ext/command-t; $(vim --version \| grep -Eo -m 1 \"/\S+ruby/[0-9.]+/lib\" \| head -1 \| sed \"s%lib$%bin/ruby%\") extconf.rb; make'}
