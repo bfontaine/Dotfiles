@@ -1,4 +1,8 @@
-{:user {:plugins [[lein-cloverage                    "1.0.13"]
+{:user {:plugins [; https://github.com/clojure-emacs/cider-nrepl#via-leiningen
+                  [cider/cider-nrepl                 "0.19.0"]
+                  [refactor-nrepl                    "2.4.0"]
+
+                  [lein-cloverage                    "1.0.13"]
                   [lein-fore-prob                    "0.1.2"]
 
                   ; Check for outdated dependencies

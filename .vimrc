@@ -245,6 +245,11 @@ let g:user_emmet_expandabbr_key='<leader>h'
 " *sh syntax
 let g:sg_no_error=1
 
+" Sexp (Clojure)
+" Disable insert mode mappings because they might conflict with demimitMate.
+" Remove me if that’s not the case.
+let g:sexp_enable_insert_mode_mappings = 0
+
 " -- functions --
 
 fun Set_indent(width)
@@ -306,6 +311,10 @@ augroup vimrc_autocmd
     au FileType javascript let b:delimitMate_expand_space=1
     au FileType clojure,scala RainbowParenthesesActivate
     au FileType clojure,scala RainbowParenthesesLoadRound
+    " https://github.com/guns/vim-clojure-highlight#rainbow-parentheses-and-other-syntax-extensions
+    au Syntax clojure RainbowParenthesesLoadRound
+    " https://github.com/guns/vim-clojure-highlight#eager-loading
+    au BufRead *.clj,*.cljc,*.cljs try | silent! Require | catch /^Fireplace/ | endtry
 
     au FileType json       setlocal nocursorline
     au FileType txt        setlocal spell

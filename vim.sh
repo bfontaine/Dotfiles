@@ -86,11 +86,27 @@ wzip() { # script_id test_file
 vim_script autoload/pathogen    16224 # Pathogen
 vim_script scripts/closetag.vim  4318 # Close tag
 
-# endwise : add 'end' in Ruby files when using if/def/…
-# haml    : HAML, Sass, SCSS syntax
-# markdown: Markdown syntax
-# surround: parentheses, quotes, XML/HTML tags
-for plugin in endwise haml markdown surround; do
+# === Tim Pope’s plugins ===
+# abolish:     %s on steroids
+# commentary:  simpler mapping for line comments:²
+# endwise:     add 'end' in Ruby files when using if/def/…
+# fugitive
+# haml:        HAML, Sass, SCSS syntax
+# markdown:    Markdown syntax
+# repeat:      Repeat plugin commands with "."
+# speeddating: Increment dates w/ <C-A> and <C-X>
+# surround:    parentheses, quotes, XML/HTML tags
+for plugin in \
+  abolish \
+  commentary \
+  endwise \
+  fugitive \
+  haml \
+  markdown \
+  repeat \
+  speeddating \
+  surround \
+  ; do
     gh_bundle tpope/vim-${plugin}
 done
 
@@ -112,16 +128,19 @@ gh_bundle MarcWeber/vim-addon-mw-utils
 gh_bundle garbas/vim-snipmate
 
 # Vim-fireplace and its dependencies (Clojure toolset)
-# gh_bundle tpope/vim-salve         # Static support for Leiningen
-# gh_bundle tpope/vim-projectionist
-# gh_bundle tpope/vim-dispatch      # Async build & test dispatcher
-# gh_bundle tpope/vim-fireplace     # Clojure REPL support
+gh_bundle tpope/vim-salve         # Static support for Leiningen
+gh_bundle tpope/vim-projectionist
+gh_bundle tpope/vim-dispatch      # Async build & test dispatcher
+gh_bundle tpope/vim-fireplace     # Clojure REPL support
 
-gh_bundle tpope/vim-abolish      # Abolish: %s on steroids
+# Clojure
+gh_bundle guns/vim-clojure-highlight
+gh_bundle guns/vim-sexp
+gh_bundle tpope/vim-sexp-mappings-for-regular-people
+
 gh_bundle tell-k/vim-autopep8    # autopep8
 gh_bundle ConradIrwin/vim-bracketed-paste # Bracketed paste
 gh_bundle Raimondi/delimitMate   # DelimitMate
-gh_bundle tpope/vim-fugitive     # Fugitive
 gh_bundle sjl/gundo.vim          # Gundo
 gh_bundle venantius/vim-eastwood # Eastwood for Vim
 gh_bundle mattn/emmet-vim        # Emmet (Zencoding-like plugin)
@@ -129,8 +148,6 @@ gh_bundle mattn/emmet-vim        # Emmet (Zencoding-like plugin)
 # https://github.com/powerline/fonts for other fonts
 gh_bundle vim-airline/vim-airline # Airline
 gh_bundle kien/rainbow_parentheses.vim # Rainbow Parentheses (for Scala/Clojure)
-gh_bundle tpope/vim-repeat       # Repeat plugin commands with "."
-gh_bundle tpope/vim-speeddating  # Increment dates w/ <C-A> and <C-X>
 gh_bundle scrooloose/syntastic   # Syntastic
 gh_bundle godlygeek/tabular      # Tabular
 
