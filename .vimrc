@@ -21,6 +21,7 @@ Plug 'mattn/emmet-vim'                 " Emmet (Zencoding-like plugin)
 Plug 'alvan/vim-closetag'              " Auto-insert HTML closing tags
 Plug 'godlygeek/tabular'               " Tabular
 Plug 'Rip-Rip/clang_complete'          " C/C++ completion
+Plug 'mhinz/vim-grepper'               " grep
 
 " SnipMate and its dependencies
 " TODO use https://github.com/SirVer/ultisnips instead
