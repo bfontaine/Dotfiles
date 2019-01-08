@@ -1,9 +1,68 @@
 set nocompatible " no compatible with VI
 
-filetype off
-execute pathogen#infect()
-" call pathogen#helptags()
-filetype plugin indent on
+" Plugins (WIP; see vim.sh)
+" https://github.com/junegunn/vim-plug
+call plug#begin('~/.vim/bundle')
+
+Plug 'tpope/vim-abolish'      " %s on steroids
+Plug 'tpope/vim-commentary'   " simpler mapping for line comments
+Plug 'tpope/vim-endwise'      " add 'end' in Ruby files when using if/def/…
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-haml'         " HAML, Sass, SCSS syntax
+Plug 'tpope/vim-markdown'     " Markdown syntax
+Plug 'tpope/vim-repeat'       " Repeat plugin commands with '.'
+Plug 'tpope/vim-speeddating'  " Increment dates w/ <C-A> and <C-X>
+Plug 'tpope/vim-surround'     " parentheses, quotes, XML/HTML tags
+
+" SnipMate and its dependencies
+Plug 'tomtom/tlib_vim'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'garbas/vim-snipmate'
+
+" Clojure
+Plug 'guns/vim-clojure-static'
+Plug 'tpope/vim-dispatch'                         " Async build & test dispatcher
+Plug 'tpope/vim-fireplace'                        " Clojure REPL support
+Plug 'guns/vim-clojure-highlight'
+Plug 'guns/vim-sexp'
+Plug 'tpope/vim-sexp-mappings-for-regular-people'
+
+Plug 'tell-k/vim-autopep8'             " autopep8
+Plug 'ConradIrwin/vim-bracketed-paste' " Bracketed paste
+Plug 'Raimondi/delimitMate'            " DelimitMate
+Plug 'sjl/gundo.vim'                   " Gundo
+Plug 'venantius/vim-eastwood'          " Eastwood for Vim
+Plug 'mattn/emmet-vim'                 " Emmet (Zencoding-like plugin)
+
+" Use https://gist.github.com/baopham/1838072 for Monaco and
+" https://github.com/powerline/fonts for other fonts
+Plug 'vim-airline/vim-airline'      " Airline
+Plug 'kien/rainbow_parentheses.vim' " Rainbow Parentheses (for Scala/Clojure)
+Plug 'scrooloose/syntastic'         " Syntastic
+Plug 'godlygeek/tabular'            " Tabular
+
+Plug 'kchmck/vim-coffee-script'    " CoffeeScript
+Plug 'rhysd/vim-crystal'           " Crystal
+Plug 'hail2u/vim-css3-syntax'      " CSS3
+Plug 'ekalinin/Dockerfile.vim'     " Dockerfile
+Plug 'killphi/vim-ebnf'            " EBNF
+Plug 'dag/vim-fish'                " Fish
+Plug 'xu-cheng/brew.vim'           " Homebrew formulae
+Plug 'bfontaine/Brewfile.vim'      " Homebrew bundle
+Plug 'pangloss/vim-javascript'     " JavaScript
+Plug 'mxw/vim-jsx'                 " JSX
+Plug 'iqqmuT/vim-k'                " K
+Plug 'groenewege/vim-less'         " LESS
+Plug 'plasticboy/vim-markdown'     " Markdown
+Plug 'juvenn/mustache.vim'         " Mustache
+Plug 'cespare/vim-toml'            " TOML
+Plug 'evidens/vim-twig'            " Twig
+Plug 'fatih/vim-go', {'for': 'go'} " Go
+
+" TODO Use Denite instead
+Plug 'wincent/Command-T', {'do': 'cd ruby/command-t/ext/command-t; $(vim --version \| grep -Eo -m 1 \"/\S+ruby/[0-9.]+/lib\" \| head -1 \| sed \"s%lib$%bin/ruby%\") extconf.rb; make'}
+
+call plug#end()
 
 set background=dark             " dark background
 set backspace=indent,eol,start  " allow backspace on everything in insert mode

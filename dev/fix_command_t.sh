@@ -1,12 +1,6 @@
 #! /bin/bash
 
-DIR="$HOME/.vim/bundle/Command-T/ruby/command-t"
-
-if [ -d "$DIR/ext/command-t" ]; then
-  DIR="$DIR/ext/command-t"
-fi
-
-cd "$DIR" || exit
+cd "$HOME/.vim/bundle/Command-T/ruby/command-t/ext/command-t" || exit
 
 ruby=$(vim --version | grep -Eo -m 1 '/\S+ruby/[0-9.]+/lib' | head -1 | sed 's%lib$%bin/ruby%')
 
