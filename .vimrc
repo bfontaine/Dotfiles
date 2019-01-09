@@ -38,9 +38,6 @@ Plug 'alvan/vim-closetag'              " Auto-insert HTML closing tags
 " == Ruby ==
 Plug 'tpope/vim-endwise'               " Auto-insert 'end' in Ruby & more
 
-" = Motion =
-Plug 'justinmk/vim-sneak' " sfoo = /foo<cr> aka jump to next occ. of 'foo'
-
 " = Command Mode =
 Plug 'tpope/vim-abolish'               " %s on steroids
 
