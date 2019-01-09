@@ -1,27 +1,81 @@
 set nocompatible " no compatible with VI
 
-" Plugins (WIP; see vim.sh)
+" Plugins
 " https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/bundle')
 
-Plug 'tpope/vim-abolish'               " %s on steroids
-Plug 'tpope/vim-commentary'            " simpler mapping for line comments
-Plug 'tpope/vim-endwise'               " add 'end' in Ruby files when using if/def/…
+" = Basics =
+Plug 'tpope/vim-sensible'              " A bit like normalize.css for Vim
+Plug 'ConradIrwin/vim-bracketed-paste' " Bracketed paste
+
+" = Global Tools =
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-haml'                  " HAML, Sass, SCSS syntax
-Plug 'tpope/vim-markdown'              " Markdown syntax
 Plug 'tpope/vim-repeat'                " Repeat plugin commands with '.'
 Plug 'tpope/vim-speeddating'           " Increment dates w/ <C-A> and <C-X>
 Plug 'tpope/vim-surround'              " parentheses, quotes, XML/HTML tags
-Plug 'tell-k/vim-autopep8'             " autopep8
-Plug 'ConradIrwin/vim-bracketed-paste' " Bracketed paste
+Plug 'godlygeek/tabular'               " Tabular
+Plug 'mhinz/vim-grepper'               " grep
 Plug 'Raimondi/delimitMate'            " DelimitMate
 Plug 'sjl/gundo.vim'                   " Gundo
-Plug 'mattn/emmet-vim'                 " Emmet (Zencoding-like plugin)
-Plug 'alvan/vim-closetag'              " Auto-insert HTML closing tags
-Plug 'godlygeek/tabular'               " Tabular
+
+" = Languages Specifics =
+
+" == C/C++ ==
 Plug 'Rip-Rip/clang_complete'          " C/C++ completion
-Plug 'mhinz/vim-grepper'               " grep
+
+" == Clojure ==
+Plug 'guns/vim-clojure-static'
+Plug 'tpope/vim-dispatch'                         " Async build & test dispatcher
+Plug 'tpope/vim-fireplace'                        " Clojure REPL support
+Plug 'guns/vim-clojure-highlight'
+Plug 'guns/vim-sexp'
+Plug 'tpope/vim-sexp-mappings-for-regular-people'
+Plug 'kien/rainbow_parentheses.vim'               " Rainbow Parentheses
+
+" == HTML ==
+Plug 'alvan/vim-closetag'              " Auto-insert HTML closing tags
+
+" == Ruby ==
+Plug 'tpope/vim-endwise'               " Auto-insert 'end' in Ruby & more
+
+" = Motion =
+Plug 'justinmk/vim-sneak' " sfoo = /foo<cr> aka jump to next occ. of 'foo'
+
+" = Command Mode =
+Plug 'tpope/vim-abolish'               " %s on steroids
+
+" = Visual Mode =
+Plug 'nelstrom/vim-visual-star-search' " * = search what's selected
+Plug 'tpope/vim-commentary'            " comment stuff with gcc / gc+motion
+
+" = Syntax =
+Plug 'vim-scripts/abnf'                           " ABNF
+Plug 'kchmck/vim-coffee-script'                   " CoffeeScript
+Plug 'rhysd/vim-crystal'                          " Crystal
+Plug 'hail2u/vim-css3-syntax'                     " CSS3
+Plug 'ekalinin/Dockerfile.vim'                    " Dockerfile
+Plug 'killphi/vim-ebnf'                           " EBNF
+Plug 'dag/vim-fish'                               " Fish
+Plug 'fatih/vim-go', {'for': 'go'}                " Go
+Plug 'xu-cheng/brew.vim'                          " Homebrew formulae
+Plug 'bfontaine/Brewfile.vim'                     " Homebrew bundle
+Plug 'vim-scripts/icalendar.vim'                  " icalendar
+Plug 'vim-scripts/Io-programming-language-syntax' " Io
+Plug 'pangloss/vim-javascript'                    " JavaScript
+Plug 'Glench/Vim-Jinja2-Syntax'                   " Jinja
+Plug 'elzr/vim-json'                              " JSON
+Plug 'mxw/vim-jsx'                                " JSX
+Plug 'iqqmuT/vim-k'                               " K
+Plug 'groenewege/vim-less'                        " LESS
+Plug 'plasticboy/vim-markdown'                    " Markdown
+Plug 'mustache/vim-mustache-handlebars'           " Mustache
+Plug 'cespare/vim-toml'                           " TOML
+Plug 'lumiliet/vim-twig'                          " Twig
+
+" TODO Use Denite instead
+Plug 'wincent/Command-T', {'do': 'cd ruby/command-t/ext/command-t; $(vim --version \| grep -Eo -m 1 \"/\S+ruby/[0-9.]+/lib\" \| head -1 \| sed \"s%lib$%bin/ruby%\") extconf.rb; make'}
+
+" = Stuff to review/sort in other categories =
 
 " SnipMate and its dependencies
 " TODO use https://github.com/SirVer/ultisnips instead
@@ -29,43 +83,10 @@ Plug 'tomtom/tlib_vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'garbas/vim-snipmate'
 
-" Clojure
-Plug 'guns/vim-clojure-static'
-Plug 'tpope/vim-dispatch'                         " Async build & test dispatcher
-Plug 'tpope/vim-fireplace'                        " Clojure REPL support
-Plug 'guns/vim-clojure-highlight'
-Plug 'guns/vim-sexp'
-Plug 'tpope/vim-sexp-mappings-for-regular-people'
-
 " Use https://gist.github.com/baopham/1838072 for Monaco and
 " https://github.com/powerline/fonts for other fonts
 Plug 'vim-airline/vim-airline'      " Airline
-Plug 'kien/rainbow_parentheses.vim' " Rainbow Parentheses (for Scala/Clojure)
 Plug 'scrooloose/syntastic'         " Syntastic (TODO use ALE: https://github.com/w0rp/ale)
-
-" = Syntax =
-Plug 'kchmck/vim-coffee-script'    " CoffeeScript
-Plug 'rhysd/vim-crystal'           " Crystal
-Plug 'hail2u/vim-css3-syntax'      " CSS3
-Plug 'ekalinin/Dockerfile.vim'     " Dockerfile
-Plug 'killphi/vim-ebnf'            " EBNF
-Plug 'dag/vim-fish'                " Fish
-Plug 'fatih/vim-go', {'for': 'go'} " Go
-Plug 'xu-cheng/brew.vim'           " Homebrew formulae
-Plug 'bfontaine/Brewfile.vim'      " Homebrew bundle
-Plug 'pangloss/vim-javascript'     " JavaScript
-Plug 'Glench/Vim-Jinja2-Syntax'    " Jinja
-Plug 'elzr/vim-json'               " JSON
-Plug 'mxw/vim-jsx'                 " JSX
-Plug 'iqqmuT/vim-k'                " K
-Plug 'groenewege/vim-less'         " LESS
-Plug 'plasticboy/vim-markdown'     " Markdown
-Plug 'juvenn/mustache.vim'         " Mustache
-Plug 'cespare/vim-toml'            " TOML
-Plug 'evidens/vim-twig'            " Twig
-
-" TODO Use Denite instead
-Plug 'wincent/Command-T', {'do': 'cd ruby/command-t/ext/command-t; $(vim --version \| grep -Eo -m 1 \"/\S+ruby/[0-9.]+/lib\" \| head -1 \| sed \"s%lib$%bin/ruby%\") extconf.rb; make'}
 
 call plug#end()
 
@@ -368,6 +389,7 @@ augroup vimrc_autocmd
     " filetypes settings
     au FileType c call Set_indent(8)
     au FileType go,markdown,php,python call Set_indent(4)
+    au FileType gitconfig setlocal commentstring=#\ %s
     au FileType dockerfile,html,htmljinja,liquid setlocal tw=0
     au FileType rust setlocal tw=79
 
