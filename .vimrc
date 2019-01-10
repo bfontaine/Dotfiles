@@ -18,6 +18,15 @@ Plug 'mhinz/vim-grepper'               " grep
 Plug 'Raimondi/delimitMate'            " DelimitMate
 Plug 'sjl/gundo.vim'                   " Gundo
 
+" = Autocomplete =
+
+" Deoplete
+" You need to `pip3 install --user pynvim` + :call deoplate#enable()
+" TODO customize it to hide the preview window + complete ONLY on request
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+
 " = Languages Specifics =
 
 " == C/C++ ==
@@ -31,6 +40,7 @@ Plug 'guns/vim-clojure-highlight'
 Plug 'guns/vim-sexp'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'kien/rainbow_parentheses.vim'               " Rainbow Parentheses
+Plug 'clojure-vim/async-clj-omni'                 " Deoplete
 
 " == HTML ==
 Plug 'alvan/vim-closetag'              " Auto-insert HTML closing tags
@@ -200,10 +210,13 @@ endfun
 " -- Global Mappings --
 
 let mapleader = ","
+let maplocalleader = " "
 
 " move up and down on long wrapped lines
 nnoremap j gj
 nnoremap k gk
+vnoremap j gj
+vnoremap k gk
 
 " avoid errors
 nnoremap <f1> <esc>
@@ -321,9 +334,6 @@ let g:go_fmt_command = "goimports"
 " Vim-latex
 let g:tex_flavor='latex'
 
-" Zencoding
-let g:user_emmet_expandabbr_key='<leader>h'
-
 " *sh syntax
 let g:sg_no_error=1
 
@@ -331,6 +341,11 @@ let g:sg_no_error=1
 " Disable insert mode mappings because they might conflict with demimitMate.
 " Remove me if that’s not the case.
 let g:sexp_enable_insert_mode_mappings = 0
+
+" Deoplete
+" https://github.com/clojure-vim/async-clj-omni#deoplete
+let g:deoplete#keyword_patterns = {}
+let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.#]*'
 
 " -- functions --
 
