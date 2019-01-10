@@ -82,7 +82,7 @@ Plug 'cespare/vim-toml'                           " TOML
 Plug 'lumiliet/vim-twig'                          " Twig
 
 " TODO Use Denite instead
-Plug 'wincent/Command-T', {'do': 'cd ruby/command-t/ext/command-t; $(vim --version \| grep -Eo -m 1 \"/\S+ruby/[0-9.]+/lib\" \| head -1 \| sed \"s%lib$%bin/ruby%\") extconf.rb; make'}
+Plug 'wincent/Command-T', {'do': 'cd ruby/command-t/ext/command-t; r=$(vim --version \| grep -Eo -m 1 \"/\S+ruby/[0-9.]+/lib\" \| head -1 \| sed \"s%lib$%bin/ruby%\");[ -z \"$r\" ] && r=ruby; \"$r\" extconf.rb; make'}
 
 " = Stuff to review/sort in other categories =
 
