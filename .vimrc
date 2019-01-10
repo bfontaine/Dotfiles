@@ -9,7 +9,6 @@ Plug 'tpope/vim-sensible'              " A bit like normalize.css for Vim
 Plug 'ConradIrwin/vim-bracketed-paste' " Bracketed paste
 
 " = Global Tools =
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'                " Repeat plugin commands with '.'
 Plug 'tpope/vim-speeddating'           " Increment dates w/ <C-A> and <C-X>
 Plug 'tpope/vim-surround'              " parentheses, quotes, XML/HTML tags
@@ -18,8 +17,11 @@ Plug 'mhinz/vim-grepper'               " grep
 Plug 'Raimondi/delimitMate'            " DelimitMate
 Plug 'sjl/gundo.vim'                   " Gundo
 
-" = Autocomplete =
+" = Git =
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter' " +-~ in gutter
 
+" = Autocomplete =
 " Deoplete
 " You need to `pip3 install --user pynvim` + :call deoplate#enable()
 " TODO customize it to hide the preview window + complete ONLY on request
