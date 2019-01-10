@@ -349,6 +349,9 @@ let g:sexp_enable_insert_mode_mappings = 0
 let g:deoplete#keyword_patterns = {}
 let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.#]*'
 
+" Git
+let g:gitgutter_diff_args = '-w' " no space changes, thanks
+
 " -- functions --
 
 fun Set_indent(width)
