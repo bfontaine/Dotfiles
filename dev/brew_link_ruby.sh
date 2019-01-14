@@ -4,7 +4,7 @@ if [ -z "$(uname -a | grep Linux)" ]; then
 fi
 
 pushd "$(mktemp -d)" 2>/dev/null || exit 1
-list="$(brew link --overwrite --dry-run ruby | grep -v 'Would remove:')"
+list="$(brew link --overwrite --dry-run ruby | grep -v 'Would remove:' | sed 's/ ->.*//g')"
 [ -z "$list" ] && brew link ruby && exit 0
 
 /bin/mv $list .
