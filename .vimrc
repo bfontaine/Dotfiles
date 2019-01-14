@@ -143,6 +143,7 @@ set timeout                     " wait max 1sec for :mappings
 set timeoutlen=800              " reduce waiting time to 0.8sec
 set title                       " show title in console title bar
 set titleold=""                 " don't show 'Thanks for flying Vim' on exit
+set updatetime=1000             " write the swap often; update vim-gitgutter often too
 set undodir=~/.vim/backups      " keep undo history accross sessions
 set undofile                    " see 'undodir' above
 set virtualedit+=block          " virtual editing in visual block mode
