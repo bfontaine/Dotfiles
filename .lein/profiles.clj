@@ -17,7 +17,11 @@
                   [com.jakemccrary/lein-test-refresh "0.23.0"]
 
                   [lein-figwheel                     "0.5.18"]
+                  #_ ; breaks the repl
                   [venantius/ultra                   "0.5.2"]]
+
+        :middleware [cider-nrepl.plugin/middleware
+                     refactor-nrepl.plugin/middleware]
 
         :dependencies [[org.clojure/tools.namespace  "0.2.11"]]
 
