@@ -1,5 +1,5 @@
 {:user {:plugins [; https://github.com/clojure-emacs/cider-nrepl#via-leiningen
-                  [cider/cider-nrepl                 "0.19.0"]
+                  [cider/cider-nrepl                 "0.21.1"]
                   [refactor-nrepl                    "2.4.0"]
 
                   [lein-cloverage                    "1.0.13"]
