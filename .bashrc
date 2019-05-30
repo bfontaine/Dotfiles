@@ -4,9 +4,6 @@
 # Default language
 [ -z "$LC_ALL" ] && LC_ALL=en_US.UTF-8
 
-# don't put duplicate lines in the history nor lines starting with a space
-HISTCONTROL=ignoreboth
-
 # save multi-lines commands in the history
 shopt -s cmdhist
 # append to the history file, don't overwrite it
@@ -42,8 +39,10 @@ stty -ixon
 HISTSIZE=100000
 HISTFILESIZE=400000
 
-# don't add ls/cd to the history
-HISTIGNORE="ls:cd"
+# don't add those commands to the history
+HISTIGNORE="ls:cd:fg:history"
+# don't put duplicate lines in the history nor lines starting with a space
+HISTCONTROL=ignoreboth
 
 # suffixes to remove from tab-completion.
 FIGNORE=.swp:swo:~
