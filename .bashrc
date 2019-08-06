@@ -248,7 +248,3 @@ zprint_inplace() { zprint < $1 | sponge $1; }
 complete_g() {
   $(complete -p git | sed 's/ git$/ g/')
 }
-
-# Boot
-# https://github.com/boot-clj/boot/wiki/JVM-Options#faster-startup
-BOOT_JVM_OPTIONS="-client -XX:+TieredCompilation -XX:TieredStopAtLevel=1 -Xverify:none"
