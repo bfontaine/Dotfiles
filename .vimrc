@@ -324,10 +324,11 @@ set laststatus=2
 let g:syntastic_css_checkers = []
 let g:syntastic_clojure_checkers = [] " temporary 'fix'
 let g:syntastic_go_checkers = ['golint', 'go']
+let g:syntastic_html_checkers = []
+let g:syntastic_julia_checkers = ['lint']
 let g:syntastic_python_checkers = ['pyflakes']
 let g:syntastic_ruby_checkers = ['rubocop', 'mri']
 let g:syntastic_tex_checkers = ['chktex']
-let g:syntastic_html_checkers = []
 " don't display these warnings
 let g:syntastic_tex_chktex_args = "-n 26 -n 36 -n 57"
 let g:syntastic_markdown_checkers = ['proselint']
