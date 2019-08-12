@@ -74,6 +74,9 @@ Plug 'pangloss/vim-javascript'                    " JavaScript
 Plug 'Glench/Vim-Jinja2-Syntax'                   " Jinja
 Plug 'elzr/vim-json'                              " JSON
 Plug 'mxw/vim-jsx'                                " JSX
+" For linting support, see:
+"   https://docs.julialang.org/en/v1/stdlib/Pkg/index.html
+"   https://github.com/tonyhffong/Lint.jl/issues/254#issuecomment-519324252
 Plug 'JuliaEditorSupport/julia-vim'               " Julia
 Plug 'iqqmuT/vim-k'                               " K
 Plug 'groenewege/vim-less'                        " LESS
