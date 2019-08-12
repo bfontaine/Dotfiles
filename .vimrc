@@ -74,6 +74,7 @@ Plug 'pangloss/vim-javascript'                    " JavaScript
 Plug 'Glench/Vim-Jinja2-Syntax'                   " Jinja
 Plug 'elzr/vim-json'                              " JSON
 Plug 'mxw/vim-jsx'                                " JSX
+Plug 'JuliaEditorSupport/julia-vim'               " Julia
 Plug 'iqqmuT/vim-k'                               " K
 Plug 'groenewege/vim-less'                        " LESS
 Plug 'plasticboy/vim-markdown'                    " Markdown
