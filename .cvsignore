@@ -26,12 +26,14 @@
 
 ## Python
 venv
+venv2
 *.pyc
 *.egg-info
 *.pickle
 __pycache__
 /htmlcov
 /dist
+/build
 .coverage
 .tox
 .webassets-cache
