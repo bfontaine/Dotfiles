@@ -9,6 +9,11 @@
 ## Vim
 *~
 .*.sw*
+*.log
+
+## IntelliJ
+/.idea
+/*.iml
 
 ## Ansible
 *.retry
@@ -21,6 +26,9 @@
 *.tar
 *.gz
 *.zip
+.DS_Store
+
+/env.sh
 
 # Languages
 
@@ -37,9 +45,13 @@ __pycache__
 .coverage
 .tox
 .webassets-cache
-/env.sh
-
-## Ocaml
+# LibreOffice
+.~lock.*
+# i18n/t10n
+*.mo
+# Ruby
+*.gem
+# Ocaml
 *.cmi
 *.cmo
 *.cmx
@@ -78,14 +90,27 @@ node_modules
 *.db
 *.db-journal
 *.db.*
+*.bak
 
 # Various data files
 *.jsons
 *.edn
 *.csv
 *.xlsx
+node_modules
+.sass-cache
 *.edn-*
 *.jsons-*
+/target/classes
+/target/stale
+.lein-failures
+.cpcache
+.rebel_readline_history
+# Ansible
+*.retry
+.galaxy_install_info
+
+/tags
 
 # Logs
 *.log
