@@ -5,6 +5,8 @@
                   [lein-cloverage                    "1.0.13"]
                   [lein-fore-prob                    "0.1.2"]
 
+                  [lein-nvd "1.1.1"]
+
                   ; Check for outdated dependencies
                   [lein-ancient                      "0.6.15"]
 
