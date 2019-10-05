@@ -89,3 +89,6 @@ frameworkpython() {
         "$BREW_PREFIX/bin/python" "$@"
     fi
 }
+
+# https://github.com/dsoprea/PyEasyArchive/issues/16#issuecomment-538654606
+export LA_LIBRARY_FILEPATH=$(brew --prefix libarchive)/lib/libarchive.dylib
