@@ -51,6 +51,7 @@
 	compactionHeuristic = true
 	# https://git-scm.com/docs/git-diff#git-diff---color-movedltmodegt
 	colorMoved = default
+	noprefix = true
 [grep]
 	extendRegexp = true
 [status]
@@ -101,3 +102,8 @@
 	check = true
 [web]
 	browser = chrome
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
