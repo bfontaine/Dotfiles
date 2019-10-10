@@ -31,8 +31,8 @@ export NODE_PATH="$BREW_PREFIX/lib/node_modules:$NODE_PATH"
 
 # Ruby
 export PATH="$BREW_PREFIX/opt/ruby/bin:$PATH"
-if [ -d "$BREW_PREFIX/lib/ruby/gems/2.5.0/bin" ]; then
-  export PATH="$BREW_PREFIX/lib/ruby/gems/2.5.0/bin:$PATH"
+if [ -d "$BREW_PREFIX/lib/ruby/gems/2.6.0/bin" ]; then
+  export PATH="$BREW_PREFIX/lib/ruby/gems/2.6.0/bin:$PATH"
 fi
 
 # end of brew-related stuff
