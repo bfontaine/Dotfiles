@@ -64,6 +64,7 @@ Plug 'rhysd/vim-crystal'                          " Crystal
 Plug 'hail2u/vim-css3-syntax'                     " CSS3
 Plug 'ekalinin/Dockerfile.vim'                    " Dockerfile
 Plug 'killphi/vim-ebnf'                           " EBNF
+Plug 'elixir-editors/vim-elixir'                  " Elixir
 Plug 'dag/vim-fish'                               " Fish
 Plug 'fatih/vim-go', {'for': 'go'}                " Go
 Plug 'xu-cheng/brew.vim'                          " Homebrew formulae
