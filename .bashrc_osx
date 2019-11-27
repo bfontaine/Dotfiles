@@ -89,4 +89,5 @@ frameworkpython() {
 }
 
 # https://github.com/dsoprea/PyEasyArchive/issues/16#issuecomment-538654606
-export LA_LIBRARY_FILEPATH=$(brew --prefix libarchive)/lib/libarchive.dylib
+# $(brew --prefix libarchive) == /usr/local/opt/libarchive
+export LA_LIBRARY_FILEPATH=/usr/local/opt/libarchive/lib/libarchive.dylib
