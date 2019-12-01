@@ -13,9 +13,7 @@
 	df   = diff
 	f    = fetch
 	fixup = commit --amend --no-edit .
-	fp   = format-patch
 	lg   = log --graph --pretty=format:'%Cred%h%Creset - %C(blue bold)%an%Creset: %C(cyan)%s%Creset %Cgreen(%ar)%Creset'
-	l1   = lg -n 1
 	m    = mv
 	# show all commits present on the current branch but not on its attached
 	# remote.
