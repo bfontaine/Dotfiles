@@ -13,7 +13,9 @@ export JAVA_HOME=/usr/
 alias sai='sudo apt install'
 
 which xclip >/dev/null && \
-    alias xclip='xclip -selection "clipboard"'
+    alias xclip='xclip -selection "clipboard"' && \
+    alias pbcopy='xclip -i' && \
+    alias pbpaste='xclip -o'
 
 # Common aliases
 
@@ -34,30 +36,38 @@ alias LS='LS -e'
 alias flushDNS='sudo rndc flush'
 
 # Linuxbrew
-if [ -x ~/.linuxbrew/bin/brew ]; then
+for lb_home in "/home/linuxbrew" ~ ; do
+  if [ ! -x "$lb_home/.linuxbrew/bin/brew" ]; then
+    continue
+  fi
+
   alias b=brew
-  export PATH="$HOME/.linuxbrew/opt/python/libexec/bin:$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH"
-  export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
-  export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+  export PATH="$lb_home/.linuxbrew/opt/python/libexec/bin:$lb_home/.linuxbrew/bin:$lb_home/.linuxbrew/sbin:$PATH"
+  export MANPATH="$lb_home/.linuxbrew/share/man:$MANPATH"
+  export INFOPATH="$lb_home/.linuxbrew/share/info:$INFOPATH"
 
   # For some reason Linuxbrew tries to auto-update too often.
   # e.g. "brew update && brew upgrade" triggers an update on the second part
   # even if it's already up-to-date.
   export HOMEBREW_NO_AUTO_UPDATE=1
 
-  if [ -f ~/.linuxbrew/etc/profile.d/z.sh ]; then
-    . ~/.linuxbrew/etc/profile.d/z.sh
+  if [ -f "$lb_home/.linuxbrew/etc/profile.d/z.sh" ]; then
+    . "$lb_home/.linuxbrew/etc/profile.d/z.sh"
   fi
-fi
+
+  export XDG_DATA_DIRS="$lb_home/.linuxbrew/share:$XDG_DATA_DIRS"
+
+  break
+done
 
 export BROWSER=google-chrome
 
 which p >/dev/null || \
   alias p="sp play"
+alias N="sp next"
 
 alias mtr="mtr -t"
 
 export GOPATH="$HOME/Go"
 export GOBIN="$GOPATH/bin"
 export PATH="$GOBIN:$PATH"
-export XDG_DATA_DIRS="/home/baptiste/.linuxbrew/share:$XDG_DATA_DIRS"
