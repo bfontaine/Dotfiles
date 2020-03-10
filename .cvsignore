@@ -30,6 +30,10 @@
 
 /env.sh
 
+# Secrets
+*.pem
+*.key
+
 # Languages
 
 ## Python
