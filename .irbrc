@@ -3,15 +3,6 @@
 require 'rubygems'
 require 'irb/completion'
 
-# awesome print
-begin
-  #require 'awesome_print'
-  #AwesomePrint.irb!
-rescue LoadError => err
-  warn "Couldn't load awesome_print: #{err}"
-  warn "Use 'gem install awesome_print'"
-end
-
 # list methods of an object
 def w(obj)
   obj.public_methods.sort - Object.methods
