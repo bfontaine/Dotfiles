@@ -182,11 +182,9 @@ alias m=mv
 alias n=node
 alias s=sudo
 alias v=vim
-alias ct=cat
 alias ff='find . -name "*~" -type f -delete'
 alias sv='sudo vim -p'
 
-alias B=boot
 alias M=make
 
 if [ x"$(which node)" != x ]; then
@@ -212,8 +210,10 @@ if [ -d "$HOME/.bash_utils/autocomplete" ]; then
     . "$HOME"/.bash_utils/autocomplete/*.sh
 fi
 
-if [ "`uname`" = "Darwin" ] && [ -f "$HOME/.bashrc_osx" ]; then
+if [ "`uname`" = "Darwin" ]; then
+  if [ -f "$HOME/.bashrc_osx" ]; then
     . $HOME/.bashrc_osx
+  fi
 elif [[ "`uname -a`" =~ "Ubuntu" ]] || [[ "`uname -a`" =~ "Linux" ]]; then
     if [ -f "$HOME/.bashrc_linux" ]; then
         . $HOME/.bashrc_linux
@@ -222,9 +222,6 @@ fi
 
 # Ensure ~/bin is before everything else
 export PATH="$HOME/bin:$PATH"
-
-# Use Go 1.5 vendor directory
-export GO15VENDOREXPERIMENT=1
 
 # OCaml
 which opam >/dev/null && . .opam/opam-init/init.sh &>/dev/null
@@ -245,7 +242,7 @@ alias v3="virtualenv --python python3 venv"
 alias freeze="./venv/bin/pip freeze >| requirements.txt"
 
 vpython() { PYTHONPATH=. ./venv/bin/python $*; }
-zprint_inplace() { zprint < $1 | sponge $1; }
+# zprint_inplace() { zprint < $1 | sponge $1; }
 
 # Boot
 # https://github.com/boot-clj/boot/wiki/JVM-Options#faster-startup

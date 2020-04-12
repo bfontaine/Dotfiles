@@ -16,15 +16,17 @@ if [ -f "$BREW_PREFIX/etc/bash_completion" ]; then
     . "$BREW_PREFIX/etc/bash_completion"
 fi
 
-# see github.com/bfontaine/brew-command-not-found
-eval "$(brew command-not-found-init)"
+# eval "$(brew command-not-found-init)"
+# 'brew' is slow; speedup this by directly loading the script.
+# see:
+#  * https://github.com/bfontaine/brew-command-not-found
+#  * https://github.com/Homebrew/homebrew-command-not-found/issues/56
+. "$BREW_PREFIX/Homebrew/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
 
 # Enable Homebrew developers-specific warnings/features
 export HOMEBREW_DEVELOPER=1
 # Disable Homebrew autoupdate
 export HOMEBREW_NO_AUTO_UPDATE=1
-# Cleanup previous versions
-export HOMEBREW_INSTALL_CLEANUP=1
 
 # Node
 export NODE_PATH="$BREW_PREFIX/lib/node_modules:$NODE_PATH"
