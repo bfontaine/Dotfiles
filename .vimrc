@@ -24,10 +24,10 @@ Plug 'airblade/vim-gitgutter' " +-~ in gutter
 " = Autocomplete =
 " Deoplete
 " You need to `pip3 install --user pynvim` + :call deoplate#enable()
-" TODO customize it to hide the preview window + complete ONLY on request
-Plug 'Shougo/deoplete.nvim'
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
+" xTODO customize it to hide the preview window + complete ONLY on request
+" Plug 'Shougo/deoplete.nvim'
+" Plug 'roxma/nvim-yarp'
+" Plug 'roxma/vim-hug-neovim-rpc'
 
 " = Languages Specifics =
 
@@ -84,6 +84,7 @@ Plug 'bfontaine/vim-quickstatements'              " QuickStatements (Wikidata)
 Plug 'burner/vim-svelte'                          " Svelte
 Plug 'cespare/vim-toml'                           " TOML
 Plug 'lumiliet/vim-twig'                          " Twig
+Plug 'bfontaine/mediawiki.vim'                    " Wikicode
 
 " TODO Use Denite instead
 Plug 'wincent/Command-T', {'do': 'cd ruby/command-t/ext/command-t; r=$(vim --version \| grep -Eo -m 1 \"/\S+ruby/[0-9.]+/lib\" \| head -1 \| sed \"s%lib$%bin/ruby%\");[ -z \"$r\" ] && r=ruby; \"$r\" extconf.rb; make'}
