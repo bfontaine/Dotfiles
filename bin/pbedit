@@ -1,0 +1,6 @@
+#!/bin/sh
+filename=$(mktemp)
+pbpaste >| "$filename"
+"$EDITOR" "$filename"
+pbcopy < "$filename"
+rm -f "$filename"
