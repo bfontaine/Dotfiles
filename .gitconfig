@@ -20,7 +20,7 @@
 	p    = !git lg @{u}..
 	s    = status --short --branch
 	sp   = stash pop
-	sd   = diff --cached
+	sd   = diff --staged
 
 [core]
 	pager = cat
