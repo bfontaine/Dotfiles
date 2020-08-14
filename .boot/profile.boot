@@ -1,8 +1,10 @@
 ;; https://github.com/clojure-vim/vim-cider#using
+#_
 (swap! boot.repl/*default-dependencies*
        concat '[[cider/cider-nrepl "0.20.0"]
                 [refactor-nrepl "2.4.0"]])
 
+#_
 (swap! boot.repl/*default-middleware* conj
        'cider.nrepl/cider-middleware
        'refactor-nrepl.middleware/wrap-refactor)
