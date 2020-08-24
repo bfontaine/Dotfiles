@@ -73,6 +73,7 @@ Plug 'vim-scripts/icalendar.vim'                  " icalendar
 Plug 'vim-scripts/Io-programming-language-syntax' " Io
 Plug 'pangloss/vim-javascript'                    " JavaScript
 Plug 'Glench/Vim-Jinja2-Syntax'                   " Jinja
+Plug 'bfrg/vim-jq'                                " JQ
 Plug 'elzr/vim-json'                              " JSON
 Plug 'mxw/vim-jsx'                                " JSX
 Plug 'JuliaEditorSupport/julia-vim'               " Julia
