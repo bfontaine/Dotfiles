@@ -227,9 +227,12 @@ export PATH="$HOME/bin:$PATH"
 which opam >/dev/null && . .opam/opam-init/init.sh &>/dev/null
 export OCAML_TOPLEVEL_PATH="$HOME/.opam/system/lib/toplevel"
 
+PATH_BEFORE_GOOGLE_CLOUD="$PATH"
 if [ -f "$HOME/.gcloud/google-cloud-sdk/path.bash.inc" ]; then
   . $HOME/.gcloud/google-cloud-sdk/path.bash.inc
   . $HOME/.gcloud/google-cloud-sdk/completion.bash.inc
+  # go at the end, thanks
+  PATH="$PATH_BEFORE_GOOGLE_CLOUD:$HOME/.gcloud/google-cloud-sdk/bin"
 fi
 
 export PLANTUML_LIMIT_SIZE=15000
