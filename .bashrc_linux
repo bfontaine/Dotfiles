@@ -57,6 +57,10 @@ for lb_home in "/home/linuxbrew" ~ ; do
 
   export XDG_DATA_DIRS="$lb_home/.linuxbrew/share:$XDG_DATA_DIRS"
 
+
+  # brew install graalvm-ce-java11-linux-amid64
+  export GRAALVM_HOME="$lb_home/.linuxbrew/opt/graalvm-ce-java11-linux-amd64"
+
   break
 done
 
