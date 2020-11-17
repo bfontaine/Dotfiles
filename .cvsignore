@@ -71,6 +71,8 @@ __pycache__
 .lein-failures
 .cpcache
 .rebel_readline_history
+### cljs-ajax test suite
+target-test-node
 
 ## Node
 node_modules
@@ -118,3 +120,5 @@ node_modules
 
 # Logs
 *.log
+# Linuxbrew
+Library/Homebrew/vendor/bundle/ruby/2.6.0
