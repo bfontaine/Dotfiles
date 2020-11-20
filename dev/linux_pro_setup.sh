@@ -1,7 +1,8 @@
 #! /bin/bash -ex
 sudo apt update
 sudo apt upgrade
-sudo apt install --yes vim git curl make ruby safe-rm fonts-powerline
+sudo apt install --yes vim git curl make ruby safe-rm xclip \
+  build-essential file terminator kolourpaint fonts-powerline
 
 mkdir -p ~/GitHub
 pushd ~/GitHub
