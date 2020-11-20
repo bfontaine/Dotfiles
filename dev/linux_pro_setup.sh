@@ -1,7 +1,7 @@
 #! /bin/bash -ex
 sudo apt update
 sudo apt upgrade
-sudo apt install --yes vim git curl
+sudo apt install --yes vim git curl make ruby
 
 mkdir -p ~/GitHub
 pushd ~/GitHub
