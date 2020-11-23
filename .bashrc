@@ -247,6 +247,6 @@ alias freeze="./venv/bin/pip freeze >| requirements.txt"
 vpython() { PYTHONPATH=. ./venv/bin/python $*; }
 # zprint_inplace() { zprint < $1 | sponge $1; }
 
-# Boot
-# https://github.com/boot-clj/boot/wiki/JVM-Options#faster-startup
-BOOT_JVM_OPTIONS="-client -XX:+TieredCompilation -XX:TieredStopAtLevel=1 -Xverify:none"
+if [ x"$(which gem)" != x ]; then
+  PATH="$PATH:$(gem environment gemdir)/bin"
+fi
