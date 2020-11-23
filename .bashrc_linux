@@ -67,8 +67,8 @@ done
 export BROWSER=google-chrome
 
 which p >/dev/null || \
-  alias p="sp play"
-alias N="sp next"
+  alias p="spotify play"
+alias N="spotify next"
 
 alias mtr="mtr -t"
 
