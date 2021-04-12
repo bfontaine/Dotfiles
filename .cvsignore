@@ -12,7 +12,7 @@
 *.log
 
 ## IntelliJ
-/.idea
+.idea
 /*.iml
 
 ## Ansible
