@@ -72,7 +72,7 @@
 
 [fetch]
 	prune = true
-	fsckobjects = true
+#	fsckobjects = true
 [push]
 	default = upstream
 [pull]
@@ -80,9 +80,9 @@
 	rebase = true
 # https://groups.google.com/forum/#!topic/binary-transparency/f-BI4o8HZW0
 [transfer]
-	fsckobjects = true
+#	fsckobjects = true
 [receive]
-	fsckObjects = true
+#	fsckObjects = true
 
 # Third Parties
 # =============
@@ -98,3 +98,10 @@
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
+[sendemail]
+	smtpencryption = tls
+	smtpuser = b@ptistefontaine.fr
+	smtpserverport = 587
+	smtpserver = mail.gandi.net
+[init]
+	defaultBranch = main
