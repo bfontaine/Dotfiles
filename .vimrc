@@ -404,6 +404,7 @@ augroup vimrc_autocmd
     au BufNewFile,BufRead Vagrantfile      set ft=ruby
     au BufNewFile,BufRead .zprintrc        set ft=clojure
     au BufNewFile,BufRead .jshintrc        set ft=json
+    au BufNewFile,BufRead .private_bashrc  set ft=bash
 
     " autocomplete
     au FileType c          setlocal ofu=ccomplete#Complete
