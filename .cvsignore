@@ -49,6 +49,7 @@ __pycache__
 .coverage
 .tox
 .webassets-cache
+/*sandbox.py
 # LibreOffice
 .~lock.*
 # i18n/t10n
