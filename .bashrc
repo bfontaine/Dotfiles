@@ -63,7 +63,7 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 PS1_PREFIX=' '
-PS1_SYMBOL='λ'
+[ -z "$PS1_SYMBOL" ] && PS1_SYMBOL='λ'
 
 function _bash_prompt_command {
     ## git prompt
