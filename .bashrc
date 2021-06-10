@@ -148,14 +148,10 @@ export PYTHONIOENCODING=utf-8
 [ -d /usr/lib/R ] && export R_HOME='/usr/lib/R'
 
 # usual
-alias top='htop'
 alias du='du -h'
 alias df='df -h'
 
 alias pwd='pwd -P'
-
-# print kill commands
-alias pkill='pkill -l'
 
 alias -- -='cd - >/dev/null'
 alias +x='chmod u+x'
@@ -170,7 +166,6 @@ alias fgrep="fgrep $DIRCOLOR"
 alias egrep="egrep $DIRCOLOR"
 
 alias la='ls -a'
-alias lr='ls -R'
 
 mkcd() { mkdir -p "$1" && cd "$1"; }
 
@@ -245,7 +240,6 @@ alias v3="virtualenv --python python3 venv"
 alias freeze="./venv/bin/pip freeze >| requirements.txt"
 
 vpython() { PYTHONPATH=. ./venv/bin/python $*; }
-# zprint_inplace() { zprint < $1 | sponge $1; }
 
 if [ x"$(which gem)" != x ]; then
   PATH="$PATH:$(gem environment gemdir)/bin"
