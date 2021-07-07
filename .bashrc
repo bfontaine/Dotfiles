@@ -239,7 +239,16 @@ alias vpip=./venv/bin/pip
 alias v3="virtualenv --python python3 venv"
 alias freeze="./venv/bin/pip freeze >| requirements.txt"
 
-vpython() { PYTHONPATH=. ./venv/bin/python $*; }
+vpython() {
+  local venv=
+  if [ -d .venv ]; then
+    venv=.venv
+  else
+    venv=venv
+  fi
+
+  PYTHONPATH=. ./$venv/bin/python $*
+}
 
 if [ x"$(which gem)" != x ]; then
   PATH="$PATH:$(gem environment gemdir)/bin"

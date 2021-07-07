@@ -7,6 +7,7 @@
 
 # Python
 --ignore-dir=venv
+--ignore-dir=.venv
 --ignore-dir=htmlcov
 --ignore-dir=.mypy_cache
 --ignore-dir=htmlcov
