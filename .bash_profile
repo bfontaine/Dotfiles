@@ -1,5 +1,5 @@
 # NVM
-[ -d "$HOME/.nvm" ] && . /Users/baptiste/.nvm/nvm.sh
+[ -d "$HOME/.nvm" ] && . $HOME/.nvm/nvm.sh
 # NPM
 export PATH="/usr/local/share/npm/bin:$PATH"
 
