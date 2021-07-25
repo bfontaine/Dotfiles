@@ -143,6 +143,7 @@ alias locaml="ledit -x -h '$HOME/.ocaml_history' ocaml"
 [ -f "$HOME/.pythonrc.py" ] && export PYTHONSTARTUP=$HOME/.pythonrc.py
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 export PYTHONIOENCODING=utf-8
+export POETRY_VIRTUALENVS_IN_PROJECT=true
 
 # R
 [ -d /usr/lib/R ] && export R_HOME='/usr/lib/R'
