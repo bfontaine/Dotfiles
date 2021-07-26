@@ -51,12 +51,12 @@ FIGNORE=.swp:swo:~
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # load a private .bashrc (i.e. not in dotfiles repo) if it exists
-[ -f $HOME/.private_bashrc ] && . $HOME/.private_bashrc;
+[ -f $HOME/.private_bashrc ] && . "$HOME/.private_bashrc";
 
 # enable color support of ls/grep/…
 DIRCOLOR=
 [ -x /usr/bin/dircolors ] ||
-    [[ $(tput -T$TERM colors) -ge 8 ]] && DIRCOLOR='--color=auto'
+    [[ $(tput -T"$TERM" colors) -ge 8 ]] && DIRCOLOR='--color=auto'
 
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
@@ -135,6 +135,10 @@ alias vim='vim -p'
 
 # Node
 export NODE_PATH='/usr/lib/node_modules'
+export N_PREFIX="$HOME/.n"
+if [ -d "$N_PREFIX" ]; then
+  PATH="$N_PREFIX/bin:$PATH"
+fi
 
 # OCaml
 alias locaml="ledit -x -h '$HOME/.ocaml_history' ocaml"
@@ -175,7 +179,6 @@ alias reload=". $HOME/.bash_profile"
 alias c='cd -P'
 alias g=git
 alias m=mv
-alias n=node
 alias s=sudo
 alias v=vim
 alias ff='find . -name "*~" -type f -delete'
@@ -183,10 +186,12 @@ alias sv='sudo vim -p'
 
 alias M=make
 
-if [ x"$(which node)" != x ]; then
-  alias n=node
-else
-  alias n=nodejs
+if [ -z "$(which n)" ]; then
+  if [ -n "$(which node)" ]; then
+    alias n=node
+  else
+    alias n=nodejs
+  fi
 fi
 
 # Setup Amazon EC2 Command-Line Tools
@@ -206,13 +211,13 @@ if [ -d "$HOME/.bash_utils/autocomplete" ]; then
     . "$HOME"/.bash_utils/autocomplete/*.sh
 fi
 
-if [ "`uname`" = "Darwin" ]; then
+if [ "$(uname)" = "Darwin" ]; then
   if [ -f "$HOME/.bashrc_osx" ]; then
-    . $HOME/.bashrc_osx
+    . "$HOME/.bashrc_osx"
   fi
-elif [[ "`uname -a`" =~ "Ubuntu" ]] || [[ "`uname -a`" =~ "Linux" ]]; then
+elif [[ "$(uname -a)" =~ "Ubuntu" ]] || [[ "$(uname -a)" =~ "Linux" ]]; then
     if [ -f "$HOME/.bashrc_linux" ]; then
-        . $HOME/.bashrc_linux
+        . "$HOME/.bashrc_linux"
     fi
 fi
 
@@ -225,8 +230,8 @@ export OCAML_TOPLEVEL_PATH="$HOME/.opam/system/lib/toplevel"
 
 PATH_BEFORE_GOOGLE_CLOUD="$PATH"
 if [ -f "$HOME/.gcloud/google-cloud-sdk/path.bash.inc" ]; then
-  . $HOME/.gcloud/google-cloud-sdk/path.bash.inc
-  . $HOME/.gcloud/google-cloud-sdk/completion.bash.inc
+  . "$HOME/.gcloud/google-cloud-sdk/path.bash.inc"
+  . "$HOME/.gcloud/google-cloud-sdk/completion.bash.inc"
   # go at the end, thanks
   PATH="$PATH_BEFORE_GOOGLE_CLOUD:$HOME/.gcloud/google-cloud-sdk/bin"
 fi
