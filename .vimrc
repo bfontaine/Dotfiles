@@ -97,6 +97,8 @@ Plug 'wincent/Command-T', {'do': 'cd ruby/command-t/ext/command-t; r=$(vim --ver
 Plug 'tomtom/tlib_vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'garbas/vim-snipmate'
+" use the old snippet parset
+let g:snipMate = { 'snippet_version' : 0 }
 
 " Use https://gist.github.com/baopham/1838072 for Monaco and
 " https://github.com/powerline/fonts for other fonts
