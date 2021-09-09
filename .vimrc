@@ -332,7 +332,7 @@ let g:syntastic_html_checkers = []
 "   https://docs.julialang.org/en/v1/stdlib/Pkg/index.html
 "   https://github.com/tonyhffong/Lint.jl/issues/254#issuecomment-519324252
 let g:syntastic_julia_checkers = [] " 'lint' is really slow
-let g:syntastic_python_checkers = ['pyflakes']
+let g:syntastic_python_checkers = ['mypy', 'pyflakes']
 let g:syntastic_ruby_checkers = ['rubocop', 'mri']
 let g:syntastic_tex_checkers = ['chktex']
 " don't display these warnings
