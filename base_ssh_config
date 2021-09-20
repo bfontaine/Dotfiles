@@ -1,0 +1,20 @@
+# This allows you to use gh:bfontaine/ex instead of git@github.com:bfontaine/ex
+# It confuses GitLink in IntelliJ so you have to add `127.0.0.1 gl gh` in /etc/hosts and
+# tell nginx to redirect them:
+#
+#     server {
+#       server_name gl;
+#       return 301 $scheme://gitlab.com$request_uri;
+#     }
+#     server {
+#       server_name gh;
+#       return 301 $scheme://github.com$request_uri;
+#     }
+#
+Host github gh
+  Hostname github.com
+  User git
+
+Host gitlab gl
+  Hostname gitlab.com
+  User git
