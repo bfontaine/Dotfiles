@@ -4,12 +4,14 @@
 #
 #     server {
 #       server_name gl;
-#       return 301 $scheme://gitlab.com$request_uri;
+#       return 301 https://gitlab.com$request_uri;
 #     }
 #     server {
 #       server_name gh;
-#       return 301 $scheme://github.com$request_uri;
+#       return 301 https://github.com$request_uri;
 #     }
+#
+# Also, uncheck "Force HTTPS" in GitLink settings.
 #
 Host github gh
   Hostname github.com
