@@ -30,12 +30,8 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export NODE_PATH="$BREW_PREFIX/lib/node_modules:$NODE_PATH"
 
 # Ruby
-export PATH="$BREW_PREFIX/opt/ruby/bin:$PATH"
-for gemsver in 2.6.0 2.7.0 2.8.0; do
-  if [ -d "$BREW_PREFIX/lib/ruby/gems/$gemsver/bin" ]; then
-    export PATH="$BREW_PREFIX/lib/ruby/gems/$gemsver/bin:$PATH"
-  fi
-done
+gembin=$(echo "$BREW_PREFIX/lib/ruby/gems"/*/bin | xargs -n 1 | tail -n 1)
+export PATH="$gembin:$BREW_PREFIX/opt/ruby/bin:$PATH"
 
 # brew install graalvm-ce-java11
 export GRAALVM_HOME=$(echo /Library/Java/JavaVirtualMachines/graalvm-ce-java11-*/Contents/Home | grep -vF "*")
