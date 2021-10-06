@@ -5,7 +5,6 @@
 	a    = add
 	br   = branch
 	ca   = commit --amend
-	cae  = commit --amend --no-edit
 	chp  = cherry-pick
 	cl   = clone
 	cm   = commit -m
