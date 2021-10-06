@@ -1,2 +1,2 @@
 snippet code
-	g=globals().copy();g.update(locals());import code;code.interact(local=g)
+	import code;code.interact(local={**globals(), **locals()})
