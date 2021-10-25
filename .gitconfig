@@ -104,3 +104,5 @@
 	smtpserver = mail.gandi.net
 [init]
 	defaultBranch = main
+[advice]
+	addEmptyPathspec = false
