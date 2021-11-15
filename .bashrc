@@ -241,9 +241,12 @@ export PLANTUML_LIMIT_SIZE=15000
 # Ansible
 export ANSIBLE_NOCOWS=1
 
+# https://github.com/docker/scan-cli-plugin/issues/149#issuecomment-823969364
+export DOCKER_SCAN_SUGGEST=false
+
 alias vpip=./venv/bin/pip
-alias v3="virtualenv --python python3 venv"
-alias freeze="./venv/bin/pip freeze >| requirements.txt"
+#alias v3="virtualenv --python python3 venv"
+#alias freeze="./venv/bin/pip freeze >| requirements.txt"
 
 vpython() {
   local venv=
