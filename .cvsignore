@@ -53,8 +53,6 @@ __pycache__
 /*sandbox.py
 # LibreOffice
 .~lock.*
-# i18n/t10n
-*.mo
 # Ruby
 *.gem
 # Ocaml
@@ -105,7 +103,6 @@ node_modules
 *.edn
 *.csv
 *.xlsx
-node_modules
 .sass-cache
 *.edn-*
 *.jsons-*
