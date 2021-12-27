@@ -50,6 +50,7 @@ __pycache__
 .coverage
 .tox
 .webassets-cache
+.mypy_cache
 /*sandbox.py
 # LibreOffice
 .~lock.*
