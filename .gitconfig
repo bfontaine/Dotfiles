@@ -106,3 +106,5 @@
 	defaultBranch = main
 [advice]
 	addEmptyPathspec = false
+[checkout]
+	defaultRemote = origin
