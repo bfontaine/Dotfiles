@@ -203,6 +203,43 @@ fi
 # Safe default
 export BROWSER='python -m webbrowser'
 
+# $PATH doesn't contain Homebrew's bin prefix at this point, so `which brew` or `command brew`
+# don't work.
+for brew_prefix in '/home/linuxbrew/.linuxbrew' "$HOME/.linuxbrew" '/usr/local/Homebrew'; do
+  if [ -d "$brew_prefix" ]; then
+    brew_binary="$brew_prefix/bin/brew"
+    BREW_PREFIX=$("$brew_binary" --prefix)
+
+    # z
+    if [ -f "$BREW_PREFIX/etc/profile.d/z.sh" ]; then
+      . "$BREW_PREFIX/etc/profile.d/z.sh"
+    fi
+
+    # Bash completion
+    if [ -f "$BREW_PREFIX/etc/bash_completion" ]; then
+      . "$BREW_PREFIX/etc/bash_completion"
+    fi
+
+    export PATH="$BREW_PREFIX/bin:$PATH:$BREW_PREFIX/sbin"
+    export MANPATH="$BREW_PREFIX/share/man:$MANPATH"
+    export INFOPATH="$BREW_PREFIX/share/info:$INFOPATH"
+    export XDG_DATA_DIRS="$BREW_PREFIX/share:$XDG_DATA_DIRS"
+
+    # Node
+    export NODE_PATH="$BREW_PREFIX/lib/node_modules:$NODE_PATH"
+
+    export HOMEBREW_NO_ENV_HINTS=1
+    # Enable Homebrew developers-specific warnings/features
+    export HOMEBREW_DEVELOPER=1
+    # Disable Homebrew autoupdate
+    export HOMEBREW_NO_AUTO_UPDATE=1
+
+    alias b=brew
+
+    break
+  fi
+done
+
 # custom autocomplete scripts
 if [ -d "$HOME/.bash_utils/autocomplete" ]; then
     . "$HOME"/.bash_utils/autocomplete/*.sh
@@ -216,35 +253,6 @@ elif [[ "$(uname -a)" =~ "Ubuntu" ]] || [[ "$(uname -a)" =~ "Linux" ]]; then
     if [ -f "$HOME/.bashrc_linux" ]; then
         . "$HOME/.bashrc_linux"
     fi
-fi
-
-which brew >/dev/null
-if [ "$?" = "0" ]; then
-  BREW_PREFIX=$(brew --prefix)
-
-  # z
-  if [ -f "$BREW_PREFIX/etc/profile.d/z.sh" ]; then
-    . "$BREW_PREFIX/etc/profile.d/z.sh"
-  fi
-
-  # Bash completion
-  if [ -f "$BREW_PREFIX/etc/bash_completion" ]; then
-    . "$BREW_PREFIX/etc/bash_completion"
-  fi
-
-  export PATH="$BREW_PREFIX/bin:$PATH:$BREW_PREFIX/sbin"
-  export MANPATH="$BREW_PREFIX/share/man:$MANPATH"
-  export INFOPATH="$BREW_PREFIX/share/info:$INFOPATH"
-  export XDG_DATA_DIRS="$BREW_PREFIX/share:$XDG_DATA_DIRS"
-
-  # Node
-  export NODE_PATH="$BREW_PREFIX/lib/node_modules:$NODE_PATH"
-
-  export HOMEBREW_NO_ENV_HINTS=1
-  # Enable Homebrew developers-specific warnings/features
-  export HOMEBREW_DEVELOPER=1
-  # Disable Homebrew autoupdate
-  export HOMEBREW_NO_AUTO_UPDATE=1
 fi
 
 # Ensure ~/bin is before everything else
