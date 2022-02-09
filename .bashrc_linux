@@ -35,34 +35,14 @@ alias LS='LS -e'
 # Internet
 alias flushDNS='sudo rndc flush'
 
-# Linuxbrew
-for lb_home in "/home/linuxbrew" ~ ; do
-  if [ ! -x "$lb_home/.linuxbrew/bin/brew" ]; then
-    continue
-  fi
-
-  alias b=brew
-  export PATH="$lb_home/.linuxbrew/opt/python/libexec/bin:$lb_home/.linuxbrew/bin:$lb_home/.linuxbrew/sbin:$PATH"
-  export MANPATH="$lb_home/.linuxbrew/share/man:$MANPATH"
-  export INFOPATH="$lb_home/.linuxbrew/share/info:$INFOPATH"
-
-  # For some reason Linuxbrew tries to auto-update too often.
-  # e.g. "brew update && brew upgrade" triggers an update on the second part
-  # even if it's already up-to-date.
-  export HOMEBREW_NO_AUTO_UPDATE=1
-
-  if [ -f "$lb_home/.linuxbrew/etc/profile.d/z.sh" ]; then
-    . "$lb_home/.linuxbrew/etc/profile.d/z.sh"
-  fi
-
-  export XDG_DATA_DIRS="$lb_home/.linuxbrew/share:$XDG_DATA_DIRS"
-
+# Homebrew
+which brew >/dev/null
+if [ "$?" = "0" ]; then
+  BREW_PREFIX=$(brew --prefix)
 
   # brew install graalvm-ce-java11-linux-amid64
-  export GRAALVM_HOME="$lb_home/.linuxbrew/opt/graalvm-ce-java11-linux-amd64"
-
-  break
-done
+  export GRAALVM_HOME="$BREW_PREFIX/opt/graalvm-ce-java11-linux-amd64"
+fi
 
 export BROWSER=google-chrome
 

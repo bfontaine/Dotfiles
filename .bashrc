@@ -126,9 +126,6 @@ ignoreeof=1
 export EDITOR='vim'
 export PS2='… '
 
-# more binaries
-export PATH="$PATH:/usr/local/sbin"
-
 # == Programming ==
 
 alias vim='vim -p'
@@ -219,6 +216,35 @@ elif [[ "$(uname -a)" =~ "Ubuntu" ]] || [[ "$(uname -a)" =~ "Linux" ]]; then
     if [ -f "$HOME/.bashrc_linux" ]; then
         . "$HOME/.bashrc_linux"
     fi
+fi
+
+which brew >/dev/null
+if [ "$?" = "0" ]; then
+  BREW_PREFIX=$(brew --prefix)
+
+  # z
+  if [ -f "$BREW_PREFIX/etc/profile.d/z.sh" ]; then
+    . "$BREW_PREFIX/etc/profile.d/z.sh"
+  fi
+
+  # Bash completion
+  if [ -f "$BREW_PREFIX/etc/bash_completion" ]; then
+    . "$BREW_PREFIX/etc/bash_completion"
+  fi
+
+  export PATH="$BREW_PREFIX/bin:$PATH:$BREW_PREFIX/sbin"
+  export MANPATH="$BREW_PREFIX/share/man:$MANPATH"
+  export INFOPATH="$BREW_PREFIX/share/info:$INFOPATH"
+  export XDG_DATA_DIRS="$BREW_PREFIX/share:$XDG_DATA_DIRS"
+
+  # Node
+  export NODE_PATH="$BREW_PREFIX/lib/node_modules:$NODE_PATH"
+
+  export HOMEBREW_NO_ENV_HINTS=1
+  # Enable Homebrew developers-specific warnings/features
+  export HOMEBREW_DEVELOPER=1
+  # Disable Homebrew autoupdate
+  export HOMEBREW_NO_AUTO_UPDATE=1
 fi
 
 # Ensure ~/bin is before everything else

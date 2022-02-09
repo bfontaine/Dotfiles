@@ -2,32 +2,11 @@
 
 which brew >/dev/null
 if [ "$?" = "0" ]; then
-BREW_PREFIX=$(brew --prefix)
-
-alias b=brew
-
-# z
-if [ -f "$BREW_PREFIX/etc/profile.d/z.sh" ]; then
-  . "$BREW_PREFIX/etc/profile.d/z.sh"
-fi
-
-# Bash completion
-if [ -f "$BREW_PREFIX/etc/bash_completion" ]; then
-  . "$BREW_PREFIX/etc/bash_completion"
-fi
 
 HB_CNF_HANDLER="$BREW_PREFIX/Homebrew/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
 if [ -f "$HB_CNF_HANDLER" ]; then
   source "$HB_CNF_HANDLER";
 fi
-
-# Enable Homebrew developers-specific warnings/features
-export HOMEBREW_DEVELOPER=1
-# Disable Homebrew autoupdate
-export HOMEBREW_NO_AUTO_UPDATE=1
-
-# Node
-export NODE_PATH="$BREW_PREFIX/lib/node_modules:$NODE_PATH"
 
 # Ruby
 gembin=$(echo "$BREW_PREFIX/lib/ruby/gems"/*/bin | xargs -n 1 | tail -n 1)
