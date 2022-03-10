@@ -49,6 +49,8 @@
 	# https://git-scm.com/docs/git-diff#git-diff---color-movedltmodegt
 	colorMoved = default
 	noprefix = true
+	# work with large diffs
+	renameLimit = 8192
 [grep]
 	extendRegexp = true
 [status]
@@ -106,5 +108,6 @@
 	defaultBranch = main
 [advice]
 	addEmptyPathspec = false
+	skippedCherryPicks = false
 [checkout]
 	defaultRemote = origin
