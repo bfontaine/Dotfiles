@@ -11,6 +11,7 @@
 --ignore-dir=htmlcov
 --ignore-dir=.mypy_cache
 --ignore-dir=htmlcov
+--ignore-dir=.coverage
 
 # Java & friends
 --ignore-dir=target
@@ -25,12 +26,14 @@
 --ignore-dir=Godeps
 --ignore-dir=vendor
 
-# Ansible
---ignore-dir=roles
-
 # IntelliJ
 --ignore-dir=.idea
 
 # Jekyll
 --ignore-dir=.jekyll-cache
 --ignore-dir=_site
+
+# PrestaShop
+--ignore-dir=var/cache/dev
+--ignore-dir=var/cache/prod
+--ignore-dir=assets/cache
