@@ -10,7 +10,6 @@
 --ignore-dir=.venv
 --ignore-dir=htmlcov
 --ignore-dir=.mypy_cache
---ignore-dir=htmlcov
 --ignore-dir=.coverage
 
 # Java & friends
