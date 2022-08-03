@@ -2,14 +2,14 @@
 # Most of these from http://sontek.net/tips-and-tricks-for-the-python-interpreter
 
 ## useful modules
+import json
 import os
-import sys
 import re
-import os.path
+import sys
 
-# Silent Pyflakes:
-if False:
-    re, sys
+def pp(x):
+    json.dump(x, sys.stdout, sort_keys=True, indent=2)
+
 
 try:
     import readline
