@@ -1,5 +1,5 @@
 # Initially stollen from github.com/coderholic/config
-# Most of these from http://sontek.net/tips-and-tricks-for-the-python-interpreter
+# Most of these from http://sontek.net/blog/old/tips_and_tricks_for_the_python_interpreter
 
 ## useful modules
 import json
