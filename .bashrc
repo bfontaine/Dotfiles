@@ -228,11 +228,17 @@ for brew_prefix in '/home/linuxbrew/.linuxbrew' "$HOME/.linuxbrew" '/usr/local/H
     # Node
     export NODE_PATH="$BREW_PREFIX/lib/node_modules:$NODE_PATH"
 
+    # Don't print hints about HOMEBREW_* env variables
     export HOMEBREW_NO_ENV_HINTS=1
     # Enable Homebrew developers-specific warnings/features
     export HOMEBREW_DEVELOPER=1
     # Disable Homebrew autoupdate
     export HOMEBREW_NO_AUTO_UPDATE=1
+    # Run 'brew autoremove' (remove formulas installed as dependencies that are
+    # no longer needed) when one runs 'brew cleanup' and 'brew uninstall'
+    export HOMEBREW_AUTOREMOVE=1
+    # Don't print the 'beer' emoji
+    export HOMEBREW_NO_EMOJI=1
 
     alias b=brew
 
