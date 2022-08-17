@@ -43,6 +43,7 @@ Plug 'guns/vim-sexp'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'kien/rainbow_parentheses.vim'               " Rainbow Parentheses
 Plug 'clojure-vim/async-clj-omni'                 " Deoplete
+Plug 'bfontaine/zprint.vim'
 
 " == HTML ==
 Plug 'alvan/vim-closetag'              " Auto-insert HTML closing tags
