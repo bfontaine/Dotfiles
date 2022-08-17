@@ -146,6 +146,24 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 export PYTHONIOENCODING=utf-8
 export POETRY_VIRTUALENVS_IN_PROJECT=true
 
+vpython() {
+  local venv=
+  if [ -d .venv ]; then
+    venv=.venv
+  else
+    venv=venv
+  fi
+
+  PYTHONPATH=. ./$venv/bin/python $*
+}
+
+alias vpip=./venv/bin/pip
+
+# pipx
+if [ -d "$HOME/.local/bin" ]; then
+  PATH="$PATH:$HOME/.local/bin"
+fi
+
 # R
 [ -d /usr/lib/R ] && export R_HOME='/usr/lib/R'
 
@@ -283,21 +301,6 @@ export ANSIBLE_NOCOWS=1
 
 # https://github.com/docker/scan-cli-plugin/issues/149#issuecomment-823969364
 export DOCKER_SCAN_SUGGEST=false
-
-alias vpip=./venv/bin/pip
-#alias v3="virtualenv --python python3 venv"
-#alias freeze="./venv/bin/pip freeze >| requirements.txt"
-
-vpython() {
-  local venv=
-  if [ -d .venv ]; then
-    venv=.venv
-  else
-    venv=venv
-  fi
-
-  PYTHONPATH=. ./$venv/bin/python $*
-}
 
 if [ x"$(which gem)" != x ]; then
   PATH="$PATH:$(gem environment gemdir)/bin"
