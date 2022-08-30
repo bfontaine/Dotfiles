@@ -190,7 +190,7 @@ set tabstop=2                   " 1 tab = 2 spaces
 " text width
 
 set colorcolumn=+1              " color (textawidth + 1) th column
-set textwidth=99                " text width = 99 columns
+set textwidth=120               " text width = 120 columns
 
 " syntax highlighting
 
