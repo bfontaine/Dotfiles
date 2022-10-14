@@ -1,39 +1,16 @@
 # .bashrc with stuff for Ubuntu-like distribs only
 #
 
-# Print to PDF files
-mkdir -p ~/PDF
-
-# == Programming ==
-
 # Java
 export JAVA_HOME=/usr/
-
-# apt-get -related aliases
-alias sai='sudo apt install'
 
 which xclip >/dev/null && \
     alias xclip='xclip -selection "clipboard"' && \
     alias pbcopy='xclip -i' && \
     alias pbpaste='xclip -o'
 
-# Common aliases
-
 # --group-directories-first is a non-standard option
 alias l="ls -Fhg --color=auto --group-directories-first"
-
-# ArchLinux
-which yaourt && \
-  alias y=yaourt
-
-which ack-grep >/dev/null && \
-  alias ack='ack-grep'
-
-alias sl='sl -e'
-alias LS='LS -e'
-
-# Internet
-alias flushDNS='sudo rndc flush'
 
 # Homebrew
 which brew >/dev/null
@@ -45,12 +22,6 @@ if [ "$?" = "0" ]; then
 fi
 
 export BROWSER=google-chrome
-
-which p >/dev/null || \
-  alias p="spotify play"
-alias N="spotify next"
-
-alias mtr="mtr -t"
 
 export GOPATH="$HOME/Go"
 export GOBIN="$GOPATH/bin"

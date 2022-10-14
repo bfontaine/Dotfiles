@@ -59,15 +59,6 @@ export MACOSX_DEPLOYMENT_TARGET=11
 # LaTeX
 export PATH="/usr/local/texlive/2015basic/bin/x86_64-darwin:$PATH"
 
-# See http://matplotlib.org/faq/virtualenv_faq.html
-frameworkpython() {
-    if [[ -n "$VIRTUAL_ENV" ]]; then
-        PYTHONHOME=$VIRTUAL_ENV "$BREW_PREFIX/bin/python" "$@"
-    else
-        "$BREW_PREFIX/bin/python" "$@"
-    fi
-}
-
 # https://github.com/dsoprea/PyEasyArchive/issues/16#issuecomment-538654606
 # $(brew --prefix libarchive) == /usr/local/opt/libarchive
 export LA_LIBRARY_FILEPATH=/usr/local/opt/libarchive/lib/libarchive.dylib

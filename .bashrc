@@ -45,7 +45,7 @@ HISTIGNORE="ls:cd:fg:history"
 HISTCONTROL=ignoreboth
 
 # suffixes to remove from tab-completion.
-FIGNORE=.swp:swo:~
+FIGNORE=.swp:.swo:~
 
 # make less more friendly for non-text input files
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -137,9 +137,6 @@ if [ -d "$N_PREFIX" ]; then
   PATH="$N_PREFIX/bin:$PATH"
 fi
 
-# OCaml
-alias locaml="ledit -x -h '$HOME/.ocaml_history' ocaml"
-
 # Python
 [ -f "$HOME/.pythonrc.py" ] && export PYTHONSTARTUP=$HOME/.pythonrc.py
 export VIRTUAL_ENV_DISABLE_PROMPT=1
@@ -157,9 +154,7 @@ vpython() {
   PYTHONPATH=. ./$venv/bin/python $*
 }
 
-alias vpip=./venv/bin/pip
-
-# pipx
+# pipx & poetry
 if [ -d "$HOME/.local/bin" ]; then
   PATH="$PATH:$HOME/.local/bin"
 fi
@@ -168,11 +163,9 @@ fi
 [ -d /usr/lib/R ] && export R_HOME='/usr/lib/R'
 
 # usual
-alias du='du -h'
-alias df='df -h'
-
 alias pwd='pwd -P'
 
+# alias '-' to 'cd -'
 alias -- -='cd - >/dev/null'
 alias +x='chmod u+x'
 
@@ -191,7 +184,6 @@ mkcd() { mkdir -p "$1" && cd "$1"; }
 
 alias reload=". $HOME/.bash_profile"
 
-alias c='cd -P'
 alias g=git
 alias m=mv
 alias s=sudo
@@ -219,7 +211,7 @@ if [ -d "$EC2_HOME" ]; then
 fi
 
 # Safe default
-export BROWSER='python -m webbrowser'
+export BROWSER='python3 -m webbrowser'
 
 # $PATH doesn't contain Homebrew's bin prefix at this point, so `which brew` or `command brew`
 # don't work.
@@ -273,8 +265,8 @@ if [ "$(uname)" = "Darwin" ]; then
   if [ -f "$HOME/.bashrc_osx" ]; then
     . "$HOME/.bashrc_osx"
   fi
-elif [[ "$(uname -a)" =~ "Ubuntu" ]] || [[ "$(uname -a)" =~ "Linux" ]]; then
-    if [ -f "$HOME/.bashrc_linux" ]; then
+elif [ -f "$HOME/.bashrc_linux" ]; then
+    if [[ "$(uname -a)" =~ "Ubuntu" ]] || [[ "$(uname -a)" =~ "Linux" ]]; then
         . "$HOME/.bashrc_linux"
     fi
 fi
