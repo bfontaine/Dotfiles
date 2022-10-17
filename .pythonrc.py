@@ -1,13 +1,9 @@
 # Initially stollen from github.com/coderholic/config
 # Most of these from http://sontek.net/blog/old/tips_and_tricks_for_the_python_interpreter
 
-## useful modules
-import json
-import os
-import re
-import sys
-
 def pp(x):
+    import json
+    import sys
     json.dump(x, sys.stdout, sort_keys=True, indent=2)
 
 
@@ -23,8 +19,9 @@ else:
     else:
         readline.parse_and_bind("tab: complete")
 
-    # Enable a History
-    HISTFILE="%s/.pyhistory" % os.environ["HOME"]
+    # Enable a history
+    from os import environ
+    HISTFILE="%s/.pyhistory" % environ["HOME"]
 
     # Read the existing history if there is one
     try:
@@ -43,7 +40,7 @@ else:
     import atexit
     atexit.register(savehist)
     del atexit
+    del environ
 finally:
     del rlcompleter
 
-WELCOME=''
