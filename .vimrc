@@ -82,6 +82,7 @@ Plug 'iqqmuT/vim-k'                               " K
 Plug 'groenewege/vim-less'                        " LESS
 Plug 'plasticboy/vim-markdown'                    " Markdown
 Plug 'mustache/vim-mustache-handlebars'           " Mustache
+Plug 'zah/nim.vim'                                " Nim
 Plug 'bfontaine/vim-quickstatements'              " QuickStatements (Wikidata)
 Plug 'burner/vim-svelte'                          " Svelte
 Plug 'cespare/vim-toml'                           " TOML
