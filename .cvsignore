@@ -28,11 +28,11 @@
 *.zip
 .DS_Store
 
-/env.sh
-
 # Secrets
 *.pem
 *.key
+.env
+/env.sh
 
 # Languages
 
