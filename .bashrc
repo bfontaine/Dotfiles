@@ -184,26 +184,6 @@ alias sv='sudo vim -p'
 
 alias M=make
 
-if [ -z "$(which n)" ]; then
-  if [ -n "$(which node)" ]; then
-    alias n=node
-  else
-    alias n=nodejs
-  fi
-fi
-
-# Setup Amazon EC2 Command-Line Tools
-export EC2_HOME=$HOME/.ec2
-
-if [ -d "$EC2_HOME" ]; then
-    export EC2_PRIVATE_KEY=`\ls $EC2_HOME/pk-*.pem`
-    export EC2_CERT=`\ls $EC2_HOME/cert-*.pem`
-    export PATH=$PATH:$EC2_HOME/bin
-fi
-
-# Safe default
-export BROWSER='python3 -m webbrowser'
-
 # $PATH doesn't contain Homebrew's bin prefix at this point, so `which brew` or `command brew`
 # don't work.
 for brew_prefix in '/home/linuxbrew/.linuxbrew' "$HOME/.linuxbrew" '/usr/local/Homebrew'; do
@@ -246,6 +226,26 @@ for brew_prefix in '/home/linuxbrew/.linuxbrew' "$HOME/.linuxbrew" '/usr/local/H
     break
   fi
 done
+
+if [ -z "$(which n)" ]; then
+  if [ -n "$(which node)" ]; then
+    alias n=node
+  else
+    alias n=nodejs
+  fi
+fi
+
+# Setup Amazon EC2 Command-Line Tools
+export EC2_HOME=$HOME/.ec2
+
+if [ -d "$EC2_HOME" ]; then
+    export EC2_PRIVATE_KEY=`\ls $EC2_HOME/pk-*.pem`
+    export EC2_CERT=`\ls $EC2_HOME/cert-*.pem`
+    export PATH=$PATH:$EC2_HOME/bin
+fi
+
+# Safe default
+export BROWSER='python3 -m webbrowser'
 
 # custom autocomplete scripts
 if [ -d "$HOME/.bash_utils/autocomplete" ]; then
