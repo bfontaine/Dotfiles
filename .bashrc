@@ -126,33 +126,6 @@ ignoreeof=1
 export EDITOR='vim'
 export PS2='… '
 
-# == Programming ==
-
-alias vim='vim -p'
-
-# Node
-export NODE_PATH='/usr/lib/node_modules'
-export N_PREFIX="$HOME/.n"
-if [ -d "$N_PREFIX" ]; then
-  PATH="$N_PREFIX/bin:$PATH"
-fi
-
-# Python
-[ -f "$HOME/.pythonrc.py" ] && export PYTHONSTARTUP=$HOME/.pythonrc.py
-export VIRTUAL_ENV_DISABLE_PROMPT=1
-export PYTHONIOENCODING=utf-8
-export POETRY_VIRTUALENVS_IN_PROJECT=true
-
-alias vpython=./.venv/bin/python
-
-# pipx & poetry
-if [ -d "$HOME/.local/bin" ]; then
-  PATH="$PATH:$HOME/.local/bin"
-fi
-
-# R
-[ -d /usr/lib/R ] && export R_HOME='/usr/lib/R'
-
 # usual
 alias pwd='pwd -P'
 
@@ -181,8 +154,6 @@ alias s=sudo
 alias v=vim
 alias ff='find . -name "*~" -type f -delete'
 alias sv='sudo vim -p'
-
-alias M=make
 
 # $PATH doesn't contain Homebrew's bin prefix at this point, so `which brew` or `command brew`
 # don't work.
@@ -226,6 +197,33 @@ for brew_prefix in '/home/linuxbrew/.linuxbrew' "$HOME/.linuxbrew" '/usr/local/H
     break
   fi
 done
+
+# == Programming ==
+
+alias vim='vim -p'
+
+# Node
+export NODE_PATH='/usr/lib/node_modules'
+export N_PREFIX="$HOME/.n"
+if [ -d "$N_PREFIX" ]; then
+  PATH="$N_PREFIX/bin:$PATH"
+fi
+
+# Python
+[ -f "$HOME/.pythonrc.py" ] && export PYTHONSTARTUP=$HOME/.pythonrc.py
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+export PYTHONIOENCODING=utf-8
+export POETRY_VIRTUALENVS_IN_PROJECT=true
+
+alias vpython=./.venv/bin/python
+
+# pipx & poetry
+if [ -d "$HOME/.local/bin" ]; then
+  PATH="$PATH:$HOME/.local/bin"
+fi
+
+# R
+[ -d /usr/lib/R ] && export R_HOME='/usr/lib/R'
 
 if [ -z "$(which n)" ]; then
   if [ -n "$(which node)" ]; then
