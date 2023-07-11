@@ -215,7 +215,7 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 export PYTHONIOENCODING=utf-8
 export POETRY_VIRTUALENVS_IN_PROJECT=true
 
-alias vpython=./.venv/bin/python
+alias vpython="poetry run python"
 
 # pipx & poetry
 if [ -d "$HOME/.local/bin" ]; then
