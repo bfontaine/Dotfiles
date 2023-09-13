@@ -1,6 +1,3 @@
-# Initially stollen from github.com/coderholic/config
-# Most of these from http://sontek.net/blog/old/tips_and_tricks_for_the_python_interpreter
-
 def pp(x):
     import json
     import sys
@@ -12,37 +9,4 @@ try:
 except ImportError:
     pass
 else:
-    import rlcompleter
-    is_libedit = 'libedit' in readline.__doc__
-    if is_libedit:
-        readline.parse_and_bind("bind ^I rl_complete")
-    else:
-        readline.parse_and_bind("tab: complete")
-
-    # Enable a history
-    from os import environ
-    # Note: if you get \040 in history, add "_HiStOrY_V2_" as the very first line of the file
-    # https://stackoverflow.com/a/17824899/735926
-    HISTFILE="%s/.pyhistory" % environ["HOME"]
-
-    # Read the existing history if there is one
-    try:
-        readline.read_history_file(HISTFILE)
-    except:
-        pass
-
-    # Set maximum number of items that will be written to the history file
-    readline.set_history_length(5000)
-
-    def savehist():
-        import readline
-        global HISTFILE
-        readline.write_history_file(HISTFILE)
-
-    import atexit
-    atexit.register(savehist)
-    del atexit
-    del environ
-finally:
-    del rlcompleter
-
+    readline.set_history_length(10000)
