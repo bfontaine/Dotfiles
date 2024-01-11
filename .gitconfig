@@ -20,6 +20,7 @@
 	s    = status --short --branch
 	sp   = stash pop
 	sd   = diff --staged
+	up   = pull --autostash --rebase
 
 [core]
 	pager = cat
@@ -90,8 +91,6 @@
 
 [github]
 	user = bfontaine
-[git-up "bundler"]
-	check = true
 [web]
 	browser = chrome
 [filter "lfs"]
