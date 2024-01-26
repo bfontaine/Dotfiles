@@ -409,6 +409,8 @@ augroup vimrc_autocmd
     au BufNewFile,BufRead .zprintrc        set ft=clojure
     au BufNewFile,BufRead .jshintrc        set ft=json
     au BufNewFile,BufRead .private_bashrc  set ft=bash
+    " would be better to have the correct type; but it's better than nothing
+    au BufNewFile,BufRead *nginx.conf.sigil set ft=nginx
 
     " autocomplete
     au FileType c          setlocal ofu=ccomplete#Complete
