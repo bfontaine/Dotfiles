@@ -9,11 +9,8 @@ if [ -f "$HB_CNF_HANDLER" ]; then
 fi
 
 # Ruby
-gembin=$(echo "$BREW_PREFIX/lib/ruby/gems"/*/bin | xargs -n 1 | tail -n 1)
+gembin=$(echo "$BREW_PREFIX/lib/ruby/gems"/*/bin | xargs -n 1 | sort | tail -n 1)
 export PATH="$gembin:$BREW_PREFIX/opt/ruby/bin:$PATH"
-
-# brew install graalvm-ce-java11
-export GRAALVM_HOME=$(echo /Library/Java/JavaVirtualMachines/graalvm-ce-java11-*/Contents/Home | grep -vF "*")
 
 # end of brew-related stuff
 fi
@@ -54,7 +51,7 @@ fi
 export GOPATH="$HOME/Documents/Programmation/Go"
 export PATH="$GOPATH/bin:$PATH:$BREW_PREFIX/opt/go/libexec/bin"
 
-export MACOSX_DEPLOYMENT_TARGET=11
+export MACOSX_DEPLOYMENT_TARGET=13.3
 
 # LaTeX
 export PATH="/usr/local/texlive/2015basic/bin/x86_64-darwin:$PATH"
