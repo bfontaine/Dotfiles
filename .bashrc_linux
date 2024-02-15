@@ -27,6 +27,3 @@ export GOPATH="$HOME/Go"
 export GOBIN="$GOPATH/bin"
 export PATH="$GOBIN:$PATH"
 
-# https://github.com/lolcommits/lolcommits/issues/387#issuecomment-604926766
-export LOLCOMMITS_DEVICE="/dev/video0"
-
