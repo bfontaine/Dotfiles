@@ -12,6 +12,9 @@
 --ignore-dir=.mypy_cache
 --ignore-dir=.coverage
 
+# other coverage dirs (JS, etc)
+--ignore-dir=coverage
+
 # Java & friends
 --ignore-dir=target
 --ignore-dir=target-back
