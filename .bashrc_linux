@@ -9,7 +9,7 @@ which xclip >/dev/null && \
     alias pbcopy='xclip -i' && \
     alias pbpaste='xclip -o'
 
-# --group-directories-first is a non-standard option
+# "--group-directories-first" is a non-standard option
 alias l="ls -Fhg --color=auto --group-directories-first"
 
 # Homebrew

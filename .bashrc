@@ -151,9 +151,7 @@ alias reload=". $HOME/.bash_profile"
 alias g=git
 alias m=mv
 alias s=sudo
-alias v=vim
 alias ff='find . -name "*~" -type f -delete'
-alias sv='sudo vim -p'
 
 # $PATH doesn't contain Homebrew's bin prefix at this point, so `which brew` or `command brew`
 # don't work.
@@ -201,6 +199,8 @@ done
 # == Programming ==
 
 alias vim='vim -p'
+alias v=vim
+alias sv='sudo vim -p'
 
 # Node
 export NODE_PATH='/usr/lib/node_modules'
@@ -234,12 +234,12 @@ if [ -z "$(which n)" ]; then
 fi
 
 # Setup Amazon EC2 Command-Line Tools
-export EC2_HOME=$HOME/.ec2
+export EC2_HOME="$HOME/.ec2"
 
 if [ -d "$EC2_HOME" ]; then
     export EC2_PRIVATE_KEY=`\ls $EC2_HOME/pk-*.pem`
     export EC2_CERT=`\ls $EC2_HOME/cert-*.pem`
-    export PATH=$PATH:$EC2_HOME/bin
+    export PATH="$PATH:$EC2_HOME/bin"
 fi
 
 # Safe default
@@ -264,7 +264,7 @@ fi
 export PATH="$HOME/bin:$PATH"
 
 # OCaml
-which opam >/dev/null && . .opam/opam-init/init.sh &>/dev/null
+which opam >/dev/null && . "$HOME/.opam/opam-init/init.sh" &>/dev/null
 export OCAML_TOPLEVEL_PATH="$HOME/.opam/system/lib/toplevel"
 
 PATH_BEFORE_GOOGLE_CLOUD="$PATH"
@@ -283,6 +283,6 @@ export ANSIBLE_NOCOWS=1
 # https://github.com/docker/scan-cli-plugin/issues/149#issuecomment-823969364
 export DOCKER_SCAN_SUGGEST=false
 
-if [ x"$(which gem)" != x ]; then
+if [ ! -z "$(which gem)" ]; then
   PATH="$PATH:$(gem environment gemdir)/bin"
 fi
