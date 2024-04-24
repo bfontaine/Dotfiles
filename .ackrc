@@ -15,6 +15,12 @@
 # other coverage dirs (JS, etc)
 --ignore-dir=coverage
 
+# JS
+--ignore-dir=.svelte-kit
+--ignore-dir=build/server/chunks
+--ignore-dir=build/client/_app
+--ignore-file=is:smui.css
+
 # Java & friends
 --ignore-dir=target
 --ignore-dir=target-back
