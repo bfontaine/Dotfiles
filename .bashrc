@@ -184,9 +184,6 @@ for brew_prefix in '/home/linuxbrew/.linuxbrew' "$HOME/.linuxbrew" '/usr/local/H
     export HOMEBREW_DEVELOPER=1
     # Disable Homebrew autoupdate
     export HOMEBREW_NO_AUTO_UPDATE=1
-    # Run 'brew autoremove' (remove formulas installed as dependencies that are
-    # no longer needed) when one runs 'brew cleanup' and 'brew uninstall'
-    export HOMEBREW_AUTOREMOVE=1
     # Don't print the 'beer' emoji
     export HOMEBREW_NO_EMOJI=1
 
