@@ -77,6 +77,8 @@ target-test-node
 
 ## Node
 node_modules
+.pnpm-store
+.npmrc
 
 ## SASS
 .sass-cache
