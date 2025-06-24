@@ -72,6 +72,7 @@ __pycache__
 .lein-failures
 .cpcache
 .rebel_readline_history
+.clj-kondo/imports
 ### cljs-ajax test suite
 target-test-node
 
