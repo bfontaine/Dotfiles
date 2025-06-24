@@ -21,11 +21,6 @@
   ;; - (require '[criterium.core :refer [bench]])
   ;; - (bench (your-expression))
   :bench {:extra-deps {criterium/criterium {:mvn/version "RELEASE"}}}
-  ;; - see https://github.com/clojure-goes-fast/clj-memory-meter
-  ;; - (require '[clj-memory-meter.core :as mm])
-  ;; - (mm/measure (your-expression))
-  :measure {:extra-deps {com.clojure-goes-fast/clj-memory-meter
-                         {:mvn/version "RELEASE"}}}
   ;; - see https://github.com/Olical/depot
   :outdated {:extra-deps {olical/depot {:mvn/version "RELEASE"}}
              :main-opts ["-m" "depot.outdated.main"]}
@@ -36,11 +31,6 @@
    :main-opts
    ["-e"
     "(require,'[nrepl.server,:refer,[start-server]]),(start-server,:port,60606)"]}
-  :nrepl/old
-  {:extra-deps {org.clojure/tools.nrepl {:mvn/version "RELEASE"}}
-   :main-opts
-   ["-e"
-    "(require,'[clojure.tools.nrepl.server,:refer,[start-server]]),(start-server,:port,60606)"]}
   ;; - start a Socket REPL on port 50505:
   :socket
   {:jvm-opts
@@ -82,7 +72,16 @@
   :uberjar {:extra-deps {seancorfield/depstar {:mvn/version "RELEASE"}}
             :main-opts ["-m" "hf.depstar.uberjar"]}
   :jar {:extra-deps {seancorfield/depstar {:mvn/version "RELEASE"}}
-        :main-opts ["-m" "hf.depstar.jar"]}}
+        :main-opts ["-m" "hf.depstar.jar"]}
+
+  ;; https://github.com/bhauman/clojure-mcp?tab=readme-ov-file#step-2-install-the-clojure-mcp-server
+  :mcp
+  {:deps {org.slf4j/slf4j-nop {:mvn/version "2.0.16"} ;; Required for stdio server
+          com.bhauman/clojure-mcp {:git/url "https://github.com/bhauman/clojure-mcp.git"
+                                   :git/tag "v0.1.5-alpha"
+                                   :git/sha "5a0c9e2"}}
+   :exec-fn clojure-mcp.main/start-mcp-server
+   :exec-args {:port 7888}}}
  :mvn/repos {"io.confluent" {:url "https://packages.confluent.io/maven/"}
              "sonatype"
              {:url
