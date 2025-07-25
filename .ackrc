@@ -17,6 +17,7 @@
 
 # JS
 --ignore-dir=.svelte-kit
+--ignore-dir=.pnpm-store
 --ignore-dir=build/server/chunks
 --ignore-dir=build/client/_app
 --ignore-file=is:smui.css
@@ -29,6 +30,8 @@
 --ignore-file=is:.lein-repl-history
 --ignore-file=is:.nrepl-history
 --ignore-dir=out
+--ignore-dir=.lsp
+--ignore-dir=.clj-kondo
 
 # Go
 --ignore-dir=Godeps

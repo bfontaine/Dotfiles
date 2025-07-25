@@ -1,24 +1,23 @@
-# OS specifics
-
-## macOS
+# macOS
 .DS_Store
 
 # Temporary files
 *.bak
+*.bak.*
 
-## Vim
+# Vim
 *~
 .*.sw*
 *.log
 
-## IntelliJ
+# IntelliJ
 .idea
 /*.iml
 
-## Ansible
+# Ansible
 *.retry
 
-## LibreOffice
+# LibreOffice
 .~lock.*
 
 # Archives / compressed files
@@ -34,9 +33,7 @@
 .env
 /env.sh
 
-# Languages
-
-## Python
+# Python
 .venv
 venv
 venv2
@@ -63,28 +60,29 @@ __pycache__
 *.native
 /_build
 
-## Ruby
+# Ruby
 *.gem
 
-## Clojure
+# Clojure
 /target/classes
 /target/stale
 .lein-failures
 .cpcache
 .rebel_readline_history
-.clj-kondo/imports
-### cljs-ajax test suite
+.clj-kondo
+.lsp
+# cljs-ajax test suite
 target-test-node
 
-## Node
+# Node
 node_modules
 .pnpm-store
 .npmrc
 
-## SASS
+# SASS
 .sass-cache
 
-## i18n/t10n
+# i18n/t10n
 *.mo
 
 # Personal notes
@@ -96,11 +94,10 @@ node_modules
 # Databases
 *.dump
 
-## SQLite
+# SQLite
 *.db
 *.db-journal
 *.db.*
-*.bak
 
 # Various data files
 *.jsons
@@ -121,7 +118,3 @@ node_modules
 
 /tags
 
-# Logs
-*.log
-# Linuxbrew
-Library/Homebrew/vendor/bundle/ruby/2.6.0
