@@ -113,7 +113,6 @@ fi
 
 case $TERM in
     xterm*|rxvt*|aterm|kterm|gnome*)
-        _bash_prompt_command;
         PROMPT_COMMAND='_bash_prompt_command';;
     *)
         ;;
