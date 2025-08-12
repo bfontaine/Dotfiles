@@ -52,6 +52,9 @@
 	noprefix = true
 	# work with large diffs
 	renameLimit = 8192
+[diff "clojure"]
+	# TODO test me
+	xfuncname = "\\((def|defn-?|fn)\\b"
 [grep]
 	extendRegexp = true
 [status]

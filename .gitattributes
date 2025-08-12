@@ -2,6 +2,7 @@
 * text=auto
 
 # language-aware diffs
+*.clj diff=clojure
 *.py diff=python
 *.rb diff=ruby
 .irbrc diff=ruby
