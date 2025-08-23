@@ -59,3 +59,7 @@ export PATH="/usr/local/texlive/2015basic/bin/x86_64-darwin:$PATH"
 # https://github.com/dsoprea/PyEasyArchive/issues/16#issuecomment-538654606
 # $(brew --prefix libarchive) == /usr/local/opt/libarchive
 export LA_LIBRARY_FILEPATH=/usr/local/opt/libarchive/lib/libarchive.dylib
+
+if [ -d "$HOME/.docker/bin" ]; then
+  PATH="$HOME/.docker/bin:$PATH"
+fi
