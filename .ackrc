@@ -11,6 +11,7 @@
 --ignore-dir=htmlcov
 --ignore-dir=.mypy_cache
 --ignore-dir=.coverage
+--ignore-dir=.hypothesis
 
 # other coverage dirs (JS, etc)
 --ignore-dir=coverage
