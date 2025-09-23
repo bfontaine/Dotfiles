@@ -3,7 +3,7 @@
 which brew >/dev/null
 if [ "$?" = "0" ]; then
 
-HB_CNF_HANDLER="$BREW_PREFIX/Homebrew/Library/Taps/homebrew/homebrew-command-not-found/handler.sh"
+HB_CNF_HANDLER="$BREW_PREFIX/Library/Homebrew/command-not-found/handler.sh"
 if [ -f "$HB_CNF_HANDLER" ]; then
   source "$HB_CNF_HANDLER";
 fi
