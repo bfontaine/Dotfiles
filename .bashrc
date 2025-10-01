@@ -35,9 +35,10 @@ stty werase undef
 # you accidentally type ^S.
 stty -ixon
 
-# history length (very large for stats)
-HISTSIZE=100000
-HISTFILESIZE=400000
+# history length
+# -- note that if it's too large Bash takes a lot of time to start
+HISTSIZE=10000
+HISTFILESIZE=40000
 
 # don't add those commands to the history
 HISTIGNORE="ls:cd:fg:history"
