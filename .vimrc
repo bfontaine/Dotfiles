@@ -340,7 +340,7 @@ let g:syntastic_tex_checkers = ['chktex']
 " don't display these warnings
 let g:syntastic_tex_chktex_args = "-n 26 -n 36 -n 57"
 let g:syntastic_markdown_checkers = ['proselint']
-let g:syntastic_python_python_exec = "/usr/bin/python3"
+let g:syntastic_python_python_exec = "/usr/local/bin/python3"
 
 " Tabular
 vnoremap <leader>t :Tabular<space>/
