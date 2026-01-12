@@ -1,8 +1,11 @@
 #! /bin/bash -ex
 sudo apt update
 sudo apt upgrade
-sudo apt install --yes vim git curl make ruby safe-rm xclip \
-  build-essential file terminator kolourpaint fonts-powerline
+sudo apt install --yes vim git curl make ruby safe-rm xclip build-essential file terminator kolourpaint \
+    fonts-powerline ansible-core imapfilter mplayer
+
+sudo snap install firefox
+sudo snap install slack
 
 mkdir -p ~/GitHub
 pushd ~/GitHub
