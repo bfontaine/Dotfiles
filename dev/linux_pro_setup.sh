@@ -28,7 +28,7 @@ popd # GitHub
 
 for f in .ackrc .bash_profile .bashrc .bashrc_linux .ctags .cvsignore .emacs \
   .gemrc .gitattributes .gitconfig .hushlogin .inputrc .irbrc .pythonrc.py \
-  .safe-rm .up-commands .vimrc .zshrc \
+  .safe-rm .up-commands .vimrc .zshrc .keyboard \
 ; do
   rm -f "$HOME/$f"
   ln -s "$HOME/GitHub/Dotfiles/$f" "$HOME/$f"
