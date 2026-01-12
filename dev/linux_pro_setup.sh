@@ -2,7 +2,7 @@
 sudo apt update
 sudo apt upgrade
 sudo apt install --yes vim git curl make ruby safe-rm xclip build-essential file terminator kolourpaint \
-    fonts-powerline ansible-core imapfilter mplayer
+    fonts-powerline ansible-core imapfilter mplayer zlib1g-dev
 
 sudo snap install firefox
 sudo snap install slack
