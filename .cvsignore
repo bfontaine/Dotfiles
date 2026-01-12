@@ -49,6 +49,9 @@ __pycache__
 .webassets-cache
 .mypy_cache
 /*sandbox.py
+.pytest_cache
+.ruff_cache
+
 # LibreOffice
 .~lock.*
 # Ruby
