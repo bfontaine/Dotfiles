@@ -284,6 +284,9 @@ export ANSIBLE_NOCOWS=1
 # https://github.com/docker/scan-cli-plugin/issues/149#issuecomment-823969364
 export DOCKER_SCAN_SUGGEST=false
 
+# Disable Claude's telemetry
+export DISABLE_TELEMETRY=1
+
 if [ ! -z "$(which gem)" ]; then
   PATH="$PATH:$(gem environment gemdir)/bin"
 fi
