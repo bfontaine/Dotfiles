@@ -242,6 +242,7 @@ vnoremap <f1> <esc>
 " open dotfiles
 nnoremap <leader>db :tabnew ~/.bashrc<cr>
 nnoremap <leader>dg :tabnew ~/.gitconfig<cr>
+nnoremap <leader>dh :tabnew ~/.config/ghostty/config<cr>
 nnoremap <leader>dp :tabnew ~/.pythonrc.py<cr>
 nnoremap <leader>ds :tabnew ~/.ssh/config<cr>
 nnoremap <leader>dv :tabnew ~/.vimrc<cr>
