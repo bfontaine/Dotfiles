@@ -8,9 +8,8 @@ sudo snap install firefox
 sudo snap install slack
 
 mkdir -p ~/GitHub
-pushd ~/GitHub
-git clone http://github.com/bfontaine/Dotfiles.git
-pushd Dotfiles
+git clone http://github.com/bfontaine/Dotfiles.git ~/GitHub/Dotfiles
+pushd ~/GitHub/Dotfiles
 
 cp -r .bash_utils ~/
 mkdir -p ~/.config
@@ -23,13 +22,19 @@ cp bin/* ~/bin/
 cp -r .vim ~/
 ./setup.sh
 
-popd # Dotfiles
-popd # GitHub
+popd
 
 for f in .ackrc .bash_profile .bashrc .bashrc_linux .ctags .cvsignore .emacs \
   .gemrc .gitattributes .gitconfig .hushlogin .inputrc .irbrc .pythonrc.py \
   .safe-rm .up-commands .vimrc .zshrc .keyboard \
+  .config/fish .config/ghostty .config/nvim \
 ; do
   rm -f "$HOME/$f"
   ln -s "$HOME/GitHub/Dotfiles/$f" "$HOME/$f"
+done
+
+for d in fish ghostty nvim \
+; do
+  rm -rf "$HOME/.config/$d"
+  ln -s "$HOME/GitHub/Dotfiles/.config/$d" "$HOME/.config/$d"
 done

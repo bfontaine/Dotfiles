@@ -1,0 +1,86 @@
+# This is the configuration file for Ghostty.
+#
+# Run `ghostty +show-config --default --docs` to view a list of
+# all available config options and their default values.
+#
+# Ghostty can reload the configuration while running by using the menu
+# options or the bound key (default: Command + Shift + comma on macOS and
+# Control + Shift + comma on other platforms). Not all config options can be
+# reloaded while running; some only apply to new windows and others may require
+# a full restart to take effect.
+
+# Config syntax crash course
+# ==========================
+# # The config file consists of simple key-value pairs,
+# # separated by equals signs.
+# font-family = Iosevka
+# window-padding-x = 2
+#
+# # Any line beginning with a # is a comment. It's not possible to put
+# # a comment after a config option, since it would be interpreted as a
+# # part of the value. For example, this will have a value of "#123abc":
+# background = #123abc
+#
+# # Empty values are used to reset config keys to default.
+# key =
+#
+# # Some config options have unique syntaxes for their value,
+# # which is explained in the docs for that config option.
+# # Just for example:
+# resize-overlay-duration = 4s 200ms
+
+# Use Ctrl+Shift+, to reload the config.
+
+# https://ghostty.org/docs/config/keybind
+
+# Terminator-like
+## Colors
+window-theme = dark
+background = black
+foreground = green
+background-opacity = 0.94
+cursor-color = green
+cursor-text = black
+## Font
+font-family = DejaVu Sans Mono
+font-size = 11
+## Cursor
+cursor-style-blink = false
+## Tabs
+gtk-tabs-location = bottom
+## Scrollback: 4GB (infinite is not possible)
+scrollback-limit = 4294967296
+## Key bindings
+### New split
+keybind = alt+d=new_split:right
+keybind = alt+shift+d=new_split:down
+### Split focus
+keybind = alt+arrow_left=goto_split:left
+keybind = alt+arrow_right=goto_split:right
+keybind = alt+arrow_up=goto_split:up
+keybind = alt+arrow_down=goto_split:down
+### Tabs
+keybind = ctrl+right=next_tab
+keybind = ctrl+left=previous_tab
+
+# Ambience palette
+# https://github.com/gnome-terminator/terminator/blob/7898cd923c7c3381c1a35296a8d3eede0c04e1b0/terminatorlib/prefseditor.py#L94-L96
+# Standard colors (0-7)
+palette = 0=#2e3436
+palette = 1=#cc0000
+palette = 2=#4e9a06
+palette = 3=#c4a000
+palette = 4=#3465a4
+palette = 5=#75507b
+palette = 6=#06989a
+palette = 7=#d3d7cf
+# Bright colors (8-15)
+palette = 8=#555753
+palette = 9=#ef2929
+palette = 10=#8ae234
+palette = 11=#fce94f
+palette = 12=#729fcf
+palette = 13=#ad7fa8
+palette = 14=#34e2e2
+palette = 15=#eeeeec
+
