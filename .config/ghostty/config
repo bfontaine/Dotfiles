@@ -39,7 +39,8 @@
 window-theme = dark
 background = black
 foreground = green
-background-opacity = 1  # setting this to <1 shows a flash of bg-opacity=0 when opening a new split/tab (todo: report it)
+# setting this to <1 shows a flash of bg-opacity=0 when opening a new split/tab (todo: report it)
+background-opacity = 1
 cursor-color = green
 cursor-text = black
 ## Font
@@ -63,6 +64,11 @@ keybind = alt+arrow_left=goto_split:left
 keybind = alt+arrow_right=goto_split:right
 keybind = alt+arrow_up=goto_split:up
 keybind = alt+arrow_down=goto_split:down
+### Split resize
+keybind = ctrl+shift+arrow_up=resize_split:up,10
+keybind = ctrl+shift+arrow_down=resize_split:down,10
+keybind = ctrl+shift+arrow_left=resize_split:left,10
+keybind = ctrl+shift+arrow_right=resize_split:right,10
 ### Tabs
 keybind = ctrl+right=next_tab
 keybind = ctrl+left=previous_tab
