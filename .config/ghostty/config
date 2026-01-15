@@ -70,8 +70,8 @@ keybind = ctrl+shift+arrow_down=resize_split:down,10
 keybind = ctrl+shift+arrow_left=resize_split:left,10
 keybind = ctrl+shift+arrow_right=resize_split:right,10
 ### Tabs
-keybind = ctrl+right=next_tab
-keybind = ctrl+left=previous_tab
+keybind = ctrl+arrow_right=next_tab
+keybind = ctrl+arrow_left=previous_tab
 
 # Ambience palette
 # https://github.com/gnome-terminator/terminator/blob/7898cd923c7c3381c1a35296a8d3eede0c04e1b0/terminatorlib/prefseditor.py#L94-L96
