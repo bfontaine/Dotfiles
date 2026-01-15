@@ -20,3 +20,8 @@ Host github gh
 Host gitlab gl
   Hostname gitlab.com
   User git
+
+# Ghostty’s TERMINFO is not properly supported everywhere. Set the TERM to xterm when SSH-ing on servers
+# https://github.com/ghostty-org/ghostty/discussions/3161#discussioncomment-11688078
+Match Final Exec "echo $TERM | grep -q xterm-ghostty"
+  SetEnv TERM=xterm-256color
