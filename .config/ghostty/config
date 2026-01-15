@@ -32,6 +32,7 @@
 # Use Ctrl+Shift+, to reload the config.
 
 # https://ghostty.org/docs/config/keybind
+# https://ghostty.org/docs/config/reference
 
 # Terminator-like
 ## Colors
@@ -46,8 +47,11 @@ font-family = DejaVu Sans Mono
 font-size = 11
 ## Cursor
 cursor-style-blink = false
+cursor-style = block
 ## Tabs
 gtk-tabs-location = bottom
+# Splits
+unfocused-split-opacity = 0.75
 ## Scrollback: 4GB (infinite is not possible)
 scrollback-limit = 4294967296
 ## Key bindings
