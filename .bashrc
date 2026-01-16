@@ -211,7 +211,7 @@ if [ -d "$N_PREFIX" ]; then
 fi
 
 # Python
-[ -f "$HOME/.pythonrc.py" ] && export PYTHONSTARTUP=$HOME/.pythonrc.py
+[ -f "$HOME/.pythonrc.py" ] && export PYTHONSTARTUP="$HOME/.pythonrc.py"
 export VIRTUAL_ENV_DISABLE_PROMPT=1
 export PYTHONIOENCODING=utf-8
 export POETRY_VIRTUALENVS_IN_PROJECT=true
@@ -225,23 +225,6 @@ fi
 
 # R
 [ -d /usr/lib/R ] && export R_HOME='/usr/lib/R'
-
-if [ -z "$(which n)" ]; then
-  if [ -n "$(which node)" ]; then
-    alias n=node
-  else
-    alias n=nodejs
-  fi
-fi
-
-# Setup Amazon EC2 Command-Line Tools
-export EC2_HOME="$HOME/.ec2"
-
-if [ -d "$EC2_HOME" ]; then
-    export EC2_PRIVATE_KEY=`\ls $EC2_HOME/pk-*.pem`
-    export EC2_CERT=`\ls $EC2_HOME/cert-*.pem`
-    export PATH="$PATH:$EC2_HOME/bin"
-fi
 
 # Safe default
 export BROWSER='python3 -m webbrowser'
@@ -258,10 +241,6 @@ fi
 
 # Ensure ~/bin is before everything else
 export PATH="$HOME/bin:$PATH"
-
-# OCaml
-which opam >/dev/null && . "$HOME/.opam/opam-init/init.sh" &>/dev/null
-export OCAML_TOPLEVEL_PATH="$HOME/.opam/system/lib/toplevel"
 
 PATH_BEFORE_GOOGLE_CLOUD="$PATH"
 if [ -f "$HOME/.gcloud/google-cloud-sdk/path.bash.inc" ]; then

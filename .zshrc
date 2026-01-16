@@ -1,6 +1,3 @@
-# added by travis gem
-[ -f /Users/baptiste/.travis/travis.sh ] && source /Users/baptiste/.travis/travis.sh
-
 # https://github.com/homebrew/homebrew-command-not-found
 . $(brew --prefix)/Library/Homebrew/command-not-found/handler.sh
 

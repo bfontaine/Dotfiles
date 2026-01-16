@@ -16,9 +16,6 @@ alias l="ls -Fhg --color=auto --group-directories-first"
 which brew >/dev/null
 if [ "$?" = "0" ]; then
   BREW_PREFIX=$(brew --prefix)
-
-  # brew install graalvm-ce-java11-linux-amid64
-  export GRAALVM_HOME="$BREW_PREFIX/opt/graalvm-ce-java11-linux-amd64"
 fi
 
 export BROWSER=google-chrome

@@ -21,14 +21,6 @@ Plug 'sjl/gundo.vim'                   " Gundo
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter' " +-~ in gutter
 
-" = Autocomplete =
-" Deoplete
-" You need to `pip3 install --user pynvim` + :call deoplate#enable()
-" xTODO customize it to hide the preview window + complete ONLY on request
-" Plug 'Shougo/deoplete.nvim'
-" Plug 'roxma/nvim-yarp'
-" Plug 'roxma/vim-hug-neovim-rpc'
-
 " = Languages Specifics =
 
 " == C/C++ ==
