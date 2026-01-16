@@ -34,6 +34,8 @@
 # https://ghostty.org/docs/config/keybind
 # https://ghostty.org/docs/config/reference
 
+confirm-close-surface = false
+
 # Terminator-like
 ## Colors
 window-theme = dark
@@ -69,6 +71,8 @@ keybind = ctrl+shift+arrow_up=resize_split:up,10
 keybind = ctrl+shift+arrow_down=resize_split:down,10
 keybind = ctrl+shift+arrow_left=resize_split:left,10
 keybind = ctrl+shift+arrow_right=resize_split:right,10
+### Terminal close
+keybind = alt+shift+e=close_surface
 ### Tabs
 keybind = ctrl+arrow_right=next_tab
 keybind = ctrl+arrow_left=previous_tab
