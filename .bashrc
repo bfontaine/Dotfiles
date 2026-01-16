@@ -216,11 +216,11 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 export PYTHONIOENCODING=utf-8
 export POETRY_VIRTUALENVS_IN_PROJECT=true
 
-alias vpython="uv run python"
+alias vpython="./.venv/bin/python"
 
-# pipx & poetry & uv
+# pipx, poetry, claude, uv, etc
 if [ -d "$HOME/.local/bin" ]; then
-  PATH="$PATH:$HOME/.local/bin"
+  PATH="$HOME/.local/bin:$PATH"
 fi
 
 # R
@@ -245,11 +245,6 @@ fi
 
 # Safe default
 export BROWSER='python3 -m webbrowser'
-
-# custom autocomplete scripts
-if [ -d "$HOME/.bash_utils/autocomplete" ]; then
-    . "$HOME"/.bash_utils/autocomplete/*.sh
-fi
 
 if [ "$(uname)" = "Darwin" ]; then
   if [ -f "$HOME/.bashrc_osx" ]; then

@@ -51,10 +51,7 @@ fi
 export GOPATH="$HOME/Documents/Programmation/Go"
 export PATH="$GOPATH/bin:$PATH:$BREW_PREFIX/opt/go/libexec/bin"
 
-export MACOSX_DEPLOYMENT_TARGET=13.3
-
-# LaTeX
-export PATH="/usr/local/texlive/2015basic/bin/x86_64-darwin:$PATH"
+export MACOSX_DEPLOYMENT_TARGET=15.7
 
 # https://github.com/dsoprea/PyEasyArchive/issues/16#issuecomment-538654606
 # $(brew --prefix libarchive) == /usr/local/opt/libarchive
