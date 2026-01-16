@@ -86,7 +86,7 @@ function _bash_prompt_command {
             fi
         fi
 
-        GITBR=$(git describe --contains --all HEAD 2> /dev/null)
+        GITBR=$(git branch --show-current 2> /dev/null)
 
         if [ $? -eq 0 ]; then
             if [ $DIRCOLOR ]; then
