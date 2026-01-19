@@ -67,10 +67,10 @@ keybind = alt+arrow_right=goto_split:right
 keybind = alt+arrow_up=goto_split:up
 keybind = alt+arrow_down=goto_split:down
 ### Split resize
-keybind = ctrl+shift+arrow_up=resize_split:up,10
-keybind = ctrl+shift+arrow_down=resize_split:down,10
-keybind = ctrl+shift+arrow_left=resize_split:left,10
-keybind = ctrl+shift+arrow_right=resize_split:right,10
+keybind = ctrl+shift+arrow_up=resize_split:up,15
+keybind = ctrl+shift+arrow_down=resize_split:down,15
+keybind = ctrl+shift+arrow_left=resize_split:left,15
+keybind = ctrl+shift+arrow_right=resize_split:right,15
 ### Terminal close
 keybind = alt+shift+e=close_surface
 ### Tabs
