@@ -2,7 +2,8 @@
 sudo apt update
 sudo apt upgrade
 sudo apt install --yes vim git curl make ruby safe-rm xclip build-essential file terminator kolourpaint \
-    fonts-powerline ansible-core imapfilter mplayer zlib1g-dev nmap gnome-tweaks tree whois filezilla
+    fonts-powerline ansible-core imapfilter mplayer zlib1g-dev nmap gnome-tweaks tree whois filezilla composer ffmpeg \
+    python3-pip apt-transport-https
 
 sudo snap install firefox
 sudo snap install slack
