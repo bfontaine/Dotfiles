@@ -35,6 +35,7 @@
 # https://ghostty.org/docs/config/reference
 
 confirm-close-surface = false
+clipboard-paste-protection = false
 
 # Terminator-like
 ## Colors
@@ -76,6 +77,9 @@ keybind = alt+shift+e=close_surface
 ### Tabs
 keybind = ctrl+arrow_right=next_tab
 keybind = ctrl+arrow_left=previous_tab
+
+# No, thanks
+keybind = ctrl+enter=unbind
 
 # Ambience palette
 # https://github.com/gnome-terminator/terminator/blob/7898cd923c7c3381c1a35296a8d3eede0c04e1b0/terminatorlib/prefseditor.py#L94-L96
