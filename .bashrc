@@ -152,6 +152,7 @@ alias g=git
 alias m=mv
 alias s=sudo
 alias ff='find . -name "*~" -type f -delete'
+alias cc=claude
 
 # $PATH doesn't contain Homebrew's bin prefix at this point, so `which brew` or `command brew`
 # don't work.
