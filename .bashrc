@@ -251,6 +251,11 @@ if [ -f "$HOME/.gcloud/google-cloud-sdk/path.bash.inc" ]; then
   PATH="$PATH_BEFORE_GOOGLE_CLOUD:$HOME/.gcloud/google-cloud-sdk/bin"
 fi
 
+
+if [ -d "$HOME/.cargo" ]; then
+  PATH="$PATH:$HOME/.cargo/bin"
+fi
+
 export PLANTUML_LIMIT_SIZE=15000
 
 # Ansible
