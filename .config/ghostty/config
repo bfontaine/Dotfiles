@@ -38,6 +38,9 @@ confirm-close-surface = false
 clipboard-paste-protection = false
 
 # Terminator-like
+## Selection
+## https://github.com/ghostty-org/ghostty/commit/811e3594eb7fd42c67157cccc2bf68e308b29337 (v1.3+)
+#selection-word-chars = " \t'\"│`|,()[]{}<>$"
 ## Colors
 window-theme = dark
 background = black
@@ -55,7 +58,7 @@ cursor-style = block
 ## Tabs
 gtk-tabs-location = bottom
 # Splits
-unfocused-split-opacity = 0.75
+unfocused-split-opacity = 0.7
 ## Scrollback: 4GB (infinite is not possible)
 scrollback-limit = 4294967296
 ## Key bindings
