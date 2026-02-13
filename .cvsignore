@@ -119,6 +119,10 @@ node_modules
 *.retry
 .galaxy_install_info
 
+# Claude Code local files
+.claude/*.local.json
+CLAUDE.local.md
+
 /tags
 
 # Random test scripts
