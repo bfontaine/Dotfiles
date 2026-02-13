@@ -8,6 +8,10 @@ sudo apt install --yes vim git curl make ruby safe-rm xclip build-essential file
 sudo snap install firefox
 sudo snap install slack
 
+# Also:
+# cargo install oxipng
+# gnome-extensions disable ding@rastersoft.com # disable desktop icons
+
 mkdir -p ~/GitHub
 git clone http://github.com/bfontaine/Dotfiles.git ~/GitHub/Dotfiles
 pushd ~/GitHub/Dotfiles
