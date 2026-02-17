@@ -81,6 +81,8 @@ keybind = alt+shift+e=close_surface
 keybind = ctrl+arrow_right=next_tab
 keybind = ctrl+arrow_left=previous_tab
 
+keybind = alt+shift+t=prompt_surface_title
+
 # No, thanks
 keybind = ctrl+enter=unbind
 
