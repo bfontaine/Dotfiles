@@ -11,6 +11,7 @@ sudo snap install slack
 # Also:
 # cargo install oxipng
 # gnome-extensions disable ding@rastersoft.com # disable desktop icons
+# in dconf-editor go to /org/gnome/desktop/wm/preferences/mouse-button-modifier and set '<zoom>' as custom value
 
 mkdir -p ~/GitHub
 git clone http://github.com/bfontaine/Dotfiles.git ~/GitHub/Dotfiles
