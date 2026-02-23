@@ -121,7 +121,9 @@ node_modules
 
 # Claude Code local files
 .claude/*.local.json
-CLAUDE.local.md
+*.local.md
+# Codex
+*.override.md
 
 /tags
 
