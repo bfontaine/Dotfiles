@@ -40,7 +40,7 @@ clipboard-paste-protection = false
 # Terminator-like
 ## Selection
 ## https://github.com/ghostty-org/ghostty/commit/811e3594eb7fd42c67157cccc2bf68e308b29337 (v1.3+)
-#selection-word-chars = " \t'\"│`|,()[]{}<>$"
+selection-word-chars = " \t'\"│`|,()[]{}<>$"
 ## Colors
 window-theme = dark
 background = black
@@ -107,3 +107,5 @@ palette = 13=#ad7fa8
 palette = 14=#34e2e2
 palette = 15=#eeeeec
 
+# Don't mess with my shell, thanks
+shell-integration = none
