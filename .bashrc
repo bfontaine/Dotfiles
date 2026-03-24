@@ -225,6 +225,11 @@ alias vpython="./.venv/bin/python"
 # pipx, poetry, claude, uv, etc
 if [ -d "$HOME/.local/bin" ]; then
   PATH="$HOME/.local/bin:$PATH"
+
+  if [ -f "$HOME/.local/bin/spotifycli" ]; then
+    alias sp=spotifycli
+    alias p='spotifycli --playpause'
+  fi
 fi
 
 # R
