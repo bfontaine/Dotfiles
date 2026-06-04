@@ -76,6 +76,7 @@ Plug 'plasticboy/vim-markdown'                    " Markdown
 Plug 'mustache/vim-mustache-handlebars'           " Mustache
 Plug 'zah/nim.vim'                                " Nim
 Plug 'bfontaine/vim-quickstatements'              " QuickStatements (Wikidata)
+Plug 'cappyzawa/starlark.vim'                     " Starlark
 Plug 'burner/vim-svelte'                          " Svelte
 Plug 'cespare/vim-toml'                           " TOML
 Plug 'lumiliet/vim-twig'                          " Twig
@@ -389,6 +390,7 @@ augroup vimrc_autocmd
     au BufNewFile,BufRead templates/*.html set ft=htmljinja
     au BufNewFile,BufRead *.ics            set ft=icalendar
     au BufNewFile,BufRead *.json           set ft=json
+    au BufNewFile,BufRead *.rules          set ft=starlark " Codex rules
     au BufNewFile,BufRead *.yml.j2         set ft=yaml
 
     au BufNewFile,BufRead /usr/share/X11/xkb/* set ft=xkb
