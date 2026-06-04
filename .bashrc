@@ -190,6 +190,8 @@ for brew_prefix in '/home/linuxbrew/.linuxbrew' "$HOME/.linuxbrew" '/usr/local/H
     export HOMEBREW_NO_AUTO_UPDATE=1
     # Don't print the 'beer' emoji
     export HOMEBREW_NO_EMOJI=1
+    # Don't ask on upgrade
+    export HOMEBREW_NO_ASK=1
 
     # Use the new internal API
     # https://github.com/Homebrew/brew/pull/20951
