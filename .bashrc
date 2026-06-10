@@ -193,10 +193,6 @@ for brew_prefix in '/home/linuxbrew/.linuxbrew' "$HOME/.linuxbrew" '/usr/local/H
     # Don't ask on upgrade
     export HOMEBREW_NO_ASK=1
 
-    # Use the new internal API
-    # https://github.com/Homebrew/brew/pull/20951
-    export HOMEBREW_USE_INTERNAL_API=1
-
     alias b=brew
 
     break
