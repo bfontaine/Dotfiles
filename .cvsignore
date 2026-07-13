@@ -8,7 +8,9 @@
 # Vim
 *~
 .*.sw*
+
 *.log
+*.log.*
 
 # IntelliJ
 .idea
@@ -110,11 +112,14 @@ node_modules
 .sass-cache
 *.edn-*
 *.jsons-*
+# Temporary files
 /target/classes
 /target/stale
 .lein-failures
 .cpcache
 .rebel_readline_history
+# Other random files
+*.pptx
 # Ansible
 *.retry
 .galaxy_install_info
@@ -124,6 +129,7 @@ node_modules
 *.local.md
 # Codex
 *.override.md
+.codex
 
 /tags
 

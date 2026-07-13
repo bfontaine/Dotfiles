@@ -45,6 +45,9 @@
 --ignore-dir=.jekyll-cache
 --ignore-dir=_site
 
+# PHP
+--ignore-file=is:.php-cs-fixer.cache
+
 # PrestaShop
 --ignore-dir=var/cache/dev
 --ignore-dir=var/cache/prod
